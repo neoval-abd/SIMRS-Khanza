@@ -1,0 +1,3 @@
+dist/*.jar
+git rm --cached dist/SIMRSKhanza.jar
+git rm --cached dist/SIMRSKhanzaM.jar
