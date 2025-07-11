@@ -1,3 +1,27 @@
-dist/*.jar
-git rm --cached dist/SIMRSKhanza.jar
-git rm --cached dist/SIMRSKhanzaM.jar
+# Build/Distribution files
+dist/
+build/
+target/
+
+# Large JAR files
+lib/rt.jar
+lib/jfxwebkit.dll
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
