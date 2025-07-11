@@ -49,6 +49,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.Timer;
 import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import kepegawaian.DlgCariPegawai;
@@ -241,6 +243,12 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         initRawatJalan();
+        
+        TCariPemeriksaan.getDocument().addDocumentListener(new DocumentListener() {
+            public void insertUpdate(DocumentEvent e) { TCariActionPerformedPemeriksaan(null); }
+            public void removeUpdate(DocumentEvent e) { TCariActionPerformedPemeriksaan(null); }
+            public void changedUpdate(DocumentEvent e) { TCariActionPerformedPemeriksaan(null); }
+        });
 
         this.setLocation(8,1);
         setSize(885,674);
@@ -1305,6 +1313,8 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        TCariPemeriksaan = new widget.TextBox();
+        
         internalFrame1 = new widget.InternalFrame();
         jPanel3 = new javax.swing.JPanel();
         panelGlass8 = new widget.panelisi();
@@ -2653,7 +2663,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
 
         internalFrame5.add(PanelInput, java.awt.BorderLayout.PAGE_START);
 
-        TabRawat.addTab("Pemeriksaan", internalFrame5);
+        TabRawat.addTab("SOAP/CPPT", internalFrame5);
 
         internalFrame6.setBackground(new java.awt.Color(235, 255, 235));
         internalFrame6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -3635,11 +3645,34 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         ScrollMenu.setPreferredSize(new java.awt.Dimension(130, 383));
 
         FormMenu.setBackground(new java.awt.Color(255, 255, 255));
-        FormMenu.setBorder(null);
+        FormMenu.setBorder(null); 
         FormMenu.setName("FormMenu"); 
         FormMenu.setPreferredSize(new java.awt.Dimension(150, 483));
         FormMenu.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 1, 1));
 
+       // Tambahkan label icon search
+        FormMenu.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 5, 1));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/icons-search.png")));
+        jLabel10.setPreferredSize(new java.awt.Dimension(23, 23)); // ukuran icon agar konsisten
+        jLabel10.setText(""); // pastikan tidak ada teks
+        FormMenu.add(jLabel10);
+        
+        TCariPemeriksaan.setName("TCariPemeriksaan"); // NOI18N
+        TCariPemeriksaan.setBackground(new java.awt.Color(98, 98, 98));
+        TCariPemeriksaan.setPreferredSize(new java.awt.Dimension(120, 23));
+        TCariPemeriksaan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TCariActionPerformedPemeriksaan(evt);
+            }
+        });
+        TCariPemeriksaan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TCariKeyPressed(evt);
+            }
+        });
+        FormMenu.add(TCariPemeriksaan);
+        
+        
         BtnRiwayat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); 
         BtnRiwayat.setText("Riwayat Pasien");
         BtnRiwayat.setFocusPainted(false);
@@ -6157,6 +6190,169 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             Valid.pindah(evt, BtnPrint, BtnKeluar);
         }
     }//GEN-LAST:event_BtnAllKeyPressed
+    
+    
+    private void TCariActionPerformedPemeriksaan(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+        String cari = TCariPemeriksaan.getText().toLowerCase();
+
+        BtnRiwayat.setVisible("riwayat pasien".contains(cari));
+        BtnResepObat.setVisible("input resep".contains(cari));
+        BtnCopyResep.setVisible("copy resep".contains(cari));
+        BtnResepLuar.setVisible("resep luar".contains(cari));
+        BtnInputObat.setVisible("input obat & BHP".contains(cari));
+        BtnObatBhp.setVisible("data obat & bhp".contains(cari));
+        BtnBerkasDigital.setVisible("berkas digital".contains(cari));
+        BtnPermintaanLab.setVisible("permintaan lab".contains(cari));
+        BtnPermintaanRad.setVisible("permintaan rad".contains(cari));
+        BtnPermintaanKonsultasiMedik.setVisible("konsultasi medik".contains(cari));
+        BtnJadwalOperasi.setVisible("jadwal operasi".contains(cari));
+        BtnSKDP.setVisible("surat kontrol".contains(cari));
+        BtnKamar.setVisible("kamar inap".contains(cari));
+        BtnTriaseIGD.setVisible("triase igd".contains(cari));
+        BtnRujukInternal.setVisible("rujuk internal".contains(cari));
+        BtnResume.setVisible("resume pasien".contains(cari));
+        BtnAwalKeperawatanIGD.setVisible("awal keperawatan igd".contains(cari));
+        BtnAwalKeperawatan.setVisible("awal keperawatan umum".contains(cari));
+        BtnAwalKeperawatanGigi.setVisible("awal keperawatan gigi".contains(cari));
+        BtnAwalKeperawatanKandungan.setVisible("awal keperawatan kandungan".contains(cari));
+        BtnAwalKeperawatanAnak.setVisible("awal keperawatan bayi/anak".contains(cari));
+        BtnAwalKeperawatanPsikiatri.setVisible("awal keperawatan psikiatri".contains(cari));
+        BtnAwalKeperawatanGeriatri.setVisible("awal keperawatan geriatri".contains(cari));
+        BtnAwalFisioterapi.setVisible("awal fisioterapi".contains(cari));
+        BtnAwalTerapiWicara.setVisible("terapi wicara".contains(cari));
+        BtnPenatalaksanaanTerapiOkupasi.setVisible("tatalaksana terapi okupasi".contains(cari));
+        BtnAwalMedisIGD.setVisible("awal medis igd".contains(cari));
+        BtnAwalMedisIGDPsikiatri.setVisible("awal medis igd psikiatri".contains(cari));
+        BtnAwalMedis.setVisible("awal medis umum".contains(cari));
+        BtnAwalMedisKandungan.setVisible("awal medis kandungan".contains(cari));
+        BtnAwalMedisAnak.setVisible("awal medis bayi/anak".contains(cari));
+        BtnAwalMedisTHT.setVisible("awal medis tht".contains(cari));
+        BtnAwalMedisPsikiatri.setVisible("awal medis psikiatri".contains(cari));
+        BtnAwalMedisPenyakitDalam.setVisible("awal medis penyakit dalam".contains(cari));
+        BtnAwalMedisMata.setVisible("awal medis mata".contains(cari));
+        BtnAwalMedisNeurologi.setVisible("awal medis neurologi".contains(cari));
+        BtnAwalMedisOrthopedi.setVisible("awal medis orthopedi".contains(cari));
+        BtnAwalMedisBedah.setVisible("awal medis bedah".contains(cari));
+        BtnAwalMedisBedahMulut.setVisible("awal medis bedah mulut".contains(cari));
+        BtnAwalMedisGeriatri.setVisible("awal medis geriatri".contains(cari));
+        BtnAwalMedisKulitKelamin.setVisible("awal medis kulit & kelamin".contains(cari));
+        BtnAwalMedisParu.setVisible("awal medis paru".contains(cari));
+        BtnAwalMedisRehabMedik.setVisible("awal medis fisik & rehabilitasi".contains(cari));
+        BtnAwalMedisHemodialisa.setVisible("awal medis hemodialisa".contains(cari));
+        BtnRujukKeluar.setVisible("rujuk keluar".contains(cari));
+        BtnCatatan.setVisible("catatan pasien".contains(cari));
+        BtnCatatanObservasiIGD.setVisible("Observasi igd".contains(cari));
+        BtnCatatanObservasiCHBP.setVisible("Observasi chbp".contains(cari));
+        BtnCatatanObservasiInduksiPersalinan.setVisible("Observasi induksi persalinan".contains(cari));
+        BtnCatatanObservasiBayi.setVisible("Observasi bayi".contains(cari));
+        BtnCatatanObservasiHemodialisa.setVisible("Observasi hemodialisa".contains(cari));
+        BtnCatatanCekGDS.setVisible("catatan cek gds".contains(cari));
+        BtnCatatanKeperawatan.setVisible("catatan keperawatan".contains(cari));
+        BtnCatatanKeseimbanganCairan.setVisible("keseimbangan cairan".contains(cari));
+        BtnCatatanCairanHemodialisa.setVisible("cairan hemodialisa".contains(cari));
+        BtnChecklistPemberianFibrinolitik.setVisible("check list pemberian fibrinoli".contains(cari));
+        BtnPenilaianUlangNyeri.setVisible("pengkajian ulang nyeri".contains(cari));
+        BtnPemantauanPEWSAnak.setVisible("pemantauan pews anak".contains(cari));
+        BtnPemantauanPEWSDewasa.setVisible("pemantauan ews dewasa".contains(cari));
+        BtnPemantauanMEOWS.setVisible("pemantauan meows obstetri".contains(cari));
+        BtnPemantauanEWSNeonatus.setVisible("pemantauan ews neonatus".contains(cari));
+        BtnMonitoringReaksiTranfusi.setVisible("monitoring reaksi tranfusi".contains(cari));
+        BtnLayananKedokteranFisikRehabilitasi.setVisible("Kedokteran Fisik & Rehabilitasi".contains(cari));
+        BtnUjiFungsiKFR.setVisible("uji fungsi/prosedur kfr".contains(cari));
+        BtnChecklistKriteriaMasukHCU.setVisible("checklist masuk hcu".contains(cari));
+        BtnChecklistKriteriaMasukICU.setVisible("checklist masuk icu".contains(cari));
+        BtnPenilaianPreInduksi.setVisible("pengkajian pre induksi".contains(cari));
+        BtnChecklistPreOperasi.setVisible("check list pre operasi".contains(cari));
+        BtnSignInSebelumAnestesi.setVisible("sign-in sebelum anestesi".contains(cari));
+        BtnTimeOutSebelumInsisi.setVisible("time-out sebelum insisi".contains(cari));
+        BtnSignOutSebelumMenutupLuka.setVisible("sign-out sebelum menutup luka".contains(cari));
+        BtnChecklistPostOperasi.setVisible("check list post operasi".contains(cari));
+        BtnPenilaianPreOperasi.setVisible("pengkajian pre operasi".contains(cari));
+        BtnCatatanAnastesiSedasi.setVisible("catatan anestesi-sedasi".contains(cari));
+        BtnPenilaianPreAnestesi.setVisible("pengkajian pre anestesi".contains(cari));
+        BtnChecklistKesiapanAnestesi.setVisible("Check list Kesiapan Anestesi".contains(cari));
+        BtnSkorAldrettePascaAnestesi.setVisible("skor aldrette pasca anestesi".contains(cari));
+        BtnSkorStewardPascaAnestesi.setVisible("skor steward pasca anestesi".contains(cari));
+        BtnSkorBromagePascaAnestesi.setVisible("skor Bromage pasca anestesi".contains(cari));
+        BtnMedicalCheckUp.setVisible("medical check up".contains(cari));
+        BtnPenilaianPsikolog.setVisible("pengkajian Psikolog".contains(cari));
+        BtnPenilaianPsikologKlinis.setVisible("pengkajian Psikolog klinis".contains(cari));
+        BtnPenilaianLanjutanRisikoJatuhDewasa.setVisible("lanjutan risiko jatuh dewasa".contains(cari));
+        BtnPenilaianLanjutanRisikoJatuhAnak.setVisible("lanjutan risiko jatuh anak".contains(cari));
+        BtnPenilaianLanjutanRisikoJatuhLansia.setVisible("lanjutan risiko jatuh lansia".contains(cari));
+        BtnPenilaianLanjutanRisikoJatuhNeonatus.setVisible("lanjutan risiko jatuh neonatus".contains(cari));
+        BtnPenilaianLanjutanRisikoJatuhGeriatri.setVisible("lanjutan risiko jatuh geriatri".contains(cari));
+        BtnPenilaianLanjutanRisikoJatuhPsikiatri.setVisible("lanjutan risiko jatuh psikiatri".contains(cari));
+        BtnPenilaianLanjutanSkriningFungsional.setVisible("lanjutan skrining fungsional".contains(cari));
+        BtnHasilPemeriksaanUSG.setVisible("hasil usg kandungan".contains(cari));
+        BtnHasilPemeriksaanUSGUrologi.setVisible("Hasil Pemeriksaan USG Urologi".contains(cari));
+        BtnHasilPemeriksaanUSGNeonatus.setVisible("Hasil Pemeriksaan USG neonatus".contains(cari));
+        BtnHasilPemeriksaanUSGGynecologi.setVisible("Hasil Pemeriksaan USG gynecologi".contains(cari));
+        BtnHasilPemeriksaanEKG.setVisible("Hasil Pemeriksaan EKG".contains(cari));
+        BtnHasilPemeriksaanECHO.setVisible("Hasil Pemeriksaan echo".contains(cari));
+        BtnHasilPemeriksaanSlitLamp.setVisible("Hasil Pemeriksaan Slit Lamp".contains(cari));
+        BtnHasilPemeriksaanOCT.setVisible("Hasil Pemeriksaan oct".contains(cari));
+        BtnHasilEndoskopiFaringLaring.setVisible("Hasil Endoskopi Faring/Laring".contains(cari));
+        BtnHasilEndoskopiHidung.setVisible("Hasil Endoskopi Hidung".contains(cari));
+        BtnHasilEndoskopiTelinga.setVisible("Hasil Endoskopi Telinga".contains(cari));
+        BtnDokumentasiESWL.setVisible("dokumentasi tindakan eswl".contains(cari));
+        BtnCatatanPersalinanan.setVisible("catatan persalinanan".contains(cari));
+        BtnLaporanTindakan.setVisible("laporan tindakan".toLowerCase().contains(cari));
+        BtnSkriningMerokokUsiaRemaja.setVisible("skrining merokok usia remaja".toLowerCase().contains(cari));
+        BtnSkriningKekerasanPadaWanita.setVisible("skrining pada prerempuan".toLowerCase().contains(cari));
+        BtnSkriningObesitas.setVisible("skrining obesitas".toLowerCase().contains(cari));
+        BtnSkriningRisikoKankerPayudara.setVisible("skrining risiko kanker payudara".toLowerCase().contains(cari));
+        BtnSkriningRisikoKankerParu.setVisible("skrining risiko kanker paru".toLowerCase().contains(cari));
+        BtnSkriningRisikoKankerServiks.setVisible("skrining risiko kanker serviks".toLowerCase().contains(cari));
+        BtnSkriningKesehatanGigiMulutremaja.setVisible("skrining gigi mulut remaja".toLowerCase().contains(cari));
+        BtnSkriningKesehatanGigiMulutBalita.setVisible("skrining gigi mulut balita".toLowerCase().contains(cari));
+        BtnSkriningKesehatanGigiMulutDewasa.setVisible("skrining gigi mulut dewasa".toLowerCase().contains(cari));
+        BtnSkriningKesehatanGigiMulutLansia.setVisible("skrining gigi mulut lansia".toLowerCase().contains(cari));
+        BtnSkriningTBC.setVisible("skrining tbc".toLowerCase().contains(cari));
+        BtnSkriningPUMA.setVisible("skrining puma".toLowerCase().contains(cari));
+        BtnSkriningAdiksiNikotin.setVisible("skrining adiksi nikotin".toLowerCase().contains(cari));
+        BtnSkriningThalassemia.setVisible("skrining thalassemia".toLowerCase().contains(cari));
+        BtnSkriningInstrumenSDQ.setVisible("skrining instrumen sdq".toLowerCase().contains(cari));
+        BtnSkriningInstrumenSRQ.setVisible("skrining instrumen srq".toLowerCase().contains(cari));
+        BtnSkriningKankerKolorektal.setVisible("skrining kanker kolorektal".toLowerCase().contains(cari));
+        BtnSkriningDiabetesMelitus.setVisible("skrining diabetes melitus".toLowerCase().contains(cari));
+        BtnSkriningAnemia.setVisible("skrining anemia".toLowerCase().contains(cari));
+        BtnSkriningHipertensi.setVisible("skrining hipertensi".toLowerCase().contains(cari));
+        BtnSkriningKesehatanPenglihatan.setVisible("skrining kesehatan penglihatan".toLowerCase().contains(cari));
+        BtnSkriningIndraPendengaran.setVisible("skrining indra pendengaran".toLowerCase().contains(cari));
+        BtnSkriningFrailtySyndrome.setVisible("skrining frailty syndrome".toLowerCase().contains(cari));
+        BtnSkriningNutrisiDewasa.setVisible("skrining nutrisi dewasa".toLowerCase().contains(cari));
+        BtnSkriningNutrisiLansia.setVisible("skrining nutrisi lansia".toLowerCase().contains(cari));
+        BtnSkriningNutrisiAnak.setVisible("skrining nutrisi anak".toLowerCase().contains(cari));
+        BtnSkriningGiziLanjut.setVisible("skrining gizi lanjut".toLowerCase().contains(cari));
+        BtnAsuhanGizi.setVisible("asuhan gizi".toLowerCase().contains(cari));
+        BtnMonitoringAsuhanGizi.setVisible("monitoring asuhan gizi".toLowerCase().contains(cari));
+        BtnCatatanADIMEGizi.setVisible("catatan adime gizi".toLowerCase().contains(cari));
+        BtnKonselingFarmasi.setVisible("konseling farmasi".toLowerCase().contains(cari));
+        BtnInformasiObat.setVisible("informasi obat".toLowerCase().contains(cari));
+        BtnRekonsiliasiObat.setVisible("rekonsiliasi obat".toLowerCase().contains(cari));
+        BtnTransferAntarRuang.setVisible("transfer antar ruang".toLowerCase().contains(cari));
+        BtnEdukasiPasienKeluarga.setVisible("edukasi pasien & keluarga".toLowerCase().contains(cari));
+        BtnPelaksanaanInformasiEdukasi.setVisible("pelaksanaan edukasi".toLowerCase().contains(cari));
+        BtnPengkajianRestrain.setVisible("pengkajian restrain".toLowerCase().contains(cari));
+        BtnPenilaianBayiBaruLahir.setVisible("pengkajian bayi baru lahir".toLowerCase().contains(cari));
+        BtnPenilaianPasienTerminal.setVisible("pengkajian pasien terminal".toLowerCase().contains(cari));
+        BtnCatatanPengkajianPaskaOperasi.setVisible("Pengkajian Paska Operasi".toLowerCase().contains(cari));
+        BtnPenilaianKorbanKekerasan.setVisible("pengkajian korban kekerasan".toLowerCase().contains(cari));
+        BtnPenilaianPasienPenyakitMenular.setVisible("pasien penyakit menular".toLowerCase().contains(cari));
+        BtnPenilaianPasienImunitasRendah.setVisible("pasien imunitas rendah".toLowerCase().contains(cari));
+        BtnPenilaianPasienKeracunan.setVisible("pasien keracunan".toLowerCase().contains(cari));
+        BtnPenilaianTambahanGeriatri.setVisible("tambahan geriatri".toLowerCase().contains(cari));
+        BtnPenilaianTambahanBunuhDiri.setVisible("tambahan bunuh diri".toLowerCase().contains(cari));
+        BtnPenilaianTambahanPerilakuKekerasan.setVisible("tambahan perilaku kekerasan".toLowerCase().contains(cari));
+        BtnPenilaianTambahanMelarikanDiri.setVisible("tambahan melarikan diri".toLowerCase().contains(cari));
+        BtnPenilaianDerajatDehidrasi.setVisible("derajat dehidrasi".toLowerCase().contains(cari));
+
+        
+    FormMenu.revalidate(); // Refresh UI
+    FormMenu.repaint();
+    }
 
     private void TCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCariKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
@@ -10210,6 +10406,8 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private widget.TextBox TCariPemeriksaan;
+    
     private widget.Button Btn5Soap;
     private widget.Button BtnAll;
     private widget.Button BtnAsuhanGizi;
