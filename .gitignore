@@ -1,6 +1,8 @@
-# Abaikan file build/output
+# Ignore file besar
+*.jar
+*.dll
+*.exe
+*.zip
 dist/
 lib/*.dll
-*.jar
-*.zip
-*.exe
+lib/*.jar
