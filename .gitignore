@@ -1,27 +1,6 @@
-# Build/Distribution files
+# Abaikan file build/output
 dist/
-build/
-target/
-
-# Large JAR files
-lib/rt.jar
-lib/jfxwebkit.dll
-
-# IDE files
-.vscode/
-.idea/
-*.iml
-*.iws
-*.ipr
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-logs/
-
-# Temporary files
-*.tmp
-*.temp
+lib/*.dll
+*.jar
+*.zip
+*.exe
