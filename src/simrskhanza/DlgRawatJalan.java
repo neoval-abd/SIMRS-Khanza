@@ -63,6 +63,8 @@ import rekammedis.RMDataResumePasien;
 import permintaan.DlgPermintaanLaboratorium;
 import permintaan.DlgPermintaanPelayananInformasiObat;
 import permintaan.DlgPermintaanRadiologi;
+import rekammedis.MasterCariTemplateSOAPIE;
+import rekammedis.MasterCariTemplateSOAPIEPerawat;
 import rekammedis.MasterCariTemplatePemeriksaan;
 import rekammedis.RMCari5SOAPTerakhir;
 import rekammedis.RMCatatanADIMEGizi;
@@ -223,11 +225,13 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
     private PreparedStatement ps,ps2,ps3,ps4,ps5,ps6,pstindakan,psset_tarif,psrekening;
     private ResultSet rs,rstindakan,rsset_tarif,rsrekening;
     private int i=0,jmlparsial=0,jml=0,index=0,tinggi=0;
+    private MasterCariTemplateSOAPIE templatesoapie = new MasterCariTemplateSOAPIE(null, false);
+    private MasterCariTemplateSOAPIEPerawat templatesoapieperawat = new MasterCariTemplateSOAPIEPerawat(null, false);
     private String aktifkanparsial="no",kode_poli="",kd_pj="",poli_ralan="No",cara_bayar_ralan="No",TANGGALMUNDUR="yes",
             Suspen_Piutang_Tindakan_Ralan="",Tindakan_Ralan="",Beban_Jasa_Medik_Dokter_Tindakan_Ralan="",Utang_Jasa_Medik_Dokter_Tindakan_Ralan="",
             Beban_Jasa_Medik_Paramedis_Tindakan_Ralan="",Utang_Jasa_Medik_Paramedis_Tindakan_Ralan="",Beban_KSO_Tindakan_Ralan="",Utang_KSO_Tindakan_Ralan="",
             Beban_Jasa_Sarana_Tindakan_Ralan="",Utang_Jasa_Sarana_Tindakan_Ralan="",HPP_BHP_Tindakan_Ralan="",Persediaan_BHP_Tindakan_Ralan="",
-            Beban_Jasa_Menejemen_Tindakan_Ralan="",Utang_Jasa_Menejemen_Tindakan_Ralan="";
+            Beban_Jasa_Menejemen_Tindakan_Ralan="",Utang_Jasa_Menejemen_Tindakan_Ralan="",poli = "";
     private boolean[] pilih; 
     private String[] kode,nama,kategori;
     private double[] totaltnd,bagianrs,bhp,jmdokter,jmperawat,kso,menejemen;
@@ -3613,6 +3617,23 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         });
         FormInput.add(ChkJln);
         ChkJln.setBounds(906, 10, 23, 23);
+        
+        BtnPanggilPasien = new widget.Button();
+        BtnPanggilPasien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/man1-24.png"))); // NOI18N
+        BtnPanggilPasien.setMnemonic('S');
+        BtnPanggilPasien.setText("Panggil Pasien");
+        BtnPanggilPasien.setToolTipText("Alt+S");
+        BtnPanggilPasien.setName("BtnPanggilPasien"); // NOI18N
+        BtnPanggilPasien.setPreferredSize(new java.awt.Dimension(100, 30));
+        BtnPanggilPasien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPanggilPasienActionPerformed(evt);
+            }
+        });
+
+        FormInput.add(BtnPanggilPasien);
+        BtnPanggilPasien.setBounds(930, 10, 130, 30);
+        
 
         internalFrame1.add(FormInput, java.awt.BorderLayout.PAGE_START);
 
@@ -10742,7 +10763,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.Table tbTindakan3;
     private widget.TextBox TanggalRegistrasi;
     // End of variables declaration//GEN-END:variables
-    private widget.Button BtnSkorBromagePascaAnestesi,BtnPenilaianPreInduksi,BtnHasilPemeriksaanUSGUrologi,BtnHasilPemeriksaanUSGGynecologi,BtnHasilPemeriksaanEKG,BtnPenatalaksanaanTerapiOkupasi,BtnPenilaianPsikolog,
+    private widget.Button BtnSoapDokter, BtnSoapDokter1,BtnPanggilPasien,BtnSkorBromagePascaAnestesi,BtnPenilaianPreInduksi,BtnHasilPemeriksaanUSGUrologi,BtnHasilPemeriksaanUSGGynecologi,BtnHasilPemeriksaanEKG,BtnPenatalaksanaanTerapiOkupasi,BtnPenilaianPsikolog,
                           BtnHasilPemeriksaanUSGNeonatus,BtnHasilEndoskopiFaringLaring,BtnHasilEndoskopiHidung,BtnHasilEndoskopiTelinga,BtnPenilaianPasienImunitasRendah,BtnCatatanKeseimbanganCairan,BtnCatatanObservasiCHBP,
                           BtnCatatanObservasiInduksiPersalinan,BtnPermintaanKonsultasiMedik,BtnSkriningMerokokUsiaRemaja,BtnSkriningKekerasanPadaWanita,BtnSkriningObesitas,BtnSkriningRisikoKankerPayudara,BtnSkriningRisikoKankerParu,
                           BtnSkriningKesehatanGigiMulutremaja,BtnSkriningTBC,BtnCatatanAnastesiSedasi,BtnSkriningPUMA,BtnSkriningAdiksiNikotin,BtnSkriningThalassemia,BtnSkriningInstrumenSDQ,BtnSkriningInstrumenSRQ,
@@ -10750,6 +10771,11 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                           BtnLaporanTindakan,BtnPelaksanaanInformasiEdukasi,BtnLayananKedokteranFisikRehabilitasi,BtnSkriningKesehatanGigiMulutBalita,BtnSkriningAnemia,BtnSkriningHipertensi,BtnSkriningKesehatanPenglihatan,
                           BtnCatatanObservasiHemodialisa,BtnSkriningKesehatanGigiMulutDewasa,BtnSkriningRisikoKankerServiks,BtnCatatanCairanHemodialisa,BtnSkriningKesehatanGigiMulutLansia,BtnSkriningIndraPendengaran,
                           BtnCatatanPengkajianPaskaOperasi,BtnSkriningFrailtySyndrome,BtnCatatanObservasiBayi,BtnChecklistKesiapanAnestesi,BtnHasilPemeriksaanSlitLamp,BtnHasilPemeriksaanOCT;   
+    
+    private widget.Label lblTemplate, lblTemplate1;
+    private widget.CekBox ChkTemplate, ChkTemplatePerawat;
+    private widget.TextBox KdNoRawat;
+    
     
     private void tampilDr() {
         Valid.tabelKosong(tabModeDr);
@@ -12929,7 +12955,91 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         TabRawat.setSelectedIndex(3);
     }
     
+    
+    private void BtnSoapDokterActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        akses.setform("DlgRawatJalan");
+        templatesoapie.emptTeks();
+        templatesoapie.isCek();
+        //    templatesoapi.setRM(KdPeg.getText(), TPegawai.getText());
+        templatesoapie.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+        templatesoapie.setLocationRelativeTo(internalFrame1);
+        templatesoapie.setVisible(true);
+    }
+    
+    private void BtnSoapDokter1ActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        akses.setform("DlgRawatJalan");
+        templatesoapieperawat.emptTeks();
+        templatesoapieperawat.isCek();
+        templatesoapieperawat.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+        templatesoapieperawat.setLocationRelativeTo(internalFrame1);
+        templatesoapieperawat.setVisible(true);
+    }
+    
     private void initRawatJalan(){
+        
+        lblTemplate = new widget.Label();
+        ChkTemplate = new widget.CekBox();
+        BtnSoapDokter = new widget.Button();
+        BtnSoapDokter1 = new widget.Button();
+        lblTemplate1 = new widget.Label();
+        ChkTemplatePerawat = new widget.CekBox();
+        
+        
+        /* lblTemplate.setText("Jadikan Template SOAPIE Dokter:");
+        lblTemplate.setName("lblTemplate"); // NOI18N
+        panelGlass12.add(lblTemplate);
+        lblTemplate.setBounds(10, 250, 180, 23);
+
+        ChkTemplate.setBorder(null);
+        ChkTemplate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ChkTemplate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ChkTemplate.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ChkTemplate.setName("ChkTemplate"); // NOI18N
+        panelGlass12.add(ChkTemplate);
+        ChkTemplate.setBounds(910, 10, 180, 26);
+
+        BtnSoapDokter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Stethoscope.png"))); // NOI18N
+        BtnSoapDokter.setMnemonic('4');
+        BtnSoapDokter.setText("Buka Template SOAP Dokter");
+        BtnSoapDokter.setToolTipText("");
+        BtnSoapDokter.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnSoapDokter.setGlassColor(new java.awt.Color(255, 153, 153));
+        BtnSoapDokter.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnSoapDokter.setName("BtnSoapDokter"); // NOI18N
+        BtnSoapDokter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSoapDokterActionPerformed(evt);
+            }
+        });
+
+        panelGlass12.add(BtnSoapDokter);
+        BtnSoapDokter.setBounds(930, 10, 180, 26);
+        
+          
+        
+        BtnSoapDokter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Surgeon SH.png"))); // NOI18N
+        BtnSoapDokter1.setMnemonic('4');
+        BtnSoapDokter1.setText("Buka Template SOAP Perawat");
+        BtnSoapDokter1.setToolTipText("");
+        BtnSoapDokter1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnSoapDokter1.setGlassColor(new java.awt.Color(255, 153, 153));
+        BtnSoapDokter1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnSoapDokter1.setName("BtnSoapDokter1"); // NOI18N
+        BtnSoapDokter1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSoapDokter1ActionPerformed(evt);
+            }
+        });
+        panelGlass12.add(BtnSoapDokter1);
+        BtnSoapDokter1.setBounds(630, 250, 200, 26);
+
+        lblTemplate1.setText("Jadikan Template SOAPIE Perawatr:");
+        lblTemplate1.setName("lblTemplate1"); // NOI18N
+        panelGlass12.add(lblTemplate1);
+        lblTemplate1.setBounds(430, 250, 180, 23); */
+        
+        
+        
         BtnSkorBromagePascaAnestesi = new widget.Button();
         BtnSkorBromagePascaAnestesi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); 
         BtnSkorBromagePascaAnestesi.setText("Skor Bromage Pasca Anestesi");
@@ -14017,4 +14127,16 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                 break;
         } 
     }
+    
+    private void BtnPanggilPasienActionPerformed(java.awt.event.ActionEvent evt) {
+        poli = Sequel.cariIsi("select reg_periksa.kd_poli from reg_periksa where reg_periksa.no_rawat=?", TNoRw.getText());
+        if (TNoRw.getText().trim().equals("") || TNoRM.getText().trim().equals("")) {
+            Valid.textKosong(TNoRw, "No Rawat dan No RM");
+        } else {
+            Sequel.queryu("delete from antripoli where kd_dokter='" + KdDok.getText() + "' and kd_poli='" + poli + "'");
+            Sequel.queryu("insert into antripoli values('" + KdDok.getText() + "','" + poli + "','1','" + TNoRw.getText() + "')");
+        }
+    }
+    
+    
 }
