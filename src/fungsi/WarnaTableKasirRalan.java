@@ -18,10 +18,6 @@ public class WarnaTableKasirRalan extends DefaultTableCellRenderer {
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column){
         Component component = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-        if (isSelected) {
-            component.setForeground(Color.RED);
-            return component; // PENTING: stop di sini agar tidak ditimpa status
-        }
         
         if (row % 2 == 1){
             component.setBackground(new Color(255,244,244));
@@ -47,6 +43,11 @@ public class WarnaTableKasirRalan extends DefaultTableCellRenderer {
             component.setBackground(new Color(204, 255, 229));
             component.setForeground(new Color(51, 51, 51));
         }
+        
+        if (isSelected) {
+            component.setForeground(Color.RED);
+        }
+        
         return component;
     }
 

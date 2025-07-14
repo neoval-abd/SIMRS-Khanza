@@ -61,9 +61,7 @@ public class MasterTemplateSOAPIEPerawat extends javax.swing.JDialog {
                 column.setPreferredWidth(500);
             }else if(i==6){
                 column.setPreferredWidth(500);
-            }else if(i==7){
-                column.setPreferredWidth(500);
-        }
+            }
         tbDokter.setDefaultRenderer(Object.class, new WarnaTable());
 
         Kd.setDocument(new batasInput((byte)5).getKata(Kd));

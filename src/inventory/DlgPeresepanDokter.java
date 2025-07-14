@@ -4168,4 +4168,19 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
             }
         }               
     }
+    
+    public void setNoRmTemplate(String norwt,String KodeDokter,String NamaDokter,String kodepj,String status) {        
+        TNoRw.setText(norwt);
+        Sequel.cariIsi("select concat(pasien.no_rkm_medis,' ',pasien.nm_pasien,' (',pasien.umur,')') from reg_periksa inner join pasien "+
+                    " on reg_periksa.no_rkm_medis=pasien.no_rkm_medis where no_rawat=? ",TPasien,TNoRw.getText());
+        KdDokter.setText(KodeDokter);
+        NmDokter.setText(NamaDokter);
+        KdPj.setText(kodepj);
+        TCari.requestFocus();
+        this.status=status;
+        SetHarga();
+        ubah=false;
+        copy=false;
+    }
+    
 }
