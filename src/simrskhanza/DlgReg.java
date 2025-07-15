@@ -12,6 +12,11 @@
 
 
 package simrskhanza;
+import javax.swing.KeyStroke;
+import javax.swing.AbstractAction;
+import javax.swing.JComponent;
+
+
 import bridging.BPJSCekDataIndukKecelakaan;
 import bridging.BPJSCekSuplesiJasaRaharja;
 import permintaan.DlgBookingOperasi;
@@ -6339,6 +6344,16 @@ public final class DlgReg extends javax.swing.JDialog {
                 BtnBatalKeyPressed(evt);
             }
         });
+        
+        BtnBatal.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW)
+                .put(KeyStroke.getKeyStroke(KeyEvent.VK_INSERT, 0), "InsertPressed");
+        BtnBatal.getActionMap()
+                .put("InsertPressed", new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                BtnBatal.doClick(); // Trigger klik
+            }
+        });
+        
         panelGlass6.add(BtnBatal);
 
         BtnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/inventaris.png"))); // NOI18N
