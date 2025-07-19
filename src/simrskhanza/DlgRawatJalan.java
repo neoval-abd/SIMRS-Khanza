@@ -6391,9 +6391,9 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         BtnPenilaianLanjutanRisikoJatuhPsikiatri.setVisible("lanjutan risiko jatuh psikiatri".contains(cari));
         BtnPenilaianLanjutanSkriningFungsional.setVisible("lanjutan skrining fungsional".contains(cari));
         BtnHasilPemeriksaanUSG.setVisible("hasil usg kandungan".contains(cari));
-        BtnHasilPemeriksaanUSGUrologi.setVisible("Hasil Pemeriksaan USG Urologi".contains(cari));
-        BtnHasilPemeriksaanUSGNeonatus.setVisible("Hasil Pemeriksaan USG neonatus".contains(cari));
-        BtnHasilPemeriksaanUSGGynecologi.setVisible("Hasil Pemeriksaan USG gynecologi".contains(cari));
+        BtnHasilPemeriksaanUSGUrologi.setVisible("hasil usg Urologi".contains(cari));
+        BtnHasilPemeriksaanUSGNeonatus.setVisible("hasil usg neonatus".contains(cari));
+        BtnHasilPemeriksaanUSGGynecologi.setVisible("hasil usg gynecologi".contains(cari));
         BtnHasilPemeriksaanEKG.setVisible("Hasil Pemeriksaan EKG".contains(cari));
         BtnHasilPemeriksaanECHO.setVisible("Hasil Pemeriksaan echo".contains(cari));
         BtnHasilPemeriksaanSlitLamp.setVisible("Hasil Pemeriksaan Slit Lamp".contains(cari));
