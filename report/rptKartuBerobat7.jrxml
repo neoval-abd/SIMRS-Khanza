@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptKartuBerobat7" language="groovy" pageWidth="255" pageHeight="155" orientation="Landscape" columnWidth="215" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptKartuBerobat7" language="groovy" pageWidth="255" pageHeight="155" orientation="Landscape" columnWidth="215" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="050e8a2f-59ac-4aa8-9f95-70160ad61afb">
 	<property name="ireport.zoom" value="2.1435888100000016"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -76,52 +77,58 @@ pasien.pnd, pasien.keluarga, pasien.namakeluarga from pasien inner join keluraha
 	<title>
 		<band height="115">
 			<textField>
-				<reportElement x="0" y="0" width="215" height="22"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+				<reportElement x="0" y="0" width="215" height="22" uuid="1a41cc12-5549-43f9-9bd9-b2c8d56cdc48"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{namars}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{namars}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="16" width="215" height="13"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+				<reportElement x="0" y="16" width="215" height="13" uuid="673e6220-c55e-40de-b4bb-14a2df116a57"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="7" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{alamatrs}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{alamatrs}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="27" width="215" height="10"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+				<reportElement x="0" y="27" width="215" height="10" uuid="f34e8222-160a-4eac-9cd1-65e33938ee6e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="7" isBold="true" isUnderline="true"/>
+					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{kontakrs}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{kontakrs}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="50" width="215" height="13"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+				<reportElement x="0" y="50" width="215" height="13" uuid="8bcdd376-6ec6-4203-9b5d-2e7dbeeeddcb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true"/>
+					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{nm_pasien}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{nm_pasien}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="62" width="215" height="10"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+				<reportElement x="0" y="62" width="215" height="10" uuid="1955ac1a-4656-4c81-9342-a4be17042f78"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="6"/>
+					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{alamat}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
 			</textField>
 			<componentElement>
-				<reportElement x="71" y="83" width="105" height="27"/>
+				<reportElement x="71" y="83" width="105" height="27" uuid="70e1b21b-e689-4676-a8f1-868e8e876491"/>
 				<jr:Code39 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="top">
 					<jr:codeExpression><![CDATA[$F{no_rkm_medis}]]></jr:codeExpression>
 				</jr:Code39>
 			</componentElement>
 			<textField>
-				<reportElement x="0" y="71" width="215" height="12"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+				<reportElement x="0" y="71" width="215" height="12" uuid="7917bad7-a85f-4817-b926-7e136775d453"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="6"/>
+					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{umur}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{umur}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>

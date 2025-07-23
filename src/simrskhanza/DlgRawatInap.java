@@ -49,6 +49,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.Timer;
 import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import kepegawaian.DlgCariPegawai;
@@ -60,6 +61,8 @@ import permintaan.DlgPermintaanKonsultasiMedik;
 import permintaan.DlgPermintaanLaboratorium;
 import permintaan.DlgPermintaanPelayananInformasiObat;
 import permintaan.DlgPermintaanRadiologi;
+import rekammedis.MasterCariTemplateSOAPIE;
+import rekammedis.MasterCariTemplateSOAPIEPerawat;
 import rekammedis.RMCari5SOAPTerakhir;
 import rekammedis.RMCatatanADIMEGizi;
 import rekammedis.RMCatatanAnastesiSedasi;
@@ -177,6 +180,9 @@ public final class DlgRawatInap extends javax.swing.JDialog {
     public  DlgCariPerawatanRanap2 perawatan2=new DlgCariPerawatanRanap2(null,false);
     public  DlgCariPegawai pegawai=new DlgCariPegawai(null,false);  
     public  DlgCariPasien pasien=new DlgCariPasien(null,false);
+    private MasterCariTemplateSOAPIE templatesoapie = new MasterCariTemplateSOAPIE(null, false);
+    private MasterCariTemplateSOAPIEPerawat templatesoapieperawat = new MasterCariTemplateSOAPIEPerawat(null, false);
+    // private RMCari5SOAPTerakhir soapterakhir = new RMCari5SOAPTerakhir(null, false);
     private PreparedStatement ps,ps2,ps3,ps4,ps5,psrekening,ps6;
     private ResultSet rs,rsrekening;
     private int i=0,tinggi=0;
@@ -195,6 +201,12 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         initComponents();
         initRawatInap();
 
+        TCariPemeriksaan.getDocument().addDocumentListener(new DocumentListener() {
+            public void insertUpdate(DocumentEvent e) { TCariActionPerformedPemeriksaan(null); }
+            public void removeUpdate(DocumentEvent e) { TCariActionPerformedPemeriksaan(null); }
+            public void changedUpdate(DocumentEvent e) { TCariActionPerformedPemeriksaan(null); }
+        });
+        
         this.setLocation(8,1);
         setSize(885,674);
         
@@ -1082,6 +1094,8 @@ public final class DlgRawatInap extends javax.swing.JDialog {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        
+        TCariPemeriksaan = new widget.TextBox();
 
         BagianRS = new javax.swing.JTextField();
         Bhp = new javax.swing.JTextField();
@@ -3359,6 +3373,28 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         FormMenu.setPreferredSize(new java.awt.Dimension(135, 43));
         FormMenu.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 1, 1));
 
+        // Tambahkan label icon search
+        FormMenu.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 5, 1));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/icons-search.png")));
+        jLabel10.setPreferredSize(new java.awt.Dimension(23, 23)); // ukuran icon agar konsisten
+        jLabel10.setText(""); // pastikan tidak ada teks
+        FormMenu.add(jLabel10);
+        
+        TCariPemeriksaan.setName("TCariPemeriksaan"); // NOI18N
+        TCariPemeriksaan.setBackground(new java.awt.Color(98, 98, 98));
+        TCariPemeriksaan.setPreferredSize(new java.awt.Dimension(120, 23));
+        TCariPemeriksaan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TCariActionPerformedPemeriksaan(evt);
+            }
+        });
+        TCariPemeriksaan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TCariKeyPressed(evt);
+            }
+        });
+        FormMenu.add(TCariPemeriksaan);
+        
         BtnRiwayat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
         BtnRiwayat.setText("Riwayat Pasien");
         BtnRiwayat.setFocusPainted(false);
@@ -6399,6 +6435,134 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }
     }//GEN-LAST:event_btnTindakan6ActionPerformed
 
+    
+    private void TCariActionPerformedPemeriksaan(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+        String cari = TCariPemeriksaan.getText().toLowerCase();
+
+        BtnRiwayat.setVisible("riwayat pasien".contains(cari));
+        BtnResepObat.setVisible("resep obat".contains(cari));
+        BtnCopyResep.setVisible("copy resep".contains(cari));
+        BtnPermintaanStok.setVisible("permintaan stok".contains(cari));
+        BtnPermintaanResepPulang.setVisible("permintaan resep pulang".contains(cari));
+        BtnInputObat.setVisible("input obat".contains(cari));
+        BtnObatBhp.setVisible("obat bhp".contains(cari));
+        BtnBerkasDigital.setVisible("berkas digital".contains(cari));
+        BtnPermintaanLab.setVisible("permintaan lab".contains(cari));
+        BtnPermintaanRad.setVisible("permintaan rad".contains(cari));
+        BtnPermintaanKonsultasiMedik.setVisible("permintaan konsultasi medik".contains(cari));
+        BtnJadwalOperasi.setVisible("jadwal operasi".contains(cari));
+        BtnSKDP.setVisible("skdp".contains(cari));
+        BtnRujukKeluar.setVisible("rujuk keluar".contains(cari));
+        BtnDiagnosa.setVisible("diagnosa".contains(cari));
+        BtnResume.setVisible("resume".contains(cari));
+        BtnAwalKeperawatanUmum.setVisible("awal keperawatan umum".contains(cari));
+        BtnAwalKeperawatanKandungan.setVisible("awal keperawatan kandungan".contains(cari));
+        BtnAwalKeperawatanNeonatus.setVisible("awal keperawatan neonatus".contains(cari));
+        BtnAwalKeperawatanBayiAnak.setVisible("awal keperawatan bayi anak".contains(cari));
+        BtnAwalFisioterapi.setVisible("awal fisioterapi".contains(cari));
+        BtnAwalMedis.setVisible("awal medis".contains(cari));
+        BtnAwalMedisKandungan.setVisible("awal medis kandungan".contains(cari));
+        BtnAwalMedisNeonatus.setVisible("awal medis neonatus".contains(cari));
+        BtnAwalMedisHemodialisa.setVisible("awal medis hemodialisa".contains(cari));
+        BtnPenilaianPreInduksi.setVisible("penilaian pre induksi".contains(cari));
+        BtnChecklistPreOperasi.setVisible("checklist pre operasi".contains(cari));
+        BtnSignInSebelumAnestesi.setVisible("signin sebelum anestesi".contains(cari));
+        BtnTimeOutSebelumInsisi.setVisible("timeout sebelum insisi".contains(cari));
+        BtnSignOutSebelumMenutupLuka.setVisible("signout sebelum menutup luka".contains(cari));
+        BtnChecklistPostOperasi.setVisible("checklist post operasi".contains(cari));
+        BtnPenilaianPreOperasi.setVisible("penilaian pre operasi".contains(cari));
+        BtnCatatanAnastesiSedasi.setVisible("catatan anastesi sedasi".contains(cari));
+        BtnPenilaianPreAnestesi.setVisible("penilaian pre anestesi".contains(cari));
+        BtnChecklistKesiapanAnestesi.setVisible("checklist kesiapan anestesi".contains(cari));
+        BtnSkorAldrettePascaAnestesi.setVisible("skor aldrette pasca anestesi".contains(cari));
+        BtnSkorStewardPascaAnestesi.setVisible("skor steward pasca anestesi".contains(cari));
+        BtnSkorBromagePascaAnestesi.setVisible("skor bromage pasca anestesi".contains(cari));
+        BtnCatatanPengkajianPaskaOperasi.setVisible("catatan pengkajian pasca operasi".contains(cari));
+        BtnPenilaianPsikolog.setVisible("penilaian psikolog".contains(cari));
+        BtnPenilaianPsikologKlinis.setVisible("penilaian psikolog klinis".contains(cari));
+        BtnPerencanaanPemulangan.setVisible("perencanaan pemulangan".contains(cari));
+        BtnPenilaianLanjutanResikoJatuhDewasa.setVisible("resiko jatuh dewasa".contains(cari));
+        BtnPenilaianLanjutanResikoJatuhAnak.setVisible("resiko jatuh anak".contains(cari));
+        BtnPenilaianLanjutanResikoJatuhLansia.setVisible("resiko jatuh lansia".contains(cari));
+        BtnPenilaianLanjutanResikoJatuhNeonatus.setVisible("resiko jatuh neonatus".contains(cari));
+        BtnPenilaianLanjutanResikoJatuhGeriatri.setVisible("resiko jatuh geriatri".contains(cari));
+        BtnPenilaianLanjutanResikoJatuhPsikiatri.setVisible("resiko jatuh psikiatri".contains(cari));
+        BtnPenilaianLanjutanSkriningFungsional.setVisible("skrining fungsional".contains(cari));
+        BtnPenilaianResikoDekubitus.setVisible("resiko dekubitus".contains(cari));
+        BtnHasilPemeriksaanUSG.setVisible("hasil usg".contains(cari));
+        BtnHasilPemeriksaanUSGUrologi.setVisible("hasil usg urologi".contains(cari));
+        BtnHasilPemeriksaanUSGNeonatus.setVisible("hasil usg neonatus".contains(cari));
+        BtnHasilPemeriksaanUSGGynecologi.setVisible("hasil usg gynecologi".contains(cari));
+        BtnHasilPemeriksaanEKG.setVisible("hasil ekg".contains(cari));
+        BtnHasilPemeriksaanECHO.setVisible("hasil echo".contains(cari));
+        BtnHasilPemeriksaanSlitLamp.setVisible("hasil slit lamp".contains(cari));
+        BtnHasilPemeriksaanOCT.setVisible("hasil oct".contains(cari));
+        BtnHasilEndoskopiFaringLaring.setVisible("endoskopi faring laring".contains(cari));
+        BtnHasilEndoskopiHidung.setVisible("endoskopi hidung".contains(cari));
+        BtnHasilEndoskopiTelinga.setVisible("endoskopi telinga".contains(cari));
+        BtnDokumentasiESWL.setVisible("dokumentasi eswl".contains(cari));
+        BtnCatatanPersalinan.setVisible("catatan persalinan".contains(cari));
+        BtnLaporanTindakan.setVisible("laporan tindakan".contains(cari));
+        BtnCatatan.setVisible("catatan".contains(cari));
+        BtnCatatanObservasiRanap.setVisible("observasi ranap".contains(cari));
+        BtnCatatanObservasiRanapKebidanan.setVisible("observasi ranap kebidanan".contains(cari));
+        BtnCatatanObservasiRanapPostPartum.setVisible("observasi ranap postpartum".contains(cari));
+        BtnCatatanObservasiCHBP.setVisible("observasi chbp".contains(cari));
+        BtnCatatanObservasiInduksiPersalinan.setVisible("observasi induksi persalinan".contains(cari));
+        BtnCatatanObservasiBayi.setVisible("observasi bayi".contains(cari));
+        BtnCatatanObservasiRestrainNonfarmakologi.setVisible("restrain nonfarmakologi".contains(cari));
+        BtnCatatanObservasiVentilator.setVisible("observasi ventilator".contains(cari));
+        BtnCatatanObservasiHemodialisa.setVisible("observasi hemodialisa".contains(cari));
+        BtnCatatanKeseimbanganCairan.setVisible("keseimbangan cairan".contains(cari));
+        BtnCatatanCairanHemodialisa.setVisible("cairan hemodialisa".contains(cari));
+        BtnChecklistPemberianFibrinolitik.setVisible("checklist fibrinolitik".contains(cari));
+        BtnFollowUpDBD.setVisible("follow up dbd".contains(cari));
+        BtnCatatanKeperawatan.setVisible("catatan keperawatan".contains(cari));
+        BtnCatatanCekGDS.setVisible("cek gds".contains(cari));
+        BtnPenilaianUlangNyeri.setVisible("penilaian ulang nyeri".contains(cari));
+        BtnPemantauanPEWSAnak.setVisible("pews anak".contains(cari));
+        BtnPemantauanPEWSDewasa.setVisible("pews dewasa".contains(cari));
+        BtnPemantauanMEOWS.setVisible("meows".contains(cari));
+        BtnPemantauanEWSNeonatus.setVisible("ews neonatus".contains(cari));
+        BtnChecklistKriteriaMasukHCU.setVisible("masuk hcu".contains(cari));
+        BtnChecklistKriteriaKeluarHCU.setVisible("keluar hcu".contains(cari));
+        BtnChecklistKriteriaMasukICU.setVisible("masuk icu".contains(cari));
+        BtnChecklistKriteriaKeluarICU.setVisible("keluar icu".contains(cari));
+        BtnMonitoringReaksiTranfusi.setVisible("reaksi transfusi".contains(cari));
+        BtnSkriningNutrisiDewasa.setVisible("skrining nutrisi dewasa".contains(cari));
+        BtnSkriningNutrisiLansia.setVisible("skrining nutrisi lansia".contains(cari));
+        BtnSkriningNutrisiAnak.setVisible("skrining nutrisi anak".contains(cari));
+        BtnSkriningGiziLanjut.setVisible("skrining gizi lanjut".contains(cari));
+        BtnAsuhanGizi.setVisible("asuhan gizi".contains(cari));
+        BtnMonitoringAsuhanGizi.setVisible("monitoring gizi".contains(cari));
+        BtnCatatanADIMEGizi.setVisible("adime gizi".contains(cari));
+        BtnKonselingFarmasi.setVisible("konseling farmasi".contains(cari));
+        BtnInformasiObat.setVisible("informasi obat".contains(cari));
+        BtnRekonsiliasiObat.setVisible("rekonsiliasi obat".contains(cari));
+        BtnTransferAntarRuang.setVisible("transfer antar ruang".contains(cari));
+        BtnPelaksanaanInformasiEdukasi.setVisible("informasi edukasi".contains(cari));
+        BtnPengkajianRestrain.setVisible("pengkajian restrain".contains(cari));
+        BtnPenilaianBayiBaruLahir.setVisible("penilaian bayi baru lahir".contains(cari));
+        BtnPenilaianPasienTerminal.setVisible("pasien terminal".contains(cari));
+        BtnPenilaianKorbanKekerasan.setVisible("korban kekerasan".contains(cari));
+        BtnPenilaianKecemasanAnak.setVisible("kecemasan anak".contains(cari));
+        BtnPenilaianPasienPenyakitMenular.setVisible("penyakit menular".contains(cari));
+        BtnPenilaianPasienImunitasRendah.setVisible("imunitas rendah".contains(cari));
+        BtnPenilaianTambahanGeriatri.setVisible("penilaian geriatri".contains(cari));
+        BtnPenilaianTambahanBunuhDiri.setVisible("bunuh diri".contains(cari));
+        BtnPenilaianTambahanPerilakuKekerasan.setVisible("perilaku kekerasan".contains(cari));
+        BtnPenilaianTambahanMelarikanDiri.setVisible("melarikan diri".contains(cari));
+        BtnPenilaianDerajatDehidrasi.setVisible("derajat dehidrasi".contains(cari));
+
+
+        
+    FormMenu.revalidate(); // Refresh UI
+    FormMenu.repaint();
+    }
+    
+    
+    
     private void btnTindakan6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnTindakan6KeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTindakan6KeyPressed
@@ -8765,6 +8929,8 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private widget.TextBox TCariPemeriksaan;
+    
     private javax.swing.JTextField BagianRS;
     private javax.swing.JTextField Bhp;
     private widget.Button Btn5Soap;
@@ -9077,10 +9243,14 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.Table tbRawatPr;
     private widget.TextBox TanggalRegistrasi;
     // End of variables declaration//GEN-END:variables
-    private widget.Button BtnSkorBromagePascaAnestesi,BtnPenilaianPreInduksi,BtnHasilPemeriksaanUSGUrologi,BtnHasilPemeriksaanUSGGynecologi,BtnHasilPemeriksaanEKG,BtnHasilPemeriksaanUSGNeonatus,BtnHasilEndoskopiFaringLaring,BtnHasilEndoskopiHidung,BtnHasilEndoskopiTelinga,
+    private widget.Button BtnSoapDokter,BtnSoapDokter1,BtnSkorBromagePascaAnestesi,BtnPenilaianPreInduksi,BtnHasilPemeriksaanUSGUrologi,BtnHasilPemeriksaanUSGGynecologi,BtnHasilPemeriksaanEKG,BtnHasilPemeriksaanUSGNeonatus,BtnHasilEndoskopiFaringLaring,BtnHasilEndoskopiHidung,BtnHasilEndoskopiTelinga,
                           BtnAwalKeperawatanNeonatus,BtnPenilaianPasienImunitasRendah,BtnCatatanKeseimbanganCairan,BtnCatatanObservasiCHBP,BtnCatatanObservasiInduksiPersalinan,BtnPermintaanKonsultasiMedik,BtnAwalKeperawatanBayiAnak,BtnCatatanObservasiRestrainNonfarmakologi,
                           BtnCatatanObservasiVentilator,BtnCatatanAnastesiSedasi,BtnChecklistPemberianFibrinolitik,BtnPenilaianPsikologKlinis,BtnAwalMedisNeonatus,BtnPenilaianDerajatDehidrasi,BtnHasilPemeriksaanECHO,BtnPenilaianBayiBaruLahir,BtnLaporanTindakan,
                           BtnPelaksanaanInformasiEdukasi,BtnCatatanObservasiHemodialisa,BtnCatatanCairanHemodialisa,BtnCatatanPengkajianPaskaOperasi,BtnCatatanObservasiBayi,BtnChecklistKesiapanAnestesi,BtnHasilPemeriksaanSlitLamp,BtnHasilPemeriksaanOCT;
+    private widget.Label lblTemplate, lblTemplate1;
+    private widget.CekBox ChkTemplate, ChkTemplatePerawat;
+    private widget.TextBox KdNoRawat;
+    
     
     public void tampilDr() {
         Valid.tabelKosong(tabModeDr);
@@ -9442,10 +9612,12 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         this.jenisbayar=jenisbayar;
     }
     
+    
+    // ATUR TINGGI INPUTAN
     private void isForm(){
         if(ChkInput.isSelected()==true){
             ChkInput.setVisible(false);
-            PanelInput1.setPreferredSize(new Dimension(WIDTH,273));
+            PanelInput1.setPreferredSize(new Dimension(WIDTH,300));
             panelGlass12.setVisible(true);      
             ChkInput.setVisible(true);
         }else if(ChkInput.isSelected()==false){           
@@ -10307,7 +10479,96 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }
     }
     
+    private void BtnSoapDokterActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        akses.setform("DlgRawatJalan");
+        templatesoapie.emptTeks();
+        templatesoapie.isCek();
+        //    templatesoapi.setRM(KdPeg.getText(), TPegawai.getText());
+        templatesoapie.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+        templatesoapie.setLocationRelativeTo(internalFrame1);
+        templatesoapie.setVisible(true);
+    }                                             
+
+    private void BtnSoapDokter1ActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        akses.setform("DlgRawatJalan");
+        templatesoapieperawat.emptTeks();
+        templatesoapieperawat.isCek();
+        templatesoapieperawat.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+        templatesoapieperawat.setLocationRelativeTo(internalFrame1);
+        templatesoapieperawat.setVisible(true);
+    }
+    
     private void initRawatInap(){
+        
+        lblTemplate = new widget.Label();
+        ChkTemplate = new widget.CekBox();
+        BtnSoapDokter = new widget.Button();
+        BtnSoapDokter1 = new widget.Button();
+        lblTemplate1 = new widget.Label();
+        ChkTemplatePerawat = new widget.CekBox();
+        
+        
+        lblTemplate.setText("Jadikan Template SOAPIE Dokter:");
+        lblTemplate.setName("lblTemplate"); // NOI18N
+        panelGlass12.add(lblTemplate);
+        lblTemplate.setBounds(10, 250, 180, 23);
+
+        ChkTemplate.setBorder(null);
+        ChkTemplate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ChkTemplate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ChkTemplate.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ChkTemplate.setName("ChkTemplate"); // NOI18N
+        panelGlass12.add(ChkTemplate);
+        ChkTemplate.setBounds(190, 250, 23, 23);
+
+        BtnSoapDokter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Stethoscope.png"))); // NOI18N
+        BtnSoapDokter.setMnemonic('4');
+        BtnSoapDokter.setText("Buka Template SOAP Dokter");
+        BtnSoapDokter.setToolTipText("");
+        BtnSoapDokter.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnSoapDokter.setGlassColor(new java.awt.Color(144, 238, 144));
+        BtnSoapDokter.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnSoapDokter.setName("BtnSoapDokter"); // NOI18N
+        BtnSoapDokter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSoapDokterActionPerformed(evt);
+            }
+        });
+
+        panelGlass12.add(BtnSoapDokter);
+        BtnSoapDokter.setBounds(220, 250, 200, 26);
+        
+        
+        BtnSoapDokter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Surgeon SH.png"))); // NOI18N
+        BtnSoapDokter1.setMnemonic('4');
+        BtnSoapDokter1.setText("Buka Template SOAP Perawat");
+        BtnSoapDokter1.setToolTipText("");
+        BtnSoapDokter1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnSoapDokter1.setGlassColor(new java.awt.Color(144, 238, 144));
+        BtnSoapDokter1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnSoapDokter1.setName("BtnSoapDokter1"); // NOI18N
+        BtnSoapDokter1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSoapDokter1ActionPerformed(evt);
+            }
+        });
+        panelGlass12.add(BtnSoapDokter1);
+        BtnSoapDokter1.setBounds(630, 250, 200, 26);
+
+        lblTemplate1.setText("Jadikan Template SOAPIE Perawatr:");
+        lblTemplate1.setName("lblTemplate1"); // NOI18N
+        panelGlass12.add(lblTemplate1);
+        lblTemplate1.setBounds(430, 250, 180, 23);
+        
+        ChkTemplatePerawat.setBorder(null);
+        ChkTemplatePerawat.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ChkTemplatePerawat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ChkTemplatePerawat.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ChkTemplatePerawat.setName("ChkTemplatePerawat"); // NOI18N
+
+        panelGlass12.add(ChkTemplatePerawat);
+        ChkTemplatePerawat.setBounds(610, 250, 23, 23);
+        
         BtnSkorBromagePascaAnestesi = new widget.Button();
         BtnSkorBromagePascaAnestesi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); 
         BtnSkorBromagePascaAnestesi.setText("Skor Bromage Pasca Anestesi");

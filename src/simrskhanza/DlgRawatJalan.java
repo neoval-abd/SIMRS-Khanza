@@ -11118,6 +11118,8 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         TabRawatMouseClicked(null);
     }
     
+    
+    // ATUR TINGGI INPUTAN
     private void isForm(){
         if(ChkInput.isSelected()==true){
             ChkInput.setVisible(false);
@@ -13471,7 +13473,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         panelGlass12.add(BtnSoapDokter1);
         BtnSoapDokter1.setBounds(630, 250, 200, 26);
 
-        lblTemplate1.setText("Jadikan Template SOAPIE Perawatr:");
+        lblTemplate1.setText("Jadikan Template SOAPIE Perawat:");
         lblTemplate1.setName("lblTemplate1"); // NOI18N
         panelGlass12.add(lblTemplate1);
         lblTemplate1.setBounds(430, 250, 180, 23);
