@@ -1,0 +1,14 @@
+/build/
+/dist/
+/lib/
+/cache/
+
+
+/setting/
+/setting/database.xml
+
+
+*.jar
+/nbproject/private/
+dist.zip
+dist.rar
