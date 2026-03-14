@@ -12,12 +12,20 @@
 package smsui;
 
 import fungsi.koneksiDB;
+<<<<<<< HEAD
 import fungsi.sekuel;
 import fungsi.validasi;
 import java.awt.Dimension;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+=======
+import fungsi.validasi;
+import java.awt.Dimension;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+>>>>>>> master
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -27,10 +35,18 @@ import javax.swing.table.TableColumn;
  * @author dosen3
  */
 public final class DlgLihatPesan extends javax.swing.JDialog {
+<<<<<<< HEAD
     private DefaultTableModel tabMode;
     private Connection koneksi=koneksiDB.condb();
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
+=======
+    private final DefaultTableModel tabMode;
+    private Connection koneksi=koneksiDB.condb();
+    private validasi Valid=new validasi();
+    private PreparedStatement ps;
+    private ResultSet rs;
+>>>>>>> master
 
     /** Creates new form DlgLihatPesan */
     public DlgLihatPesan(java.awt.Frame parent, boolean modal) {
@@ -201,6 +217,7 @@ public final class DlgLihatPesan extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 
     public void tampil() {
+<<<<<<< HEAD
         String sql="select * from sms";
         prosesCari(sql);
     }
@@ -228,4 +245,30 @@ public final class DlgLihatPesan extends javax.swing.JDialog {
         }
     }
 
+=======
+        try{   
+            Valid.tabelKosong(tabMode);  
+            ps=koneksi.prepareStatement("select * from sms");
+            try {
+                rs=ps.executeQuery();
+                while(rs.next()){
+                    tabMode.addRow(new Object[]{
+                        rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9)
+                    });
+                } 
+            } catch (Exception e) {
+                System.out.println(e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }              
+        }catch(Exception e){
+            System.out.println("Notifikasi : "+e);
+        }
+    }
+>>>>>>> master
 }

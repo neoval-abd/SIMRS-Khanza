@@ -2859,6 +2859,7 @@ public final class RMPenilaianAwalMedisRanapKandungan extends javax.swing.JDialo
         } catch (Exception e) {
             System.out.println("Notif : "+e);
         }
+<<<<<<< HEAD
         
         // TAMBAHAN FITUR OTOMATIS ISI SENDIRI
         if (Sequel.cariInteger("select count(no_rawat) from penilaian_awal_keperawatan_kebidanan_ranap where no_rawat='" + TNoRw.getText() + "' ") > 0) {
@@ -2880,16 +2881,22 @@ public final class RMPenilaianAwalMedisRanapKandungan extends javax.swing.JDialo
             TBJ.setText(Sequel.cariIsi("select 	pemeriksaan_kebidanan_tbj from penilaian_awal_keperawatan_kebidanan_ranap where no_rawat=?", TNoRw.getText()));
             His.setText(Sequel.cariIsi("select pemeriksaan_kebidanan_his from penilaian_awal_keperawatan_kebidanan_ranap where no_rawat=?", TNoRw.getText()));
         }
+=======
+>>>>>>> master
     }
  
     public void setNoRm(String norwt,Date tgl2) {
         TNoRw.setText(norwt);
         TCari.setText(norwt);
         DTPCari2.setDate(tgl2);    
+<<<<<<< HEAD
         
         SwingUtilities.invokeLater(() -> {
             isRawat();
         }); 
+=======
+        isRawat(); 
+>>>>>>> master
     }
     
     public void isCek(){

@@ -143,6 +143,7 @@ public final class KeuanganBayarPemesananFarmasi extends javax.swing.JDialog {
         NoBukti.setDocument(new batasInput((byte)30).getKata(NoBukti));
         KdPetugas.setDocument(new batasInput((byte)20).getKata(KdPetugas));
         Keterangan.setDocument(new batasInput((byte)100).getKata(Keterangan));
+<<<<<<< HEAD
         
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -167,6 +168,9 @@ public final class KeuanganBayarPemesananFarmasi extends javax.swing.JDialog {
                 }
             });
         } 
+=======
+        TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+>>>>>>> master
         
         BesarBayar.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
             @Override
@@ -1359,6 +1363,32 @@ private void BtnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             }
         } catch (Exception e) {
         }
+<<<<<<< HEAD
+=======
+        
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        } 
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void BtnAll1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAll1ActionPerformed

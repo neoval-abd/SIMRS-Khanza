@@ -14,14 +14,20 @@ package bridging;
 import fungsi.WarnaTable;
 import fungsi.batasInput;
 import fungsi.koneksiDB;
+<<<<<<< HEAD
 import fungsi.sekuel;
+=======
+>>>>>>> master
 import fungsi.validasi;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+<<<<<<< HEAD
 import java.sql.SQLException;
+=======
+>>>>>>> master
 import javax.swing.JTable;
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
@@ -34,7 +40,10 @@ import javax.swing.table.TableColumn;
 public class INACBGCariCoderNIK extends javax.swing.JDialog {
     private final DefaultTableModel tabMode;
     private Connection koneksi=koneksiDB.condb();
+<<<<<<< HEAD
     private sekuel Sequel=new sekuel();
+=======
+>>>>>>> master
     private validasi Valid=new validasi();
     private PreparedStatement ps;
     private ResultSet rs;
@@ -47,7 +56,11 @@ public class INACBGCariCoderNIK extends javax.swing.JDialog {
         initComponents();
 
         this.setLocation(10,10);
+<<<<<<< HEAD
         setSize(459,539);
+=======
+        
+>>>>>>> master
 
         Object[] row={"NIP","Petugas","Coder NIK"};
         tabMode=new DefaultTableModel(null,row){
@@ -74,6 +87,7 @@ public class INACBGCariCoderNIK extends javax.swing.JDialog {
         tbSpesialis.setDefaultRenderer(Object.class, new WarnaTable());
 
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -96,6 +110,8 @@ public class INACBGCariCoderNIK extends javax.swing.JDialog {
                 }
             });
         }  
+=======
+>>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -267,6 +283,31 @@ public class INACBGCariCoderNIK extends javax.swing.JDialog {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         tampil();
+<<<<<<< HEAD
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        tampil();
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        tampil();
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        tampil();
+                    }
+                }
+            });
+        } 
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
@@ -308,12 +349,24 @@ public class INACBGCariCoderNIK extends javax.swing.JDialog {
         Valid.tabelKosong(tabMode);
         try{
             ps=koneksi.prepareStatement(
+<<<<<<< HEAD
                     "select inacbg_coder_nik.nik,pegawai.nama,inacbg_coder_nik.no_ik "+
                     "from inacbg_coder_nik inner join pegawai on inacbg_coder_nik.nik=pegawai.nik where "+
                     "pegawai.nama like ? or inacbg_coder_nik.no_ik like ? order by pegawai.nama");
             try {
                 ps.setString(1, "%"+TCari.getText().trim()+"%");
                 ps.setString(2, "%"+TCari.getText().trim()+"%");
+=======
+                "select inacbg_coder_nik.nik,pegawai.nama,inacbg_coder_nik.no_ik from inacbg_coder_nik inner join pegawai on inacbg_coder_nik.nik=pegawai.nik "+
+                (TCari.getText().trim().equals("")?"":"where pegawai.nama like ? or inacbg_coder_nik.no_ik like ? ")+"order by pegawai.nama"
+            );
+            try {
+                if(!TCari.getText().trim().equals("")){
+                    ps.setString(1, "%"+TCari.getText().trim()+"%");
+                    ps.setString(2, "%"+TCari.getText().trim()+"%");
+                }
+                    
+>>>>>>> master
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3)});
@@ -328,7 +381,11 @@ public class INACBGCariCoderNIK extends javax.swing.JDialog {
                     ps.close();
                 }
             }            
+<<<<<<< HEAD
         }catch(SQLException e){
+=======
+        }catch(Exception e){
+>>>>>>> master
             System.out.println("Notifikasi : "+e);
         }
         LCount.setText(""+tabMode.getRowCount());
@@ -337,5 +394,8 @@ public class INACBGCariCoderNIK extends javax.swing.JDialog {
     public JTable getTable(){
         return tbSpesialis;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 }

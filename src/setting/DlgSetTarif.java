@@ -15,14 +15,27 @@ import fungsi.koneksiDB;
 import fungsi.sekuel;
 import fungsi.validasi;
 import fungsi.WarnaTable;
+<<<<<<< HEAD
+=======
+import java.awt.Cursor;
+>>>>>>> master
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -35,6 +48,13 @@ public class DlgSetTarif extends javax.swing.JDialog {
     private Connection koneksi=koneksiDB.condb();
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
+<<<<<<< HEAD
+=======
+    private PreparedStatement ps;
+    private ResultSet rs;
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
 
     /** Creates new form DlgAdmin 
      *@param parent
@@ -444,7 +464,11 @@ public class DlgSetTarif extends javax.swing.JDialog {
                 YesNo7.getSelectedItem().toString(),YesNo8.getSelectedItem().toString(),YesNo9.getSelectedItem().toString(),
                 YesNo10.getSelectedItem().toString(),YesNo11.getSelectedItem().toString()
             });
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
             emptTeks();
         }else if(tabMode.getRowCount()>0){
             JOptionPane.showMessageDialog(null,"Maaf, Hanya diijinkan satu record ...!!!!");
@@ -472,7 +496,11 @@ public class DlgSetTarif extends javax.swing.JDialog {
 
     private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHapusActionPerformed
             Sequel.queryu("delete from set_tarif");
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
             emptTeks();
 }//GEN-LAST:event_BtnHapusActionPerformed
 
@@ -492,7 +520,11 @@ public class DlgSetTarif extends javax.swing.JDialog {
                 YesNo7.getSelectedItem().toString(),YesNo8.getSelectedItem().toString(),YesNo9.getSelectedItem().toString(),
                 YesNo10.getSelectedItem().toString(),YesNo11.getSelectedItem().toString()
         });
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
         emptTeks();
 }//GEN-LAST:event_BtnEditActionPerformed
 
@@ -560,7 +592,11 @@ public class DlgSetTarif extends javax.swing.JDialog {
     }//GEN-LAST:event_YesNo4KeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void YesNo6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_YesNo6KeyPressed
@@ -638,6 +674,7 @@ public class DlgSetTarif extends javax.swing.JDialog {
     private widget.Table tbAdmin;
     // End of variables declaration//GEN-END:variables
 
+<<<<<<< HEAD
     public void tampil() {
         String sql="select * from set_tarif";
         prosesCari(sql);
@@ -655,6 +692,33 @@ public class DlgSetTarif extends javax.swing.JDialog {
                     rs.getString(7),rs.getString(8),rs.getString(9),
                     rs.getString(10),rs.getString(11)});
             }
+=======
+    private void tampil() {
+        Valid.tabelKosong(tabMode);
+        try{
+            ps=koneksi.prepareStatement("select * from set_tarif");
+            try{
+                rs=ps.executeQuery();
+                while(rs.next()){
+                    tabMode.addRow(new Object[]{
+                        rs.getString(1),rs.getString(2),rs.getString(3),
+                        rs.getString(4),rs.getString(5),rs.getString(6),
+                        rs.getString(7),rs.getString(8),rs.getString(9),
+                        rs.getString(10),rs.getString(11)
+                    });
+                }
+            } catch (Exception e) {
+                System.out.println("Notif Map : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }
+                
+>>>>>>> master
         }catch(SQLException e){
             System.out.println("Notifikasi : "+e);
         }
@@ -690,4 +754,39 @@ public class DlgSetTarif extends javax.swing.JDialog {
         YesNo10.setSelectedIndex(0);
         YesNo11.setSelectedIndex(0);
     }
+<<<<<<< HEAD
+=======
+    
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

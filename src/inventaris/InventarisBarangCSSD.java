@@ -61,7 +61,11 @@ public class InventarisBarangCSSD extends javax.swing.JDialog {
         initComponents();
 
         this.setLocation(10,10);
+<<<<<<< HEAD
         setSize(459,539);
+=======
+        
+>>>>>>> master
 
         tabMode=new DefaultTableModel(null,new Object[]{
                 "No.Inventaris","Kode Barang","Nama Barang","Ruang","Kategori"
@@ -91,6 +95,7 @@ public class InventarisBarangCSSD extends javax.swing.JDialog {
         tbSpesialis.setDefaultRenderer(Object.class, new WarnaTable());
         
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -114,6 +119,8 @@ public class InventarisBarangCSSD extends javax.swing.JDialog {
             });
         }
         
+=======
+>>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -562,6 +569,31 @@ public class InventarisBarangCSSD extends javax.swing.JDialog {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         runBackground(() ->tampil());
+<<<<<<< HEAD
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated

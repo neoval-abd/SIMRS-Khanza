@@ -17,8 +17,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -30,8 +39,11 @@ public class DapurCariPengeluaran extends javax.swing.JDialog {
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
     private Connection koneksi=koneksiDB.condb();
+<<<<<<< HEAD
     public  DlgCariPetugas petugas=new DlgCariPetugas(null,false);
     public  DapurBarang barang=new DapurBarang(null,false);
+=======
+>>>>>>> master
     private riwayatdapur Trackbarang=new riwayatdapur();
     private PreparedStatement ps,ps2,psdetailpengeluaran;
     private Jurnal jur=new Jurnal();
@@ -39,6 +51,11 @@ public class DapurCariPengeluaran extends javax.swing.JDialog {
     private double tagihan=0,ttltagihan=0,total=0;
     private int i=0;
     private boolean sukses=false;
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
 
     /** Creates new form DlgProgramStudi
      * @param parent
@@ -131,6 +148,7 @@ public class DapurCariPengeluaran extends javax.swing.JDialog {
         NoKeluar.setDocument(new batasInput((byte)15).getKata(NoKeluar));
         kdptg.setDocument(new batasInput((byte)25).getKata(kdptg));
         kdbar.setDocument(new batasInput((byte)15).getKata(kdbar));
+<<<<<<< HEAD
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));          
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -236,6 +254,9 @@ public class DapurCariPengeluaran extends javax.swing.JDialog {
             @Override
             public void keyReleased(KeyEvent e) {}
         }); 
+=======
+        TCari.setDocument(new batasInput((byte)100).getKata(TCari));  
+>>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -305,6 +326,14 @@ public class DapurCariPengeluaran extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+<<<<<<< HEAD
+=======
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+>>>>>>> master
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Cari Stok Keluar Barang Dapur Kering & Basah ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
@@ -638,7 +667,33 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
 */
 
     private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPetugasActionPerformed
+<<<<<<< HEAD
         akses.setform("DlgCariPengeluaranDapur");
+=======
+        DlgCariPetugas petugas=new DlgCariPetugas(null,false);
+        petugas.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(petugas.getTable().getSelectedRow()!= -1){                   
+                    kdptg.setText(petugas.getTable().getValueAt(petugas.getTable().getSelectedRow(),0).toString());
+                    nmptg.setText(petugas.getTable().getValueAt(petugas.getTable().getSelectedRow(),1).toString());
+                }            
+                kdptg.requestFocus();
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
+>>>>>>> master
         petugas.emptTeks();
         petugas.isCek();
         petugas.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
@@ -652,7 +707,46 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     }//GEN-LAST:event_TglBeli1KeyPressed
 
     private void btnBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarangActionPerformed
+<<<<<<< HEAD
         akses.setform("DlgCariPengeluaranDapur");
+=======
+        DapurBarang barang=new DapurBarang(null,false);
+        barang.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(barang.getTable().getSelectedRow()!= -1){                   
+                    kdbar.setText(barang.getTable().getValueAt(barang.getTable().getSelectedRow(),0).toString());                    
+                    nmbar.setText(barang.getTable().getValueAt(barang.getTable().getSelectedRow(),1).toString());
+                }   
+                kdbar.requestFocus();
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
+        
+        barang.getTable().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode()==KeyEvent.VK_SPACE){
+                    barang.dispose();
+                } 
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        }); 
+>>>>>>> master
         barang.emptTeks();
         barang.isCek();
         barang.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
@@ -711,9 +805,15 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
         if(TabRawat.getSelectedIndex()==0){
+<<<<<<< HEAD
             tampil();
         }else if(TabRawat.getSelectedIndex()==1){
             tampil2();
+=======
+            runBackground(() ->tampil());
+        }else if(TabRawat.getSelectedIndex()==1){
+            runBackground(() ->tampil2());
+>>>>>>> master
         }
     }//GEN-LAST:event_BtnCariActionPerformed
 
@@ -734,9 +834,15 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
         kdptg.setText("");
         nmptg.setText("");
         if(TabRawat.getSelectedIndex()==0){
+<<<<<<< HEAD
             tampil();
         }else if(TabRawat.getSelectedIndex()==1){
             tampil2();
+=======
+            runBackground(() ->tampil());
+        }else if(TabRawat.getSelectedIndex()==1){
+            runBackground(() ->tampil2());
+>>>>>>> master
         }
     }//GEN-LAST:event_BtnAllActionPerformed
 
@@ -856,7 +962,11 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             if(sukses==true){
                 Sequel.queryu2("delete from dapurpengeluaran where no_keluar=?",1,new String[]{tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString()});
                 Sequel.Commit();
+<<<<<<< HEAD
                 tampil();
+=======
+                runBackground(() ->tampil());
+>>>>>>> master
             }else{
                 JOptionPane.showMessageDialog(null,"Terjadi kesalahan saat pemrosesan data, transaksi dibatalkan.\nPeriksa kembali data sebelum melanjutkan menyimpan..!!");
                 Sequel.RollBack();
@@ -881,12 +991,64 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
 
     private void TabRawatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabRawatMouseClicked
         if(TabRawat.getSelectedIndex()==0){
+<<<<<<< HEAD
             tampil();
         }else if(TabRawat.getSelectedIndex()==1){
             tampil2();
         }
     }//GEN-LAST:event_TabRawatMouseClicked
 
+=======
+            runBackground(() ->tampil());
+        }else if(TabRawat.getSelectedIndex()==1){
+            runBackground(() ->tampil2());
+        }
+    }//GEN-LAST:event_TabRawatMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TabRawat.getSelectedIndex()==0){
+                        if(TCari.getText().length()>2){
+                            runBackground(() ->tampil());
+                        }
+                    }else if(TabRawat.getSelectedIndex()==1){
+                        if(TCari.getText().length()>2){
+                            runBackground(() ->tampil2());
+                        }
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TabRawat.getSelectedIndex()==0){
+                        if(TCari.getText().length()>2){
+                            runBackground(() ->tampil());
+                        }
+                    }else if(TabRawat.getSelectedIndex()==1){
+                        if(TCari.getText().length()>2){
+                            runBackground(() ->tampil2());
+                        }
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TabRawat.getSelectedIndex()==0){
+                        if(TCari.getText().length()>2){
+                            runBackground(() ->tampil());
+                        }
+                    }else if(TabRawat.getSelectedIndex()==1){
+                        if(TCari.getText().length()>2){
+                            runBackground(() ->tampil2());
+                        }
+                    }
+                }
+            });
+        } 
+    }//GEN-LAST:event_formWindowOpened
+
+>>>>>>> master
     /**
     * @param args the command line arguments
     */
@@ -1098,4 +1260,38 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         } 
     }
     
+<<<<<<< HEAD
+=======
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

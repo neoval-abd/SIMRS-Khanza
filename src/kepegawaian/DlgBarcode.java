@@ -81,6 +81,7 @@ public final class DlgBarcode extends javax.swing.JDialog {
         tbBangsal.setDefaultRenderer(Object.class, new WarnaTable());
 
         Bcd.setDocument(new batasInput((int)25).getKata(Bcd));
+<<<<<<< HEAD
         
         TCari.setDocument(new batasInput((int)100).getKata(TCari));
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -106,6 +107,9 @@ public final class DlgBarcode extends javax.swing.JDialog {
             });
         }  
         
+=======
+        TCari.setDocument(new batasInput((int)100).getKata(TCari));
+>>>>>>> master
     }
     
     /** This method is called from within the constructor to
@@ -656,6 +660,31 @@ public final class DlgBarcode extends javax.swing.JDialog {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         runBackground(() ->tampil());
+<<<<<<< HEAD
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        } 
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**

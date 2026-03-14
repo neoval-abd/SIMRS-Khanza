@@ -19,6 +19,12 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.io.FileInputStream;
 import java.util.Properties;
+<<<<<<< HEAD
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+>>>>>>> master
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -54,6 +60,11 @@ import javax.swing.SwingUtilities;
 public class DlgRetensi extends javax.swing.JDialog {
     private final JFXPanel jfxPanel = new JFXPanel();
     private WebEngine engine;
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
  
     private final JPanel panel = new JPanel(new BorderLayout());
     private final JLabel lblStatus = new JLabel();
@@ -71,7 +82,11 @@ public class DlgRetensi extends javax.swing.JDialog {
     
     private void initComponents2() {           
         txtURL.addActionListener((ActionEvent e) -> {
+<<<<<<< HEAD
             loadURL(txtURL.getText());
+=======
+            runBackground(() ->loadURL(txtURL.getText()));
+>>>>>>> master
         });
   
         progressBar.setPreferredSize(new Dimension(150, 18));
@@ -268,4 +283,38 @@ public class DlgRetensi extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 
 
+<<<<<<< HEAD
+=======
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

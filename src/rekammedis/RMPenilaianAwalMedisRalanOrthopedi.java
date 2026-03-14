@@ -2525,6 +2525,7 @@ public final class RMPenilaianAwalMedisRalanOrthopedi extends javax.swing.JDialo
         } catch (Exception e) {
             System.out.println("Notif : "+e);
         }
+<<<<<<< HEAD
         
         
         // TAMBAHAN FITUR OTOMATIS ISI SENDIRI DI AWAL MEDIS DOKTER
@@ -2544,6 +2545,8 @@ public final class RMPenilaianAwalMedisRalanOrthopedi extends javax.swing.JDialo
             Alergi.setText(Sequel.cariIsi("select alergi from penilaian_awal_keperawatan_ralan where no_rawat=?", TNoRw.getText()));
         }
         
+=======
+>>>>>>> master
     }
  
     public void setNoRm(String norwt,Date tgl2) {

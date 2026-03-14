@@ -48,7 +48,11 @@ public class DlgParkirJenis extends javax.swing.JDialog {
         initComponents();
 
         this.setLocation(10,10);
+<<<<<<< HEAD
         setSize(459,539);
+=======
+        
+>>>>>>> master
 
         Object[] row={"ID Jenis","Jenis Parkir","Biaya Parkir","Sistem"};
         tabMode=new DefaultTableModel(null,row){

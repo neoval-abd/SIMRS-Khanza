@@ -47,7 +47,11 @@ public class DlgSetPenjabLab extends javax.swing.JDialog {
     private ResultSet rs;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
+<<<<<<< HEAD
     private int pilihan=0,i=0;
+=======
+    private int i=0;
+>>>>>>> master
 
     /** Creates new form DlgAdmin
      * @param parent

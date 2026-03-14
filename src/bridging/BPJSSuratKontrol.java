@@ -225,6 +225,7 @@ public class BPJSSuratKontrol extends javax.swing.JDialog {
         Usia.setDocument(new batasInput((byte)5).getOnlyAngka(Usia));
         AsamUrat.setDocument(new batasInput((byte)5).getOnlyAngka(AsamUrat));
         RemisiSLE.setDocument(new batasInput((byte)5).getOnlyAngka(RemisiSLE));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -247,6 +248,8 @@ public class BPJSSuratKontrol extends javax.swing.JDialog {
                 }
             });
         } 
+=======
+>>>>>>> master
         
         ChkInput.setSelected(false);
         isForm();
@@ -458,6 +461,14 @@ public class BPJSSuratKontrol extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+<<<<<<< HEAD
+=======
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+>>>>>>> master
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Surat Kontrol VClaim ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
@@ -682,7 +693,11 @@ public class BPJSSuratKontrol extends javax.swing.JDialog {
         R1.setPreferredSize(new java.awt.Dimension(115, 23));
         panelCari.add(R1);
 
+<<<<<<< HEAD
         DTPTanggalSurat1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-01-2026" }));
+=======
+        DTPTanggalSurat1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026" }));
+>>>>>>> master
         DTPTanggalSurat1.setDisplayFormat("dd-MM-yyyy");
         DTPTanggalSurat1.setName("DTPTanggalSurat1"); // NOI18N
         DTPTanggalSurat1.setOpaque(false);
@@ -705,7 +720,11 @@ public class BPJSSuratKontrol extends javax.swing.JDialog {
         jLabel22.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel22);
 
+<<<<<<< HEAD
         DTPTanggalSurat2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-01-2026" }));
+=======
+        DTPTanggalSurat2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026" }));
+>>>>>>> master
         DTPTanggalSurat2.setDisplayFormat("dd-MM-yyyy");
         DTPTanggalSurat2.setName("DTPTanggalSurat2"); // NOI18N
         DTPTanggalSurat2.setOpaque(false);
@@ -731,7 +750,11 @@ public class BPJSSuratKontrol extends javax.swing.JDialog {
         R2.setPreferredSize(new java.awt.Dimension(120, 23));
         panelCari.add(R2);
 
+<<<<<<< HEAD
         DTPTanggalKontrol1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-01-2026" }));
+=======
+        DTPTanggalKontrol1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026" }));
+>>>>>>> master
         DTPTanggalKontrol1.setDisplayFormat("dd-MM-yyyy");
         DTPTanggalKontrol1.setName("DTPTanggalKontrol1"); // NOI18N
         DTPTanggalKontrol1.setOpaque(false);
@@ -754,7 +777,11 @@ public class BPJSSuratKontrol extends javax.swing.JDialog {
         jLabel25.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel25);
 
+<<<<<<< HEAD
         DTPTanggalKontrol2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-01-2026" }));
+=======
+        DTPTanggalKontrol2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026" }));
+>>>>>>> master
         DTPTanggalKontrol2.setDisplayFormat("dd-MM-yyyy");
         DTPTanggalKontrol2.setName("DTPTanggalKontrol2"); // NOI18N
         DTPTanggalKontrol2.setOpaque(false);
@@ -837,7 +864,11 @@ public class BPJSSuratKontrol extends javax.swing.JDialog {
         NoSEP.setBounds(286, 10, 150, 23);
 
         TanggalSurat.setForeground(new java.awt.Color(50, 70, 50));
+<<<<<<< HEAD
         TanggalSurat.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-01-2026" }));
+=======
+        TanggalSurat.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026" }));
+>>>>>>> master
         TanggalSurat.setDisplayFormat("dd-MM-yyyy");
         TanggalSurat.setName("TanggalSurat"); // NOI18N
         TanggalSurat.setOpaque(false);
@@ -917,7 +948,11 @@ public class BPJSSuratKontrol extends javax.swing.JDialog {
         jLabel14.setBounds(491, 70, 100, 23);
 
         TanggalKontrol.setForeground(new java.awt.Color(50, 70, 50));
+<<<<<<< HEAD
         TanggalKontrol.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-01-2026 17:10:41" }));
+=======
+        TanggalKontrol.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026 05:08:45" }));
+>>>>>>> master
         TanggalKontrol.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TanggalKontrol.setName("TanggalKontrol"); // NOI18N
         TanggalKontrol.setOpaque(false);
@@ -2049,6 +2084,34 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         R1.setSelected(true);
     }//GEN-LAST:event_DTPTanggalSurat2KeyPressed
 
+<<<<<<< HEAD
+=======
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        } 
+    }//GEN-LAST:event_formWindowOpened
+
+>>>>>>> master
     /**
     * @param args the command line arguments
     */

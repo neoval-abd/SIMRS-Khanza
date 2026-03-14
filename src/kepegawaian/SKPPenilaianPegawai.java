@@ -105,6 +105,7 @@ public class SKPPenilaianPegawai extends javax.swing.JDialog {
 
         NoPenilaian.setDocument(new batasInput((byte)20).getKata(NoPenilaian));    
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -127,6 +128,8 @@ public class SKPPenilaianPegawai extends javax.swing.JDialog {
                 }
             });
         }
+=======
+>>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -690,11 +693,40 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
             if(Valid.daysOld("./cache/skppenilaianpegawai.iyem")<30){
                 runBackground(() ->tampil2());
             }else{
+<<<<<<< HEAD
                 tampil();
                 runBackground(() ->tampil2());
             }
         } catch (Exception e) {
         }
+=======
+                runBackground(() ->LoadData());
+            }
+        } catch (Exception e) {
+        }
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil2());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil2());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil2());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed
@@ -781,8 +813,12 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         KdKategori.setText("");
         NmKategori.setText("");
         Sasaran.setSelectedIndex(0);
+<<<<<<< HEAD
         tampil();
         runBackground(() ->tampil2());
+=======
+        runBackground(() ->LoadData());
+>>>>>>> master
     }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
@@ -1110,6 +1146,14 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(skp_penilaian.nomor_penilaian,3),signed)),0) from skp_penilaian where left(skp_penilaian.tanggal,10)='"+Valid.SetTgl(Tanggal.getSelectedItem()+"")+"' ",
                 "SKP"+Tanggal.getSelectedItem().toString().substring(6,10)+Tanggal.getSelectedItem().toString().substring(3,5)+Tanggal.getSelectedItem().toString().substring(0,2),4,NoPenilaian); 
     }
+<<<<<<< HEAD
+=======
+    
+    private void LoadData(){
+        tampil();
+        tampil2();
+    }
+>>>>>>> master
 
     private void runBackground(Runnable task) {
         if (ceksukses) return;

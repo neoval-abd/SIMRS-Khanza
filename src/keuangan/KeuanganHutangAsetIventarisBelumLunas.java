@@ -148,6 +148,7 @@ public final class KeuanganHutangAsetIventarisBelumLunas extends javax.swing.JDi
         KdPetugas.setDocument(new batasInput((byte)20).getKata(KdPetugas));
         Keterangan.setDocument(new batasInput((byte)100).getKata(Keterangan));        
         
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -171,6 +172,8 @@ public final class KeuanganHutangAsetIventarisBelumLunas extends javax.swing.JDi
             });
         }       
         
+=======
+>>>>>>> master
         ChkAccor.setSelected(false);
         isPhoto();
         HTMLEditorKit kit = new HTMLEditorKit();
@@ -1081,6 +1084,31 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
             }
         } catch (Exception e) {
         }
+<<<<<<< HEAD
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }  
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void KodeSuplierKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KodeSuplierKeyPressed

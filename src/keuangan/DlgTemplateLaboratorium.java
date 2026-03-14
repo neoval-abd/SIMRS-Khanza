@@ -16,15 +16,29 @@ import fungsi.batasInput;
 import fungsi.koneksiDB;
 import fungsi.sekuel;
 import fungsi.validasi;
+<<<<<<< HEAD
+=======
+import java.awt.Cursor;
+>>>>>>> master
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+<<<<<<< HEAD
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+>>>>>>> master
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+<<<<<<< HEAD
+=======
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -39,6 +53,11 @@ public final class DlgTemplateLaboratorium extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private PreparedStatement ps;
     private ResultSet rs;
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
     /** Creates new form DlgPenyakit
      * @param parent
      * @param modal */
@@ -331,11 +350,24 @@ private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     // End of variables declaration//GEN-END:variables
 
     public void tampil() {
+<<<<<<< HEAD
         Valid.tabelKosong(tabMode);
         try{            
             ps=koneksi.prepareStatement("select id_template, Pemeriksaan, satuan, nilai_rujukan_ld, nilai_rujukan_la, nilai_rujukan_pd,"+
                         "nilai_rujukan_pa,bagian_rs,bhp,bagian_perujuk,bagian_dokter,bagian_laborat,kso,menejemen,biaya_item,urut "+
                         "from template_laboratorium where kd_jenis_prw=? order by urut");
+=======
+        runBackground(() ->LoadData());
+    }
+    
+    private void LoadData() {
+        Valid.tabelKosong(tabMode);
+        try{            
+            ps=koneksi.prepareStatement(
+                    "select template_laboratorium.id_template,template_laboratorium.Pemeriksaan,template_laboratorium.satuan,template_laboratorium.nilai_rujukan_ld,template_laboratorium.nilai_rujukan_la,template_laboratorium.nilai_rujukan_pd,"+
+                    "template_laboratorium.nilai_rujukan_pa,template_laboratorium.bagian_rs,template_laboratorium.bhp,template_laboratorium.bagian_perujuk,template_laboratorium.bagian_dokter,template_laboratorium.bagian_laborat,template_laboratorium.kso,template_laboratorium.menejemen,"+
+                    "template_laboratorium.biaya_item,template_laboratorium.urut from template_laboratorium where template_laboratorium.kd_jenis_prw=? order template_laboratorium.by urut");
+>>>>>>> master
             try {
                 ps.setString(1,KdPeriksa.getText());
                 rs=ps.executeQuery();
@@ -400,4 +432,39 @@ private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             }
         }
     }
+<<<<<<< HEAD
+=======
+    
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

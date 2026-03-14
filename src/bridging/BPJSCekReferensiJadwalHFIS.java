@@ -57,8 +57,11 @@ public final class BPJSCekReferensiJadwalHFIS extends javax.swing.JDialog {
     private JsonNode root;
     private JsonNode nameNode;
     private JsonNode response;
+<<<<<<< HEAD
     private BPJSCekReferensiPoliHFIS poli=new BPJSCekReferensiPoliHFIS(null,false);
     private BPJSCekReferensiDokterHFIS dokter=new BPJSCekReferensiDokterHFIS(null,false);
+=======
+>>>>>>> master
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
 
@@ -113,6 +116,7 @@ public final class BPJSCekReferensiJadwalHFIS extends javax.swing.JDialog {
         }
         tbKamar.setDefaultRenderer(Object.class, new WarnaTable());
         
+<<<<<<< HEAD
         poli.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {}
@@ -193,6 +197,8 @@ public final class BPJSCekReferensiJadwalHFIS extends javax.swing.JDialog {
             public void keyReleased(KeyEvent e) {}
         }); 
         
+=======
+>>>>>>> master
         WindowUpdate.setSize(725,170);
         
         try {
@@ -640,7 +646,46 @@ public final class BPJSCekReferensiJadwalHFIS extends javax.swing.JDialog {
     }//GEN-LAST:event_BtnPrintActionPerformed
 
     private void BtnPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPoliActionPerformed
+<<<<<<< HEAD
         i=1;
+=======
+        BPJSCekReferensiPoliHFIS poli=new BPJSCekReferensiPoliHFIS(null,false);
+        poli.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(poli.getTable().getSelectedRow()!= -1){   
+                    KdPoli.setText(poli.getTable().getValueAt(poli.getTable().getSelectedRow(),1).toString());
+                    NmPoli.setText(poli.getTable().getValueAt(poli.getTable().getSelectedRow(),2).toString());
+                    KdPoli.requestFocus();
+                }                  
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
+        
+        poli.getTable().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode()==KeyEvent.VK_SPACE){
+                    poli.dispose();
+                }
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        }); 
+>>>>>>> master
         poli.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         poli.setLocationRelativeTo(internalFrame1);
         poli.setVisible(true);
@@ -734,7 +779,48 @@ public final class BPJSCekReferensiJadwalHFIS extends javax.swing.JDialog {
     }//GEN-LAST:event_KodePoliUpdateKeyPressed
 
     private void btnPoliklinikUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliklinikUpdateActionPerformed
+<<<<<<< HEAD
         i=2;
+=======
+        BPJSCekReferensiPoliHFIS poli=new BPJSCekReferensiPoliHFIS(null,false);
+        poli.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(poli.getTable().getSelectedRow()!= -1){   
+                    KodePoliUpdate.setText(poli.getTable().getValueAt(poli.getTable().getSelectedRow(),1).toString());
+                    NmPoliUpdate.setText(poli.getTable().getValueAt(poli.getTable().getSelectedRow(),2).toString());
+                    KodeSubspesialis.setText(poli.getTable().getValueAt(poli.getTable().getSelectedRow(),3).toString());
+                    NmSubspesialis.setText(poli.getTable().getValueAt(poli.getTable().getSelectedRow(),4).toString());
+                    KodePoliUpdate.requestFocus();
+                }                  
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
+        
+        poli.getTable().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode()==KeyEvent.VK_SPACE){
+                    poli.dispose();
+                }
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        }); 
+>>>>>>> master
         poli.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         poli.setLocationRelativeTo(internalFrame1);
         poli.setVisible(true);
@@ -745,6 +831,45 @@ public final class BPJSCekReferensiJadwalHFIS extends javax.swing.JDialog {
     }//GEN-LAST:event_KodeDokterUpdateKeyPressed
 
     private void btnDokterUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDokterUpdateActionPerformed
+<<<<<<< HEAD
+=======
+        BPJSCekReferensiDokterHFIS dokter=new BPJSCekReferensiDokterHFIS(null,false);
+        dokter.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(dokter.getTable().getSelectedRow()!= -1){   
+                    KodeDokterUpdate.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),1).toString());
+                    NmDokterUpdate.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),2).toString());
+                    KodeDokterUpdate.requestFocus();
+                }                  
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
+        
+        dokter.getTable().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode()==KeyEvent.VK_SPACE){
+                    dokter.dispose();
+                }
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        }); 
+>>>>>>> master
         dokter.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         dokter.setLocationRelativeTo(internalFrame1);
         dokter.setVisible(true);

@@ -25,9 +25,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
+<<<<<<< HEAD
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import org.jfree.chart.ChartFactory;
@@ -46,6 +56,11 @@ public final class DlgDkkSurveilansRanap extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private PreparedStatement ps,ps2,ps3,ps4;
     private ResultSet rs,rs2;
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
     private int i=0,hr0s7=0,hr8s28=0,kr1th=0,th1s4=0,th5s9=0,th10s14=0,th15s19=0,th20s44=0,th45s54=0,th55s59=0,
                 th60s69=0,th70plus=0,laki=0,per=0,jml=0,ttl=0,jmltotal,meninggal;
     /** Creates new form DlgLhtBiaya
@@ -447,24 +462,42 @@ public final class DlgDkkSurveilansRanap extends javax.swing.JDialog {
 
 private void BtnCari1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCari1ActionPerformed
         if(TabRawat.getSelectedIndex()==0){
+<<<<<<< HEAD
             tampil();
         }else if(TabRawat.getSelectedIndex()==1){
             tampil2();
+=======
+            runBackground(() ->tampil());
+        }else if(TabRawat.getSelectedIndex()==1){
+            runBackground(() ->tampil2());
+>>>>>>> master
         }
 }//GEN-LAST:event_BtnCari1ActionPerformed
 
 private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCari1KeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
+<<<<<<< HEAD
             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); 
             tampil();
             this.setCursor(Cursor.getDefaultCursor());
+=======
+            if(TabRawat.getSelectedIndex()==0){
+                runBackground(() ->tampil());
+            }else if(TabRawat.getSelectedIndex()==1){
+                runBackground(() ->tampil2());
+            }
+>>>>>>> master
         }else{
             Valid.pindah(evt, TKd, BtnPrint);
         }
 }//GEN-LAST:event_BtnCari1KeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void ppGrafikHidupMatiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppGrafikHidupMatiActionPerformed
@@ -530,9 +563,15 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
 
     private void TabRawatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabRawatMouseClicked
         if(TabRawat.getSelectedIndex()==0){
+<<<<<<< HEAD
             tampil();
         }else if(TabRawat.getSelectedIndex()==1){
             tampil2();
+=======
+            runBackground(() ->tampil());
+        }else if(TabRawat.getSelectedIndex()==1){
+            runBackground(() ->tampil2());
+>>>>>>> master
         }
     }//GEN-LAST:event_TabRawatMouseClicked
 
@@ -575,7 +614,11 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
     private widget.Table tbBangsal2;
     // End of variables declaration//GEN-END:variables
 
+<<<<<<< HEAD
     public void tampil(){        
+=======
+    private void tampil(){        
+>>>>>>> master
         try{   
             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); 
             Valid.tabelKosong(tabMode); 
@@ -680,7 +723,11 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
         }
     }
     
+<<<<<<< HEAD
     public void tampil2(){        
+=======
+    private void tampil2(){        
+>>>>>>> master
         try{   
             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); 
             Valid.tabelKosong(tabMode2); 
@@ -786,5 +833,39 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
         }
     }
 
+<<<<<<< HEAD
 
+=======
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

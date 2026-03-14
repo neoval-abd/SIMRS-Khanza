@@ -372,7 +372,11 @@ public final class DlgCariJabatan extends javax.swing.JDialog {
             file.createNewFile();
             fileWriter = new FileWriter(file);
             StringBuilder iyembuilder = new StringBuilder();
+<<<<<<< HEAD
             ps=koneksi.prepareStatement("select jabatan.kd_jbtn, jabatan.nm_jbtn from jabatan order by jabatan.nm_jbtn");   
+=======
+            ps=koneksi.prepareStatement("select jabatan.kd_jbtn,jabatan.nm_jbtn from jabatan order by jabatan.nm_jbtn");   
+>>>>>>> master
             try {
                 rs=ps.executeQuery();
                 while(rs.next()){

@@ -17,21 +17,41 @@ import fungsi.sekuel;
 import fungsi.validasi;
 import fungsi.WarnaTable;
 import java.awt.Canvas;
+<<<<<<< HEAD
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+=======
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+>>>>>>> master
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.net.URL;
 import java.sql.Blob;
 import java.sql.Connection;
+<<<<<<< HEAD
 import java.sql.ResultSet;
 import java.sql.SQLException;
+=======
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+>>>>>>> master
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+<<<<<<< HEAD
+=======
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
@@ -42,10 +62,21 @@ import javax.swing.table.TableColumn;
  * @author perpustakaan
  */
 public class DlgRunTeks extends javax.swing.JDialog {
+<<<<<<< HEAD
     private DefaultTableModel tabMode,tabmode2;
     private Connection koneksi=koneksiDB.condb();
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
+=======
+    private final DefaultTableModel tabMode;
+    private Connection koneksi=koneksiDB.condb();
+    private sekuel Sequel=new sekuel();
+    private validasi Valid=new validasi();
+    private PreparedStatement ps;
+    private ResultSet rs;
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
 
     /** Creates new form DlgAdmin
      * @param parent */
@@ -58,7 +89,11 @@ public class DlgRunTeks extends javax.swing.JDialog {
         };
 
         tbAdmin.setModel(tabMode);
+<<<<<<< HEAD
         //tampil();
+=======
+        //runBackground(() ->tampil());
+>>>>>>> master
         //tbJabatan.setDefaultRenderer(Object.class, new WarnaTable(Scroll.getBackground(),Color.GREEN));
         tbAdmin.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbAdmin.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
@@ -77,7 +112,10 @@ public class DlgRunTeks extends javax.swing.JDialog {
         tbAdmin.setDefaultRenderer(Object.class, new WarnaTable());
         TTeks.setDocument(new batasInput((int)1500).getKata(TTeks));
     }
+<<<<<<< HEAD
     Dimension screen=Toolkit.getDefaultToolkit().getScreenSize();
+=======
+>>>>>>> master
     private javax.swing.JFileChooser jfc = new JFileChooser();
     private FileFilter jpgFilter = new FileNameExtensionFilter("Gambar JPEG", "jpg");
     private FileFilter gifFilter = new FileNameExtensionFilter("Gambar GIF", "gif");
@@ -349,7 +387,11 @@ public class DlgRunTeks extends javax.swing.JDialog {
                 Sequel.mengedit("runtext","teks='"+TTeks.getText()+"'","aktifkan='"+YesNo.getSelectedItem()+"',gambar=?",EGb);
                 
             }            
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
             emptTeks();
         }
 }//GEN-LAST:event_BtnEditActionPerformed
@@ -401,7 +443,11 @@ public class DlgRunTeks extends javax.swing.JDialog {
             EGb.setText("./setting/wallpaper.png");
         }else if(tabMode.getRowCount()==0){  
             Sequel.menyimpan("runtext","'"+TTeks.getText()+"','"+YesNo.getSelectedItem()+"'","Display",EGb);
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
             emptTeks();
         }else if(tabMode.getRowCount()>0){
             JOptionPane.showMessageDialog(null,"Maaf, Hanya diijinkan satu runtext ...!!!!");
@@ -435,7 +481,11 @@ public class DlgRunTeks extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null,"Maaf, Gagal menghapus. Pilih dulu data yang mau dihapus.\nKlik data pada table untuk memilih...!!!!");
         }else if(! TTeks.getText().trim().equals("")){
             Sequel.queryu("delete from runtext ");
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
             emptTeks();
         }
     }//GEN-LAST:event_BtnHapusActionPerformed
@@ -475,7 +525,11 @@ private void TTeksKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TTe
 }//GEN-LAST:event_TTeksKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -519,6 +573,7 @@ private void TTeksKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TTe
     // End of variables declaration//GEN-END:variables
 
     private void tampil() {
+<<<<<<< HEAD
         String sql="select teks, aktifkan, gambar from runtext";
         prosesCari(sql);
     }
@@ -532,6 +587,27 @@ private void TTeksKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TTe
                 Object[] data={rs.getString(1),rs.getString(2),rs.getString(3)};
                 tabMode.addRow(data);
             }
+=======
+        Valid.tabelKosong(tabMode);
+        try{
+            ps=koneksi.prepareStatement("select teks, aktifkan, gambar from runtext");
+            try {
+                rs=ps.executeQuery();
+                while(rs.next()){
+                    Object[] data={rs.getString(1),rs.getString(2),rs.getString(3)};
+                    tabMode.addRow(data);
+                }
+            } catch (Exception e) {
+                System.out.println("Notif Map : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }   
+>>>>>>> master
         }catch(SQLException e){
             System.out.println("Notifikasi : "+e);
         }
@@ -606,4 +682,38 @@ private void TTeksKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TTe
         System.out.println(str);
     }
     
+<<<<<<< HEAD
+=======
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

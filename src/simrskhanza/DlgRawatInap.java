@@ -3207,7 +3207,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         panelGlass14.add(jLabel48);
         jLabel48.setBounds(500, 70, 47, 23);
 
-        cmbDalam.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"Kenyal", "Lunak"}));
+        cmbDalam.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kenyal", "Lunak" }));
         cmbDalam.setName("cmbDalam"); // NOI18N
         cmbDalam.setPreferredSize(new java.awt.Dimension(55, 28));
         cmbDalam.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -7660,7 +7660,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                 getDataDrPr();
             } catch (java.lang.NullPointerException e) {
             }
-
         }
     }//GEN-LAST:event_tbRawatDrPrMouseClicked
 
@@ -8662,7 +8661,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                 } catch (java.lang.NullPointerException e) {
                 }
             }
-
         }
     }//GEN-LAST:event_tbRawatDrKeyReleased
 
@@ -8674,7 +8672,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                 } catch (java.lang.NullPointerException e) {
                 }
             }
-
         }
     }//GEN-LAST:event_tbRawatPrKeyReleased
 
@@ -8686,7 +8683,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                 } catch (java.lang.NullPointerException e) {
                 }
             }
-
         }
     }//GEN-LAST:event_tbRawatDrPrKeyReleased
 
@@ -8698,7 +8694,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                 } catch (java.lang.NullPointerException e) {
                 }
             }
-
         }
     }//GEN-LAST:event_tbPemeriksaanKeyReleased
 
@@ -12736,7 +12731,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnHasilPemeriksaanUSGUrologi.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnHasilPemeriksaanUSGUrologi.setRoundRect(false);
         BtnHasilPemeriksaanUSGUrologi.addActionListener(this::BtnHasilPemeriksaanUSGUrologiActionPerformed);
-
         BtnHasilPemeriksaanUSGGynecologi = new widget.Button();
         BtnHasilPemeriksaanUSGGynecologi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnHasilPemeriksaanUSGGynecologi.setText("Hasil USG Gynecologi");
@@ -12749,7 +12743,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnHasilPemeriksaanUSGGynecologi.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnHasilPemeriksaanUSGGynecologi.setRoundRect(false);
         BtnHasilPemeriksaanUSGGynecologi.addActionListener(this::BtnHasilPemeriksaanUSGGynecologiActionPerformed);
-
         BtnHasilPemeriksaanUSGNeonatus = new widget.Button();
         BtnHasilPemeriksaanUSGNeonatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnHasilPemeriksaanUSGNeonatus.setText("Hasil USG Neonatus");
@@ -12762,7 +12755,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnHasilPemeriksaanUSGNeonatus.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnHasilPemeriksaanUSGNeonatus.setRoundRect(false);
         BtnHasilPemeriksaanUSGNeonatus.addActionListener(this::BtnHasilPemeriksaanUSGNeonatusActionPerformed);
-
         BtnHasilPemeriksaanEKG = new widget.Button();
         BtnHasilPemeriksaanEKG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnHasilPemeriksaanEKG.setText("Hasil Pemeriksaan EKG");
@@ -12775,7 +12767,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnHasilPemeriksaanEKG.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnHasilPemeriksaanEKG.setRoundRect(false);
         BtnHasilPemeriksaanEKG.addActionListener(this::BtnHasilPemeriksaanEKGActionPerformed);
-
         BtnHasilPemeriksaanTreadmill = new widget.Button();
         BtnHasilPemeriksaanTreadmill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnHasilPemeriksaanTreadmill.setText("Hasil Pemeriksaan Treadmill");
@@ -12788,7 +12779,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnHasilPemeriksaanTreadmill.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnHasilPemeriksaanTreadmill.setRoundRect(false);
         BtnHasilPemeriksaanTreadmill.addActionListener(this::BtnHasilPemeriksaanTreadmillActionPerformed);
-
         BtnHasilPemeriksaanECHO = new widget.Button();
         BtnHasilPemeriksaanECHO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnHasilPemeriksaanECHO.setText("Hasil Pemeriksaan ECHO");
@@ -12801,7 +12791,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnHasilPemeriksaanECHO.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnHasilPemeriksaanECHO.setRoundRect(false);
         BtnHasilPemeriksaanECHO.addActionListener(this::BtnHasilPemeriksaanECHOActionPerformed);
-
         BtnHasilPemeriksaanECHOPediatrik = new widget.Button();
         BtnHasilPemeriksaanECHOPediatrik.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnHasilPemeriksaanECHOPediatrik.setText("Hasil ECHO Pediatrik");
@@ -12814,7 +12803,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnHasilPemeriksaanECHOPediatrik.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnHasilPemeriksaanECHOPediatrik.setRoundRect(false);
         BtnHasilPemeriksaanECHOPediatrik.addActionListener(this::BtnHasilPemeriksaanECHOPediatrikActionPerformed);
-
         BtnHasilEndoskopiFaringLaring = new widget.Button();
         BtnHasilEndoskopiFaringLaring.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnHasilEndoskopiFaringLaring.setText("Hasil Endoskopi Faring/Laring");
@@ -12827,7 +12815,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnHasilEndoskopiFaringLaring.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnHasilEndoskopiFaringLaring.setRoundRect(false);
         BtnHasilEndoskopiFaringLaring.addActionListener(this::BtnHasilEndoskopiFaringLaringActionPerformed);
-
         BtnHasilEndoskopiHidung = new widget.Button();
         BtnHasilEndoskopiHidung.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnHasilEndoskopiHidung.setText("Hasil Endoskopi Hidung");
@@ -12840,7 +12827,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnHasilEndoskopiHidung.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnHasilEndoskopiHidung.setRoundRect(false);
         BtnHasilEndoskopiHidung.addActionListener(this::BtnHasilEndoskopiHidungActionPerformed);
-
         BtnHasilEndoskopiTelinga = new widget.Button();
         BtnHasilEndoskopiTelinga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnHasilEndoskopiTelinga.setText("Hasil Endoskopi Telinga");
@@ -13178,7 +13164,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnHasilPemeriksaanSlitLamp.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnHasilPemeriksaanSlitLamp.setRoundRect(false);
         BtnHasilPemeriksaanSlitLamp.addActionListener(this::BtnHasilPemeriksaanSlitLampActionPerformed);
-
         BtnHasilPemeriksaanOCT = new widget.Button();
         BtnHasilPemeriksaanOCT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnHasilPemeriksaanOCT.setText("Hasil Pemeriksaan OCT");
@@ -13191,7 +13176,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnHasilPemeriksaanOCT.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnHasilPemeriksaanOCT.setRoundRect(false);
         BtnHasilPemeriksaanOCT.addActionListener(this::BtnHasilPemeriksaanOCTActionPerformed);
-
         BtnChecklistKriteriaMasukNICU = new widget.Button();
         BtnChecklistKriteriaMasukNICU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnChecklistKriteriaMasukNICU.setText("Check List Masuk NICU");
@@ -13204,7 +13188,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnChecklistKriteriaMasukNICU.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnChecklistKriteriaMasukNICU.setRoundRect(false);
         BtnChecklistKriteriaMasukNICU.addActionListener(this::BtnChecklistKriteriaMasukNICUActionPerformed);
-
         BtnChecklistKriteriaMasukPICU = new widget.Button();
         BtnChecklistKriteriaMasukPICU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnChecklistKriteriaMasukPICU.setText("Check List Masuk PICU");
@@ -13217,7 +13200,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnChecklistKriteriaMasukPICU.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnChecklistKriteriaMasukPICU.setRoundRect(false);
         BtnChecklistKriteriaMasukPICU.addActionListener(this::BtnChecklistKriteriaMasukPICUActionPerformed);
-
         BtnChecklistKriteriaKeluarPICU = new widget.Button();
         BtnChecklistKriteriaKeluarPICU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnChecklistKriteriaKeluarPICU.setText("Check List Keluar PICU");
@@ -13230,7 +13212,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnChecklistKriteriaKeluarPICU.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnChecklistKriteriaKeluarPICU.setRoundRect(false);
         BtnChecklistKriteriaKeluarPICU.addActionListener(this::BtnChecklistKriteriaKeluarPICUActionPerformed);
-
         BtnChecklistKriteriaKeluarNICU = new widget.Button();
         BtnChecklistKriteriaKeluarNICU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnChecklistKriteriaKeluarNICU.setText("Check List Keluar NICU");
@@ -13243,7 +13224,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         BtnChecklistKriteriaKeluarNICU.setPreferredSize(new java.awt.Dimension(190, 23));
         BtnChecklistKriteriaKeluarNICU.setRoundRect(false);
         BtnChecklistKriteriaKeluarNICU.addActionListener(this::BtnChecklistKriteriaKeluarNICUActionPerformed);
-
         BtnSkriningGiziKehamilan = new widget.Button();
         BtnSkriningGiziKehamilan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png")));
         BtnSkriningGiziKehamilan.setText("Skrining Gizi Kehamilan");
@@ -13925,1176 +13905,495 @@ public final class DlgRawatInap extends javax.swing.JDialog {
     }
 
     private void gantitindakandokter() {
-        if (Sequel.cariRegistrasi(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 1).toString()) > 0) {
-            JOptionPane.showMessageDialog(rootPane, "Data billing sudah terverifikasi, data tidak boleh diubah.\nSilahkan hubungi bagian kasir/keuangan ..!!");
+        if(Sequel.cariRegistrasi(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),1).toString())>0){
+            JOptionPane.showMessageDialog(rootPane,"Data billing sudah terverifikasi, data tidak boleh diubah.\nSilahkan hubungi bagian kasir/keuangan ..!!");
             TCari.requestFocus();
-        } else {
+        }else{
             Sequel.AutoComitFalse();
-            sukses = true;
-            if (Sequel.mengedittf("rawat_inap_dr", "no_rawat='" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 1)
-                    + "' and kd_jenis_prw='" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 10)
-                    + "' and kd_dokter='" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 5)
-                    + "' and tgl_perawatan='" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 7)
-                    + "' and jam_rawat='" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 8) + "'",
-                    "no_rawat='" + TNoRw.getText() + "',kd_jenis_prw='" + TKdPrw.getText()
-                    + "',kd_dokter='" + KdDok.getText() + "',material='" + BagianRS.getText()
-                    + "',bhp='" + Bhp.getText() + "',tarif_tindakandr='" + JmDokter.getText() + "',biaya_rawat='" + TTnd.getText()
-                    + "',tgl_perawatan='" + Valid.SetTgl(DTPTgl.getSelectedItem() + "") + "',jam_rawat='" + cmbJam.getSelectedItem() + ":" + cmbMnt.getSelectedItem() + ":" + cmbDtk.getSelectedItem() + "',"
-                    + "kso='" + KSO.getText() + "',menejemen='" + Menejemen.getText() + "'") == true) {
+            sukses=true;
+            if(Sequel.mengedittf("rawat_inap_dr","no_rawat='"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),1)+
+                    "' and kd_jenis_prw='"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),10)+  
+                    "' and kd_dokter='"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),5)+
+                    "' and tgl_perawatan='"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),7)+
+                    "' and jam_rawat='"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),8)+"'",
+                    "no_rawat='"+TNoRw.getText()+"',kd_jenis_prw='"+TKdPrw.getText()+
+                    "',kd_dokter='"+KdDok.getText()+"',material='"+BagianRS.getText()+
+                    "',bhp='"+Bhp.getText()+"',tarif_tindakandr='"+JmDokter.getText()+"',biaya_rawat='"+TTnd.getText()+
+                    "',tgl_perawatan='"+Valid.SetTgl(DTPTgl.getSelectedItem()+"")+"',jam_rawat='"+cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem()+"',"+
+                    "kso='"+KSO.getText()+"',menejemen='"+Menejemen.getText()+"'")==true){
 
                 Sequel.queryu("delete from tampjurnal");
-                if (Valid.SetAngka(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 9).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Suspen_Piutang_Tindakan_Ranap + "','Suspen Piutang Tindakan Ranap','0','" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 9).toString() + "'", "kredit=kredit+'" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 9).toString() + "'", "kd_rek='" + Suspen_Piutang_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Tindakan_Ranap + "','Pendapatan Tindakan Rawat Inap','" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 9).toString() + "','0'", "debet=debet+'" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 9).toString() + "'", "kd_rek='" + Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),9).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Suspen_Piutang_Tindakan_Ranap+"','Suspen Piutang Tindakan Ranap','0','"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),9).toString()+"'","kredit=kredit+'"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),9).toString()+"'","kd_rek='"+Suspen_Piutang_Tindakan_Ranap+"'")==false){
+                                    sukses=false;
+                                } 
+                    if(Sequel.menyimpantf("tampjurnal","'"+Tindakan_Ranap+"','Pendapatan Tindakan Rawat Inap','"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),9).toString()+"','0'","debet=debet+'"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),9).toString()+"'","kd_rek='"+Tindakan_Ranap+"'")==false){
+                                    sukses=false;
+                                }
                 }
-                if (Valid.SetAngka(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 11).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Medik_Dokter_Tindakan_Ranap + "','Beban Jasa Medik Dokter Tindakan Ranap','0','" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 11).toString() + "'", "kredit=kredit+'" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 11).toString() + "'", "kd_rek='" + Beban_Jasa_Medik_Dokter_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Medik_Dokter_Tindakan_Ranap + "','Utang Jasa Medik Dokter Tindakan Ranap','" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 11).toString() + "','0'", "debet=debet+'" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 11).toString() + "'", "kd_rek='" + Utang_Jasa_Medik_Dokter_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),11).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Medik_Dokter_Tindakan_Ranap+"','Beban Jasa Medik Dokter Tindakan Ranap','0','"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),11).toString()+"'","kredit=kredit+'"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),11).toString()+"'","kd_rek='"+Beban_Jasa_Medik_Dokter_Tindakan_Ranap+"'")==false){
+                                    sukses=false;
+                                } 
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Medik_Dokter_Tindakan_Ranap+"','Utang Jasa Medik Dokter Tindakan Ranap','"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),11).toString()+"','0'","debet=debet+'"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),11).toString()+"'","kd_rek='"+Utang_Jasa_Medik_Dokter_Tindakan_Ranap+"'")==false){
+                                    sukses=false;
+                                } 
                 }
-                if (Valid.SetAngka(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 12).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_KSO_Tindakan_Ranap + "','Beban KSO Tindakan Ranap','0','" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 12).toString() + "'", "kredit=kredit+'" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 12).toString() + "'", "kd_rek='" + Beban_KSO_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_KSO_Tindakan_Ranap + "','Utang KSO Tindakan Ranap','" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 12).toString() + "','0'", "debet=debet+'" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 12).toString() + "'", "kd_rek='" + Utang_KSO_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),12).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_KSO_Tindakan_Ranap+"','Beban KSO Tindakan Ranap','0','"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),12).toString()+"'","kredit=kredit+'"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),12).toString()+"'","kd_rek='"+Beban_KSO_Tindakan_Ranap+"'")==false){
+                                    sukses=false;
+                                }  
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_KSO_Tindakan_Ranap+"','Utang KSO Tindakan Ranap','"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),12).toString()+"','0'","debet=debet+'"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),12).toString()+"'","kd_rek='"+Utang_KSO_Tindakan_Ranap+"'")==false){
+                                    sukses=false;
+                                }  
                 }
-                if (Valid.SetAngka(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 13).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Sarana_Tindakan_Ranap + "','Beban Jasa Sarana Tindakan Ranap','0','" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 13).toString() + "'", "kredit=kredit+'" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 13).toString() + "'", "kd_rek='" + Beban_Jasa_Sarana_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Sarana_Tindakan_Ranap + "','Utang Jasa Sarana Tindakan Ranap','" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 13).toString() + "','0'", "debet=debet+'" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 13).toString() + "'", "kd_rek='" + Utang_Jasa_Sarana_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),13).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Sarana_Tindakan_Ranap+"','Beban Jasa Sarana Tindakan Ranap','0','"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),13).toString()+"'","kredit=kredit+'"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),13).toString()+"'","kd_rek='"+Beban_Jasa_Sarana_Tindakan_Ranap+"'")==false){
+                                    sukses=false;
+                                }  
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Sarana_Tindakan_Ranap+"','Utang Jasa Sarana Tindakan Ranap','"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),13).toString()+"','0'","debet=debet+'"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),13).toString()+"'","kd_rek='"+Utang_Jasa_Sarana_Tindakan_Ranap+"'")==false){
+                                    sukses=false;
+                                } 
                 }
-                if (Valid.SetAngka(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 14).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + HPP_BHP_Tindakan_Ranap + "','HPP BHP Tindakan Ranap','0','" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 14).toString() + "'", "kredit=kredit+'" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 14).toString() + "'", "kd_rek='" + HPP_BHP_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Persediaan_BHP_Tindakan_Ranap + "','Persediaan BHP Tindakan Ranap','" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 14).toString() + "','0'", "debet=debet+'" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 14).toString() + "'", "kd_rek='" + Persediaan_BHP_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),14).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+HPP_BHP_Tindakan_Ranap+"','HPP BHP Tindakan Ranap','0','"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),14).toString()+"'","kredit=kredit+'"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),14).toString()+"'","kd_rek='"+HPP_BHP_Tindakan_Ranap+"'")==false){
+                                    sukses=false;
+                                } 
+                    if(Sequel.menyimpantf("tampjurnal","'"+Persediaan_BHP_Tindakan_Ranap+"','Persediaan BHP Tindakan Ranap','"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),14).toString()+"','0'","debet=debet+'"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),14).toString()+"'","kd_rek='"+Persediaan_BHP_Tindakan_Ranap+"'")==false){
+                                    sukses=false;
+                                } 
                 }
-                if (Valid.SetAngka(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 15).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Menejemen_Tindakan_Ranap + "','Beban Jasa Menejemen Tindakan Ranap','0','" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 15).toString() + "'", "kredit=kredit+'" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 15).toString() + "'", "kd_rek='" + Beban_Jasa_Menejemen_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Menejemen_Tindakan_Ranap + "','Utang Jasa Menejemen Tindakan Ranap','" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 15).toString() + "','0'", "debet=debet+'" + tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(), 15).toString() + "'", "kd_rek='" + Utang_Jasa_Menejemen_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),15).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Menejemen_Tindakan_Ranap+"','Beban Jasa Menejemen Tindakan Ranap','0','"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),15).toString()+"'","kredit=kredit+'"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),15).toString()+"'","kd_rek='"+Beban_Jasa_Menejemen_Tindakan_Ranap+"'")==false){
+                                    sukses=false;
+                                } 
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Menejemen_Tindakan_Ranap+"','Utang Jasa Menejemen Tindakan Ranap','"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),15).toString()+"','0'","debet=debet+'"+tbRawatDr.getValueAt(tbRawatDr.getSelectedRow(),15).toString()+"'","kd_rek='"+Utang_Jasa_Menejemen_Tindakan_Ranap+"'")==false){
+                                    sukses=false;
+                                }
+                }
+                
+                if(sukses==true){
+                    sukses=jur.simpanJurnal(TNoRw.getText(),"U","PERUBAHAN TINDAKAN RAWAT INAP PASIEN OLEH "+akses.getkode());
                 }
 
-                if (sukses == true) {
-                    sukses = jur.simpanJurnal(TNoRw.getText(), "U", "PERUBAHAN TINDAKAN RAWAT INAP PASIEN OLEH " + akses.getkode());
-                }
-
-                if (sukses == true) {
+                if(sukses==true){
                     Sequel.queryu("delete from tampjurnal");
-                    if (Valid.SetAngka(TTnd.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Suspen_Piutang_Tindakan_Ranap + "','Suspen Piutang Tindakan Ranap','" + TTnd.getText() + "','0'", "debet=debet+'" + (TTnd.getText()) + "'", "kd_rek='" + Suspen_Piutang_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Tindakan_Ranap + "','Pendapatan Tindakan Rawat Inap','0','" + TTnd.getText() + "'", "kredit=kredit+'" + (TTnd.getText()) + "'", "kd_rek='" + Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                        if(Valid.SetAngka(TTnd.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Suspen_Piutang_Tindakan_Ranap+"','Suspen Piutang Tindakan Ranap','"+TTnd.getText()+"','0'","debet=debet+'"+(TTnd.getText())+"'","kd_rek='"+Suspen_Piutang_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Tindakan_Ranap+"','Pendapatan Tindakan Rawat Inap','0','"+TTnd.getText()+"'","kredit=kredit+'"+(TTnd.getText())+"'","kd_rek='"+Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(JmDokter.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Medik_Dokter_Tindakan_Ranap + "','Beban Jasa Medik Dokter Tindakan Ranap','" + JmDokter.getText() + "','0'", "debet=debet+'" + (JmDokter.getText()) + "'", "kd_rek='" + Beban_Jasa_Medik_Dokter_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Medik_Dokter_Tindakan_Ranap + "','Utang Jasa Medik Dokter Tindakan Ranap','0','" + JmDokter.getText() + "'", "kredit=kredit+'" + (JmDokter.getText()) + "'", "kd_rek='" + Utang_Jasa_Medik_Dokter_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(JmDokter.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Medik_Dokter_Tindakan_Ranap+"','Beban Jasa Medik Dokter Tindakan Ranap','"+JmDokter.getText()+"','0'","debet=debet+'"+(JmDokter.getText())+"'","kd_rek='"+Beban_Jasa_Medik_Dokter_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Medik_Dokter_Tindakan_Ranap+"','Utang Jasa Medik Dokter Tindakan Ranap','0','"+JmDokter.getText()+"'","kredit=kredit+'"+(JmDokter.getText())+"'","kd_rek='"+Utang_Jasa_Medik_Dokter_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(KSO.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_KSO_Tindakan_Ranap + "','Beban KSO Tindakan Ranap','" + KSO.getText() + "','0'", "debet=debet+'" + (KSO.getText()) + "'", "kd_rek='" + Beban_KSO_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_KSO_Tindakan_Ranap + "','Utang KSO Tindakan Ranap','0','" + KSO.getText() + "'", "kredit=kredit+'" + (KSO.getText()) + "'", "kd_rek='" + Utang_KSO_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(KSO.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_KSO_Tindakan_Ranap+"','Beban KSO Tindakan Ranap','"+KSO.getText()+"','0'","debet=debet+'"+(KSO.getText())+"'","kd_rek='"+Beban_KSO_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_KSO_Tindakan_Ranap+"','Utang KSO Tindakan Ranap','0','"+KSO.getText()+"'","kredit=kredit+'"+(KSO.getText())+"'","kd_rek='"+Utang_KSO_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(BagianRS.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Sarana_Tindakan_Ranap + "','Beban Jasa Sarana Tindakan Ranap','" + BagianRS.getText() + "','0'", "debet=debet+'" + (BagianRS.getText()) + "'", "kd_rek='" + Beban_Jasa_Sarana_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Sarana_Tindakan_Ranap + "','Utang Jasa Sarana Tindakan Ranap','0','" + BagianRS.getText() + "'", "kredit=kredit+'" + (BagianRS.getText()) + "'", "kd_rek='" + Utang_Jasa_Sarana_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(BagianRS.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Sarana_Tindakan_Ranap+"','Beban Jasa Sarana Tindakan Ranap','"+BagianRS.getText()+"','0'","debet=debet+'"+(BagianRS.getText())+"'","kd_rek='"+Beban_Jasa_Sarana_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Sarana_Tindakan_Ranap+"','Utang Jasa Sarana Tindakan Ranap','0','"+BagianRS.getText()+"'","kredit=kredit+'"+(BagianRS.getText())+"'","kd_rek='"+Utang_Jasa_Sarana_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(Bhp.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + HPP_BHP_Tindakan_Ranap + "','HPP BHP Tindakan Ranap','" + Bhp.getText() + "','0'", "debet=debet+'" + (Bhp.getText()) + "'", "kd_rek='" + HPP_BHP_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Persediaan_BHP_Tindakan_Ranap + "','Persediaan BHP Tindakan Ranap','0','" + Bhp.getText() + "'", "kredit=kredit+'" + (Bhp.getText()) + "'", "kd_rek='" + Persediaan_BHP_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(Bhp.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+HPP_BHP_Tindakan_Ranap+"','HPP BHP Tindakan Ranap','"+Bhp.getText()+"','0'","debet=debet+'"+(Bhp.getText())+"'","kd_rek='"+HPP_BHP_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Persediaan_BHP_Tindakan_Ranap+"','Persediaan BHP Tindakan Ranap','0','"+Bhp.getText()+"'","kredit=kredit+'"+(Bhp.getText())+"'","kd_rek='"+Persediaan_BHP_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(Menejemen.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Menejemen_Tindakan_Ranap + "','Beban Jasa Menejemen Tindakan Ranap','" + Menejemen.getText() + "','0'", "debet=debet+'" + (Menejemen.getText()) + "'", "kd_rek='" + Beban_Jasa_Menejemen_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Menejemen_Tindakan_Ranap + "','Utang Jasa Menejemen Tindakan Ranap','0','" + Menejemen.getText() + "'", "kredit=kredit+'" + (Menejemen.getText()) + "'", "kd_rek='" + Utang_Jasa_Menejemen_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(Menejemen.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Menejemen_Tindakan_Ranap+"','Beban Jasa Menejemen Tindakan Ranap','"+Menejemen.getText()+"','0'","debet=debet+'"+(Menejemen.getText())+"'","kd_rek='"+Beban_Jasa_Menejemen_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Menejemen_Tindakan_Ranap+"','Utang Jasa Menejemen Tindakan Ranap','0','"+Menejemen.getText()+"'","kredit=kredit+'"+(Menejemen.getText())+"'","kd_rek='"+Utang_Jasa_Menejemen_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (sukses == true) {
-                        sukses = jur.simpanJurnal(TNoRw.getText(), "U", "PERUBAHAN TINDAKAN RAWAT INAP PASIEN " + TPasien.getText());
+                    if(sukses==true){
+                        sukses=jur.simpanJurnal(TNoRw.getText(),"U","PERUBAHAN TINDAKAN RAWAT INAP PASIEN "+TPasien.getText());
                     }
                 }
-            } else {
-                sukses = false;
-            }
+            }else{
+                sukses=false;
+            }  
 
-            if (sukses == true) {
+            if(sukses==true){
                 Sequel.Commit();
-                tbRawatDr.setValueAt(TNoRw.getText(), tbRawatDr.getSelectedRow(), 1);
-                tbRawatDr.setValueAt(TNoRM.getText(), tbRawatDr.getSelectedRow(), 2);
-                tbRawatDr.setValueAt(TPasien.getText(), tbRawatDr.getSelectedRow(), 3);
-                tbRawatDr.setValueAt(TNmPrw.getText(), tbRawatDr.getSelectedRow(), 4);
-                tbRawatDr.setValueAt(KdDok.getText(), tbRawatDr.getSelectedRow(), 5);
-                tbRawatDr.setValueAt(TDokter.getText(), tbRawatDr.getSelectedRow(), 6);
-                tbRawatDr.setValueAt(Valid.SetTgl(DTPTgl.getSelectedItem() + ""), tbRawatDr.getSelectedRow(), 7);
-                tbRawatDr.setValueAt(cmbJam.getSelectedItem() + ":" + cmbMnt.getSelectedItem() + ":" + cmbDtk.getSelectedItem(), tbRawatDr.getSelectedRow(), 8);
-                tbRawatDr.setValueAt(Double.parseDouble(TTnd.getText()), tbRawatDr.getSelectedRow(), 9);
-                tbRawatDr.setValueAt(TKdPrw.getText(), tbRawatDr.getSelectedRow(), 10);
-                tbRawatDr.setValueAt(JmDokter.getText(), tbRawatDr.getSelectedRow(), 11);
-                tbRawatDr.setValueAt(KSO.getText(), tbRawatDr.getSelectedRow(), 12);
-                tbRawatDr.setValueAt(BagianRS.getText(), tbRawatDr.getSelectedRow(), 13);
-                tbRawatDr.setValueAt(Bhp.getText(), tbRawatDr.getSelectedRow(), 14);
-                tbRawatDr.setValueAt(Menejemen.getText(), tbRawatDr.getSelectedRow(), 15);
+                tbRawatDr.setValueAt(TNoRw.getText(),tbRawatDr.getSelectedRow(), 1);
+                tbRawatDr.setValueAt(TNoRM.getText(),tbRawatDr.getSelectedRow(), 2);
+                tbRawatDr.setValueAt(TPasien.getText(),tbRawatDr.getSelectedRow(), 3);
+                tbRawatDr.setValueAt(TNmPrw.getText(),tbRawatDr.getSelectedRow(), 4);
+                tbRawatDr.setValueAt(KdDok.getText(),tbRawatDr.getSelectedRow(), 5);
+                tbRawatDr.setValueAt(TDokter.getText(),tbRawatDr.getSelectedRow(), 6);
+                tbRawatDr.setValueAt(Valid.SetTgl(DTPTgl.getSelectedItem()+""),tbRawatDr.getSelectedRow(), 7);
+                tbRawatDr.setValueAt(cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),tbRawatDr.getSelectedRow(), 8);
+                tbRawatDr.setValueAt(Double.parseDouble(TTnd.getText()),tbRawatDr.getSelectedRow(), 9);
+                tbRawatDr.setValueAt(TKdPrw.getText(),tbRawatDr.getSelectedRow(), 10);
+                tbRawatDr.setValueAt(JmDokter.getText(),tbRawatDr.getSelectedRow(), 11);
+                tbRawatDr.setValueAt(KSO.getText(),tbRawatDr.getSelectedRow(), 12);
+                tbRawatDr.setValueAt(BagianRS.getText(),tbRawatDr.getSelectedRow(), 13);
+                tbRawatDr.setValueAt(Bhp.getText(),tbRawatDr.getSelectedRow(), 14);
+                tbRawatDr.setValueAt(Menejemen.getText(),tbRawatDr.getSelectedRow(), 15);
                 BtnBatalActionPerformed(null);
-            } else {
-                JOptionPane.showMessageDialog(null, "Terjadi kesalahan saat pemrosesan data, transaksi dibatalkan.\nPeriksa kembali data sebelum melanjutkan menyimpan..!!");
+            }else{
+                JOptionPane.showMessageDialog(null,"Terjadi kesalahan saat pemrosesan data, transaksi dibatalkan.\nPeriksa kembali data sebelum melanjutkan menyimpan..!!");
                 Sequel.RollBack();
             }
             Sequel.AutoComitTrue();
         }
     }
-
-    private void gantitindakanpetugas() {
-        if (Sequel.cariRegistrasi(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 1).toString()) > 0) {
-            JOptionPane.showMessageDialog(rootPane, "Data billing sudah terverifikasi, data tidak boleh diubah.\nSilahkan hubungi bagian kasir/keuangan ..!!");
+    
+    private void gantitindakanpetugas(){
+        if(Sequel.cariRegistrasi(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),1).toString())>0){
+            JOptionPane.showMessageDialog(rootPane,"Data billing sudah terverifikasi, data tidak boleh diubah.\nSilahkan hubungi bagian kasir/keuangan ..!!");
             TCari.requestFocus();
-        } else {
+        }else{
             Sequel.AutoComitFalse();
-            sukses = true;
-            if (Sequel.mengedittf("rawat_inap_pr", "no_rawat='" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 1)
-                    + "' and kd_jenis_prw='" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 10)
-                    + "' and nip='" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 5)
-                    + "' and tgl_perawatan='" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 7)
-                    + "' and jam_rawat='" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 8) + "'",
-                    "no_rawat='" + TNoRw.getText() + "',kd_jenis_prw='" + TKdPrwPetugas.getText()
-                    + "',nip='" + kdptg.getText() + "',material='" + BagianRS.getText()
-                    + "',bhp='" + Bhp.getText() + "',tarif_tindakanpr='" + JmPerawat.getText() + "',biaya_rawat='" + TTnd.getText()
-                    + "',tgl_perawatan='" + Valid.SetTgl(DTPTgl.getSelectedItem() + "") + "',jam_rawat='" + cmbJam.getSelectedItem() + ":" + cmbMnt.getSelectedItem() + ":" + cmbDtk.getSelectedItem() + "',"
-                    + "kso='" + KSO.getText() + "',menejemen='" + Menejemen.getText() + "'") == true) {
+            sukses=true;
+            if(Sequel.mengedittf("rawat_inap_pr","no_rawat='"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),1)+
+                    "' and kd_jenis_prw='"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),10)+
+                    "' and nip='"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),5)+
+                    "' and tgl_perawatan='"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),7)+
+                    "' and jam_rawat='"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),8)+"'",
+                    "no_rawat='"+TNoRw.getText()+"',kd_jenis_prw='"+TKdPrwPetugas.getText()+
+                    "',nip='"+kdptg.getText()+"',material='"+BagianRS.getText()+
+                    "',bhp='"+Bhp.getText()+"',tarif_tindakanpr='"+JmPerawat.getText()+"',biaya_rawat='"+TTnd.getText()+
+                    "',tgl_perawatan='"+Valid.SetTgl(DTPTgl.getSelectedItem()+"")+"',jam_rawat='"+cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem()+"',"+
+                    "kso='"+KSO.getText()+"',menejemen='"+Menejemen.getText()+"'")==true){
 
                 Sequel.queryu("delete from tampjurnal");
-                if (Valid.SetAngka(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 9).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Suspen_Piutang_Tindakan_Ranap + "','Suspen Piutang Tindakan Ranap','0','" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 9).toString() + "'", "kredit=kredit+'" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 9).toString() + "'", "kd_rek='" + Suspen_Piutang_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Tindakan_Ranap + "','Pendapatan Tindakan Rawat Inap','" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 9).toString() + "','0'", "debet=debet+'" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 9).toString() + "'", "kd_rek='" + Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                }
-                if (Valid.SetAngka(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 11).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Medik_Paramedis_Tindakan_Ranap + "','Beban Jasa Medik Dokter Tindakan Ranap','0','" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 11).toString() + "'", "kredit=kredit+'" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 11).toString() + "'", "kd_rek='" + Beban_Jasa_Medik_Paramedis_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Medik_Paramedis_Tindakan_Ranap + "','Utang Jasa Medik Dokter Tindakan Ranap','" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 11).toString() + "','0'", "debet=debet+'" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 11).toString() + "'", "kd_rek='" + Utang_Jasa_Medik_Paramedis_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
+                if(Valid.SetAngka(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),9).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Suspen_Piutang_Tindakan_Ranap+"','Suspen Piutang Tindakan Ranap','0','"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),9).toString()+"'","kredit=kredit+'"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),9).toString()+"'","kd_rek='"+Suspen_Piutang_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
+                    if(Sequel.menyimpantf("tampjurnal","'"+Tindakan_Ranap+"','Pendapatan Tindakan Rawat Inap','"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),9).toString()+"','0'","debet=debet+'"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),9).toString()+"'","kd_rek='"+Tindakan_Ranap+"'")==false){
+                        sukses=false;
                     }
                 }
-                if (Valid.SetAngka(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 12).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_KSO_Tindakan_Ranap + "','Beban KSO Tindakan Ranap','0','" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 12).toString() + "'", "kredit=kredit+'" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 12).toString() + "'", "kd_rek='" + Beban_KSO_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_KSO_Tindakan_Ranap + "','Utang KSO Tindakan Ranap','" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 12).toString() + "','0'", "debet=debet+'" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 12).toString() + "'", "kd_rek='" + Utang_KSO_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
+                if(Valid.SetAngka(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),11).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Medik_Paramedis_Tindakan_Ranap+"','Beban Jasa Medik Dokter Tindakan Ranap','0','"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),11).toString()+"'","kredit=kredit+'"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),11).toString()+"'","kd_rek='"+Beban_Jasa_Medik_Paramedis_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Medik_Paramedis_Tindakan_Ranap+"','Utang Jasa Medik Dokter Tindakan Ranap','"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),11).toString()+"','0'","debet=debet+'"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),11).toString()+"'","kd_rek='"+Utang_Jasa_Medik_Paramedis_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
+                }
+                if(Valid.SetAngka(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),12).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_KSO_Tindakan_Ranap+"','Beban KSO Tindakan Ranap','0','"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),12).toString()+"'","kredit=kredit+'"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),12).toString()+"'","kd_rek='"+Beban_KSO_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    }  
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_KSO_Tindakan_Ranap+"','Utang KSO Tindakan Ranap','"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),12).toString()+"','0'","debet=debet+'"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),12).toString()+"'","kd_rek='"+Utang_KSO_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    }  
+                }
+                if(Valid.SetAngka(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),13).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Sarana_Tindakan_Ranap+"','Beban Jasa Sarana Tindakan Ranap','0','"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),13).toString()+"'","kredit=kredit+'"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),13).toString()+"'","kd_rek='"+Beban_Jasa_Sarana_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    }  
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Sarana_Tindakan_Ranap+"','Utang Jasa Sarana Tindakan Ranap','"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),13).toString()+"','0'","debet=debet+'"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),13).toString()+"'","kd_rek='"+Utang_Jasa_Sarana_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
+                }
+                if(Valid.SetAngka(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),14).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+HPP_BHP_Tindakan_Ranap+"','HPP BHP Tindakan Ranap','0','"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),14).toString()+"'","kredit=kredit+'"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),14).toString()+"'","kd_rek='"+HPP_BHP_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
+                    if(Sequel.menyimpantf("tampjurnal","'"+Persediaan_BHP_Tindakan_Ranap+"','Persediaan BHP Tindakan Ranap','"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),14).toString()+"','0'","debet=debet+'"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),14).toString()+"'","kd_rek='"+Persediaan_BHP_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
+                }
+                if(Valid.SetAngka(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),15).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Menejemen_Tindakan_Ranap+"','Beban Jasa Menejemen Tindakan Ranap','0','"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),15).toString()+"'","kredit=kredit+'"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),15).toString()+"'","kd_rek='"+Beban_Jasa_Menejemen_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Menejemen_Tindakan_Ranap+"','Utang Jasa Menejemen Tindakan Ranap','"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),15).toString()+"','0'","debet=debet+'"+tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(),15).toString()+"'","kd_rek='"+Utang_Jasa_Menejemen_Tindakan_Ranap+"'")==false){
+                        sukses=false;
                     }
                 }
-                if (Valid.SetAngka(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 13).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Sarana_Tindakan_Ranap + "','Beban Jasa Sarana Tindakan Ranap','0','" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 13).toString() + "'", "kredit=kredit+'" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 13).toString() + "'", "kd_rek='" + Beban_Jasa_Sarana_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Sarana_Tindakan_Ranap + "','Utang Jasa Sarana Tindakan Ranap','" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 13).toString() + "','0'", "debet=debet+'" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 13).toString() + "'", "kd_rek='" + Utang_Jasa_Sarana_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                }
-                if (Valid.SetAngka(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 14).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + HPP_BHP_Tindakan_Ranap + "','HPP BHP Tindakan Ranap','0','" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 14).toString() + "'", "kredit=kredit+'" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 14).toString() + "'", "kd_rek='" + HPP_BHP_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Persediaan_BHP_Tindakan_Ranap + "','Persediaan BHP Tindakan Ranap','" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 14).toString() + "','0'", "debet=debet+'" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 14).toString() + "'", "kd_rek='" + Persediaan_BHP_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                }
-                if (Valid.SetAngka(tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 15).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Menejemen_Tindakan_Ranap + "','Beban Jasa Menejemen Tindakan Ranap','0','" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 15).toString() + "'", "kredit=kredit+'" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 15).toString() + "'", "kd_rek='" + Beban_Jasa_Menejemen_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Menejemen_Tindakan_Ranap + "','Utang Jasa Menejemen Tindakan Ranap','" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 15).toString() + "','0'", "debet=debet+'" + tbRawatPr.getValueAt(tbRawatPr.getSelectedRow(), 15).toString() + "'", "kd_rek='" + Utang_Jasa_Menejemen_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                }
-                if (sukses == true) {
-                    sukses = jur.simpanJurnal(TNoRw.getText(), "U", "PEMBATALAN TINDAKAN RAWAT INAP PASIEN " + TNoRM.getText() + " " + TPasien.getText() + " OLEH " + akses.getkode());
+                if(sukses==true){
+                    sukses=jur.simpanJurnal(TNoRw.getText(),"U","PEMBATALAN TINDAKAN RAWAT INAP PASIEN "+TNoRM.getText()+" "+TPasien.getText()+" OLEH "+akses.getkode());
                 }
 
-                if (sukses == true) {
+                if(sukses==true){
                     Sequel.queryu("delete from tampjurnal");
-                    if (Valid.SetAngka(TTnd.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Suspen_Piutang_Tindakan_Ranap + "','Suspen Piutang Tindakan Ranap','" + TTnd.getText() + "','0'", "debet=debet+'" + (TTnd.getText()) + "'", "kd_rek='" + Suspen_Piutang_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Tindakan_Ranap + "','Pendapatan Tindakan Rawat Inap','0','" + TTnd.getText() + "'", "kredit=kredit+'" + (TTnd.getText()) + "'", "kd_rek='" + Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(TTnd.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Suspen_Piutang_Tindakan_Ranap+"','Suspen Piutang Tindakan Ranap','"+TTnd.getText()+"','0'","debet=debet+'"+(TTnd.getText())+"'","kd_rek='"+Suspen_Piutang_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Tindakan_Ranap+"','Pendapatan Tindakan Rawat Inap','0','"+TTnd.getText()+"'","kredit=kredit+'"+(TTnd.getText())+"'","kd_rek='"+Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(JmPerawat.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Medik_Paramedis_Tindakan_Ranap + "','Beban Jasa Medik Paramedis Tindakan Ranap','" + JmPerawat.getText() + "','0'", "debet=debet+'" + (JmPerawat.getText()) + "'", "kd_rek='" + Beban_Jasa_Medik_Paramedis_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Medik_Paramedis_Tindakan_Ranap + "','Utang Jasa Medik Paramedis Tindakan Ranap','0','" + JmPerawat.getText() + "'", "kredit=kredit+'" + (JmPerawat.getText()) + "'", "kd_rek='" + Utang_Jasa_Medik_Paramedis_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(JmPerawat.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Medik_Paramedis_Tindakan_Ranap+"','Beban Jasa Medik Paramedis Tindakan Ranap','"+JmPerawat.getText()+"','0'","debet=debet+'"+(JmPerawat.getText())+"'","kd_rek='"+Beban_Jasa_Medik_Paramedis_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Medik_Paramedis_Tindakan_Ranap+"','Utang Jasa Medik Paramedis Tindakan Ranap','0','"+JmPerawat.getText()+"'","kredit=kredit+'"+(JmPerawat.getText())+"'","kd_rek='"+Utang_Jasa_Medik_Paramedis_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(KSO.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_KSO_Tindakan_Ranap + "','Beban KSO Tindakan Ranap','" + KSO.getText() + "','0'", "debet=debet+'" + (KSO.getText()) + "'", "kd_rek='" + Beban_KSO_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_KSO_Tindakan_Ranap + "','Utang KSO Tindakan Ranap','0','" + KSO.getText() + "'", "kredit=kredit+'" + (KSO.getText()) + "'", "kd_rek='" + Utang_KSO_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(KSO.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_KSO_Tindakan_Ranap+"','Beban KSO Tindakan Ranap','"+KSO.getText()+"','0'","debet=debet+'"+(KSO.getText())+"'","kd_rek='"+Beban_KSO_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_KSO_Tindakan_Ranap+"','Utang KSO Tindakan Ranap','0','"+KSO.getText()+"'","kredit=kredit+'"+(KSO.getText())+"'","kd_rek='"+Utang_KSO_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(BagianRS.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Sarana_Tindakan_Ranap + "','Beban Jasa Sarana Tindakan Ranap','" + BagianRS.getText() + "','0'", "debet=debet+'" + (BagianRS.getText()) + "'", "kd_rek='" + Beban_Jasa_Sarana_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Sarana_Tindakan_Ranap + "','Utang Jasa Sarana Tindakan Ranap','0','" + BagianRS.getText() + "'", "kredit=kredit+'" + (BagianRS.getText()) + "'", "kd_rek='" + Utang_Jasa_Sarana_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(BagianRS.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Sarana_Tindakan_Ranap+"','Beban Jasa Sarana Tindakan Ranap','"+BagianRS.getText()+"','0'","debet=debet+'"+(BagianRS.getText())+"'","kd_rek='"+Beban_Jasa_Sarana_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Sarana_Tindakan_Ranap+"','Utang Jasa Sarana Tindakan Ranap','0','"+BagianRS.getText()+"'","kredit=kredit+'"+(BagianRS.getText())+"'","kd_rek='"+Utang_Jasa_Sarana_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(Bhp.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + HPP_BHP_Tindakan_Ranap + "','HPP BHP Tindakan Ranap','" + Bhp.getText() + "','0'", "debet=debet+'" + (Bhp.getText()) + "'", "kd_rek='" + HPP_BHP_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Persediaan_BHP_Tindakan_Ranap + "','Persediaan BHP Tindakan Ranap','0','" + Bhp.getText() + "'", "kredit=kredit+'" + (Bhp.getText()) + "'", "kd_rek='" + Persediaan_BHP_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(Bhp.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+HPP_BHP_Tindakan_Ranap+"','HPP BHP Tindakan Ranap','"+Bhp.getText()+"','0'","debet=debet+'"+(Bhp.getText())+"'","kd_rek='"+HPP_BHP_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Persediaan_BHP_Tindakan_Ranap+"','Persediaan BHP Tindakan Ranap','0','"+Bhp.getText()+"'","kredit=kredit+'"+(Bhp.getText())+"'","kd_rek='"+Persediaan_BHP_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(Menejemen.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Menejemen_Tindakan_Ranap + "','Beban Jasa Menejemen Tindakan Ranap','" + Menejemen.getText() + "','0'", "debet=debet+'" + (Menejemen.getText()) + "'", "kd_rek='" + Beban_Jasa_Menejemen_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Menejemen_Tindakan_Ranap + "','Utang Jasa Menejemen Tindakan Ranap','0','" + Menejemen.getText() + "'", "kredit=kredit+'" + (Menejemen.getText()) + "'", "kd_rek='" + Utang_Jasa_Menejemen_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(Menejemen.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Menejemen_Tindakan_Ranap+"','Beban Jasa Menejemen Tindakan Ranap','"+Menejemen.getText()+"','0'","debet=debet+'"+(Menejemen.getText())+"'","kd_rek='"+Beban_Jasa_Menejemen_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Menejemen_Tindakan_Ranap+"','Utang Jasa Menejemen Tindakan Ranap','0','"+Menejemen.getText()+"'","kredit=kredit+'"+(Menejemen.getText())+"'","kd_rek='"+Utang_Jasa_Menejemen_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (sukses == true) {
-                        sukses = jur.simpanJurnal(TNoRw.getText(), "U", "TINDAKAN RAWAT INAP PASIEN " + TPasien.getText());
+                    if(sukses==true){
+                        sukses=jur.simpanJurnal(TNoRw.getText(),"U","TINDAKAN RAWAT INAP PASIEN "+TPasien.getText());
                     }
                 }
-            } else {
-                sukses = false;
-            }
-            if (sukses == true) {
+            }else{
+                sukses=false;
+            } 
+            if(sukses==true){
                 Sequel.Commit();
-                tbRawatPr.setValueAt(TNoRw.getText(), tbRawatPr.getSelectedRow(), 1);
-                tbRawatPr.setValueAt(TNoRM.getText(), tbRawatPr.getSelectedRow(), 2);
-                tbRawatPr.setValueAt(TPasien.getText(), tbRawatPr.getSelectedRow(), 3);
-                tbRawatPr.setValueAt(TNmPrwPetugas.getText(), tbRawatPr.getSelectedRow(), 4);
-                tbRawatPr.setValueAt(kdptg.getText(), tbRawatPr.getSelectedRow(), 5);
-                tbRawatPr.setValueAt(TPerawat.getText(), tbRawatPr.getSelectedRow(), 6);
-                tbRawatPr.setValueAt(Valid.SetTgl(DTPTgl.getSelectedItem() + ""), tbRawatPr.getSelectedRow(), 7);
-                tbRawatPr.setValueAt(cmbJam.getSelectedItem() + ":" + cmbMnt.getSelectedItem() + ":" + cmbDtk.getSelectedItem(), tbRawatPr.getSelectedRow(), 8);
-                tbRawatPr.setValueAt(Double.parseDouble(TTnd.getText()), tbRawatPr.getSelectedRow(), 9);
-                tbRawatPr.setValueAt(TKdPrwPetugas.getText(), tbRawatPr.getSelectedRow(), 10);
-                tbRawatPr.setValueAt(JmPerawat.getText(), tbRawatPr.getSelectedRow(), 11);
-                tbRawatPr.setValueAt(KSO.getText(), tbRawatPr.getSelectedRow(), 12);
-                tbRawatPr.setValueAt(BagianRS.getText(), tbRawatPr.getSelectedRow(), 13);
-                tbRawatPr.setValueAt(Bhp.getText(), tbRawatPr.getSelectedRow(), 14);
-                tbRawatPr.setValueAt(Menejemen.getText(), tbRawatPr.getSelectedRow(), 15);
+                tbRawatPr.setValueAt(TNoRw.getText(),tbRawatPr.getSelectedRow(), 1);
+                tbRawatPr.setValueAt(TNoRM.getText(),tbRawatPr.getSelectedRow(), 2);
+                tbRawatPr.setValueAt(TPasien.getText(),tbRawatPr.getSelectedRow(), 3);
+                tbRawatPr.setValueAt(TNmPrwPetugas.getText(),tbRawatPr.getSelectedRow(), 4);
+                tbRawatPr.setValueAt(kdptg.getText(),tbRawatPr.getSelectedRow(), 5);
+                tbRawatPr.setValueAt(TPerawat.getText(),tbRawatPr.getSelectedRow(), 6);
+                tbRawatPr.setValueAt(Valid.SetTgl(DTPTgl.getSelectedItem()+""),tbRawatPr.getSelectedRow(), 7);
+                tbRawatPr.setValueAt(cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),tbRawatPr.getSelectedRow(), 8);
+                tbRawatPr.setValueAt(Double.parseDouble(TTnd.getText()),tbRawatPr.getSelectedRow(), 9);
+                tbRawatPr.setValueAt(TKdPrwPetugas.getText(),tbRawatPr.getSelectedRow(), 10);
+                tbRawatPr.setValueAt(JmPerawat.getText(),tbRawatPr.getSelectedRow(), 11);
+                tbRawatPr.setValueAt(KSO.getText(),tbRawatPr.getSelectedRow(), 12);
+                tbRawatPr.setValueAt(BagianRS.getText(),tbRawatPr.getSelectedRow(), 13);
+                tbRawatPr.setValueAt(Bhp.getText(),tbRawatPr.getSelectedRow(), 14);
+                tbRawatPr.setValueAt(Menejemen.getText(),tbRawatPr.getSelectedRow(), 15);
                 BtnBatalActionPerformed(null);
-            } else {
-                JOptionPane.showMessageDialog(null, "Terjadi kesalahan saat pemrosesan data, transaksi dibatalkan.\nPeriksa kembali data sebelum melanjutkan menyimpan..!!");
+            }else{
+                JOptionPane.showMessageDialog(null,"Terjadi kesalahan saat pemrosesan data, transaksi dibatalkan.\nPeriksa kembali data sebelum melanjutkan menyimpan..!!");
                 Sequel.RollBack();
             }
             Sequel.AutoComitTrue();
         }
     }
-
-    private void gantitindakandokterpetugas() {
-        if (Sequel.cariRegistrasi(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 1).toString()) > 0) {
-            JOptionPane.showMessageDialog(rootPane, "Data billing sudah terverifikasi, data tidak boleh diubah.\nSilahkan hubungi bagian kasir/keuangan ..!!");
+    
+    private void gantitindakandokterpetugas(){
+        if(Sequel.cariRegistrasi(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),1).toString())>0){
+            JOptionPane.showMessageDialog(rootPane,"Data billing sudah terverifikasi, data tidak boleh diubah.\nSilahkan hubungi bagian kasir/keuangan ..!!");
             TCari.requestFocus();
-        } else {
+        }else{
             Sequel.AutoComitFalse();
-            sukses = true;
-            if (Sequel.mengedittf("rawat_inap_drpr", "no_rawat='" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 1)
-                    + "' and kd_jenis_prw='" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 12)
-                    + "' and kd_dokter='" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 5)
-                    + "' and nip='" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 7)
-                    + "' and tgl_perawatan='" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 9)
-                    + "' and jam_rawat='" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 10) + "'",
-                    "no_rawat='" + TNoRw.getText() + "',kd_jenis_prw='" + TKdPrwDokterPetugas.getText()
-                    + "',nip='" + kdptg2.getText() + "',kd_dokter='" + KdDok2.getText() + "',material='" + BagianRS.getText()
-                    + "',bhp='" + Bhp.getText() + "',tarif_tindakanpr='" + JmPerawat.getText() + "',tarif_tindakandr='" + JmDokter.getText() + "',biaya_rawat='" + TTnd.getText()
-                    + "',tgl_perawatan='" + Valid.SetTgl(DTPTgl.getSelectedItem() + "") + "',jam_rawat='" + cmbJam.getSelectedItem() + ":" + cmbMnt.getSelectedItem() + ":" + cmbDtk.getSelectedItem() + "',"
-                    + "kso='" + KSO.getText() + "',menejemen='" + Menejemen.getText() + "'") == true) {
+            sukses=true;
+            if(Sequel.mengedittf("rawat_inap_drpr","no_rawat='"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),1)+
+                    "' and kd_jenis_prw='"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),12)+
+                    "' and kd_dokter='"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),5)+
+                    "' and nip='"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),7)+
+                    "' and tgl_perawatan='"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),9)+
+                    "' and jam_rawat='"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),10)+"'",
+                    "no_rawat='"+TNoRw.getText()+"',kd_jenis_prw='"+TKdPrwDokterPetugas.getText()+
+                    "',nip='"+kdptg2.getText()+"',kd_dokter='"+KdDok2.getText()+"',material='"+BagianRS.getText()+
+                    "',bhp='"+Bhp.getText()+"',tarif_tindakanpr='"+JmPerawat.getText()+"',tarif_tindakandr='"+JmDokter.getText()+"',biaya_rawat='"+TTnd.getText()+
+                    "',tgl_perawatan='"+Valid.SetTgl(DTPTgl.getSelectedItem()+"")+"',jam_rawat='"+cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem()+"',"+
+                    "kso='"+KSO.getText()+"',menejemen='"+Menejemen.getText()+"'")==true){
 
                 Sequel.queryu("delete from tampjurnal");
-                if (Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 11).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Suspen_Piutang_Tindakan_Ranap + "','Suspen Piutang Tindakan Ranap','0','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 11).toString() + "'", "kredit=kredit+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 11).toString() + "'", "kd_rek='" + Suspen_Piutang_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Tindakan_Ranap + "','Pendapatan Tindakan Rawat Inap','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 11).toString() + "','0'", "debet=debet+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 11).toString() + "'", "kd_rek='" + Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),11).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Suspen_Piutang_Tindakan_Ranap+"','Suspen Piutang Tindakan Ranap','0','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),11).toString()+"'","kredit=kredit+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),11).toString()+"'","kd_rek='"+Suspen_Piutang_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
+                    if(Sequel.menyimpantf("tampjurnal","'"+Tindakan_Ranap+"','Pendapatan Tindakan Rawat Inap','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),11).toString()+"','0'","debet=debet+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),11).toString()+"'","kd_rek='"+Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    }   
                 }
-                if (Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 13).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Medik_Dokter_Tindakan_Ranap + "','Beban Jasa Medik Dokter Tindakan Ranap','0','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 13).toString() + "'", "kredit=kredit+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 13).toString() + "'", "kd_rek='" + Beban_Jasa_Medik_Dokter_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Medik_Dokter_Tindakan_Ranap + "','Utang Jasa Medik Dokter Tindakan Ranap','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 13).toString() + "','0'", "debet=debet+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 13).toString() + "'", "kd_rek='" + Utang_Jasa_Medik_Dokter_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),13).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Medik_Dokter_Tindakan_Ranap+"','Beban Jasa Medik Dokter Tindakan Ranap','0','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),13).toString()+"'","kredit=kredit+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),13).toString()+"'","kd_rek='"+Beban_Jasa_Medik_Dokter_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Medik_Dokter_Tindakan_Ranap+"','Utang Jasa Medik Dokter Tindakan Ranap','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),13).toString()+"','0'","debet=debet+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),13).toString()+"'","kd_rek='"+Utang_Jasa_Medik_Dokter_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
                 }
-                if (Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 14).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Medik_Paramedis_Tindakan_Ranap + "','Beban Jasa Medik Paramedis Tindakan Ranap','0','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 14).toString() + "'", "kredit=kredit+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 14).toString() + "'", "kd_rek='" + Beban_Jasa_Medik_Paramedis_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Medik_Paramedis_Tindakan_Ranap + "','Utang Jasa Medik Paramedis Tindakan Ranap','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 14).toString() + "','0'", "debet=debet+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 14).toString() + "'", "kd_rek='" + Utang_Jasa_Medik_Paramedis_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),14).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Medik_Paramedis_Tindakan_Ranap+"','Beban Jasa Medik Paramedis Tindakan Ranap','0','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),14).toString()+"'","kredit=kredit+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),14).toString()+"'","kd_rek='"+Beban_Jasa_Medik_Paramedis_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    }     
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Medik_Paramedis_Tindakan_Ranap+"','Utang Jasa Medik Paramedis Tindakan Ranap','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),14).toString()+"','0'","debet=debet+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),14).toString()+"'","kd_rek='"+Utang_Jasa_Medik_Paramedis_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    }         
                 }
-                if (Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 15).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_KSO_Tindakan_Ranap + "','Beban KSO Tindakan Ranap','0','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 15).toString() + "'", "kredit=kredit+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 15).toString() + "'", "kd_rek='" + Beban_KSO_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_KSO_Tindakan_Ranap + "','Utang KSO Tindakan Ranap','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 15).toString() + "','0'", "debet=debet+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 15).toString() + "'", "kd_rek='" + Utang_KSO_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),15).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_KSO_Tindakan_Ranap+"','Beban KSO Tindakan Ranap','0','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),15).toString()+"'","kredit=kredit+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),15).toString()+"'","kd_rek='"+Beban_KSO_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    }  
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_KSO_Tindakan_Ranap+"','Utang KSO Tindakan Ranap','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),15).toString()+"','0'","debet=debet+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),15).toString()+"'","kd_rek='"+Utang_KSO_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    }                               
                 }
-                if (Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 16).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Sarana_Tindakan_Ranap + "','Beban Jasa Sarana Tindakan Ranap','0','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 16).toString() + "'", "kredit=kredit+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 16).toString() + "'", "kd_rek='" + Beban_Jasa_Sarana_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Sarana_Tindakan_Ranap + "','Utang Jasa Sarana Tindakan Ranap','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 16).toString() + "','0'", "debet=debet+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 16).toString() + "'", "kd_rek='" + Utang_Jasa_Sarana_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),16).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Sarana_Tindakan_Ranap+"','Beban Jasa Sarana Tindakan Ranap','0','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),16).toString()+"'","kredit=kredit+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),16).toString()+"'","kd_rek='"+Beban_Jasa_Sarana_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Sarana_Tindakan_Ranap+"','Utang Jasa Sarana Tindakan Ranap','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),16).toString()+"','0'","debet=debet+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),16).toString()+"'","kd_rek='"+Utang_Jasa_Sarana_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
                 }
-                if (Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 17).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + HPP_BHP_Tindakan_Ranap + "','HPP BHP Tindakan Ranap','0','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 17).toString() + "'", "kredit=kredit+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 17).toString() + "'", "kd_rek='" + HPP_BHP_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Persediaan_BHP_Tindakan_Ranap + "','Persediaan BHP Tindakan Ranap','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 17).toString() + "','0'", "debet=debet+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 17).toString() + "'", "kd_rek='" + Persediaan_BHP_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),17).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+HPP_BHP_Tindakan_Ranap+"','HPP BHP Tindakan Ranap','0','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),17).toString()+"'","kredit=kredit+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),17).toString()+"'","kd_rek='"+HPP_BHP_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
+                    if(Sequel.menyimpantf("tampjurnal","'"+Persediaan_BHP_Tindakan_Ranap+"','Persediaan BHP Tindakan Ranap','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),17).toString()+"','0'","debet=debet+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),17).toString()+"'","kd_rek='"+Persediaan_BHP_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    } 
                 }
-                if (Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 18).toString()) > 0) {
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Menejemen_Tindakan_Ranap + "','Beban Jasa Menejemen Tindakan Ranap','0','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 18).toString() + "'", "kredit=kredit+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 18).toString() + "'", "kd_rek='" + Beban_Jasa_Menejemen_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
-                    if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Menejemen_Tindakan_Ranap + "','Utang Jasa Menejemen Tindakan Ranap','" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 18).toString() + "','0'", "debet=debet+'" + tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(), 18).toString() + "'", "kd_rek='" + Utang_Jasa_Menejemen_Tindakan_Ranap + "'") == false) {
-                        sukses = false;
-                    }
+                if(Valid.SetAngka(tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),18).toString())>0){
+                    if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Menejemen_Tindakan_Ranap+"','Beban Jasa Menejemen Tindakan Ranap','0','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),18).toString()+"'","kredit=kredit+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),18).toString()+"'","kd_rek='"+Beban_Jasa_Menejemen_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    }    
+                    if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Menejemen_Tindakan_Ranap+"','Utang Jasa Menejemen Tindakan Ranap','"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),18).toString()+"','0'","debet=debet+'"+tbRawatDrPr.getValueAt(tbRawatDrPr.getSelectedRow(),18).toString()+"'","kd_rek='"+Utang_Jasa_Menejemen_Tindakan_Ranap+"'")==false){
+                        sukses=false;
+                    }  
                 }
-                if (sukses == true) {
-                    sukses = jur.simpanJurnal(TNoRw.getText(), "U", "PEMBATALAN TINDAKAN RAWAT INAP PASIEN " + TNoRM.getText() + " " + TPasien.getText() + " OLEH " + akses.getkode());
+                if(sukses==true){
+                    sukses=jur.simpanJurnal(TNoRw.getText(),"U","PEMBATALAN TINDAKAN RAWAT INAP PASIEN "+TNoRM.getText()+" "+TPasien.getText()+" OLEH "+akses.getkode());
                 }
 
-                if (sukses == true) {
+                if(sukses==true){
                     Sequel.queryu("delete from tampjurnal");
-                    if (Valid.SetAngka(TTnd.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Suspen_Piutang_Tindakan_Ranap + "','Suspen Piutang Tindakan Ranap','" + TTnd.getText() + "','0'", "debet=debet+'" + (TTnd.getText()) + "'", "kd_rek='" + Suspen_Piutang_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Tindakan_Ranap + "','Pendapatan Tindakan Rawat Inap','0','" + TTnd.getText() + "'", "kredit=kredit+'" + (TTnd.getText()) + "'", "kd_rek='" + Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(TTnd.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Suspen_Piutang_Tindakan_Ranap+"','Suspen Piutang Tindakan Ranap','"+TTnd.getText()+"','0'","debet=debet+'"+(TTnd.getText())+"'","kd_rek='"+Suspen_Piutang_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Tindakan_Ranap+"','Pendapatan Tindakan Rawat Inap','0','"+TTnd.getText()+"'","kredit=kredit+'"+(TTnd.getText())+"'","kd_rek='"+Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(JmDokter.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Medik_Dokter_Tindakan_Ranap + "','Beban Jasa Medik Dokter Tindakan Ranap','" + JmDokter.getText() + "','0'", "debet=debet+'" + (JmDokter.getText()) + "'", "kd_rek='" + Beban_Jasa_Medik_Dokter_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Medik_Dokter_Tindakan_Ranap + "','Utang Jasa Medik Dokter Tindakan Ranap','0','" + JmDokter.getText() + "'", "kredit=kredit+'" + (JmDokter.getText()) + "'", "kd_rek='" + Utang_Jasa_Medik_Dokter_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(JmDokter.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Medik_Dokter_Tindakan_Ranap+"','Beban Jasa Medik Dokter Tindakan Ranap','"+JmDokter.getText()+"','0'","debet=debet+'"+(JmDokter.getText())+"'","kd_rek='"+Beban_Jasa_Medik_Dokter_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Medik_Dokter_Tindakan_Ranap+"','Utang Jasa Medik Dokter Tindakan Ranap','0','"+JmDokter.getText()+"'","kredit=kredit+'"+(JmDokter.getText())+"'","kd_rek='"+Utang_Jasa_Medik_Dokter_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(JmPerawat.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Medik_Paramedis_Tindakan_Ranap + "','Beban Jasa Medik Paramedis Tindakan Ranap','" + JmPerawat.getText() + "','0'", "debet=debet+'" + (JmPerawat.getText()) + "'", "kd_rek='" + Beban_Jasa_Medik_Paramedis_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Medik_Paramedis_Tindakan_Ranap + "','Utang Jasa Medik Paramedis Tindakan Ranap','0','" + JmPerawat.getText() + "'", "kredit=kredit+'" + (JmPerawat.getText()) + "'", "kd_rek='" + Utang_Jasa_Medik_Paramedis_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(JmPerawat.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Medik_Paramedis_Tindakan_Ranap+"','Beban Jasa Medik Paramedis Tindakan Ranap','"+JmPerawat.getText()+"','0'","debet=debet+'"+(JmPerawat.getText())+"'","kd_rek='"+Beban_Jasa_Medik_Paramedis_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Medik_Paramedis_Tindakan_Ranap+"','Utang Jasa Medik Paramedis Tindakan Ranap','0','"+JmPerawat.getText()+"'","kredit=kredit+'"+(JmPerawat.getText())+"'","kd_rek='"+Utang_Jasa_Medik_Paramedis_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(KSO.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_KSO_Tindakan_Ranap + "','Beban KSO Tindakan Ranap','" + KSO.getText() + "','0'", "debet=debet+'" + (KSO.getText()) + "'", "kd_rek='" + Beban_KSO_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_KSO_Tindakan_Ranap + "','Utang KSO Tindakan Ranap','0','" + KSO.getText() + "'", "kredit=kredit+'" + (KSO.getText()) + "'", "kd_rek='" + Utang_KSO_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(KSO.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_KSO_Tindakan_Ranap+"','Beban KSO Tindakan Ranap','"+KSO.getText()+"','0'","debet=debet+'"+(KSO.getText())+"'","kd_rek='"+Beban_KSO_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_KSO_Tindakan_Ranap+"','Utang KSO Tindakan Ranap','0','"+KSO.getText()+"'","kredit=kredit+'"+(KSO.getText())+"'","kd_rek='"+Utang_KSO_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(BagianRS.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Sarana_Tindakan_Ranap + "','Beban Jasa Sarana Tindakan Ranap','" + BagianRS.getText() + "','0'", "debet=debet+'" + (BagianRS.getText()) + "'", "kd_rek='" + Beban_Jasa_Sarana_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Sarana_Tindakan_Ranap + "','Utang Jasa Sarana Tindakan Ranap','0','" + BagianRS.getText() + "'", "kredit=kredit+'" + (BagianRS.getText()) + "'", "kd_rek='" + Utang_Jasa_Sarana_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(BagianRS.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Sarana_Tindakan_Ranap+"','Beban Jasa Sarana Tindakan Ranap','"+BagianRS.getText()+"','0'","debet=debet+'"+(BagianRS.getText())+"'","kd_rek='"+Beban_Jasa_Sarana_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Sarana_Tindakan_Ranap+"','Utang Jasa Sarana Tindakan Ranap','0','"+BagianRS.getText()+"'","kredit=kredit+'"+(BagianRS.getText())+"'","kd_rek='"+Utang_Jasa_Sarana_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(Bhp.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + HPP_BHP_Tindakan_Ranap + "','HPP BHP Tindakan Ranap','" + Bhp.getText() + "','0'", "debet=debet+'" + (Bhp.getText()) + "'", "kd_rek='" + HPP_BHP_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Persediaan_BHP_Tindakan_Ranap + "','Persediaan BHP Tindakan Ranap','0','" + Bhp.getText() + "'", "kredit=kredit+'" + (Bhp.getText()) + "'", "kd_rek='" + Persediaan_BHP_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(Bhp.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+HPP_BHP_Tindakan_Ranap+"','HPP BHP Tindakan Ranap','"+Bhp.getText()+"','0'","debet=debet+'"+(Bhp.getText())+"'","kd_rek='"+HPP_BHP_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Persediaan_BHP_Tindakan_Ranap+"','Persediaan BHP Tindakan Ranap','0','"+Bhp.getText()+"'","kredit=kredit+'"+(Bhp.getText())+"'","kd_rek='"+Persediaan_BHP_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (Valid.SetAngka(Menejemen.getText()) > 0) {
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Beban_Jasa_Menejemen_Tindakan_Ranap + "','Beban Jasa Menejemen Tindakan Ranap','" + Menejemen.getText() + "','0'", "debet=debet+'" + (Menejemen.getText()) + "'", "kd_rek='" + Beban_Jasa_Menejemen_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
-                        if (Sequel.menyimpantf("tampjurnal", "'" + Utang_Jasa_Menejemen_Tindakan_Ranap + "','Utang Jasa Menejemen Tindakan Ranap','0','" + Menejemen.getText() + "'", "kredit=kredit+'" + (Menejemen.getText()) + "'", "kd_rek='" + Utang_Jasa_Menejemen_Tindakan_Ranap + "'") == false) {
-                            sukses = false;
-                        }
+                    if(Valid.SetAngka(Menejemen.getText())>0){
+                        if(Sequel.menyimpantf("tampjurnal","'"+Beban_Jasa_Menejemen_Tindakan_Ranap+"','Beban Jasa Menejemen Tindakan Ranap','"+Menejemen.getText()+"','0'","debet=debet+'"+(Menejemen.getText())+"'","kd_rek='"+Beban_Jasa_Menejemen_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }  
+                        if(Sequel.menyimpantf("tampjurnal","'"+Utang_Jasa_Menejemen_Tindakan_Ranap+"','Utang Jasa Menejemen Tindakan Ranap','0','"+Menejemen.getText()+"'","kredit=kredit+'"+(Menejemen.getText())+"'","kd_rek='"+Utang_Jasa_Menejemen_Tindakan_Ranap+"'")==false){
+                            sukses=false;
+                        }   
                     }
-                    if (sukses == true) {
-                        sukses = jur.simpanJurnal(TNoRw.getText(), "U", "TINDAKAN RAWAT INAP PASIEN " + TPasien.getText());
+                    if(sukses==true){
+                        sukses=jur.simpanJurnal(TNoRw.getText(),"U","TINDAKAN RAWAT INAP PASIEN "+TPasien.getText());
                     }
-                }
-            } else {
-                sukses = false;
-            }
+                }   
+            }else{
+                sukses=false;
+            } 
 
-            if (sukses == true) {
+            if(sukses==true){
                 Sequel.Commit();
-                tbRawatDrPr.setValueAt(TNoRw.getText(), tbRawatDrPr.getSelectedRow(), 1);
-                tbRawatDrPr.setValueAt(TNoRM.getText(), tbRawatDrPr.getSelectedRow(), 2);
-                tbRawatDrPr.setValueAt(TPasien.getText(), tbRawatDrPr.getSelectedRow(), 3);
-                tbRawatDrPr.setValueAt(TNmPrwDokterPetugas.getText(), tbRawatDrPr.getSelectedRow(), 4);
-                tbRawatDrPr.setValueAt(KdDok2.getText(), tbRawatDrPr.getSelectedRow(), 5);
-                tbRawatDrPr.setValueAt(TDokter2.getText(), tbRawatDrPr.getSelectedRow(), 6);
-                tbRawatDrPr.setValueAt(kdptg2.getText(), tbRawatDrPr.getSelectedRow(), 7);
-                tbRawatDrPr.setValueAt(TPerawat2.getText(), tbRawatDrPr.getSelectedRow(), 8);
-                tbRawatDrPr.setValueAt(Valid.SetTgl(DTPTgl.getSelectedItem() + ""), tbRawatDrPr.getSelectedRow(), 9);
-                tbRawatDrPr.setValueAt(cmbJam.getSelectedItem() + ":" + cmbMnt.getSelectedItem() + ":" + cmbDtk.getSelectedItem(), tbRawatDrPr.getSelectedRow(), 10);
-                tbRawatDrPr.setValueAt(TTnd.getText(), tbRawatDrPr.getSelectedRow(), 11);
-                tbRawatDrPr.setValueAt(TKdPrwDokterPetugas.getText(), tbRawatDrPr.getSelectedRow(), 12);
-                tbRawatDrPr.setValueAt(JmDokter.getText(), tbRawatDrPr.getSelectedRow(), 13);
-                tbRawatDrPr.setValueAt(JmPerawat.getText(), tbRawatDrPr.getSelectedRow(), 14);
-                tbRawatDrPr.setValueAt(KSO.getText(), tbRawatDrPr.getSelectedRow(), 15);
-                tbRawatDrPr.setValueAt(BagianRS.getText(), tbRawatDrPr.getSelectedRow(), 16);
-                tbRawatDrPr.setValueAt(Bhp.getText(), tbRawatDrPr.getSelectedRow(), 17);
-                tbRawatDrPr.setValueAt(Menejemen.getText(), tbRawatDrPr.getSelectedRow(), 18);
+                tbRawatDrPr.setValueAt(TNoRw.getText(),tbRawatDrPr.getSelectedRow(), 1);
+                tbRawatDrPr.setValueAt(TNoRM.getText(),tbRawatDrPr.getSelectedRow(), 2);
+                tbRawatDrPr.setValueAt(TPasien.getText(),tbRawatDrPr.getSelectedRow(), 3);
+                tbRawatDrPr.setValueAt(TNmPrwDokterPetugas.getText(),tbRawatDrPr.getSelectedRow(), 4);
+                tbRawatDrPr.setValueAt(KdDok2.getText(),tbRawatDrPr.getSelectedRow(), 5);
+                tbRawatDrPr.setValueAt(TDokter2.getText(),tbRawatDrPr.getSelectedRow(), 6);
+                tbRawatDrPr.setValueAt(kdptg2.getText(),tbRawatDrPr.getSelectedRow(), 7);
+                tbRawatDrPr.setValueAt(TPerawat2.getText(),tbRawatDrPr.getSelectedRow(), 8);
+                tbRawatDrPr.setValueAt(Valid.SetTgl(DTPTgl.getSelectedItem()+""),tbRawatDrPr.getSelectedRow(), 9);
+                tbRawatDrPr.setValueAt(cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),tbRawatDrPr.getSelectedRow(), 10);
+                tbRawatDrPr.setValueAt(TTnd.getText(),tbRawatDrPr.getSelectedRow(), 11);
+                tbRawatDrPr.setValueAt(TKdPrwDokterPetugas.getText(),tbRawatDrPr.getSelectedRow(), 12);
+                tbRawatDrPr.setValueAt(JmDokter.getText(),tbRawatDrPr.getSelectedRow(), 13);
+                tbRawatDrPr.setValueAt(JmPerawat.getText(),tbRawatDrPr.getSelectedRow(), 14);
+                tbRawatDrPr.setValueAt(KSO.getText(),tbRawatDrPr.getSelectedRow(), 15);
+                tbRawatDrPr.setValueAt(BagianRS.getText(),tbRawatDrPr.getSelectedRow(), 16);
+                tbRawatDrPr.setValueAt(Bhp.getText(),tbRawatDrPr.getSelectedRow(), 17);
+                tbRawatDrPr.setValueAt(Menejemen.getText(),tbRawatDrPr.getSelectedRow(), 18);
                 BtnBatalActionPerformed(null);
-            } else {
-                JOptionPane.showMessageDialog(null, "Terjadi kesalahan saat pemrosesan data, transaksi dibatalkan.\nPeriksa kembali data sebelum melanjutkan menyimpan..!!");
+            }else{
+                JOptionPane.showMessageDialog(null,"Terjadi kesalahan saat pemrosesan data, transaksi dibatalkan.\nPeriksa kembali data sebelum melanjutkan menyimpan..!!");
                 Sequel.RollBack();
             }
-            Sequel.AutoComitTrue();
+            Sequel.AutoComitTrue();                                    
         }
     }
-
-    // TAMBAHAN FITUR TCARIPEMERIKSAAN
-    private void TCariActionPerformedPemeriksaan(java.awt.event.ActionEvent evt) {
-        String cari = TCariPemeriksaan.getText().toLowerCase();
-
-        BtnRiwayat.setVisible("riwayat pasien".contains(cari));
-        BtnResepObat.setVisible("resep obat".contains(cari));
-        BtnCopyResep.setVisible("copy resep".contains(cari));
-        BtnPermintaanStok.setVisible("permintaan stok".contains(cari));
-        BtnPermintaanResepPulang.setVisible("permintaan resep pulang".contains(cari));
-        BtnInputObat.setVisible("input obat".contains(cari));
-        BtnObatBhp.setVisible("obat bhp".contains(cari));
-        BtnBerkasDigital.setVisible("berkas digital".contains(cari));
-        BtnPermintaanLab.setVisible("permintaan lab".contains(cari));
-        BtnPermintaanRad.setVisible("permintaan rad".contains(cari));
-        BtnPermintaanKonsultasiMedik.setVisible("permintaan konsultasi medik".contains(cari));
-        BtnJadwalOperasi.setVisible("jadwal operasi".contains(cari));
-        BtnSKDP.setVisible("skdp".contains(cari));
-        BtnRujukKeluar.setVisible("rujuk keluar".contains(cari));
-        BtnDiagnosa.setVisible("diagnosa".contains(cari));
-        BtnResume.setVisible("resume".contains(cari));
-        BtnAwalKeperawatanUmum.setVisible("awal keperawatan umum".contains(cari));
-        BtnAwalKeperawatanKandungan.setVisible("awal keperawatan kandungan".contains(cari));
-        BtnAwalKeperawatanNeonatus.setVisible("awal keperawatan neonatus".contains(cari));
-        BtnAwalKeperawatanBayiAnak.setVisible("awal keperawatan bayi anak".contains(cari));
-        BtnAwalFisioterapi.setVisible("awal fisioterapi".contains(cari));
-        BtnAwalMedis.setVisible("awal medis".contains(cari));
-        BtnAwalMedisKandungan.setVisible("awal medis kandungan".contains(cari));
-        BtnAwalMedisNeonatus.setVisible("awal medis neonatus".contains(cari));
-        BtnAwalMedisHemodialisa.setVisible("awal medis hemodialisa".contains(cari));
-        BtnPenilaianPreInduksi.setVisible("penilaian pre induksi".contains(cari));
-        BtnChecklistPreOperasi.setVisible("checklist pre operasi".contains(cari));
-        BtnSignInSebelumAnestesi.setVisible("signin sebelum anestesi".contains(cari));
-        BtnTimeOutSebelumInsisi.setVisible("timeout sebelum insisi".contains(cari));
-        BtnSignOutSebelumMenutupLuka.setVisible("signout sebelum menutup luka".contains(cari));
-        BtnChecklistPostOperasi.setVisible("checklist post operasi".contains(cari));
-        BtnPenilaianPreOperasi.setVisible("penilaian pre operasi".contains(cari));
-        BtnCatatanAnastesiSedasi.setVisible("catatan anastesi sedasi".contains(cari));
-        BtnPenilaianPreAnestesi.setVisible("penilaian pre anestesi".contains(cari));
-        BtnChecklistKesiapanAnestesi.setVisible("checklist kesiapan anestesi".contains(cari));
-        BtnSkorAldrettePascaAnestesi.setVisible("skor aldrette pasca anestesi".contains(cari));
-        BtnSkorStewardPascaAnestesi.setVisible("skor steward pasca anestesi".contains(cari));
-        BtnSkorBromagePascaAnestesi.setVisible("skor bromage pasca anestesi".contains(cari));
-        BtnCatatanPengkajianPaskaOperasi.setVisible("catatan pengkajian pasca operasi".contains(cari));
-        BtnPenilaianPsikolog.setVisible("penilaian psikolog".contains(cari));
-        BtnPenilaianPsikologKlinis.setVisible("penilaian psikolog klinis".contains(cari));
-        BtnPerencanaanPemulangan.setVisible("perencanaan pemulangan".contains(cari));
-        BtnPenilaianLanjutanResikoJatuhDewasa.setVisible("resiko jatuh dewasa".contains(cari));
-        BtnPenilaianLanjutanResikoJatuhAnak.setVisible("resiko jatuh anak".contains(cari));
-        BtnPenilaianLanjutanResikoJatuhLansia.setVisible("resiko jatuh lansia".contains(cari));
-        BtnPenilaianLanjutanResikoJatuhNeonatus.setVisible("resiko jatuh neonatus".contains(cari));
-        BtnPenilaianLanjutanResikoJatuhGeriatri.setVisible("resiko jatuh geriatri".contains(cari));
-        BtnPenilaianLanjutanResikoJatuhPsikiatri.setVisible("resiko jatuh psikiatri".contains(cari));
-        BtnPenilaianLanjutanSkriningFungsional.setVisible("skrining fungsional".contains(cari));
-        BtnPenilaianResikoDekubitus.setVisible("resiko dekubitus".contains(cari));
-        BtnHasilPemeriksaanUSG.setVisible("hasil usg".contains(cari));
-        BtnHasilPemeriksaanUSGUrologi.setVisible("hasil usg urologi".contains(cari));
-        BtnHasilPemeriksaanUSGNeonatus.setVisible("hasil usg neonatus".contains(cari));
-        BtnHasilPemeriksaanUSGGynecologi.setVisible("hasil usg gynecologi".contains(cari));
-        BtnHasilPemeriksaanEKG.setVisible("hasil ekg".contains(cari));
-        BtnHasilPemeriksaanECHO.setVisible("hasil echo".contains(cari));
-        BtnHasilPemeriksaanSlitLamp.setVisible("hasil slit lamp".contains(cari));
-        BtnHasilPemeriksaanOCT.setVisible("hasil oct".contains(cari));
-        BtnHasilEndoskopiFaringLaring.setVisible("endoskopi faring laring".contains(cari));
-        BtnHasilEndoskopiHidung.setVisible("endoskopi hidung".contains(cari));
-        BtnHasilEndoskopiTelinga.setVisible("endoskopi telinga".contains(cari));
-        BtnDokumentasiESWL.setVisible("dokumentasi eswl".contains(cari));
-        BtnCatatanPersalinan.setVisible("catatan persalinan".contains(cari));
-        BtnLaporanTindakan.setVisible("laporan tindakan".contains(cari));
-        BtnCatatan.setVisible("catatan".contains(cari));
-        BtnCatatanObservasiRanap.setVisible("observasi ranap".contains(cari));
-        BtnCatatanObservasiRanapKebidanan.setVisible("observasi ranap kebidanan".contains(cari));
-        BtnCatatanObservasiRanapPostPartum.setVisible("observasi ranap postpartum".contains(cari));
-        BtnCatatanObservasiCHBP.setVisible("observasi chbp".contains(cari));
-        BtnCatatanObservasiInduksiPersalinan.setVisible("observasi induksi persalinan".contains(cari));
-        BtnCatatanObservasiBayi.setVisible("observasi bayi".contains(cari));
-        BtnCatatanObservasiRestrainNonfarmakologi.setVisible("restrain nonfarmakologi".contains(cari));
-        BtnCatatanObservasiVentilator.setVisible("observasi ventilator".contains(cari));
-        BtnCatatanObservasiHemodialisa.setVisible("observasi hemodialisa".contains(cari));
-        BtnCatatanKeseimbanganCairan.setVisible("keseimbangan cairan".contains(cari));
-        BtnCatatanCairanHemodialisa.setVisible("cairan hemodialisa".contains(cari));
-        BtnChecklistPemberianFibrinolitik.setVisible("checklist fibrinolitik".contains(cari));
-        BtnFollowUpDBD.setVisible("follow up dbd".contains(cari));
-        BtnCatatanKeperawatan.setVisible("catatan keperawatan".contains(cari));
-        BtnCatatanCekGDS.setVisible("cek gds".contains(cari));
-        BtnPenilaianUlangNyeri.setVisible("penilaian ulang nyeri".contains(cari));
-        BtnPemantauanPEWSAnak.setVisible("pews anak".contains(cari));
-        BtnPemantauanPEWSDewasa.setVisible("pews dewasa".contains(cari));
-        BtnPemantauanMEOWS.setVisible("meows".contains(cari));
-        BtnPemantauanEWSNeonatus.setVisible("ews neonatus".contains(cari));
-        BtnChecklistKriteriaMasukHCU.setVisible("masuk hcu".contains(cari));
-        BtnChecklistKriteriaKeluarHCU.setVisible("keluar hcu".contains(cari));
-        BtnChecklistKriteriaMasukICU.setVisible("masuk icu".contains(cari));
-        BtnChecklistKriteriaKeluarICU.setVisible("keluar icu".contains(cari));
-        BtnMonitoringReaksiTranfusi.setVisible("reaksi transfusi".contains(cari));
-        BtnSkriningNutrisiDewasa.setVisible("skrining nutrisi dewasa".contains(cari));
-        BtnSkriningNutrisiLansia.setVisible("skrining nutrisi lansia".contains(cari));
-        BtnSkriningNutrisiAnak.setVisible("skrining nutrisi anak".contains(cari));
-        BtnSkriningGiziLanjut.setVisible("skrining gizi lanjut".contains(cari));
-        BtnAsuhanGizi.setVisible("asuhan gizi".contains(cari));
-        BtnMonitoringAsuhanGizi.setVisible("monitoring gizi".contains(cari));
-        BtnCatatanADIMEGizi.setVisible("adime gizi".contains(cari));
-        BtnKonselingFarmasi.setVisible("konseling farmasi".contains(cari));
-        BtnInformasiObat.setVisible("informasi obat".contains(cari));
-        BtnRekonsiliasiObat.setVisible("rekonsiliasi obat".contains(cari));
-        BtnTransferAntarRuang.setVisible("transfer antar ruang".contains(cari));
-        BtnPelaksanaanInformasiEdukasi.setVisible("informasi edukasi".contains(cari));
-        BtnPengkajianRestrain.setVisible("pengkajian restrain".contains(cari));
-        BtnPenilaianBayiBaruLahir.setVisible("penilaian bayi baru lahir".contains(cari));
-        BtnPenilaianPasienTerminal.setVisible("pasien terminal".contains(cari));
-        BtnPenilaianKorbanKekerasan.setVisible("korban kekerasan".contains(cari));
-        BtnPenilaianKecemasanAnak.setVisible("kecemasan anak".contains(cari));
-        BtnPenilaianPasienPenyakitMenular.setVisible("penyakit menular".contains(cari));
-        BtnPenilaianPasienImunitasRendah.setVisible("imunitas rendah".contains(cari));
-        BtnPenilaianTambahanGeriatri.setVisible("penilaian geriatri".contains(cari));
-        BtnPenilaianTambahanBunuhDiri.setVisible("bunuh diri".contains(cari));
-        BtnPenilaianTambahanPerilakuKekerasan.setVisible("perilaku kekerasan".contains(cari));
-        BtnPenilaianTambahanMelarikanDiri.setVisible("melarikan diri".contains(cari));
-        BtnPenilaianDerajatDehidrasi.setVisible("derajat dehidrasi".contains(cari));
-        BtnChecklistKriteriaMasukNICU.setVisible("check list kriteria masuk nicu".contains(cari));
-        BtnChecklistKriteriaKeluarNICU.setVisible("check list kriteria keluar nicu".contains(cari));
-        BtnChecklistKriteriaMasukPICU.setVisible("check list kriteria masuk picu".contains(cari));
-        BtnChecklistKriteriaKeluarPICU.setVisible("check list kriteria keluar picu".contains(cari));
-        BtnAwalMedisPsikiatri.setVisible("awal medis psikiatri".contains(cari));
-
-        FormMenu.revalidate(); // Refresh UI
-        FormMenu.repaint();
-    }
-
-    // AWAL TAMBAHAN FITUR SOAPIE
-    private void BtnSoapPerawatActionPerformed(java.awt.event.ActionEvent evt) {
-        akses.setform("DlgRawatJalan");
-        templatesoapieperawat.emptTeks();
-        templatesoapieperawat.isCek();
-        templatesoapieperawat.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
-        templatesoapieperawat.setLocationRelativeTo(internalFrame1);
-        templatesoapieperawat.setVisible(true);
-    }
-
-    private void SimpanTemplateSOAPIEPerawat() {
-        if (ChkTemplatePerawat.isSelected()) {
-            Valid.autoNomer("template_soapie_perawat", "S", 4, KdNoRawat);
-            if (KdNoRawat.getText().trim().equals("")) {
-                Valid.textKosong(KdNoRawat, "No.Template");
-            } else if (TKeluhan.getText().trim().equals("")) {
-                Valid.textKosong(TKeluhan, "Subyek");
-            } else if (TPemeriksaan.getText().trim().equals("")) {
-                Valid.textKosong(TPemeriksaan, "Obyek");
-            } else if (TPenilaian.getText().trim().equals("")) {
-                Valid.textKosong(TPenilaian, "Asesmen");
-            } else if (TInstruksi.getText().trim().equals("")) {
-                Valid.textKosong(TInstruksi, "Instruksi");
-            } else if (TEvaluasi.getText().trim().equals("")) {
-                Valid.textKosong(TEvaluasi, "Evaluasi");
-            } else {
-                if (Sequel.menyimpantf("template_soapie_perawat", "?,?,?,?,?,?,?", "No.Template", 7, new String[]{
-                    KdNoRawat.getText(), TKeluhan.getText(), TPemeriksaan.getText(), TPenilaian.getText(), TindakLanjut.getText(),
-                    TInstruksi.getText(), TEvaluasi.getText()
-                }) == true) {
-                    JOptionPane.showMessageDialog(null, "Template SOAPIE Sukses Tersimpan");
-                    TEvaluasi.requestFocus();
-                }
-            }
-        }
-    }
-
-    private void SimpanTemplateSOAPIE() {
-        if (ChkTemplate.isSelected()) {
-            Valid.autoNomer("template_pemeriksaan_dokter", "S", 4, KdNoRawat);
-            if (KdNoRawat.getText().trim().equals("")) {
-                Valid.textKosong(KdNoRawat, "No.Template");
-            } else if (KdDok.getText().trim().equals("")) {
-                Valid.textKosong(KdDok, "Kode Dokter");
-            } else if (TKeluhan.getText().trim().equals("")) {
-                Valid.textKosong(TKeluhan, "Subyek");
-            } else if (TPemeriksaan.getText().trim().equals("")) {
-                Valid.textKosong(TPemeriksaan, "Obyek");
-            } else if (TPenilaian.getText().trim().equals("")) {
-                Valid.textKosong(TPenilaian, "Asesmen");
-            } else if (TInstruksi.getText().trim().equals("")) {
-                Valid.textKosong(TInstruksi, "Instruksi");
-            } else if (TEvaluasi.getText().trim().equals("")) {
-                Valid.textKosong(TEvaluasi, "Evaluasi");
-            } else {
-                if (Sequel.menyimpantf("template_pemeriksaan_dokter", "?,?,?,?,?,?,?,?", "No.Template", 8, new String[]{
-                    KdNoRawat.getText(), KdDok.getText(), TKeluhan.getText(), TPemeriksaan.getText(), TPenilaian.getText(), TindakLanjut.getText(),
-                    TInstruksi.getText(), TEvaluasi.getText()
-                }) == true) {
-                    JOptionPane.showMessageDialog(null, "Template SOAPIE Sukses Tersimpan");
-                    TEvaluasi.requestFocus();
-                }
-            }
-        }
-    }
-
-    private void BtnSoapDokterActionPerformed(java.awt.event.ActionEvent evt) {
-        akses.setform("DlgRawatJalan");
-        templatesoapie.emptTeks();
-        templatesoapie.isCek();
-        //    templatesoapi.setRM(KdPeg.getText(), TPegawai.getText());
-        templatesoapie.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
-        templatesoapie.setLocationRelativeTo(internalFrame1);
-        templatesoapie.setVisible(true);
-    }
-
-    private void BtnSoapDokter1ActionPerformed(java.awt.event.ActionEvent evt) {
-        akses.setform("DlgRawatJalan");
-        templatesoapieperawat.emptTeks();
-        templatesoapieperawat.isCek();
-        templatesoapieperawat.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
-        templatesoapieperawat.setLocationRelativeTo(internalFrame1);
-        templatesoapieperawat.setVisible(true);
-    }
-    // AKHIR TAMBAHAN FITUR SOAPIE
-
-    // TAMBAHAN FITUR KOMUNIKASI SBAR
-    private void isFormAdime() {
-        if (ChkInput5.isSelected() == true) {
-            ChkInput5.setVisible(false);
-            PanelInput6.setPreferredSize(new Dimension(WIDTH, 308));
-            panelGlass18.setVisible(true);
-            ChkInput5.setVisible(true);
-        } else if (ChkInput5.isSelected() == false) {
-            ChkInput5.setVisible(false);
-            PanelInput6.setPreferredSize(new Dimension(WIDTH, 20));
-            panelGlass18.setVisible(false);
-            ChkInput5.setVisible(true);
-        }
-    }
-
-    private void getDataPemeriksaanSbar() {
-        if (tbPemeriksaanSbar.getSelectedRow() != -1) {
-            TNoRw.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 1).toString());
-            TNoRM.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 2).toString());
-            TPasien.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 3).toString());
-            TSituation.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 6).toString());
-            TBackground.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 7).toString());
-            TAssesment.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 8).toString());
-            TRecommendation.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 9).toString());
-            cmbJam.setSelectedItem(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 5).toString().substring(0, 2));
-            cmbMnt.setSelectedItem(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 5).toString().substring(3, 5));
-            cmbDtk.setSelectedItem(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 5).toString().substring(6, 8));
-            Valid.SetTgl(DTPTgl, tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 4).toString());
-        }
-    }
-
-    private void isForm4() {
-        if (ChkInput3.isSelected() == true) {
-            ChkInput3.setVisible(false);
-            PanelInput4.setPreferredSize(new Dimension(WIDTH, 260));
-            panelGlass16.setVisible(true);
-            ChkInput3.setVisible(true);
-        } else if (ChkInput3.isSelected() == false) {
-            ChkInput3.setVisible(false);
-            PanelInput4.setPreferredSize(new Dimension(WIDTH, 20));
-            panelGlass16.setVisible(false);
-            ChkInput3.setVisible(true);
-        }
-    }
-
-    private void tbPemeriksaanSbarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbPemeriksaanSbarMouseClicked
-        if (tabModePemeriksaanSbar.getRowCount() != 0) {
-            try {
-                getDataPemeriksaanSbar();
-            } catch (java.lang.NullPointerException e) {
-            }
-
-        }
-    }//GEN-LAST:event_tbPemeriksaanSbarMouseClicked
-
-    private void tbPemeriksaanSbarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbPemeriksaanSbarKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tbPemeriksaanSbarKeyReleased
-
-    private void ChkInput3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkInput3ActionPerformed
-        isForm4();
-    }//GEN-LAST:event_ChkInput3ActionPerformed
-
-    private void TSituationKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TSituationKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TSituationKeyPressed
-
-    private void TBackgroundKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TBackgroundKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TBackgroundKeyPressed
-
-    private void TAssesmentKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TAssesmentKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TAssesmentKeyPressed
-
-    private void TRecommendationKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TRecommendationKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TRecommendationKeyPressed
-
-    private void KdPeg2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KdPeg2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_KdPeg2ActionPerformed
-
-    private void KdPeg2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdPeg2KeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
-            Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?", TPegawai2, KdPeg2.getText());
-        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            BtnSeekPegawai1ActionPerformed(null);
-        } else {
-            Valid.pindah(evt, TNoRw, TSituation);
-        }
-    }//GEN-LAST:event_KdPeg2KeyPressed
-
-    private void TPegawai2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TPegawai2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TPegawai2ActionPerformed
-
-    private void BtnSeekPegawai1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeekPegawai1ActionPerformed
-        akses.setform("DlgRawatInap");
-        pegawai2.emptTeks();
-        pegawai2.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
-        pegawai2.setLocationRelativeTo(internalFrame1);
-        pegawai2.setVisible(true);
-    }//GEN-LAST:event_BtnSeekPegawai1ActionPerformed
-
-    private void KdPeg3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdPeg3KeyPressed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_KdPeg3KeyPressed
-
-    private void BtnVerifSbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerifSbarActionPerformed
-        if (TNoRw.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
-            TCari.requestFocus();
-        } else {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            DlgSBAR soap = new DlgSBAR(null, false);
-            soap.setNoRawat(TNoRw.getText(), TNoRw.getText());
-            soap.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
-            soap.setLocationRelativeTo(internalFrame1);
-            soap.setVisible(true);
-            this.setCursor(Cursor.getDefaultCursor());
-        }
-    }//GEN-LAST:event_BtnVerifSbarActionPerformed
-
-    private void jLabel84MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel84MouseClicked
-        if (TNoRw.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
-            TCari.requestFocus();
-        } else {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            DlgSBAR soap = new DlgSBAR(null, false);
-            soap.setNoRawat(TNoRw.getText(), TNoRw.getText());
-            soap.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
-            soap.setLocationRelativeTo(internalFrame1);
-            soap.setVisible(true);
-            this.setCursor(Cursor.getDefaultCursor());
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel84MouseClicked
-
-    private void jLabel86MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel86MouseClicked
-        if (TPasien.getText().trim().equals("") || TNoRw.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
-            TCari.requestFocus();
-        } else {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            ValidasiSBAR form = new ValidasiSBAR(null, false);
-            form.isCek();
-            form.emptTeks();
-            form.setNoRm(TNoRw.getText(), DTPCari2.getDate());
-            form.tampil();
-            form.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
-            form.setLocationRelativeTo(internalFrame1);
-            form.setVisible(true);
-            this.setCursor(Cursor.getDefaultCursor());
-        }// TODO add your handling code here:
-    }//GEN-LAST:event_jLabel86MouseClicked
-
-    private void BtnVerifSbar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerifSbar3ActionPerformed
-        if (TPasien.getText().trim().equals("") || TNoRw.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
-            TCari.requestFocus();
-        } else {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            ValidasiSBAR form = new ValidasiSBAR(null, false);
-            form.isCek();
-            form.emptTeks();
-            form.setNoRm(TNoRw.getText(), DTPCari2.getDate());
-            form.tampil();
-            form.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
-            form.setLocationRelativeTo(internalFrame1);
-            form.setVisible(true);
-            this.setCursor(Cursor.getDefaultCursor());
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnVerifSbar3ActionPerformed
-
-    // TAMBAHAN FITUR KOMUNIKASI SBAR DAY 2
-    private void ChkInput4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkInput4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ChkInput4ActionPerformed
-
-    private void TSituation1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TSituation1KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TSituation1KeyPressed
-
-    private void TBackground1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TBackground1KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TBackground1KeyPressed
-
-    private void TAssesment1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TAssesment1KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TAssesment1KeyPressed
-
-    private void TRecommendation1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TRecommendation1KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TRecommendation1KeyPressed
-
-    private void KdPeg4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KdPeg4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_KdPeg4ActionPerformed
-
-    private void KdPeg4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdPeg4KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_KdPeg4KeyPressed
-
-    private void TPegawai4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TPegawai4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TPegawai4ActionPerformed
-
-    private void BtnSeekPegawai2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeekPegawai2ActionPerformed
-        akses.setform("DlgRawatInap");
-        pegawai2.emptTeks();
-        pegawai2.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
-        pegawai2.setLocationRelativeTo(internalFrame1);
-        pegawai2.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_BtnSeekPegawai2ActionPerformed
-
-    private void KdPeg5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdPeg5KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_KdPeg5KeyPressed
-
-//    private void BtnVerifSbar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerifSbar1ActionPerformed
-//        if (TNoRw.getText().trim().equals("")) {
-//            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
-//            TCari.requestFocus();
-//        } else {
-//            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-//            DlgTBAK soap = new DlgTBAK(null, false);
-//            soap.setNoRawat(TNoRw.getText(), TNoRw.getText());
-//            soap.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
-//            soap.setLocationRelativeTo(internalFrame1);
-//            soap.setVisible(true);
-//            this.setCursor(Cursor.getDefaultCursor());
-//        }
-//        // TODO add your handling code here:
-//    }//GEN-LAST:event_BtnVerifSbar1ActionPerformed
-//
-//    private void jLabel87MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel87MouseClicked
-//        if (TPasien.getText().trim().equals("") || TNoRw.getText().trim().equals("")) {
-//            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
-//            TCari.requestFocus();
-//        } else {
-//            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-//            ValidasiTBAK form = new ValidasiTBAK(null, false);
-//            form.isCek();
-//            form.emptTeks();
-//            form.setNoRm(TNoRw.getText(), DTPCari2.getDate());
-//            form.tampil();
-//            form.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
-//            form.setLocationRelativeTo(internalFrame1);
-//            form.setVisible(true);
-//            this.setCursor(Cursor.getDefaultCursor());
-//        }         // TODO add your handling code here:
-//    }//GEN-LAST:event_jLabel87MouseClicked
-//    private void jLabel100MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel100MouseClicked
-//        if (TNoRw.getText().trim().equals("")) {
-//            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
-//            TCari.requestFocus();
-//        } else {
-//            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-//            DlgTBAK soap = new DlgTBAK(null, false);
-//            soap.setNoRawat(TNoRw.getText(), TNoRw.getText());
-//            soap.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
-//            soap.setLocationRelativeTo(internalFrame1);
-//            soap.setVisible(true);
-//            this.setCursor(Cursor.getDefaultCursor());
-//        }        // TODO add your handling code here:
-//    }//GEN-LAST:event_jLabel100MouseClicked
-//
-//    private void BtnVerifSbar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerifSbar2ActionPerformed
-//        if (TPasien.getText().trim().equals("") || TNoRw.getText().trim().equals("")) {
-//            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
-//            TCari.requestFocus();
-//        } else {
-//            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-//            ValidasiTBAK form = new ValidasiTBAK(null, false);
-//            form.isCek();
-//            form.emptTeks();
-//            form.setNoRm(TNoRw.getText(), DTPCari2.getDate());
-//            form.tampil();
-//            form.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
-//            form.setLocationRelativeTo(internalFrame1);
-//            form.setVisible(true);
-//            this.setCursor(Cursor.getDefaultCursor());
-//        }        // TODO add your handling code here:
-//    }//GEN-LAST:event_BtnVerifSbar2ActionPerformed
-//    private void tbPemeriksaan1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbPemeriksaan1MouseClicked
-//        if (tabModePemeriksaanAdime.getRowCount() != 0) {
-//            try {
-//                getDataPemeriksaanAdime();
-//            } catch (java.lang.NullPointerException e) {
-//            }
-//
-//        }        // TODO add your handling code here:
-//    }//GEN-LAST:event_tbPemeriksaan1MouseClicked
-//
-//    private void tbPemeriksaan1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbPemeriksaan1KeyReleased
-//        if (tabModePemeriksaanAdime.getRowCount() != 0) {
-//            if ((evt.getKeyCode() == KeyEvent.VK_ENTER) || (evt.getKeyCode() == KeyEvent.VK_UP) || (evt.getKeyCode() == KeyEvent.VK_DOWN)) {
-//                try {
-//                    getDataPemeriksaanAdime();
-//                } catch (java.lang.NullPointerException e) {
-//                }
-//            }
-//
-//        }        // TODO add your handling code here:
-//    }//GEN-LAST:event_tbPemeriksaan1KeyReleased
-    // TAMABAHAN FITUR TBAK
-//    private void tbPemeriksaanTbakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbPemeriksaanTbakMouseClicked
-//        if(tabModePemeriksaanTbak.getRowCount()!=0){
-//            try {
-//                getDataPemeriksaanTbak();
-//            } catch (java.lang.NullPointerException e) {
-//            }
-//
-//        }
-//        // TODO add your handling code here:
-//    }//GEN-LAST:event_tbPemeriksaanTbakMouseClicked
-//
-//    private void tbPemeriksaanTbakKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbPemeriksaanTbakKeyReleased
-//        // TODO add your handling code here:
-//    }//GEN-LAST:event_tbPemeriksaanTbakKeyReleased
-    private void tampilPemeriksaanSbar() {
-        Valid.tabelKosong(tabModePemeriksaanSbar);
-        try {
-            ps7 = koneksi.prepareStatement("select pemeriksaan_ranap_sbar.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"
-                    + "pemeriksaan_ranap_sbar.tgl_perawatan,pemeriksaan_ranap_sbar.jam_rawat,pemeriksaan_ranap_sbar.situation,pemeriksaan_ranap_sbar.background, "
-                    + "pemeriksaan_ranap_sbar.assesment,pemeriksaan_ranap_sbar.recommendation,pemeriksaan_ranap_sbar.nip,pegawai.nama,pegawai.jbtn, IF(vps.no_rawat IS NOT NULL, 'Tervalidasi', 'Belum Divalidasi')"
-                    + "from pasien inner join reg_periksa on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "
-                    + "inner join pemeriksaan_ranap_sbar on pemeriksaan_ranap_sbar.no_rawat=reg_periksa.no_rawat "
-                    + "inner join pegawai on pemeriksaan_ranap_sbar.nip=pegawai.nik "
-                    + "LEFT JOIN validasi_pemeriksaan_sbar vps ON CONCAT(pemeriksaan_ranap_sbar.no_rawat, pemeriksaan_ranap_sbar.tgl_perawatan, pemeriksaan_ranap_sbar.jam_rawat) = CONCAT (vps.no_rawat, vps.tgl_perawatan, vps.jam_rawat) where "
-                    + "pemeriksaan_ranap_sbar.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? "
-                    + (TCari.getText().trim().equals("") ? "" : "and (pemeriksaan_ranap_sbar.no_rawat like ? or reg_periksa.no_rkm_medis like ? or pasien.nm_pasien like ? or "
-                    + "pemeriksaan_ranap_sbar.situation like ? or pemeriksaan_ranap_sbar.background like ? or pemeriksaan_ranap_sbar.assesment like ? or "
-                    + "pemeriksaan_ranap_sbar.recommendation like ?)")
-                    + "order by pemeriksaan_ranap_sbar.no_rawat,pemeriksaan_ranap_sbar.tgl_perawatan,pemeriksaan_ranap_sbar.jam_rawat desc");
-            try {
-                ps7.setString(1, Valid.SetTgl(DTPCari1.getSelectedItem() + ""));
-                ps7.setString(2, Valid.SetTgl(DTPCari2.getSelectedItem() + ""));
-                ps7.setString(3, "%" + TCariPasien.getText() + "%");
-                if (!TCari.getText().trim().equals("")) {
-                    ps7.setString(4, "%" + TCari.getText().trim() + "%");
-                    ps7.setString(5, "%" + TCari.getText().trim() + "%");
-                    ps7.setString(6, "%" + TCari.getText().trim() + "%");
-                    ps7.setString(7, "%" + TCari.getText().trim() + "%");
-                    ps7.setString(8, "%" + TCari.getText().trim() + "%");
-                    ps7.setString(9, "%" + TCari.getText().trim() + "%");
-                    ps7.setString(10, "%" + TCari.getText().trim() + "%");
-                }
-
-                rs = ps7.executeQuery();
-                while (rs.next()) {
-                    tabModePemeriksaanSbar.addRow(new Object[]{
-                        false, rs.getString(1), rs.getString(2), rs.getString(3),
-                        rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7),
-                        rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11),
-                        rs.getString(12), rs.getString(13)
-                    });
-                }
-            } catch (Exception e) {
-                System.out.println("Notifikasi : " + e);
-            } finally {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps4 != null) {
-                    ps4.close();
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("Notifikasi : " + e);
-        }
-        LCount.setText("" + tabModePemeriksaanSbar.getRowCount());
-    }
-    // AKHIR TAMBAHAN FITUR KOMUNIKASI SBAR
-
-    // TAMBAHAN FITUR KOMUNIKASI SBAR TAPI SOAP
-    private void Btn5Soap1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn5Soap1ActionPerformed
-        if (TPasien.getText().trim().equals("") || TNoRw.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
-            TCari.requestFocus();
-        } else if (TPegawai.getText().trim().equals("") || KdPeg.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu petugas/dokter pemberi asuhan...!!!");
-            TCari.requestFocus();
-        } else {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            soapterakhir.setNoRM(TNoRM.getText(), KdPeg.getText(), "Ranap");
-            soapterakhir.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
-            soapterakhir.setLocationRelativeTo(internalFrame1);
-            soapterakhir.setVisible(true);
-            this.setCursor(Cursor.getDefaultCursor());
-        }
-    }//GEN-LAST:event_Btn5Soap1ActionPerformed
-
-//    private void Btn5Soap2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn5Soap2ActionPerformed
-//        if(TNoRw.getText().trim().equals("")){
-//            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
-//            TCari.requestFocus();
-//        }else{
-//            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-//            RMRiwayatSOAPIECPPT resume=new RMRiwayatSOAPIECPPT(null,true);
-//            resume.setNoRm(TNoRM.getText(),TPasien.getText());
-//            resume.setSize(internalFrame1.getWidth(),internalFrame1.getHeight());
-//            resume.setLocationRelativeTo(internalFrame1);
-//            resume.setVisible(true);
-//            this.setCursor(Cursor.getDefaultCursor());
-//        }
-//    }//GEN-LAST:event_Btn5Soap2ActionPerformed
-    // TAMBAHAN FITUR GRAFIK TTV PRIVATE VOID
-    private void BtnCekGrafikTTV(java.awt.event.ActionEvent evt) {
-        grafiksqlttv kas = new grafiksqlttv("Grafik TTV Pasien " + TPasien.getText(),
-                "select DATE_FORMAT(tgl_perawatan , '%d/%m/%Y') as tgl,jam_rawat,replace(suhu_tubuh,',','.') as suhu_tubuh,nadi,respirasi,spo2 from pemeriksaan_ranap where no_rawat='" + TNoRw.getText() + "' and suhu_tubuh <>''", "Suhu", "Nadi", "Respirasi", "Spo2");
-        kas.setModal(true);
-        kas.setAlwaysOnTop(true);
-        kas.setLocationRelativeTo(panelBiasa3);
-        kas.setSize(screen.width, 600);
-        kas.setLocation(0, 100);
-        kas.setVisible(true);
-    }
-
-    // TAMBAHAN FITUR PINTASAN PENUNJANG
-    private void BtnHasilRadiologiActionPerformed(java.awt.event.ActionEvent evt) {
-        if (TNoRw.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu pasien...!!!");
-            TCari.requestFocus();
-        } else {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            RMRiwayatPenunjang resume = new RMRiwayatPenunjang(null, true);
-            resume.setNoRm(TNoRM.getText(), TPasien.getText());
-            resume.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
-            resume.setLocationRelativeTo(internalFrame1);
-            resume.setVisible(true);
-            this.setCursor(Cursor.getDefaultCursor());
-        }        // TODO add your handling code here:
-    }
-
-    private void BtnHasilPengobatanActionPerformed(java.awt.event.ActionEvent evt) {
-        if (TNoRw.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu pasien...!!!");
-            TCari.requestFocus();
-        } else {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            RMRiwayatPengobatan resume = new RMRiwayatPengobatan(null, true);
-            resume.setNoRm(TNoRM.getText(), TPasien.getText());
-            resume.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
-            resume.setLocationRelativeTo(internalFrame1);
-            resume.setVisible(true);
-            this.setCursor(Cursor.getDefaultCursor());
-        }
-    }
-
-    private void BtnHasilPengobatan1ActionPerformed(java.awt.event.ActionEvent evt) {
-        if (TNoRw.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu pasien...!!!");
-            TCari.requestFocus();
-        } else {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            RMRiwayatOperasi resume = new RMRiwayatOperasi(null, true);
-            resume.setNoRm(TNoRM.getText(), TPasien.getText());
-            resume.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
-            resume.setLocationRelativeTo(internalFrame1);
-            resume.setVisible(true);
-            this.setCursor(Cursor.getDefaultCursor());
-        } // TODO add your handling code here:
-    }
-
-    public void emptTeks() {
+    
+    public void emptTeks(){
         ChkInput.setSelected(true);
         ChkInput1.setSelected(true);
         ChkInput2.setSelected(true);
-        isForm();
+        isForm(); 
         isForm2();
         isForm3();
         TSuhu.setText("");
@@ -15151,17 +14450,11 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         cmbKesadaran.setSelectedIndex(0);
         TNoRw.requestFocus();
     }
-
+    
     private void runBackground(Runnable task) {
-        if (ceksukses) {
-            return;
-        }
-        if (executor.isShutdown() || executor.isTerminated()) {
-            return;
-        }
-        if (!isDisplayable()) {
-            return;
-        }
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
 
         ceksukses = true;
         setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -15183,7 +14476,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
             ceksukses = false;
         }
     }
-
     @Override
     public void dispose() {
         executor.shutdownNow();

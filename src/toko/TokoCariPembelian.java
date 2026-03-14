@@ -91,6 +91,7 @@ public class TokoCariPembelian extends javax.swing.JDialog {
         kdsup.setDocument(new batasInput((byte)5).getKata(kdsup));
         kdptg.setDocument(new batasInput((byte)25).getKata(kdptg));
         kdbar.setDocument(new batasInput((byte)15).getKata(kdbar));
+<<<<<<< HEAD
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));          
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -114,6 +115,9 @@ public class TokoCariPembelian extends javax.swing.JDialog {
                 }
             });
         }  
+=======
+        TCari.setDocument(new batasInput((byte)100).getKata(TCari));  
+>>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -750,13 +754,22 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                       if(sukses==true){
                            Sequel.queryu2("delete from tokopembelian where no_faktur=?",1,new String[]{tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString()});
                            Sequel.Commit();
+<<<<<<< HEAD
                            runBackground(() ->tampil());
+=======
+>>>>>>> master
                       }else{
                           JOptionPane.showMessageDialog(null,"Terjadi kesalahan saat pemrosesan data, transaksi dibatalkan.\nPeriksa kembali data sebelum melanjutkan menyimpan..!!");
                           Sequel.RollBack();
                       }
 
                       Sequel.AutoComitTrue();
+<<<<<<< HEAD
+=======
+                      if(sukses==true){
+                          runBackground(() ->tampil());
+                      }
+>>>>>>> master
                   }   
                } catch (Exception e) {
                    System.out.println("Notif : "+e);
@@ -768,7 +781,10 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                        pscaribeli.close();
                    }
                }
+<<<<<<< HEAD
                runBackground(() ->tampil());
+=======
+>>>>>>> master
            } catch (Exception ex) {
                System.out.println(ex);
            }      
@@ -777,7 +793,32 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
 }//GEN-LAST:event_ppHapusActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         runBackground(() ->tampil());
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void kdjenisKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kdjenisKeyPressed

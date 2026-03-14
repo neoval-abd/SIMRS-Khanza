@@ -115,6 +115,7 @@ public final class PengajuanCutiAdmin extends javax.swing.JDialog {
         Alamat.setDocument(new batasInput((int)100).getKata(Alamat));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
         Jumlah.setDocument(new batasInput((byte)3).getOnlyAngka(Jumlah));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -138,6 +139,8 @@ public final class PengajuanCutiAdmin extends javax.swing.JDialog {
             });
         }
         
+=======
+>>>>>>> master
         ChkInput.setSelected(false);
         isForm();
     }
@@ -1031,6 +1034,31 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         emptTeks();
         runBackground(() ->tampil());
+<<<<<<< HEAD
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void BidangKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BidangKeyPressed

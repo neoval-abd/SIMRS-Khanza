@@ -4142,6 +4142,10 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                 }
             }
         } catch (Exception e) {
+<<<<<<< HEAD
+=======
+            sukses=false;
+>>>>>>> master
             System.out.println("Notif : "+e);
         } 
     }

@@ -135,6 +135,7 @@ public final class LabKeslingPermintaanPengujianSampel extends javax.swing.JDial
         KondisiWadah.setDocument(new batasInput((int)40).getKata(KondisiWadah));
         TCariPeriksa.setDocument(new batasInput((int)100).getKata(TCariPeriksa));
         
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCariPeriksa.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -158,6 +159,8 @@ public final class LabKeslingPermintaanPengujianSampel extends javax.swing.JDial
             });
         }  
         
+=======
+>>>>>>> master
         ChkJln.setSelected(true);
         jam();
         ChkInput.setSelected(false);
@@ -1368,10 +1371,38 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             }
         } catch (Exception e) {
         }
+<<<<<<< HEAD
     }//GEN-LAST:event_formWindowOpened
 
     private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCariPeriksa.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCariPeriksa.getText().length()>2){
+                        runBackground(() ->tampil2());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCariPeriksa.getText().length()>2){
+                        runBackground(() ->tampil2());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCariPeriksa.getText().length()>2){
+                        runBackground(() ->tampil2());
+                    }
+                }
+            });
+        }  
+    }//GEN-LAST:event_formWindowOpened
+
+    private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed
+>>>>>>> master
         LabKeslingNilaiNormalBakuMutu form=new LabKeslingNilaiNormalBakuMutu(null,false);
         form.emptTeks();
         form.isCek();
@@ -1379,7 +1410,10 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         form.setLocationRelativeTo(internalFrame1);
         form.setAlwaysOnTop(false);
         form.setVisible(true);
+<<<<<<< HEAD
         this.setCursor(Cursor.getDefaultCursor());
+=======
+>>>>>>> master
 
     }//GEN-LAST:event_BtnTambahActionPerformed
 

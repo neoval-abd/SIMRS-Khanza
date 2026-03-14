@@ -135,6 +135,7 @@ public class TokoPenjualan extends javax.swing.JDialog {
         Ongkir.setDocument(new batasInput((byte)14).getOnlyAngka(Ongkir));     
         TCari.setDocument(new batasInput((byte)100).getKata(TCari)); 
         
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -158,6 +159,8 @@ public class TokoPenjualan extends javax.swing.JDialog {
             });
         }
         
+=======
+>>>>>>> master
         Bayar.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
             @Override
             public void insertUpdate(DocumentEvent e) {isKembali();}
@@ -183,6 +186,7 @@ public class TokoPenjualan extends javax.swing.JDialog {
         } catch (Exception e) {
             hpptoko="dasar";
         }
+<<<<<<< HEAD
         
         try {
             ps=koneksi.prepareStatement("select Penjualan_Toko,HPP_Barang_Toko,Persediaan_Barang_Toko from set_akun");
@@ -206,6 +210,8 @@ public class TokoPenjualan extends javax.swing.JDialog {
         } catch (Exception e) {
             System.out.println("Notif : "+e);
         }
+=======
+>>>>>>> master
     }
     
 
@@ -1160,9 +1166,61 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
 }//GEN-LAST:event_ppBersihkanActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         runBackground(() ->tampil());
         tampilAkunBayar();
         cariPPN(); 
+=======
+        try {
+            ps=koneksi.prepareStatement("select Penjualan_Toko,HPP_Barang_Toko,Persediaan_Barang_Toko from set_akun");
+            try {
+                rs=ps.executeQuery();
+                if(rs.next()){
+                    Penjualan_Toko=rs.getString("Penjualan_Toko");
+                    HPP_Barang_Toko=rs.getString("HPP_Barang_Toko");
+                    Persediaan_Barang_Toko=rs.getString("Persediaan_Barang_Toko");
+                }
+            } catch (Exception e) {
+                System.out.println("Notif : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif : "+e);
+        }
+        
+        tampilAkunBayar();
+        runBackground(() ->tampil());
+        cariPPN(); 
+        
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed

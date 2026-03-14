@@ -82,6 +82,7 @@ public final class YaskiReferensiKabupaten extends javax.swing.JDialog {
         tbKamar.setDefaultRenderer(Object.class, new WarnaTable());
         
         Kabupaten.setDocument(new batasInput((byte)100).getKata(Kabupaten));
+<<<<<<< HEAD
         
         if(koneksiDB.CARICEPAT().equals("aktif")){
             Kabupaten.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -105,6 +106,8 @@ public final class YaskiReferensiKabupaten extends javax.swing.JDialog {
                 }
             });
         } 
+=======
+>>>>>>> master
     }
     
     
@@ -137,6 +140,14 @@ public final class YaskiReferensiKabupaten extends javax.swing.JDialog {
         setIconImages(null);
         setUndecorated(true);
         setResizable(false);
+<<<<<<< HEAD
+=======
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+>>>>>>> master
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Pencarian Data Referensi Kabupaten ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
@@ -316,6 +327,34 @@ public final class YaskiReferensiKabupaten extends javax.swing.JDialog {
             propinsi.setVisible(true);
     }//GEN-LAST:event_BtnPropinsiActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            Kabupaten.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(Kabupaten.getText().length()>2){
+                        runBackground(() ->tampil(Kabupaten.getText()));
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(Kabupaten.getText().length()>2){
+                        runBackground(() ->tampil(Kabupaten.getText()));
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(Kabupaten.getText().length()>2){
+                        runBackground(() ->tampil(Kabupaten.getText()));
+                    }
+                }
+            });
+        }
+    }//GEN-LAST:event_formWindowOpened
+
+>>>>>>> master
     /**
     * @param args the command line arguments
     */

@@ -97,6 +97,7 @@ public class DlgSirkulasiBerkas extends javax.swing.JDialog {
         KdRuang.setDocument(new batasInput((byte)5).getKata(KdRuang));
         NoRm.setDocument(new batasInput((byte)10).getKata(NoRm));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -119,6 +120,8 @@ public class DlgSirkulasiBerkas extends javax.swing.JDialog {
                 }
             });
         }  
+=======
+>>>>>>> master
         
         WindowInput.setSize(735,275);
         WindowInput.setLocationRelativeTo(null);         
@@ -1106,6 +1109,31 @@ private void RmCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Rm
 
 private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
     runBackground(() ->tampil());
+<<<<<<< HEAD
+=======
+    if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        } 
+>>>>>>> master
 }//GEN-LAST:event_formWindowOpened
 
 private void NoRmKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NoRmKeyPressed

@@ -13,8 +13,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -27,6 +36,11 @@ public class InventarisAsalHibah extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private int i;
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
 
     /** Creates new form DlgProgramStudi
      * @param parent
@@ -66,6 +80,7 @@ public class InventarisAsalHibah extends javax.swing.JDialog {
         Kota.setDocument(new batasInput((byte)20).getKata(Kota));    
         Telp.setDocument(new batasInput((byte)13).getOnlyAngka(Telp)); 
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));    
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -88,6 +103,9 @@ public class InventarisAsalHibah extends javax.swing.JDialog {
                 }
             });
         }   
+=======
+           
+>>>>>>> master
         ChkInput.setSelected(false);
         isForm();           
     }
@@ -507,7 +525,11 @@ public class InventarisAsalHibah extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -544,7 +566,11 @@ public class InventarisAsalHibah extends javax.swing.JDialog {
             tbDokter.requestFocus();
         }else{
             Valid.hapusTable(tabMode,Kd,"pemberihibah","kode_pemberi");
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
             emptTeks();
         }
 }//GEN-LAST:event_BtnHapusActionPerformed
@@ -572,7 +598,11 @@ public class InventarisAsalHibah extends javax.swing.JDialog {
             Valid.editTable(tabMode,"pemberihibah","kode_pemberi","?","kode_pemberi=?,nama_pemberi=?,alamat=?,kota=?,no_telp=?",6,new String[]{
                 Kd.getText(),Nm.getText(),Alamat.getText(),Kota.getText(),Telp.getText(),tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString()
             });
+<<<<<<< HEAD
             if(tabMode.getRowCount()!=0){tampil();}
+=======
+            if(tabMode.getRowCount()!=0){runBackground(() ->tampil());}
+>>>>>>> master
             emptTeks();
 
         }
@@ -622,7 +652,11 @@ public class InventarisAsalHibah extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
@@ -658,7 +692,11 @@ public class InventarisAsalHibah extends javax.swing.JDialog {
             if(Sequel.menyimpantf("pemberihibah","?,?,?,?,?","Kode Pemberi Hibah",5,new String[]{
                 Kd.getText(),Nm.getText(),Alamat.getText(),Kota.getText(),Telp.getText()   
             })==true){
+<<<<<<< HEAD
                 tampil();
+=======
+                runBackground(() ->tampil());
+>>>>>>> master
                 emptTeks();
             }                
         }
@@ -694,7 +732,33 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 }//GEN-LAST:event_ChkInputActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdKeyPressed
@@ -863,4 +927,38 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
     }    
  
+<<<<<<< HEAD
+=======
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

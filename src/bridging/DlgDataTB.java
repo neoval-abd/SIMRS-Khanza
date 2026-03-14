@@ -233,6 +233,7 @@ public final class DlgDataTB extends javax.swing.JDialog {
         PemeriksaanLaboratBulan2NoReg.setDocument(new batasInput((byte)15).getKata(PemeriksaanLaboratBulan2NoReg));
         PemeriksaanLaboratBulan3NoReg.setDocument(new batasInput((byte)15).getKata(PemeriksaanLaboratBulan3NoReg));
         PemeriksaanLaboratBulan5NoReg.setDocument(new batasInput((byte)15).getKata(PemeriksaanLaboratBulan5NoReg));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -255,6 +256,8 @@ public final class DlgDataTB extends javax.swing.JDialog {
                 }
             });
         }  
+=======
+>>>>>>> master
         
         try {
             kdwasor = koneksiDB.KABUPATENSITT();
@@ -427,6 +430,14 @@ public final class DlgDataTB extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+<<<<<<< HEAD
+=======
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+>>>>>>> master
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Pasien Teridentifikasi TB ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
@@ -578,7 +589,11 @@ public final class DlgDataTB extends javax.swing.JDialog {
         jLabel58.setPreferredSize(new java.awt.Dimension(55, 23));
         panelGlass9.add(jLabel58);
 
+<<<<<<< HEAD
         DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-02-2023" }));
+=======
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026" }));
+>>>>>>> master
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -591,7 +606,11 @@ public final class DlgDataTB extends javax.swing.JDialog {
         jLabel59.setPreferredSize(new java.awt.Dimension(24, 23));
         panelGlass9.add(jLabel59);
 
+<<<<<<< HEAD
         DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-02-2023" }));
+=======
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026" }));
+>>>>>>> master
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -791,7 +810,11 @@ public final class DlgDataTB extends javax.swing.JDialog {
         FormInput.add(jLabel12);
         jLabel12.setBounds(270, 160, 54, 23);
 
+<<<<<<< HEAD
         TanggalLaporan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-02-2023 20:17:42" }));
+=======
+        TanggalLaporan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026 05:09:38" }));
+>>>>>>> master
         TanggalLaporan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TanggalLaporan.setName("TanggalLaporan"); // NOI18N
         TanggalLaporan.setOpaque(false);
@@ -1182,7 +1205,11 @@ public final class DlgDataTB extends javax.swing.JDialog {
         FormInput.add(jLabel23);
         jLabel23.setBounds(532, 250, 80, 23);
 
+<<<<<<< HEAD
         MulaiBerobat.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-02-2023" }));
+=======
+        MulaiBerobat.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026" }));
+>>>>>>> master
         MulaiBerobat.setDisplayFormat("dd-MM-yyyy");
         MulaiBerobat.setName("MulaiBerobat"); // NOI18N
         MulaiBerobat.setOpaque(false);
@@ -1429,7 +1456,11 @@ public final class DlgDataTB extends javax.swing.JDialog {
         FormInput.add(jLabel31);
         jLabel31.setBounds(0, 460, 100, 23);
 
+<<<<<<< HEAD
         AkhirBerobat.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-02-2023" }));
+=======
+        AkhirBerobat.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026" }));
+>>>>>>> master
         AkhirBerobat.setDisplayFormat("dd-MM-yyyy");
         AkhirBerobat.setName("AkhirBerobat"); // NOI18N
         AkhirBerobat.setOpaque(false);
@@ -1461,7 +1492,11 @@ public final class DlgDataTB extends javax.swing.JDialog {
         FormInput.add(jLabel32);
         jLabel32.setBounds(512, 460, 100, 23);
 
+<<<<<<< HEAD
         DianjurkanTesHIV.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-02-2023" }));
+=======
+        DianjurkanTesHIV.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026" }));
+>>>>>>> master
         DianjurkanTesHIV.setDisplayFormat("dd-MM-yyyy");
         DianjurkanTesHIV.setName("DianjurkanTesHIV"); // NOI18N
         DianjurkanTesHIV.setOpaque(false);
@@ -1473,7 +1508,11 @@ public final class DlgDataTB extends javax.swing.JDialog {
         FormInput.add(DianjurkanTesHIV);
         DianjurkanTesHIV.setBounds(615, 460, 90, 23);
 
+<<<<<<< HEAD
         TanggalTesHIV.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-02-2023" }));
+=======
+        TanggalTesHIV.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-02-2026" }));
+>>>>>>> master
         TanggalTesHIV.setDisplayFormat("dd-MM-yyyy");
         TanggalTesHIV.setName("TanggalTesHIV"); // NOI18N
         TanggalTesHIV.setOpaque(false);
@@ -2864,6 +2903,34 @@ public final class DlgDataTB extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_PaduanOATKeyPressed
 
+<<<<<<< HEAD
+=======
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+    }//GEN-LAST:event_formWindowOpened
+
+>>>>>>> master
     /**
     * @param args the command line arguments
     */

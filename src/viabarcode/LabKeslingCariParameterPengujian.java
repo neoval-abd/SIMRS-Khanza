@@ -27,7 +27,15 @@ import java.io.FileWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+<<<<<<< HEAD
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -48,6 +56,12 @@ public final class LabKeslingCariParameterPengujian extends javax.swing.JDialog 
     private JsonNode root;
     private JsonNode response;
     private FileReader myObj;
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+    
+>>>>>>> master
     /** Creates new form DlgPenyakit
      * @param parent
      * @param modal */
@@ -82,6 +96,7 @@ public final class LabKeslingCariParameterPengujian extends javax.swing.JDialog 
         }
         tbKamar.setDefaultRenderer(Object.class, new WarnaTable());
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -104,6 +119,8 @@ public final class LabKeslingCariParameterPengujian extends javax.swing.JDialog 
                 }
             });
         }
+=======
+>>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -271,7 +288,11 @@ public final class LabKeslingCariParameterPengujian extends javax.swing.JDialog 
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
+<<<<<<< HEAD
         tampil2();
+=======
+        runBackground(() ->tampil2());
+>>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -284,7 +305,11 @@ public final class LabKeslingCariParameterPengujian extends javax.swing.JDialog 
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
@@ -338,12 +363,44 @@ public final class LabKeslingCariParameterPengujian extends javax.swing.JDialog 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
             if(Valid.daysOld("./cache/parameterpengujianlabkesling.iyem")<30){
+<<<<<<< HEAD
                 tampil2();
             }else{
                 tampil();
             }
         } catch (Exception e) {
         }
+=======
+                runBackground(() ->tampil2());
+            }else{
+                runBackground(() ->tampil());
+            }
+        } catch (Exception e) {
+        }
+        
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil2());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil2());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil2());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -455,11 +512,50 @@ public final class LabKeslingCariParameterPengujian extends javax.swing.JDialog 
             myObj.close();
         } catch (Exception ex) {
             if(ex.toString().contains("java.io.FileNotFoundException")){
+<<<<<<< HEAD
                 tampil();
+=======
+                runBackground(() ->tampil());
+>>>>>>> master
             }else{
                 System.out.println("Notifikasi : "+ex);
             }
         }
         LCount.setText(""+tabMode.getRowCount());
     } 
+<<<<<<< HEAD
+=======
+    
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

@@ -16,13 +16,26 @@ import fungsi.batasInput;
 import fungsi.koneksiDB;
 import fungsi.sekuel;
 import fungsi.validasi;
+<<<<<<< HEAD
+=======
+import java.awt.Cursor;
+>>>>>>> master
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -37,6 +50,11 @@ public class DlgSetNota extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private PreparedStatement ps;
     private ResultSet rs;
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
     private String laborat="No",radiologi="No",operasi="No",obat="No",
             ranap_dokter="No",ranap_paramedis="No",ralan_dokter="No",
             ralan_paramedis="No",tambahan="No",potongan="No",
@@ -695,6 +713,10 @@ public class DlgSetNota extends javax.swing.JDialog {
 
         jLabel22.setText("Centang Dokter di Nota Ralan :");
         jLabel22.setName("jLabel22"); // NOI18N
+<<<<<<< HEAD
+=======
+        jLabel22.setPreferredSize(null);
+>>>>>>> master
         FormInput.add(jLabel22);
         jLabel22.setBounds(0, 370, 165, 23);
 
@@ -711,6 +733,10 @@ public class DlgSetNota extends javax.swing.JDialog {
 
         jLabel23.setText("Centang Dokter di Nota Ranap :");
         jLabel23.setName("jLabel23"); // NOI18N
+<<<<<<< HEAD
+=======
+        jLabel23.setPreferredSize(null);
+>>>>>>> master
         FormInput.add(jLabel23);
         jLabel23.setBounds(0, 400, 165, 23);
 
@@ -1678,7 +1704,11 @@ public class DlgSetNota extends javax.swing.JDialog {
                         "'"+cmbYesCetakPenjualan.getSelectedItem()+"','"+cmbYesTombolNotaPenjualan.getSelectedItem()+"','"+cmbYesCentangObatRalan.getSelectedItem()+"',"+
                         "'"+cmbYesCentangObatRanap.getSelectedItem()+"','"+cmbYesCetakPenjualanToko.getSelectedItem()+"','"+cmbYesTombolNotaPenjualanToko.getSelectedItem()+"',"+
                         "'"+cmbYesCetakLabKesling.getSelectedItem()+"','"+cmbYesTombolNotaLabKesling.getSelectedItem()+"'","Set Nota")==true){
+<<<<<<< HEAD
                     tampil();
+=======
+                    runBackground(() ->tampil());
+>>>>>>> master
                     emptTeks();
                 }                
             }else if(tabMode.getRowCount()>0){
@@ -1740,7 +1770,11 @@ public class DlgSetNota extends javax.swing.JDialog {
                     NamaService.getText(),BesarBiaya.getText(),laborat,radiologi,operasi,obat,ranap_dokter,ranap_paramedis,
                     ralan_dokter,ralan_paramedis,tambahan,potongan,kamar,registrasi,harian,retur_Obat,resep_Pulang
                 })==true){
+<<<<<<< HEAD
                     tampil2();
+=======
+                    runBackground(() ->tampil2());
+>>>>>>> master
                     emptTeks2();
                 }
             }else if(tabMode2.getRowCount()>0){
@@ -1802,7 +1836,11 @@ public class DlgSetNota extends javax.swing.JDialog {
                     NamaService1.getText(),BesarBiaya1.getText(),laborat,radiologi,operasi,obat,ranap_dokter,ranap_paramedis,
                     ralan_dokter,ralan_paramedis,tambahan,potongan,kamar,registrasi,harian,retur_Obat,resep_Pulang
                 })==true){
+<<<<<<< HEAD
                     tampil3();
+=======
+                    runBackground(() ->tampil3());
+>>>>>>> master
                     emptTeks3();
                 }
             }else if(tabMode3.getRowCount()>0){
@@ -1853,7 +1891,11 @@ public class DlgSetNota extends javax.swing.JDialog {
                 JOptionPane.showMessageDialog(null,"Maaf, Gagal menghapus. Pilih dulu data yang mau dihapus.\nKlik data pada table untuk memilih...!!!!");
             }else if(!NotaRalan.getText().trim().equals("")){
                 Sequel.queryu("delete from set_nota");
+<<<<<<< HEAD
                 tampil();
+=======
+                runBackground(() ->tampil());
+>>>>>>> master
                 emptTeks();
             }
         }else if(TabSetting.getSelectedIndex()==1){
@@ -1864,7 +1906,11 @@ public class DlgSetNota extends javax.swing.JDialog {
                 JOptionPane.showMessageDialog(null,"Maaf, Gagal menghapus. Pilih dulu data yang mau dihapus.\nKlik data pada table untuk memilih...!!!!");
             }else if(!NamaService.getText().trim().equals("")){
                 Sequel.queryu("delete from set_service_ranap");
+<<<<<<< HEAD
                 tampil2();
+=======
+                runBackground(() ->tampil2());
+>>>>>>> master
                 emptTeks2();
             }
         }else if(TabSetting.getSelectedIndex()==2){
@@ -1875,7 +1921,11 @@ public class DlgSetNota extends javax.swing.JDialog {
                 JOptionPane.showMessageDialog(null,"Maaf, Gagal menghapus. Pilih dulu data yang mau dihapus.\nKlik data pada table untuk memilih...!!!!");
             }else if(!NamaService1.getText().trim().equals("")){
                 Sequel.queryu("delete from set_service_ranap_piutang");
+<<<<<<< HEAD
                 tampil3();
+=======
+                runBackground(() ->tampil3());
+>>>>>>> master
                 emptTeks3();
             }
         }
@@ -1931,7 +1981,11 @@ private void NotaRalanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
 }//GEN-LAST:event_NotaRalanKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
        tampil();
+=======
+       runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void cmbYesRalanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbYesRalanKeyPressed
@@ -1984,7 +2038,11 @@ private void NotaRalanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                         "'"+cmbYesCetakPenjualan.getSelectedItem()+"','"+cmbYesTombolNotaPenjualan.getSelectedItem()+"','"+cmbYesCentangObatRalan.getSelectedItem()+"',"+
                         "'"+cmbYesCentangObatRanap.getSelectedItem()+"','"+cmbYesCetakPenjualanToko.getSelectedItem()+"','"+cmbYesTombolNotaPenjualanToko.getSelectedItem()+"',"+
                         "'"+cmbYesCetakLabKesling.getSelectedItem()+"','"+cmbYesTombolNotaLabKesling.getSelectedItem()+"'","Set Nota")==true){
+<<<<<<< HEAD
                     tampil();
+=======
+                    runBackground(() ->tampil());
+>>>>>>> master
                     emptTeks();
                 } 
             }
@@ -2044,7 +2102,11 @@ private void NotaRalanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     NamaService.getText(),BesarBiaya.getText(),laborat,radiologi,operasi,obat,ranap_dokter,ranap_paramedis,
                     ralan_dokter,ralan_paramedis,tambahan,potongan,kamar,registrasi,harian,retur_Obat,resep_Pulang
                 })==true){
+<<<<<<< HEAD
                     tampil2();
+=======
+                    runBackground(() ->tampil2());
+>>>>>>> master
                     emptTeks2();
                 }
             }
@@ -2104,7 +2166,11 @@ private void NotaRalanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     NamaService1.getText(),BesarBiaya1.getText(),laborat,radiologi,operasi,obat,ranap_dokter,ranap_paramedis,
                     ralan_dokter,ralan_paramedis,tambahan,potongan,kamar,registrasi,harian,retur_Obat,resep_Pulang
                 })==true){
+<<<<<<< HEAD
                     tampil3();
+=======
+                    runBackground(() ->tampil3());
+>>>>>>> master
                     emptTeks3();
                 }
             }
@@ -2170,11 +2236,19 @@ private void NotaRalanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
 
     private void TabSettingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabSettingMouseClicked
         if(TabSetting.getSelectedIndex()==0){
+<<<<<<< HEAD
             tampil();
         }else if(TabSetting.getSelectedIndex()==1){
             tampil2();
         }else if(TabSetting.getSelectedIndex()==2){
             tampil3();
+=======
+            runBackground(() ->tampil());
+        }else if(TabSetting.getSelectedIndex()==1){
+            runBackground(() ->tampil2());
+        }else if(TabSetting.getSelectedIndex()==2){
+            runBackground(() ->tampil3());
+>>>>>>> master
         }
     }//GEN-LAST:event_TabSettingMouseClicked
 
@@ -2588,7 +2662,11 @@ private void NotaRalanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.Table tbAdmin3;
     // End of variables declaration//GEN-END:variables
 
+<<<<<<< HEAD
     public void tampil() {
+=======
+    private void tampil() {
+>>>>>>> master
         Valid.tabelKosong(tabMode);
         try{    
             ps=koneksi.prepareStatement("select * from set_nota ");
@@ -2643,7 +2721,11 @@ private void NotaRalanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         }
     }
     
+<<<<<<< HEAD
     public void tampil2() {
+=======
+    private void tampil2() {
+>>>>>>> master
         Valid.tabelKosong(tabMode2);
         try{    
             ps=koneksi.prepareStatement("select * from set_service_ranap ");
@@ -2684,7 +2766,11 @@ private void NotaRalanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         }
     }
     
+<<<<<<< HEAD
     public void tampil3() {
+=======
+    private void tampil3() {
+>>>>>>> master
         Valid.tabelKosong(tabMode3);
         try{    
             ps=koneksi.prepareStatement("select * from set_service_ranap_piutang ");
@@ -3045,4 +3131,39 @@ private void NotaRalanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             ChkInput3.setVisible(true);
         }
     }
+<<<<<<< HEAD
+=======
+    
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

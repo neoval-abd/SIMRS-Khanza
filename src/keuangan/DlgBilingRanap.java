@@ -51,6 +51,10 @@ import inventory.DlgResepPulang;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+<<<<<<< HEAD
+=======
+import javax.swing.event.DocumentEvent;
+>>>>>>> master
 import simrskhanza.DlgCariCaraBayar;
 import simrskhanza.DlgCariPeriksaLabMB;
 import simrskhanza.DlgCariPeriksaLabPA;
@@ -4711,6 +4715,51 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
             }
         } catch (Exception e) {
         }
+<<<<<<< HEAD
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        BtnCariBayarActionPerformed(null);
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        BtnCariBayarActionPerformed(null);
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        BtnCariBayarActionPerformed(null);
+                    }
+                }
+            });
+            TCari1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari1.getText().length()>2){
+                        btnCariPiutangActionPerformed(null);
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari1.getText().length()>2){
+                        btnCariPiutangActionPerformed(null);
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari1.getText().length()>2){
+                        btnCariPiutangActionPerformed(null);
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void tbAkunPiutangPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tbAkunPiutangPropertyChange

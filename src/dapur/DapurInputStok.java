@@ -26,8 +26,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -47,6 +56,11 @@ public class DapurInputStok extends javax.swing.JDialog {
     private riwayatdapur Trackbarang=new riwayatdapur();
     private boolean sukses=true;    
     private String order="order by dapurbarang.nama_brng";
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
 
     /** Creates new form DlgProgramStudi
      * @param parent
@@ -111,6 +125,7 @@ public class DapurInputStok extends javax.swing.JDialog {
 
         catatan.setDocument(new batasInput((byte)60).getKata(catatan));  
         TCari.setDocument(new batasInput((byte)100).getKata(TCari)); 
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -133,6 +148,8 @@ public class DapurInputStok extends javax.swing.JDialog {
                 }
             });
         }        
+=======
+>>>>>>> master
         TCari.requestFocus();
     }
     
@@ -381,6 +398,14 @@ public class DapurInputStok extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+<<<<<<< HEAD
+=======
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+>>>>>>> master
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Stok Opname Barang Dapur Kering & Basah ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
@@ -659,7 +684,10 @@ public class DapurInputStok extends javax.swing.JDialog {
 }//GEN-LAST:event_tbDokterKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
+<<<<<<< HEAD
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+=======
+>>>>>>> master
         DapurStokOpname ipsrsopname=new DapurStokOpname(null,false);
         ipsrsopname.isCek(); 
         ipsrsopname.emptTeks();
@@ -667,7 +695,10 @@ public class DapurInputStok extends javax.swing.JDialog {
         ipsrsopname.setLocationRelativeTo(internalFrame1);
         ipsrsopname.setAlwaysOnTop(false);
         ipsrsopname.setVisible(true);
+<<<<<<< HEAD
         this.setCursor(Cursor.getDefaultCursor());
+=======
+>>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
@@ -730,7 +761,11 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                     for(index=0;index<tbDokter.getRowCount();index++){   
                         tbDokter.setValueAt("",index,0);        
                     }
+<<<<<<< HEAD
                     tampil();
+=======
+                    runBackground(() ->tampil());
+>>>>>>> master
                 }
             }
         }
@@ -754,7 +789,11 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
 
 private void TCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCariKeyPressed
        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
         }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_DOWN){
             BtnCari1.requestFocus();
         }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_UP){
@@ -765,12 +804,20 @@ private void TCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCa
 }//GEN-LAST:event_TCariKeyPressed
 
 private void BtnCari1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCari1ActionPerformed
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnCari1ActionPerformed
 
 private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCari1KeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
         }else{
             Valid.pindah(evt, TCari, BtnSimpan);
         }
@@ -814,7 +861,10 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     }//GEN-LAST:event_tbDokterPropertyChange
 
     private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed
+<<<<<<< HEAD
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+=======
+>>>>>>> master
         DapurBarang barang=new DapurBarang(null,false);
         barang.emptTeks();
         barang.isCek();
@@ -822,7 +872,10 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         barang.setLocationRelativeTo(internalFrame1);
         barang.setAlwaysOnTop(false);
         barang.setVisible(true);
+<<<<<<< HEAD
         this.setCursor(Cursor.getDefaultCursor());
+=======
+>>>>>>> master
     }//GEN-LAST:event_BtnTambahActionPerformed
 
     private void ppBelumOpnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppBelumOpnameActionPerformed
@@ -905,42 +958,74 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
 
     private void MnKodeBarangDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnKodeBarangDescActionPerformed
         order="order by dapurbarang.kode_brng desc";
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_MnKodeBarangDescActionPerformed
 
     private void MnKodeBarangAscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnKodeBarangAscActionPerformed
         order="order by dapurbarang.kode_brng asc";
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_MnKodeBarangAscActionPerformed
 
     private void MnNamaBarangDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnNamaBarangDescActionPerformed
         order="order by dapurbarang.nama_brng desc";
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_MnNamaBarangDescActionPerformed
 
     private void MnNamaBarangAscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnNamaBarangAscActionPerformed
         order="order by dapurbarang.nama_brng asc";
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_MnNamaBarangAscActionPerformed
 
     private void MnKategoriAscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnKategoriAscActionPerformed
         order="order by dapurbarang.jenis desc";
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_MnKategoriAscActionPerformed
 
     private void MnKategoriDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnKategoriDescActionPerformed
         order="order by dapurbarang.jenis asc";
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_MnKategoriDescActionPerformed
 
     private void MnSatuanDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSatuanDescActionPerformed
         order="order by dapurbarang.kode_sat desc";
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_MnSatuanDescActionPerformed
 
     private void MnSatuanAscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSatuanAscActionPerformed
         order="order by dapurbarang.kode_sat asc";
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_MnSatuanAscActionPerformed
 
     private void BtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrintActionPerformed
@@ -982,6 +1067,35 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         }
     }//GEN-LAST:event_BtnPrintKeyPressed
 
+<<<<<<< HEAD
+=======
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        runBackground(() ->tampil());
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+    }//GEN-LAST:event_formWindowOpened
+
+>>>>>>> master
     /**
     * @param args the command line arguments
     */
@@ -1038,7 +1152,11 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private widget.Table tbDokter;
     // End of variables declaration//GEN-END:variables
 
+<<<<<<< HEAD
     public void tampil() {        
+=======
+    private void tampil() {        
+>>>>>>> master
         try{     
             jml=0;
             for(i=0;i<tbDokter.getRowCount();i++){
@@ -1085,6 +1203,7 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
             }
             pstampil=koneksi.prepareStatement(
                 "select dapurbarang.kode_brng, dapurbarang.nama_brng,dapurbarang.jenis, dapurbarang.kode_sat, "+
+<<<<<<< HEAD
                 "dapurbarang.harga,dapurbarang.stok from dapurbarang where dapurbarang.status='1' and "+
                 "(dapurbarang.kode_brng like ? or dapurbarang.nama_brng like ? "+
                 "or dapurbarang.kode_sat like ? or dapurbarang.jenis like ?) "+order);
@@ -1093,6 +1212,20 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                 pstampil.setString(2,"%"+TCari.getText().trim()+"%");
                 pstampil.setString(3,"%"+TCari.getText().trim()+"%");
                 pstampil.setString(4,"%"+TCari.getText().trim()+"%");
+=======
+                "dapurbarang.harga,dapurbarang.stok from dapurbarang where dapurbarang.status='1' "+
+                (TCari.getText().trim().equals("")?"":"and (dapurbarang.kode_brng like ? or dapurbarang.nama_brng like ? "+
+                "or dapurbarang.kode_sat like ? or dapurbarang.jenis like ?) ")+order
+            );
+            try {
+                if(!TCari.getText().trim().equals("")){
+                    pstampil.setString(1,"%"+TCari.getText().trim()+"%");
+                    pstampil.setString(2,"%"+TCari.getText().trim()+"%");
+                    pstampil.setString(3,"%"+TCari.getText().trim()+"%");
+                    pstampil.setString(4,"%"+TCari.getText().trim()+"%");
+                }
+                    
+>>>>>>> master
                 rstampil=pstampil.executeQuery();
                 while(rstampil.next()){                            
                     tabMode.addRow(new Object[]{
@@ -1195,4 +1328,38 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
          BtnSimpan.setEnabled(akses.getdapur_opname());   
     }
 
+<<<<<<< HEAD
+=======
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

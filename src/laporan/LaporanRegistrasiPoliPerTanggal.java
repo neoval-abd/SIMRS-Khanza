@@ -71,6 +71,7 @@ public class LaporanRegistrasiPoliPerTanggal extends javax.swing.JDialog {
         tbJadwal.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbJadwal.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         Valid.LoadTahun(ThnCari);
+<<<<<<< HEAD
 
 
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));  
@@ -97,6 +98,9 @@ public class LaporanRegistrasiPoliPerTanggal extends javax.swing.JDialog {
             });
         }  
         
+=======
+        TCari.setDocument(new batasInput((byte)100).getKata(TCari)); 
+>>>>>>> master
     }
    
 
@@ -362,7 +366,32 @@ public class LaporanRegistrasiPoliPerTanggal extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void BtnKeluarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnKeluarKeyPressed

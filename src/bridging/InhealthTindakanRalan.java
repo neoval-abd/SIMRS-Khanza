@@ -27,8 +27,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -46,7 +55,12 @@ public final class InhealthTindakanRalan extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;    
     private int i=0;
+<<<<<<< HEAD
     private DlgJnsPerawatanRalan barang=new DlgJnsPerawatanRalan(null,false);
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
     
     /** Creates new form DlgJnsPerawatanRalan
      * @param parent
@@ -83,6 +97,7 @@ public final class InhealthTindakanRalan extends javax.swing.JDialog {
 
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));    
         KdTindakanInhealth.setDocument(new batasInput((byte)20).getKata(KdTindakanInhealth));    
+<<<<<<< HEAD
         
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -145,6 +160,8 @@ public final class InhealthTindakanRalan extends javax.swing.JDialog {
         
         
     
+=======
+>>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -458,6 +475,45 @@ public final class InhealthTindakanRalan extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPoliRSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliRSActionPerformed
+<<<<<<< HEAD
+=======
+        DlgJnsPerawatanRalan barang=new DlgJnsPerawatanRalan(null,false);
+        barang.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(barang.getTable().getSelectedRow()!= -1){                    
+                    kdtindakan.setText(barang.getTable().getValueAt(barang.getTable().getSelectedRow(),1).toString());
+                    TTindakan.setText(barang.getTable().getValueAt(barang.getTable().getSelectedRow(),2).toString());
+                }
+                kdtindakan.requestFocus();
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        }); 
+        
+        barang.getTable().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode()==KeyEvent.VK_SPACE){
+                    barang.dispose();
+                }
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        });
+>>>>>>> master
         barang.isCek();        
         barang.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         barang.setLocationRelativeTo(internalFrame1);
@@ -477,7 +533,11 @@ public final class InhealthTindakanRalan extends javax.swing.JDialog {
             if(Sequel.menyimpantf("inhealth_tindakan_ralan","?,?","Mapping Tindakan",2,new String[]{
                 kdtindakan.getText(),KdTindakanInhealth.getText()
             })==true){
+<<<<<<< HEAD
                 tampil();
+=======
+                runBackground(() ->tampil());
+>>>>>>> master
                 emptTeks();
             }                
         }
@@ -501,7 +561,11 @@ public final class InhealthTindakanRalan extends javax.swing.JDialog {
 
     private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHapusActionPerformed
         Valid.hapusTable(tabMode,kdtindakan,"inhealth_tindakan_ralan","kd_jenis_prw");
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
         emptTeks();
 }//GEN-LAST:event_BtnHapusActionPerformed
 
@@ -524,7 +588,11 @@ public final class InhealthTindakanRalan extends javax.swing.JDialog {
                         kdtindakan.getText(),KdTindakanInhealth.getText(),tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),0).toString()
                     })==true){
                     emptTeks();
+<<<<<<< HEAD
                     tampil();
+=======
+                    runBackground(() ->tampil());
+>>>>>>> master
                 }
             }                
         }
@@ -587,7 +655,11 @@ public final class InhealthTindakanRalan extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -600,13 +672,22 @@ public final class InhealthTindakanRalan extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
+<<<<<<< HEAD
             tampil();
             TCari.setText("");
+=======
+            TCari.setText("");
+            runBackground(() ->tampil());
+>>>>>>> master
         }else{
             Valid.pindah(evt, BtnPrint, BtnKeluar);
         }
@@ -633,8 +714,35 @@ public final class InhealthTindakanRalan extends javax.swing.JDialog {
 }//GEN-LAST:event_tbJnsPerawatanKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         tampil();
         emptTeks();
+=======
+        runBackground(() ->tampil());
+        emptTeks();
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        } 
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -741,10 +849,44 @@ public final class InhealthTindakanRalan extends javax.swing.JDialog {
         return tbJnsPerawatan;
     }    
 
+<<<<<<< HEAD
    
     
     
     
 
     
+=======
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

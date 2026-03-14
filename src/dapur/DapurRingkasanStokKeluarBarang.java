@@ -93,6 +93,7 @@ public class DapurRingkasanStokKeluarBarang extends javax.swing.JDialog {
         KdPeg.setDocument(new batasInput((byte)20).getKata(KdPeg));
         kdbar.setDocument(new batasInput((byte)15).getKata(kdbar));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));      
+<<<<<<< HEAD
         Keterangan.setDocument(new batasInput((byte)100).getKata(Keterangan));          
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -116,6 +117,9 @@ public class DapurRingkasanStokKeluarBarang extends javax.swing.JDialog {
                 }
             });
         }
+=======
+        Keterangan.setDocument(new batasInput((byte)100).getKata(Keterangan));        
+>>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -887,7 +891,32 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     }//GEN-LAST:event_BtnPrintKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         runBackground(() ->tampil());
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void MnKodeBarangDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnKodeBarangDescActionPerformed

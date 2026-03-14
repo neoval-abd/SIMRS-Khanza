@@ -28,8 +28,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
@@ -46,9 +55,14 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private PreparedStatement ps;
     private ResultSet rs;
+<<<<<<< HEAD
     private PerpustakaanInventaris perpustakaan_inventaris=new PerpustakaanInventaris(null,false);
     private PerpustakaanAnggota anggota=new PerpustakaanAnggota(null,false);
     private PerpustakaanDenda denda=new PerpustakaanDenda(null,false);
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
     private double perhari=Sequel.cariIsiAngka("select denda_perhari from perpustakaan_set_peminjaman"),besardenda=0;
 
     /** Creates new form DlgSpesialis
@@ -156,6 +170,7 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
         Keterangan.setDocument(new batasInput((byte)50).getKata(Keterangan));
         
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -179,6 +194,8 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
             });
         }
         
+=======
+>>>>>>> master
         Keterlambatan.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -229,6 +246,7 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
                 isDendaLain();
             }
         });
+<<<<<<< HEAD
         
         perpustakaan_inventaris.addWindowListener(new WindowListener() {
             @Override
@@ -339,6 +357,8 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
             @Override
             public void keyReleased(KeyEvent e) {}
         });
+=======
+>>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -963,7 +983,11 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
                             Double.toString(Double.parseDouble(Keterlambatan.getText())*perhari)
                         })==true){
                             emptTeks();
+<<<<<<< HEAD
                             tampil();
+=======
+                            runBackground(() ->tampil());
+>>>>>>> master
                     }
                 }
             }else if(TabRawat.getSelectedIndex()==1){
@@ -979,7 +1003,11 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
                             Double.toString(Double.parseDouble(Harga.getText())*(Double.parseDouble(DendaLain.getText())/100)),Keterangan.getText()
                         })==true){
                             emptTeks2();
+<<<<<<< HEAD
                             tampil2();
+=======
+                            runBackground(() ->tampil2());
+>>>>>>> master
                     }
                 }
             }
@@ -1009,7 +1037,11 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
                     if(Sequel.queryu2tf("delete from perpustakaan_bayar_denda_harian where tgl_denda=? and no_anggota=? and no_inventaris=?",3,new String[]{
                             tbBayarDenda.getValueAt(tbBayarDenda.getSelectedRow(),0).toString(),tbBayarDenda.getValueAt(tbBayarDenda.getSelectedRow(),1).toString(),tbBayarDenda.getValueAt(tbBayarDenda.getSelectedRow(),3).toString()
                         })==true){
+<<<<<<< HEAD
                             tampil();
+=======
+                            runBackground(() ->tampil());
+>>>>>>> master
                             emptTeks();
                     }
                 }
@@ -1027,7 +1059,11 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
                             tbDendaLain.getValueAt(tbDendaLain.getSelectedRow(),0).toString(),tbDendaLain.getValueAt(tbDendaLain.getSelectedRow(),1).toString(),
                             tbDendaLain.getValueAt(tbDendaLain.getSelectedRow(),3).toString(),tbDendaLain.getValueAt(tbDendaLain.getSelectedRow(),5).toString()
                         })==true){
+<<<<<<< HEAD
                             tampil2();
+=======
+                            runBackground(() ->tampil2());
+>>>>>>> master
                             emptTeks2();
                     }
                 }
@@ -1059,9 +1095,15 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
         if(TabRawat.getSelectedIndex()==0){
+<<<<<<< HEAD
             tampil();
         }else if(TabRawat.getSelectedIndex()==1){
             tampil2();
+=======
+            runBackground(() ->tampil());
+        }else if(TabRawat.getSelectedIndex()==1){
+            runBackground(() ->tampil2());
+>>>>>>> master
         }
 }//GEN-LAST:event_BtnCariActionPerformed
 
@@ -1080,9 +1122,15 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
         if(TabRawat.getSelectedIndex()==0){
+<<<<<<< HEAD
             tampil();
         }else if(TabRawat.getSelectedIndex()==1){
             tampil2();
+=======
+            runBackground(() ->tampil());
+        }else if(TabRawat.getSelectedIndex()==1){
+            runBackground(() ->tampil2());
+>>>>>>> master
         }
         
 }//GEN-LAST:event_BtnAllActionPerformed
@@ -1092,7 +1140,32 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnAllKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         tampil();
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void tglItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_tglItemStateChanged
@@ -1115,6 +1188,45 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
     }//GEN-LAST:event_TNoAKeyPressed
 
     private void btnAngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAngActionPerformed
+<<<<<<< HEAD
+=======
+        PerpustakaanAnggota anggota=new PerpustakaanAnggota(null,false);
+        anggota.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(anggota.getTable().getSelectedRow()!= -1){                   
+                    TNoA.setText(anggota.getTable().getValueAt(anggota.getTable().getSelectedRow(),0).toString());
+                    TNmA.setText(anggota.getTable().getValueAt(anggota.getTable().getSelectedRow(),1).toString());
+                }   
+                TNoA.requestFocus();
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
+        
+        anggota.getTable().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode()==KeyEvent.VK_SPACE){
+                    anggota.dispose();
+                }
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        });
+>>>>>>> master
         anggota.isCek();
         anggota.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         anggota.setLocationRelativeTo(internalFrame1);
@@ -1138,6 +1250,46 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
     }//GEN-LAST:event_TNoIKeyPressed
 
     private void btnInvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvActionPerformed
+<<<<<<< HEAD
+=======
+        PerpustakaanInventaris perpustakaan_inventaris=new PerpustakaanInventaris(null,false);
+        perpustakaan_inventaris.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(perpustakaan_inventaris.getTable().getSelectedRow()!= -1){  
+                    TNoI.setText(perpustakaan_inventaris.getTable().getValueAt(perpustakaan_inventaris.getTable().getSelectedRow(),0).toString());
+                    TJudul.setText(perpustakaan_inventaris.getTable().getValueAt(perpustakaan_inventaris.getTable().getSelectedRow(),1).toString()+", "+perpustakaan_inventaris.getTable().getValueAt(perpustakaan_inventaris.getTable().getSelectedRow(),2).toString());
+                    Harga.setText(perpustakaan_inventaris.getTable().getValueAt(perpustakaan_inventaris.getTable().getSelectedRow(),11).toString());
+                    TNoI.requestFocus();
+                }                
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
+        
+        perpustakaan_inventaris.getTable().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode()==KeyEvent.VK_SPACE){
+                    perpustakaan_inventaris.dispose();
+                }
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        });
+>>>>>>> master
         perpustakaan_inventaris.isCek();
         perpustakaan_inventaris.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         perpustakaan_inventaris.setLocationRelativeTo(internalFrame1);
@@ -1155,9 +1307,15 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
 
     private void TabRawatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabRawatMouseClicked
         if(TabRawat.getSelectedIndex()==0){
+<<<<<<< HEAD
             tampil();
         }else if(TabRawat.getSelectedIndex()==1){
             tampil2();
+=======
+            runBackground(() ->tampil());
+        }else if(TabRawat.getSelectedIndex()==1){
+            runBackground(() ->tampil2());
+>>>>>>> master
         }
     }//GEN-LAST:event_TabRawatMouseClicked
 
@@ -1220,6 +1378,46 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
     }//GEN-LAST:event_KdJenisDendaKeyPressed
 
     private void BtnDendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDendaActionPerformed
+<<<<<<< HEAD
+=======
+        PerpustakaanDenda denda=new PerpustakaanDenda(null,false);
+        denda.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(denda.getTable().getSelectedRow()!= -1){                   
+                    KdJenisDenda.setText(denda.getTable().getValueAt(denda.getTable().getSelectedRow(),0).toString());
+                    JenisDenda.setText(denda.getTable().getValueAt(denda.getTable().getSelectedRow(),1).toString());
+                    DendaLain.setText(denda.getTable().getValueAt(denda.getTable().getSelectedRow(),2).toString());
+                }   
+                KdJenisDenda.requestFocus();
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
+        
+        denda.getTable().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode()==KeyEvent.VK_SPACE){
+                    denda.dispose();
+                }
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        });
+>>>>>>> master
         denda.isCek();
         denda.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         denda.setLocationRelativeTo(internalFrame1);
@@ -1399,13 +1597,18 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
     private widget.Tanggal tgl;
     // End of variables declaration//GEN-END:variables
 
+<<<<<<< HEAD
     public void tampil() {
+=======
+    private void tampil() {
+>>>>>>> master
         Valid.tabelKosong(tabMode);
         try {
             ps=koneksi.prepareStatement(
                 "select perpustakaan_bayar_denda_harian.tgl_denda,perpustakaan_bayar_denda_harian.no_anggota,perpustakaan_anggota.nama_anggota,"+
                 "perpustakaan_inventaris.no_inventaris,perpustakaan_buku.kode_buku, perpustakaan_buku.judul_buku, "+
                 "perpustakaan_bayar_denda_harian.keterlambatan,perpustakaan_bayar_denda_harian.besar_denda from perpustakaan_inventaris "+
+<<<<<<< HEAD
                 "inner join perpustakaan_buku inner join perpustakaan_bayar_denda_harian inner join perpustakaan_anggota on "+
                 "perpustakaan_buku.kode_buku=perpustakaan_inventaris.kode_buku and perpustakaan_bayar_denda_harian.no_anggota=perpustakaan_anggota.no_anggota "+
                 "and perpustakaan_inventaris.no_inventaris=perpustakaan_bayar_denda_harian.no_inventaris where "+
@@ -1414,10 +1617,20 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
                 "perpustakaan_bayar_denda_harian.tgl_denda between ? and ? and perpustakaan_inventaris.no_inventaris like ? or "+
                 "perpustakaan_bayar_denda_harian.tgl_denda between ? and ? and perpustakaan_buku.kode_buku like ? or "+
                 "perpustakaan_bayar_denda_harian.tgl_denda between ? and ? and perpustakaan_buku.judul_buku like ? order by perpustakaan_bayar_denda_harian.tgl_denda desc"
+=======
+                "inner join perpustakaan_buku on perpustakaan_buku.kode_buku=perpustakaan_inventaris.kode_buku "+
+                "inner join perpustakaan_bayar_denda_harian on perpustakaan_inventaris.no_inventaris=perpustakaan_bayar_denda_harian.no_inventaris "+
+                "inner join perpustakaan_anggota on perpustakaan_bayar_denda_harian.no_anggota=perpustakaan_anggota.no_anggota "+
+                "where perpustakaan_bayar_denda_harian.tgl_denda between ? and ? "+(TCari.getText().trim().equals("")?"":
+                "and (perpustakaan_bayar_denda_harian.no_anggota like ? or perpustakaan_anggota.nama_anggota like ? or "+
+                "perpustakaan_inventaris.no_inventaris like ? or perpustakaan_buku.kode_buku like ? or perpustakaan_buku.judul_buku like ?) ")+
+                "order by perpustakaan_bayar_denda_harian.tgl_denda desc"
+>>>>>>> master
             );
             try {
                 ps.setString(1,Valid.SetTgl(TglPinjam1.getSelectedItem()+""));
                 ps.setString(2,Valid.SetTgl(TglPinjam2.getSelectedItem()+""));
+<<<<<<< HEAD
                 ps.setString(3,"%"+TCari.getText().trim()+"%");
                 ps.setString(4,Valid.SetTgl(TglPinjam1.getSelectedItem()+""));
                 ps.setString(5,Valid.SetTgl(TglPinjam2.getSelectedItem()+""));
@@ -1431,6 +1644,15 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
                 ps.setString(13,Valid.SetTgl(TglPinjam1.getSelectedItem()+""));
                 ps.setString(14,Valid.SetTgl(TglPinjam2.getSelectedItem()+""));
                 ps.setString(15,"%"+TCari.getText().trim()+"%");
+=======
+                if(!TCari.getText().trim().equals("")){
+                    ps.setString(3,"%"+TCari.getText().trim()+"%");
+                    ps.setString(4,"%"+TCari.getText().trim()+"%");
+                    ps.setString(5,"%"+TCari.getText().trim()+"%");
+                    ps.setString(6,"%"+TCari.getText().trim()+"%");
+                    ps.setString(7,"%"+TCari.getText().trim()+"%");
+                }   
+>>>>>>> master
                 rs=ps.executeQuery();
                 besardenda=0;
                 while(rs.next()){
@@ -1457,7 +1679,11 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
         }
     }
     
+<<<<<<< HEAD
     public void tampil2() {
+=======
+    private void tampil2() {
+>>>>>>> master
         Valid.tabelKosong(tabMode2);
         try {
             ps=koneksi.prepareStatement(
@@ -1465,6 +1691,7 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
                 "perpustakaan_inventaris.no_inventaris,perpustakaan_buku.kode_buku, perpustakaan_buku.judul_buku, "+
                 "perpustakaan_denda.kode_denda,perpustakaan_denda.jenis_denda,perpustakaan_denda.besar_denda as denda,"+
                 "perpustakaan_bayar_denda.besar_denda,perpustakaan_bayar_denda.keterangan_denda from perpustakaan_inventaris "+
+<<<<<<< HEAD
                 "inner join perpustakaan_buku inner join perpustakaan_bayar_denda inner join perpustakaan_anggota inner join perpustakaan_denda on "+
                 "perpustakaan_buku.kode_buku=perpustakaan_inventaris.kode_buku and perpustakaan_bayar_denda.no_anggota=perpustakaan_anggota.no_anggota "+
                 "and perpustakaan_inventaris.no_inventaris=perpustakaan_bayar_denda.no_inventaris and perpustakaan_bayar_denda.kode_denda=perpustakaan_denda.kode_denda where "+
@@ -1474,10 +1701,21 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
                 "perpustakaan_bayar_denda.tgl_denda between ? and ? and perpustakaan_denda.jenis_denda like ? or "+
                 "perpustakaan_bayar_denda.tgl_denda between ? and ? and perpustakaan_buku.kode_buku like ? or "+
                 "perpustakaan_bayar_denda.tgl_denda between ? and ? and perpustakaan_buku.judul_buku like ? order by perpustakaan_bayar_denda.tgl_denda desc"
+=======
+                "inner join perpustakaan_buku on perpustakaan_buku.kode_buku=perpustakaan_inventaris.kode_buku "+
+                "inner join perpustakaan_bayar_denda on perpustakaan_inventaris.no_inventaris=perpustakaan_bayar_denda.no_inventaris "+
+                "inner join perpustakaan_anggota on perpustakaan_bayar_denda.no_anggota=perpustakaan_anggota.no_anggota "+
+                "inner join perpustakaan_denda on perpustakaan_bayar_denda.kode_denda=perpustakaan_denda.kode_denda "+
+                "where perpustakaan_bayar_denda.tgl_denda between ? and ? "+(TCari.getText().trim().equals("")?"":
+                "and (perpustakaan_bayar_denda.no_anggota like ? or perpustakaan_anggota.nama_anggota like ? or "+
+                "perpustakaan_inventaris.no_inventaris like ? or perpustakaan_denda.jenis_denda like ? or perpustakaan_buku.kode_buku like ? or "+
+                "perpustakaan_buku.judul_buku like ?) ")+"order by perpustakaan_bayar_denda.tgl_denda desc"
+>>>>>>> master
             );
             try {
                 ps.setString(1,Valid.SetTgl(TglPinjam1.getSelectedItem()+""));
                 ps.setString(2,Valid.SetTgl(TglPinjam2.getSelectedItem()+""));
+<<<<<<< HEAD
                 ps.setString(3,"%"+TCari.getText().trim()+"%");
                 ps.setString(4,Valid.SetTgl(TglPinjam1.getSelectedItem()+""));
                 ps.setString(5,Valid.SetTgl(TglPinjam2.getSelectedItem()+""));
@@ -1496,6 +1734,17 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
                 ps.setString(18,"%"+TCari.getText().trim()+"%");
                 rs=ps.executeQuery();
                 
+=======
+                if(!TCari.getText().trim().equals("")){
+                    ps.setString(3,"%"+TCari.getText().trim()+"%");
+                    ps.setString(4,"%"+TCari.getText().trim()+"%");
+                    ps.setString(5,"%"+TCari.getText().trim()+"%");
+                    ps.setString(6,"%"+TCari.getText().trim()+"%");
+                    ps.setString(7,"%"+TCari.getText().trim()+"%");
+                    ps.setString(8,"%"+TCari.getText().trim()+"%");
+                }   
+                rs=ps.executeQuery();
+>>>>>>> master
                 besardenda=0;
                 while(rs.next()){
                     tabMode2.addRow(new Object[]{
@@ -1569,7 +1818,11 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
         }
     }
     
+<<<<<<< HEAD
     public void isInventaris(){
+=======
+    private void isInventaris(){
+>>>>>>> master
         try {
             ps=koneksi.prepareStatement(
                "select perpustakaan_inventaris.no_inventaris,perpustakaan_buku.kode_buku, perpustakaan_buku.judul_buku, "+
@@ -1620,4 +1873,39 @@ public class PerpustakaanBayarDenda extends javax.swing.JDialog {
             }
         }
     }
+<<<<<<< HEAD
+=======
+    
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

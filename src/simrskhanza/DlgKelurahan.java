@@ -64,7 +64,11 @@ public class DlgKelurahan extends javax.swing.JDialog {
         initComponents();
 
         this.setLocation(10,10);
+<<<<<<< HEAD
         setSize(459,539);
+=======
+        
+>>>>>>> master
 
         Object[] row={"Nama Kelurahan","Kode"};
         tabMode=new DefaultTableModel(null,row){

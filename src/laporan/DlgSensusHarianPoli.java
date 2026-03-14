@@ -62,6 +62,7 @@ public final class DlgSensusHarianPoli extends javax.swing.JDialog {
         this.setLocation(8,1);
         setSize(885,674);
 
+<<<<<<< HEAD
         
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -86,6 +87,8 @@ public final class DlgSensusHarianPoli extends javax.swing.JDialog {
             });
         }  
         
+=======
+>>>>>>> master
         LoadHTML.setEditable(true);
         LoadHTML2.setEditable(true);
         HTMLEditorKit kit = new HTMLEditorKit();
@@ -518,7 +521,32 @@ public final class DlgSensusHarianPoli extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnKeluarKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         runBackground(() ->tampil());
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void kdpoliKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kdpoliKeyPressed
@@ -748,7 +776,11 @@ public final class DlgSensusHarianPoli extends javax.swing.JDialog {
     private javax.swing.JMenuItem ppTampilkanLama;
     // End of variables declaration//GEN-END:variables
 
+<<<<<<< HEAD
     public void tampil(){        
+=======
+    private void tampil(){        
+>>>>>>> master
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         try{
             jmllama=0;jmlbaru=0;jmllaki=0;jmlper=0;

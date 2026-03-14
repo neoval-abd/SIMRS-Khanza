@@ -102,6 +102,7 @@ public final class DlgBulanan extends javax.swing.JDialog {
 
         Nik.setDocument(new batasInput((int)25).getKata(Nik));
         catatan.setDocument(new batasInput((int)100).getKata(catatan));
+<<<<<<< HEAD
         
         TCari.setDocument(new batasInput((int)100).getKata(TCari));
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -126,12 +127,16 @@ public final class DlgBulanan extends javax.swing.JDialog {
                 }
             });
         }  
+=======
+        TCari.setDocument(new batasInput((int)100).getKata(TCari));
+>>>>>>> master
         
         Valid.loadCombo(Departemen,"nama","departemen");
         Departemen.addItem("Semua");
         Departemen.setSelectedItem("Semua");
         
         loadTahun();
+<<<<<<< HEAD
         try {
             psketerlambatan=koneksi.prepareStatement("select * from set_keterlambatan");
             try {
@@ -158,6 +163,8 @@ public final class DlgBulanan extends javax.swing.JDialog {
         } catch (Exception e) {
             System.out.println(e);
         }
+=======
+>>>>>>> master
     }
 
     
@@ -443,6 +450,14 @@ public final class DlgBulanan extends javax.swing.JDialog {
         setIconImages(null);
         setUndecorated(true);
         setResizable(false);
+<<<<<<< HEAD
+=======
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+>>>>>>> master
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Rekap Presensi Bulanan ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1131,6 +1146,61 @@ public final class DlgBulanan extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_tbBangsalMouseClicked
 
+<<<<<<< HEAD
+=======
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        try {
+            psketerlambatan=koneksi.prepareStatement("select * from set_keterlambatan");
+            try {
+                rsketerlambatan=psketerlambatan.executeQuery();
+                if(rsketerlambatan.next()){
+                    toleransi=rsketerlambatan.getInt(1);
+                    terlambat1=rsketerlambatan.getInt(2);
+                    terlambat2=rsketerlambatan.getInt(3);
+                }else{
+                    toleransi=0;
+                    terlambat1=0;
+                    terlambat2=0;
+                }
+            } catch (Exception e) {
+                System.out.println("Notif Bangsal : "+e);
+            } finally{
+                if(rsketerlambatan!=null){
+                    rsketerlambatan.close();
+                }
+                if(psketerlambatan!=null){
+                    psketerlambatan.close();
+                }
+            }   
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }  
+    }//GEN-LAST:event_formWindowOpened
+
+>>>>>>> master
     /**
     * @param args the command line arguments
     */

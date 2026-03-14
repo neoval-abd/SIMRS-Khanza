@@ -2588,6 +2588,7 @@ public final class RMPenilaianAwalMedisRanapDewasa extends javax.swing.JDialog {
         } catch (Exception e) {
             System.out.println("Notif : "+e);
         }
+<<<<<<< HEAD
         
         // TAMBAHAN ISI OTOMATIS DARI AWAL KEPERAWATAN RANAP
         try {
@@ -2633,6 +2634,15 @@ public final class RMPenilaianAwalMedisRanapDewasa extends javax.swing.JDialog {
         SwingUtilities.invokeLater(() -> {
             isRawat();
         }); 
+=======
+    }
+ 
+    public void setNoRm(String norwt,Date tgl2) {
+        TNoRw.setText(norwt);
+        TCari.setText(norwt);
+        DTPCari2.setDate(tgl2);    
+        isRawat(); 
+>>>>>>> master
     }
     
     public void isCek(){

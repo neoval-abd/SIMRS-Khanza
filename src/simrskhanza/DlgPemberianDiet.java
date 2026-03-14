@@ -1620,55 +1620,11 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     ps2.close();
                 }
             }
-            LCount.setText("" + tabMode.getRowCount());
-        } catch (Exception e) {
-            System.out.println("Notifikasi : " + e);
+        }catch(Exception e){
+            System.out.println("Notifikasi : "+e);
         }
     }
 
-//    public void tampil2() {
-//        try {
-//            Valid.tabelKosong(tabMode2);
-//            ps2 = koneksi.prepareStatement(
-//                    "select diet.nama_diet, count(diet.nama_diet) as jumlah "
-//                    + "from detail_beri_diet inner join reg_periksa on detail_beri_diet.no_rawat=reg_periksa.no_rawat "
-//                    + "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "
-//                    + "inner join diet on detail_beri_diet.kd_diet=diet.kd_diet "
-//                    + "inner join kamar on detail_beri_diet.kd_kamar=kamar.kd_kamar "
-//                    + "inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "
-//                    + "where detail_beri_diet.tanggal between ? and ? and detail_beri_diet.waktu like ? and bangsal.nm_bangsal like ? "
-//                    + (TCari.getText().trim().equals("") ? "" : "and (detail_beri_diet.no_rawat like ? or reg_periksa.no_rkm_medis like ? or pasien.nm_pasien like ?) ")
-//                    + "group by diet.nama_diet order by bangsal.nm_bangsal,diet.nama_diet");
-//            try {
-//                ps2.setString(1, Valid.SetTgl(DTPCari1.getSelectedItem() + ""));
-//                ps2.setString(2, Valid.SetTgl(DTPCari2.getSelectedItem() + ""));
-//                ps2.setString(3, "%" + WaktuDiet2.getText().trim() + "%");
-//                ps2.setString(4, "%" + NmBangsalCari.getText().trim() + "%");
-//                if (!TCari.getText().trim().equals("")) {
-//                    ps2.setString(5, "%" + TCari.getText().trim() + "%");
-//                    ps2.setString(6, "%" + TCari.getText().trim() + "%");
-//                    ps2.setString(7, "%" + TCari.getText().trim() + "%");
-//                }
-//                rs = ps2.executeQuery();
-//                i = 1;
-//                while (rs.next()) {
-//                    tabMode2.addRow(new Object[]{i + "", rs.getString(1), rs.getString(2)});
-//                    i++;
-//                }
-//            } catch (Exception e) {
-//                System.out.println("Notif : " + e);
-//            } finally {
-//                if (rs != null) {
-//                    rs.close();
-//                }
-//                if (ps2 != null) {
-//                    ps2.close();
-//                }
-//            }
-//        } catch (Exception e) {
-//            System.out.println("Notifikasi : " + e);
-//        }
-//    }
 
     public void emptTeks() {
         KdDiet.setText("");
@@ -1680,17 +1636,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }
 
     private void getData() {
-//        if (tbDataDiet.getSelectedRow() != -1) {
-//            TNoRw.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(), 0).toString());
-//            TPasien.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(), 1).toString());
-//            Ruang.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(), 2).toString());
-//            WaktuDiet.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(), 4).toString());
-//            JamDiet.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(), 5).toString());
-//            NmDiet.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(), 6).toString());
-//            Kamar.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(), 8).toString());
-//            KdDiet.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(), 9).toString());
-//            Valid.SetTgl(DTPTgl, tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(), 3).toString());
-//        }
         if (tbDataDiet.getSelectedRow() != -1) {
             int row = tbDataDiet.getSelectedRow();
 

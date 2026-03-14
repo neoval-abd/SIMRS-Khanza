@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 5.2.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="533" leftMargin="42" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0512355f-2615-4ed4-af9b-607687661d0c">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
@@ -99,12 +99,8 @@ bridging_sep.nmdpdjp,bridging_sep.lakalantas from bridging_sep  where no_sep= $P
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="if(bridging_sep.jnspelayanan=&apos;1&apos;,&apos;Rawat Inap&apos;,&apos;Rawat Jalan&apos;)" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name">
-			<![CDATA[if(bridging_sep.jnspelayanan='1','Rawat Inap','Rawat Jalan')]]>
-		</property>
-		<property name="com.jaspersoft.studio.field.label">
-			<![CDATA[if(bridging_sep.jnspelayanan='1','Rawat Inap','Rawat Jalan')]]>
-		</property>
+		<property name="com.jaspersoft.studio.field.name" value="if(bridging_sep.jnspelayanan=&apos;1&apos;,&apos;Rawat Inap&apos;,&apos;Rawat Jalan&apos;)"/>
+		<property name="com.jaspersoft.studio.field.label" value="if(bridging_sep.jnspelayanan=&apos;1&apos;,&apos;Rawat Inap&apos;,&apos;Rawat Jalan&apos;)"/>
 	</field>
 	<field name="catatan" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="catatan"/>
@@ -137,20 +133,12 @@ bridging_sep.nmdpdjp,bridging_sep.lakalantas from bridging_sep  where no_sep= $P
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="if(bridging_sep.klsrawat=&apos;1&apos;,&apos;Kelas 1&apos;,if(bridging_sep.klsrawat=&apos;2&apos;,&apos;Kelas 2&apos;,&apos;Kelas 3&apos;))" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name">
-			<![CDATA[if(bridging_sep.klsrawat='1','Kelas 1',if(bridging_sep.klsrawat='2','Kelas 2','Kelas 3'))]]>
-		</property>
-		<property name="com.jaspersoft.studio.field.label">
-			<![CDATA[if(bridging_sep.klsrawat='1','Kelas 1',if(bridging_sep.klsrawat='2','Kelas 2','Kelas 3'))]]>
-		</property>
+		<property name="com.jaspersoft.studio.field.name" value="if(bridging_sep.klsrawat=&apos;1&apos;,&apos;Kelas 1&apos;,if(bridging_sep.klsrawat=&apos;2&apos;,&apos;Kelas 2&apos;,&apos;Kelas 3&apos;))"/>
+		<property name="com.jaspersoft.studio.field.label" value="if(bridging_sep.klsrawat=&apos;1&apos;,&apos;Kelas 1&apos;,if(bridging_sep.klsrawat=&apos;2&apos;,&apos;Kelas 2&apos;,&apos;Kelas 3&apos;))"/>
 	</field>
 	<field name="if(bridging_sep.lakalantas=&apos;0&apos;,&apos;Kasus Kecelakaan&apos;,&apos;Bukan Kasus Kecelakaan&apos;)" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name">
-			<![CDATA[if(bridging_sep.lakalantas='0','Kasus Kecelakaan','Bukan Kasus Kecelakaan')]]>
-		</property>
-		<property name="com.jaspersoft.studio.field.label">
-			<![CDATA[if(bridging_sep.lakalantas='0','Kasus Kecelakaan','Bukan Kasus Kecelakaan')]]>
-		</property>
+		<property name="com.jaspersoft.studio.field.name" value="if(bridging_sep.lakalantas=&apos;0&apos;,&apos;Kasus Kecelakaan&apos;,&apos;Bukan Kasus Kecelakaan&apos;)"/>
+		<property name="com.jaspersoft.studio.field.label" value="if(bridging_sep.lakalantas=&apos;0&apos;,&apos;Kasus Kecelakaan&apos;,&apos;Bukan Kasus Kecelakaan&apos;)"/>
 	</field>
 	<field name="lokasilaka" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="lokasilaka"/>
@@ -466,23 +454,31 @@ bridging_sep.nmdpdjp,bridging_sep.lakalantas from bridging_sep  where no_sep= $P
 				<text><![CDATA[Sub/Spesialis]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="309" width="484" height="18" uuid="2cabbd9b-4831-4945-88b1-ade256094f52"/>
+				<reportElement x="10" y="320" width="484" height="18" uuid="2cabbd9b-4831-4945-88b1-ade256094f52"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="13" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[RINGKASAN PELAYANAN POLIKLINIK RAWAT JALAN JKN]]></text>
+				<text><![CDATA[RESUME MEDIS RAWAT JALAN JKN]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="10" y="339" width="484" height="17" uuid="9b0c19f8-7367-4001-88e1-2259e785c579"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{namars}]]></textFieldExpression>
+			</textField>
 			<staticText>
-				<reportElement x="0" y="427" width="113" height="14" uuid="3b3047c1-07e2-4f58-b0e8-8931ef4e8a5e"/>
+				<reportElement x="0" y="390" width="113" height="14" uuid="3b3047c1-07e2-4f58-b0e8-8931ef4e8a5e"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Tahoma" size="10" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[B. Diagnosa Utama]]></text>
+				<text><![CDATA[Diagnosa]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="113" y="427" width="7" height="14" uuid="50b2ab2e-fb90-4418-abd0-aec72e6406de"/>
+				<reportElement x="113" y="390" width="7" height="14" uuid="50b2ab2e-fb90-4418-abd0-aec72e6406de"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Tahoma" size="9" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -490,13 +486,21 @@ bridging_sep.nmdpdjp,bridging_sep.lakalantas from bridging_sep  where no_sep= $P
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="121" y="441" width="239" height="1" uuid="0382e8c3-25a5-44f7-af7f-82aabc988a7a"/>
+				<reportElement x="121" y="405" width="411" height="1" uuid="0382e8c3-25a5-44f7-af7f-82aabc988a7a"/>
 				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="113" y="522" width="7" height="14" uuid="765cbdd5-49cf-4454-a9e9-08197d4c0ed8"/>
+				<reportElement x="121" y="390" width="270" height="14" uuid="d7f5ffa0-92f8-4b02-a77f-2f0a649b7a93"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[1.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="113" y="460" width="7" height="14" uuid="765cbdd5-49cf-4454-a9e9-08197d4c0ed8"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Tahoma" size="10" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -504,71 +508,219 @@ bridging_sep.nmdpdjp,bridging_sep.lakalantas from bridging_sep  where no_sep= $P
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="522" width="113" height="14" uuid="4f1d421d-c723-4479-b9bc-28647b417877"/>
+				<reportElement x="0" y="460" width="113" height="14" uuid="4f1d421d-c723-4479-b9bc-28647b417877"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Tahoma" size="10" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[C. Tindakan/Penunjang]]></text>
+				<text><![CDATA[Prosedur/Tindakan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="566" width="220" height="18" uuid="81c5cd55-2200-438f-ae39-cf876570c639">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
+				<reportElement x="0" y="520" width="113" height="14" uuid="81c5cd55-2200-438f-ae39-cf876570c639"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="12" isBold="false"/>
+					<font fontName="Tahoma" size="10" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[D. TINDAK LANJUT DARI PEMERIKSAAN]]></text>
+				<text><![CDATA[Laporan Tindakan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="221" y="568" width="7" height="14" uuid="c465451b-9565-4899-b6c2-71a65d7a05ac"/>
+				<reportElement x="113" y="520" width="7" height="14" uuid="c465451b-9565-4899-b6c2-71a65d7a05ac"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="true"/>
+					<font fontName="Tahoma" size="10" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="370" y="427" width="81" height="14" uuid="3b93fdf3-0b32-479f-bcde-b7478cd59012"/>
+				<reportElement x="451" y="390" width="81" height="14" uuid="de236dca-bc63-4727-921a-15b0bc17fbb7"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="10" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[Kode ICD 10]]></text>
+				<text><![CDATA[(                         )]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="680" width="200" height="18" uuid="3119973f-7e98-4106-8582-89c3423bbeef">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="12" isBold="false"/>
+				<reportElement x="451" y="375" width="81" height="14" uuid="3b93fdf3-0b32-479f-bcde-b7478cd59012"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[E. PERLU PEMERIKSAAN PENUNJANG]]></text>
+				<text><![CDATA[Kode ICD X]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="36" y="703" width="113" height="14" uuid="39100b9e-d6ed-4467-b0f9-cab2ca041d7e"/>
+				<reportElement x="451" y="410" width="81" height="14" uuid="2e780041-52f6-4204-b2fa-e1c9207076bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(                         )]]></text>
+			</staticText>
+			<line>
+				<reportElement x="121" y="425" width="411" height="1" uuid="6c973c31-10b3-4949-a038-259c276a6b78"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="121" y="410" width="270" height="14" uuid="51a09aca-9ed8-41e4-924f-733dd40be536"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Tahoma" size="10" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[RO / Radiologi]]></text>
+				<text><![CDATA[2.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="480" width="270" height="14" uuid="787a50b3-bc14-4189-9773-c037c3b1da6e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[2.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="460" width="81" height="14" uuid="16a8fbfe-2076-4ef5-8728-53302587ff75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(                         )]]></text>
+			</staticText>
+			<line>
+				<reportElement x="121" y="475" width="411" height="1" uuid="42593a77-fa7c-4e8d-98c2-7b04a9710be2"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="451" y="445" width="81" height="14" uuid="37bfd321-59ff-41a2-b9e6-115f754f523e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Kode ICD IX]]></text>
+			</staticText>
+			<line>
+				<reportElement x="121" y="495" width="411" height="1" uuid="2c363d3f-67d7-415f-a55b-3160dc90de97"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="121" y="460" width="270" height="14" uuid="a7aa2e07-a9df-4e0c-89c8-e9619a84b7d1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[1.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="480" width="81" height="14" uuid="62978c7b-96be-440b-8a05-41bdfc37865d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(                         )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="520" width="270" height="14" uuid="f2033a83-cf56-443d-bed2-0956349accd3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<line>
+				<reportElement x="121" y="535" width="411" height="1" uuid="77405f04-b0e7-43ca-9ae1-1c21ebf755ac"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="121" y="555" width="411" height="1" uuid="33d1c217-8ebf-46cc-abc8-2076656229c7"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="121" y="540" width="270" height="14" uuid="959dd5a8-23b7-4c66-909a-85389d7d4a56"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<line>
+				<reportElement x="121" y="575" width="411" height="1" uuid="dcb41f57-d63d-4fbb-a2a1-0507ce3b1204"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="121" y="560" width="270" height="14" uuid="d15243e5-7497-4ef9-be4e-e23bc12dd609"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="600" width="113" height="14" uuid="3119973f-7e98-4106-8582-89c3423bbeef"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Dirawat Inapkan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="113" y="600" width="7" height="14" uuid="7a0814da-8ed8-4b1c-b8dc-792667a7aae6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="600" width="113" height="14" uuid="39100b9e-d6ed-4467-b0f9-cab2ca041d7e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Ya]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="15" y="703" width="14" height="14" uuid="819387e9-ee67-4493-abb5-35d5ee03dc02"/>
+				<reportElement x="120" y="600" width="14" height="14" uuid="819387e9-ee67-4493-abb5-35d5ee03dc02"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="120" y="620" width="14" height="14" uuid="2168b6eb-c5fa-404c-9a5d-d214ff2e279d"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement x="407" y="737" width="126" height="14" uuid="b7fb7555-ab14-47fa-ac19-830dc7d9777f"/>
+				<reportElement x="141" y="620" width="113" height="14" uuid="b8ac2170-ed5f-4a16-973c-b415e036d145"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tidak]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="620" width="113" height="14" uuid="b7fb7555-ab14-47fa-ac19-830dc7d9777f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="10" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[Slawi, .............................]]></text>
+				<text><![CDATA[Dokter,]]></text>
 			</staticText>
+			<line>
+				<reportElement x="427" y="675" width="104" height="1" uuid="3bfc2b66-bab1-4077-9846-62796d08019d"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
 			<staticText>
 				<reportElement x="48" y="2" width="484" height="18" uuid="66b703bc-a182-4cfa-9c8c-149ce4883d1f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -1011,454 +1163,6 @@ bridging_sep.nmdpdjp,bridging_sep.lakalantas from bridging_sep  where no_sep= $P
 					<jr:codeExpression><![CDATA[$F{no_sep}]]></jr:codeExpression>
 				</jr:barbecue>
 			</componentElement>
-			<staticText>
-				<reportElement x="-1" y="358" width="113" height="14" uuid="0f00821f-c36d-489d-9122-c9b87a2d5c44"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[A. Anamnesa]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="113" y="358" width="7" height="14" uuid="0efa1f59-0e88-4eab-9231-d2df3b6cca83"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="9" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[:]]></text>
-			</staticText>
-			<line>
-				<reportElement x="122" y="372" width="411" height="1" uuid="4de0f1d2-e02b-4800-86cb-752a876a7191"/>
-				<graphicElement>
-					<pen lineWidth="1.5" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement x="0" y="449" width="113" height="14" uuid="e90238dd-2f47-4164-ad66-2c8084215541"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[    Diagnosa Utama]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="113" y="449" width="7" height="14" uuid="b25a492e-93d2-4bce-bb88-332d05618e62"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="9" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="0" y="472" width="113" height="14" uuid="9e099ba3-d129-4eb8-a800-d6a0a3652aec"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[    Diagnosa Sekunder]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="113" y="472" width="7" height="14" uuid="f199b37e-8d05-4f0e-8b6f-9ac59a0fe11e"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="9" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="0" y="492" width="113" height="14" uuid="8d75d202-0f4f-4a0a-aecb-4dca82b5b246"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[    Diagnosa Sekunder]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="113" y="492" width="7" height="14" uuid="a1027b0f-fb5f-44ad-9ef3-8a09b8a619b0"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="9" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[:]]></text>
-			</staticText>
-			<line>
-				<reportElement x="122" y="389" width="411" height="1" uuid="e59b7a10-4c4a-4270-8e05-e73e3f25fe12"/>
-				<graphicElement>
-					<pen lineWidth="1.5" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement x="120" y="398" width="100" height="14" uuid="70080dc5-0f81-4450-a619-3db49010508e"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[TD : .........................]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="228" y="398" width="96" height="14" uuid="0612b23a-442f-4f52-8b39-f67d50bf42d7"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[N : .........................]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="332" y="398" width="100" height="14" uuid="c61986d5-d7e1-4fda-84ba-b5c90f9686b2"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[RR : .........................]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="440" y="398" width="93" height="14" uuid="2b8bb926-3bdc-4838-8d5f-c8e187b1ad83"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[8 : .........................]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="0" y="542" width="113" height="14" uuid="86b71470-c7b8-4338-8866-44144dbf4bff"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[    Tindakan/Penunjang]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="113" y="542" width="7" height="14" uuid="b2a93c72-6275-4d4e-b21f-187da56edf72"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[:]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement x="14" y="593" width="16" height="14" uuid="69adc73a-6a78-4796-b2ca-cebdfb40d6eb"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<rectangle>
-				<reportElement x="14" y="613" width="16" height="14" uuid="f28bcbe8-dbae-4dfa-886a-a8dcf41a146c"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<line>
-				<reportElement x="121" y="463" width="239" height="1" uuid="d7894bc9-1af3-4625-87c2-2917d709dc83"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement x="121" y="506" width="239" height="1" uuid="8f138080-dc55-46d9-a1f7-df76d7c016ad"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement x="121" y="484" width="239" height="1" uuid="6b2e5b95-1d93-42f0-baa3-bb5e94b3125b"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement x="370" y="449" width="81" height="14" uuid="98bbb802-0c1b-436b-a068-4e009a89eae3"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Kode ICD 10]]></text>
-			</staticText>
-			<line>
-				<reportElement x="121" y="534" width="239" height="1" uuid="d45ef9e3-ea74-43a8-8b6c-e318469d4cb2"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement x="121" y="556" width="239" height="1" uuid="07b33964-2adc-419c-aaca-8b5fc455b7fb"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement x="370" y="493" width="81" height="14" uuid="aeb3bf56-877e-4565-8074-327b13c1794c"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Kode ICD 10]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="370" y="471" width="81" height="14" uuid="6bf43bb3-f09e-4a73-aedf-95eabe5ca92f"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Kode ICD 10]]></text>
-			</staticText>
-			<line>
-				<reportElement x="452" y="440" width="81" height="1" uuid="6b7d5a35-d728-4254-8df1-7744e60ae826"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement x="452" y="462" width="81" height="1" uuid="a575880f-5f1e-4ccb-a59f-0f7ecda0ae72"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement x="452" y="484" width="81" height="1" uuid="675d5023-4560-4dad-a43e-34b1da3e0916"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement x="452" y="506" width="81" height="1" uuid="cf500cad-cb59-4e24-a9e9-cd3c3e90497c"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement x="370" y="522" width="81" height="14" uuid="077868cd-0575-4016-b99e-dec8fab813ac"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Kode ICD 9]]></text>
-			</staticText>
-			<line>
-				<reportElement x="452" y="535" width="81" height="1" uuid="8792e34d-e7e5-4a34-9fd3-ef1e3e6b04e4"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement x="369" y="543" width="81" height="14" uuid="a18350eb-bd18-4408-bbcd-b6cea312b893"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Kode ICD 9]]></text>
-			</staticText>
-			<line>
-				<reportElement x="451" y="556" width="81" height="1" uuid="e5aaea87-c211-44fe-8bf6-4426bc593d2f"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<rectangle>
-				<reportElement x="14" y="633" width="16" height="14" uuid="8376dd90-a866-4f18-b9a5-4bd739d72d40"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<rectangle>
-				<reportElement x="14" y="653" width="16" height="14" uuid="efd62e23-5011-40a3-982d-b35b22aa6e08"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<staticText>
-				<reportElement x="35" y="593" width="113" height="14" uuid="a95a678c-1704-42e7-847f-15cf31c02821"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Konsultasi Selesai]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="35" y="613" width="113" height="14" uuid="3aee3bab-f6ed-4f19-ae4d-7fdde0a00bb0"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Perlu RANAP]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="35" y="653" width="113" height="14" uuid="12510775-1476-4f5b-a977-d69d53b9d728"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Perlu Rujukan Parsial     :]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="35" y="633" width="113" height="14" uuid="6ede3480-0a29-4f7e-bdb2-64554fcd28e4"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Perlu Kontrol Ulang       :]]></text>
-			</staticText>
-			<line>
-				<reportElement x="150" y="647" width="163" height="1" uuid="f1943b67-c852-46b4-803b-d660d0d82a20"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement x="200" y="613" width="113" height="14" uuid="76cda748-8853-44a0-b7ae-4de21bb4da6d"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Dirujuk Ke Poli]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement x="179" y="593" width="16" height="14" uuid="acf35e2a-3e5d-4203-bf6c-228fecf259fa"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<staticText>
-				<reportElement x="200" y="593" width="113" height="14" uuid="adee4f74-243b-4f15-8c04-26a29ada6118"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Dirujuk Ke RS]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement x="179" y="613" width="16" height="14" uuid="00384a13-3565-4301-a81c-fe2a0710a4db"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<line>
-				<reportElement x="150" y="666" width="163" height="1" uuid="d42c943e-af7e-4cdf-a677-12ce2410341e"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement x="366" y="613" width="113" height="14" uuid="40a32d6c-3c44-43ee-a63a-6d4b064b8b4a"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Dirujuk Balik Ke PPK I]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement x="345" y="613" width="16" height="14" uuid="2a27a41f-3e95-4925-a0a1-84fbdd657646"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<staticText>
-				<reportElement x="204" y="682" width="7" height="14" uuid="70e83841-c93f-4d53-b67a-f716c0f093bb"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="true"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[:]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement x="158" y="703" width="14" height="14" uuid="27a24204-bf77-4192-9df5-cfcb7ac46162"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<staticText>
-				<reportElement x="179" y="703" width="61" height="14" uuid="2b017095-bb8f-4473-a40b-35e46e91a193"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Laboratorium]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement x="248" y="703" width="14" height="14" uuid="085e30fc-698a-4c34-88a6-33a7d46a5cd9"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<staticText>
-				<reportElement x="269" y="703" width="20" height="14" uuid="98c38f82-d97c-40b5-89e8-f9603d6c34a7"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[USG]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="317" y="703" width="90" height="14" uuid="825a028b-e2c0-41ed-97b7-93efe600de0a"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Lain-lain  ..............]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement x="296" y="703" width="14" height="14" uuid="346233cc-131f-4dd1-88a8-6cf209b3b631"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<staticText>
-				<reportElement x="0" y="730" width="200" height="18" uuid="a2fdda1f-3778-4968-8988-567d2865c986">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Tahoma" size="12" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[E. RESEP OBAT]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="0" y="769" width="341" height="11" uuid="a0902074-8f8e-4fc2-bd10-2e34bb281668"/>
-				<textElement verticalAlignment="Top">
-					<font fontName="Tahoma" size="7" isBold="false" isItalic="true"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[*Lembar Putih       : Apotik]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="0" y="780" width="341" height="11" uuid="56562c9b-77f0-4b7a-a04c-7871b3138222"/>
-				<textElement verticalAlignment="Top">
-					<font fontName="Tahoma" size="7" isBold="false" isItalic="true"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[*Lembar Kuning    : Pasien]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="0" y="791" width="341" height="11" uuid="427d123f-5b01-4356-8e9b-fb910bcf53f4"/>
-				<textElement verticalAlignment="Top">
-					<font fontName="Tahoma" size="7" isBold="false" isItalic="true"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[*Lembar Merah     : Asuransi]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="414" y="750" width="113" height="14" uuid="623e1ee2-2d1b-409e-8ca1-10fbb2243787"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Dokter Poliklinik]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="407" y="788" width="126" height="14" uuid="c4c5f17c-9275-47a4-9756-3e33decfdb35"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="10" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[(..................................)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="10" y="327" width="484" height="18" uuid="f74d3602-7cb5-4a2a-85fa-02bc4ae189e0"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="13" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[NO. ...............................................................]]></text>
-			</staticText>
 		</band>
 	</detail>
 	<columnFooter>

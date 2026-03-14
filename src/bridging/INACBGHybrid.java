@@ -50,13 +50,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
+<<<<<<< HEAD
 import javax.swing.SwingUtilities;
+=======
+>>>>>>> master
 import keuangan.DlgBilingRalan;
 import keuangan.DlgBilingRanap;
 import laporan.DlgDiagnosaPenyakit;
 import rekammedis.RMRiwayatPerawatan;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.SwingUtilities;
+<<<<<<< HEAD
+=======
+import javax.swing.WindowConstants;
+>>>>>>> master
 
 /**
  *
@@ -78,6 +85,13 @@ public class INACBGHybrid extends javax.swing.JDialog {
     private String URL="";
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
+<<<<<<< HEAD
+=======
+    private RMRiwayatPerawatan resume;
+    private DlgBilingRalan dlgbil;
+    private DlgBilingRanap billing;
+    private DlgDiagnosaPenyakit diagnosa;
+>>>>>>> master
                                     
     
     public INACBGHybrid(java.awt.Frame parent, boolean modal) {
@@ -177,6 +191,7 @@ public class INACBGHybrid extends javax.swing.JDialog {
                                     try {
                                         rs=ps.executeQuery();
                                         if(rs.next()){
+<<<<<<< HEAD
                                             DlgDiagnosaPenyakit diagnosa=new DlgDiagnosaPenyakit(null,false);
                                             diagnosa.addWindowListener(new WindowListener() {
                                                 @Override
@@ -200,6 +215,44 @@ public class INACBGHybrid extends javax.swing.JDialog {
                                             diagnosa.setLocationRelativeTo(internalFrame1);
                                             diagnosa.isCek();
                                             diagnosa.setNoRm(rs.getString("no_rawat"),rs.getDate("tgl_registrasi"),rs.getDate("tgl_registrasi"),rs.getString("status_lanjut"));
+=======
+                                            if (diagnosa == null || !diagnosa.isDisplayable()) {
+                                                diagnosa=new DlgDiagnosaPenyakit(null,false);
+                                                diagnosa.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                                                diagnosa.addWindowListener(new WindowListener() {
+                                                    @Override
+                                                    public void windowOpened(WindowEvent e) {}
+                                                    @Override
+                                                    public void windowClosing(WindowEvent e) {}
+                                                    @Override
+                                                    public void windowClosed(WindowEvent e) {
+                                                        runBackground(() ->loadURL(URL));
+                                                        diagnosa=null;
+                                                    }
+                                                    @Override
+                                                    public void windowIconified(WindowEvent e) {}
+                                                    @Override
+                                                    public void windowDeiconified(WindowEvent e) {}
+                                                    @Override
+                                                    public void windowActivated(WindowEvent e) {}
+                                                    @Override
+                                                    public void windowDeactivated(WindowEvent e) {}
+                                                });
+                                                diagnosa.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                                                diagnosa.setLocationRelativeTo(internalFrame1);
+                                            }
+                                                
+                                            if (diagnosa == null) return;
+                                            if (!diagnosa.isVisible()) {
+                                                diagnosa.isCek();
+                                                diagnosa.setNoRm(rs.getString("no_rawat"),rs.getDate("tgl_registrasi"),rs.getDate("tgl_registrasi"),rs.getString("status_lanjut"));
+                                            }  
+                                            if (diagnosa.isVisible()) {
+                                                diagnosa.toFront();
+                                                return;
+                                            } 
+                                                
+>>>>>>> master
                                             diagnosa.setVisible(true); 
                                         }
                                     } catch (Exception e) {
@@ -264,6 +317,7 @@ public class INACBGHybrid extends javax.swing.JDialog {
                                     try {
                                         rs=ps.executeQuery();
                                         if(rs.next()){
+<<<<<<< HEAD
                                             RMRiwayatPerawatan resume=new RMRiwayatPerawatan(null,false);
                                             resume.addWindowListener(new WindowListener() {
                                                 @Override
@@ -287,6 +341,42 @@ public class INACBGHybrid extends javax.swing.JDialog {
                                             resume.setNoRm(rs.getString("no_rkm_medis"),rs.getString("nm_pasien"));
                                             resume.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                                             resume.setLocationRelativeTo(internalFrame1);
+=======
+                                            if (resume == null || !resume.isDisplayable()) {
+                                                resume=new RMRiwayatPerawatan(null,false);
+                                                resume.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                                                resume.addWindowListener(new WindowListener() {
+                                                    @Override
+                                                    public void windowOpened(WindowEvent e) {}
+                                                    @Override
+                                                    public void windowClosing(WindowEvent e) {}
+                                                    @Override
+                                                    public void windowClosed(WindowEvent e) {
+                                                        runBackground(() ->loadURL(URL));
+                                                        resume=null;
+                                                    }
+                                                    @Override
+                                                    public void windowIconified(WindowEvent e) {}
+                                                    @Override
+                                                    public void windowDeiconified(WindowEvent e) {}
+                                                    @Override
+                                                    public void windowActivated(WindowEvent e) {}
+                                                    @Override
+                                                    public void windowDeactivated(WindowEvent e) {}
+                                                });
+                                                resume.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                                                resume.setLocationRelativeTo(internalFrame1);
+                                            }
+                                            if (resume == null) return;
+                                            if (!resume.isVisible()) {
+                                                resume.setNoRawat(rs.getString("no_rawat"));
+                                                resume.setNoRm(rs.getString("no_rkm_medis"),rs.getString("nm_pasien"));
+                                            }  
+                                            if (resume.isVisible()) {
+                                                resume.toFront();
+                                                return;
+                                            }    
+>>>>>>> master
                                             resume.setVisible(true);
                                         }
                                     } catch (Exception e) {
@@ -306,6 +396,7 @@ public class INACBGHybrid extends javax.swing.JDialog {
                                         rs=ps.executeQuery();
                                         if(rs.next()){
                                             if(rs.getString("status_lanjut").equals("Ralan")){
+<<<<<<< HEAD
                                                 DlgBilingRalan dlgbil=new DlgBilingRalan(null,false);
                                                 dlgbil.addWindowListener(new WindowListener() {
                                                     @Override
@@ -356,6 +447,84 @@ public class INACBGHybrid extends javax.swing.JDialog {
                                                 billing.isRawat();          
                                                 billing.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                                                 billing.setLocationRelativeTo(internalFrame1);
+=======
+                                                if (dlgbil == null || !dlgbil.isDisplayable()) {
+                                                    dlgbil=new DlgBilingRalan(null,false);
+                                                    dlgbil.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                                                    dlgbil.addWindowListener(new WindowListener() {
+                                                        @Override
+                                                        public void windowOpened(WindowEvent e) {}
+                                                        @Override
+                                                        public void windowClosing(WindowEvent e) {}
+                                                        @Override
+                                                        public void windowClosed(WindowEvent e) {
+                                                            runBackground(() ->loadURL(URL));
+                                                            dlgbil=null;
+                                                        }
+                                                        @Override
+                                                        public void windowIconified(WindowEvent e) {}
+                                                        @Override
+                                                        public void windowDeiconified(WindowEvent e) {}
+                                                        @Override
+                                                        public void windowActivated(WindowEvent e) {}
+                                                        @Override
+                                                        public void windowDeactivated(WindowEvent e) {}
+                                                    });
+                                                    dlgbil.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                                                    dlgbil.setLocationRelativeTo(internalFrame1);
+                                                }   
+                                                
+                                                if (dlgbil == null) return;
+                                                if (!dlgbil.isVisible()) {
+                                                    dlgbil.TNoRw.setText(rs.getString("no_rawat"));
+                                                    dlgbil.isCek();
+                                                    dlgbil.isRawat(); 
+                                                }  
+                                                if (dlgbil.isVisible()) {
+                                                    dlgbil.toFront();
+                                                    return;
+                                                } 
+                                                
+                                                dlgbil.setVisible(true);
+                                            }else if(rs.getString("status_lanjut").equals("Ranap")){
+                                                if (billing == null || !billing.isDisplayable()) {
+                                                    billing=new DlgBilingRanap( null,false);
+                                                    billing.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                                                    billing.addWindowListener(new WindowListener() {
+                                                        @Override
+                                                        public void windowOpened(WindowEvent e) {}
+                                                        @Override
+                                                        public void windowClosing(WindowEvent e) {}
+                                                        @Override
+                                                        public void windowClosed(WindowEvent e) {
+                                                            runBackground(() ->loadURL(URL));
+                                                            billing=null;
+                                                        }
+                                                        @Override
+                                                        public void windowIconified(WindowEvent e) {}
+                                                        @Override
+                                                        public void windowDeiconified(WindowEvent e) {}
+                                                        @Override
+                                                        public void windowActivated(WindowEvent e) {}
+                                                        @Override
+                                                        public void windowDeactivated(WindowEvent e) {}
+                                                    });
+                                                    billing.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                                                    billing.setLocationRelativeTo(internalFrame1);
+                                                }  
+                                                
+                                                if (billing == null) return;
+                                                if (!billing.isVisible()) {
+                                                    billing.TNoRw.setText(rs.getString("no_rawat"));                   
+                                                    billing.isCek();  
+                                                    billing.isRawat(); 
+                                                }  
+                                                if (billing.isVisible()) {
+                                                    billing.toFront();
+                                                    return;
+                                                }  
+                                                
+>>>>>>> master
                                                 billing.setVisible(true);
                                             }
                                         }

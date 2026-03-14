@@ -16,8 +16,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -26,10 +35,18 @@ public class TokoRiwayatBarang extends javax.swing.JDialog {
     private final DefaultTableModel tabMode;
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
+<<<<<<< HEAD
     private Connection koneksi=koneksiDB.condb();    
     private TokoBarang barang=new TokoBarang(null,false);
     private PreparedStatement ps;
     private ResultSet rs;
+=======
+    private Connection koneksi=koneksiDB.condb(); 
+    private PreparedStatement ps;
+    private ResultSet rs;
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
 
     /** 
      * @param parent
@@ -75,6 +92,7 @@ public class TokoRiwayatBarang extends javax.swing.JDialog {
         tbDokter.setDefaultRenderer(Object.class, new WarnaTable());         
         
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -135,6 +153,8 @@ public class TokoRiwayatBarang extends javax.swing.JDialog {
             public void keyReleased(KeyEvent e) {}
         });
         
+=======
+>>>>>>> master
     }    
     /** This method is called from within the constructor to
      * initialize the form.
@@ -440,9 +460,13 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
+<<<<<<< HEAD
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); 
         prosesCari();
         this.setCursor(Cursor.getDefaultCursor());
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -468,6 +492,46 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     }//GEN-LAST:event_kdbarKeyPressed
 
     private void btnBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarangActionPerformed
+<<<<<<< HEAD
+=======
+        TokoBarang barang=new TokoBarang(null,false);
+        barang.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(barang.getTable().getSelectedRow()!= -1){                   
+                    kdbar.setText(barang.getTable().getValueAt(barang.getTable().getSelectedRow(),0).toString());                    
+                    nmbar.setText(barang.getTable().getValueAt(barang.getTable().getSelectedRow(),1).toString());
+                }  
+                kdbar.requestFocus();
+                
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
+        
+        barang.getTable().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode()==KeyEvent.VK_SPACE){
+                    barang.dispose();                    
+                }
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        });
+>>>>>>> master
         barang.emptTeks();
         barang.isCek();
         barang.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
@@ -480,9 +544,13 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
         TCari.setText("");
         kdbar.setText("");
         nmbar.setText("");
+<<<<<<< HEAD
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); 
         prosesCari();
         this.setCursor(Cursor.getDefaultCursor());
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
@@ -494,7 +562,32 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     }//GEN-LAST:event_BtnAllKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         prosesCari();
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        } 
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -537,7 +630,11 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     private widget.Table tbDokter;
     // End of variables declaration//GEN-END:variables
 
+<<<<<<< HEAD
     private void prosesCari() {
+=======
+    private void tampil() {
+>>>>>>> master
        Valid.tabelKosong(tabMode);      
        try{   
             if(nmbar.getText().trim().equals("")&&TCari.getText().trim().equals("")){
@@ -559,10 +656,17 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                     "toko_riwayat_barang.jam,toko_riwayat_barang.petugas,"+
                     "toko_riwayat_barang.status from toko_riwayat_barang "+
                     "inner join tokobarang on toko_riwayat_barang.kode_brng=tokobarang.kode_brng where "+
+<<<<<<< HEAD
                     "toko_riwayat_barang.tanggal between ? and ? and tokobarang.nama_brng like ? and toko_riwayat_barang.kode_brng like ? or "+
                     "toko_riwayat_barang.tanggal between ? and ? and tokobarang.nama_brng like ? and tokobarang.nama_brng like ? or "+
                     "toko_riwayat_barang.tanggal between ? and ? and tokobarang.nama_brng like ? and toko_riwayat_barang.petugas like ? or "+
                     "toko_riwayat_barang.tanggal between ? and ? and tokobarang.nama_brng like ? and toko_riwayat_barang.status like ? order by toko_riwayat_barang.tanggal,toko_riwayat_barang.jam ");
+=======
+                    "toko_riwayat_barang.tanggal between ? and ? and tokobarang.nama_brng like ? "+
+                    "and (toko_riwayat_barang.kode_brng like ? or tokobarang.nama_brng like ? or "+
+                    "toko_riwayat_barang.petugas like ? or toko_riwayat_barang.status like ?) "+
+                    "order by toko_riwayat_barang.tanggal,toko_riwayat_barang.jam ");
+>>>>>>> master
             }
                 
             try {
@@ -574,6 +678,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                     ps.setString(2,Valid.SetTgl(Tgl2.getSelectedItem()+""));
                     ps.setString(3,"%"+nmbar.getText()+"%");
                     ps.setString(4,"%"+TCari.getText().trim()+"%");
+<<<<<<< HEAD
                     ps.setString(5,Valid.SetTgl(Tgl1.getSelectedItem()+""));
                     ps.setString(6,Valid.SetTgl(Tgl2.getSelectedItem()+""));
                     ps.setString(7,"%"+nmbar.getText()+"%");
@@ -586,6 +691,11 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                     ps.setString(14,Valid.SetTgl(Tgl2.getSelectedItem()+""));
                     ps.setString(15,"%"+nmbar.getText()+"%");
                     ps.setString(16,"%"+TCari.getText().trim()+"%");
+=======
+                    ps.setString(5,"%"+TCari.getText().trim()+"%");
+                    ps.setString(6,"%"+TCari.getText().trim()+"%");
+                    ps.setString(7,"%"+TCari.getText().trim()+"%");
+>>>>>>> master
                 }
                 rs=ps.executeQuery();            
                 while(rs.next()){
@@ -617,4 +727,38 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
          BtnPrint.setEnabled(akses.gettoko_riwayat_barang());
     }
     
+<<<<<<< HEAD
+=======
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

@@ -119,6 +119,7 @@ public class KeuanganPiutangJasaPerusahaan extends javax.swing.JDialog {
         NoPiutang.setDocument(new batasInput((byte)20).getKata(NoPiutang));
         Keterangan.setDocument(new batasInput((int)100).getKata(Keterangan));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -141,6 +142,8 @@ public class KeuanganPiutangJasaPerusahaan extends javax.swing.JDialog {
                 }
             });
         }
+=======
+>>>>>>> master
         
         PersenMenejemen.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
             @Override
@@ -826,11 +829,41 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             if(Valid.daysOld("./cache/piutangjasaperusahaan.iyem")<8){
                 runBackground(() ->tampil2());
             }else{
+<<<<<<< HEAD
                 tampil();
                 runBackground(() ->tampil2());
             }
         } catch (Exception e) {
         }            
+=======
+                runBackground(() ->LoadData());
+            }
+        } catch (Exception e) {
+        }  
+        
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil2());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil2());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil2());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void TCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCariKeyPressed
@@ -1545,6 +1578,14 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         return tabMode;
     }
     
+<<<<<<< HEAD
+=======
+    private void LoadData(){
+        tampil();
+        tampil2();
+    }
+    
+>>>>>>> master
     private void runBackground(Runnable task) {
         if (ceksukses) return;
         if (executor.isShutdown() || executor.isTerminated()) return;

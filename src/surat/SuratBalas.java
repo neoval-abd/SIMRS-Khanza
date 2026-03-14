@@ -25,9 +25,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -45,6 +55,11 @@ public final class SuratBalas extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private int i=0;
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
 
     /** Creates new form DlgBangsal
      * @param parent
@@ -75,7 +90,11 @@ public final class SuratBalas extends javax.swing.JDialog {
         };
 
         tbBangsal.setModel(tabMode);
+<<<<<<< HEAD
         //tampil();
+=======
+        //runBackground(() ->tampil());
+>>>>>>> master
 
         //tbBangsal.setDefaultRenderer(Object.class, new WarnaTable(jPanel2.getBackground(),tbBangsal.getBackground()));
         tbBangsal.setPreferredScrollableViewportSize(new Dimension(500,500));
@@ -97,6 +116,7 @@ public final class SuratBalas extends javax.swing.JDialog {
         TKd.setDocument(new batasInput((byte)5).getKata(TKd));
         TNm.setDocument(new batasInput((byte)50).getKata(TNm));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -121,6 +141,9 @@ public final class SuratBalas extends javax.swing.JDialog {
         } 
         TKd.requestFocus();
         
+=======
+        TKd.requestFocus();
+>>>>>>> master
     }
     
     /** This method is called from within the constructor to
@@ -436,7 +459,11 @@ public final class SuratBalas extends javax.swing.JDialog {
             Valid.textKosong(TNm,"balas");
         }else{
             if(Sequel.menyimpantf("surat_balas","?,?","Kode",2,new String[]{TKd.getText(),TNm.getText()})==true){
+<<<<<<< HEAD
                 tampil();
+=======
+                runBackground(() ->tampil());
+>>>>>>> master
                 emptTeks();
             }else{
                 TKd.requestFocus();
@@ -468,7 +495,11 @@ public final class SuratBalas extends javax.swing.JDialog {
                 Sequel.meghapus("surat_balas","kd",tbBangsal.getValueAt(i,1).toString());
             }
         } 
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
         emptTeks();
 }//GEN-LAST:event_BtnHapusActionPerformed
 
@@ -488,7 +519,11 @@ public final class SuratBalas extends javax.swing.JDialog {
         }else{
             if(tbBangsal.getSelectedRow()>-1){
                 Sequel.mengedit("surat_balas","kd=?","balas=?,kd=?",3,new String[]{TNm.getText(),TKd.getText(),tbBangsal.getValueAt(tbBangsal.getSelectedRow(), 1).toString()});
+<<<<<<< HEAD
                 if(tabMode.getRowCount()!=0){tampil();}
+=======
+                if(tabMode.getRowCount()!=0){runBackground(() ->tampil());}
+>>>>>>> master
                 emptTeks();
             }            
         }
@@ -552,7 +587,11 @@ public final class SuratBalas extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -569,13 +608,21 @@ public final class SuratBalas extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
             TCari.setText("");
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
         }else{
             Valid.pindah(evt, BtnCari, TKd);
         }
@@ -608,7 +655,33 @@ public final class SuratBalas extends javax.swing.JDialog {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         emptTeks();
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        } 
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -656,6 +729,7 @@ public final class SuratBalas extends javax.swing.JDialog {
     private void tampil() {
         Valid.tabelKosong(tabMode);
         try{
+<<<<<<< HEAD
             ps=koneksi.prepareStatement("select * from surat_balas where kd like ? "+
                     "or balas like ? order by kd");
             try {
@@ -665,6 +739,18 @@ public final class SuratBalas extends javax.swing.JDialog {
                 while(rs.next()){
                     tabMode.addRow(new Object[]{false,rs.getString(1),
                                    rs.getString(2)});
+=======
+            ps=koneksi.prepareStatement(
+                "select * from surat_balas "+(TCari.getText().trim().equals("")?"":"where surat_balas.kd like ? or surat_balas.balas like ? ")+" order by surat_balas.kd");
+            try {
+                if(!TCari.getText().trim().equals("")){
+                    ps.setString(1,"%"+TCari.getText().trim()+"%");
+                    ps.setString(2,"%"+TCari.getText().trim()+"%");
+                }   
+                rs=ps.executeQuery();
+                while(rs.next()){
+                    tabMode.addRow(new Object[]{false,rs.getString(1),rs.getString(2)});
+>>>>>>> master
                 }
             } catch (Exception e) {
                 System.out.println("Notif Map : "+e);
@@ -712,4 +798,39 @@ public final class SuratBalas extends javax.swing.JDialog {
         BtnEdit.setEnabled(akses.getsurat_balas());
         BtnPrint.setEnabled(akses.getsurat_balas());
     }
+<<<<<<< HEAD
+=======
+    
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

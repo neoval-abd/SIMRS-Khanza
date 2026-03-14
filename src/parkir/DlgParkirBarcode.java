@@ -48,7 +48,11 @@ public class DlgParkirBarcode extends javax.swing.JDialog {
         initComponents();
 
         this.setLocation(10,10);
+<<<<<<< HEAD
         setSize(459,539);
+=======
+        
+>>>>>>> master
 
         Object[] row={"Kode Barcode","Nomer Kartu"};
         tabMode=new DefaultTableModel(null,row){

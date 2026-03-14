@@ -21,7 +21,11 @@ public class riwayattoko {
     public synchronized void catatRiwayat(String kodebarang,double masuk,double keluar,String posisi,String petugas,String status){        
         try {
             stokakhir=0;stokawal=0;            
+<<<<<<< HEAD
             psawal=koneksi.prepareStatement("select stok from tokobarang where kode_brng=?");
+=======
+            psawal=koneksi.prepareStatement("select tokobarang.stok from tokobarang where tokobarang.kode_brng=?");
+>>>>>>> master
             try {
                 psawal.setString(1,kodebarang);
                 rs=psawal.executeQuery();

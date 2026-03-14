@@ -126,6 +126,7 @@ public final class DlgPengeluaranHarian extends javax.swing.JDialog {
         RekeningAtasNama.setDocument(new batasInput((byte)60).getKata(RekeningAtasNama));
         KotaAtasNamaRekening.setDocument(new batasInput((byte)20).getKata(KotaAtasNamaRekening));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -149,6 +150,8 @@ public final class DlgPengeluaranHarian extends javax.swing.JDialog {
             });
         }  
         
+=======
+>>>>>>> master
         ChkInput.setSelected(false);
     }
 
@@ -1372,6 +1375,31 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }else{
             runBackground(() ->tampilAkunBankMandiri());
         }
+<<<<<<< HEAD
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**

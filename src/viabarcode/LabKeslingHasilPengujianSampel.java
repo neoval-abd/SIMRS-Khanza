@@ -27,8 +27,17 @@ import java.awt.event.KeyEvent;
 import java.io.FileReader;
 import java.util.Calendar;
 import java.util.Date;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.Timer;
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
@@ -50,6 +59,11 @@ public final class LabKeslingHasilPengujianSampel extends javax.swing.JDialog {
     private JsonNode response;
     private FileReader myObj;
     public boolean berhasil=false;
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
 
     /** Creates new form DlgPerawatan
      * @param parent
@@ -106,6 +120,7 @@ public final class LabKeslingHasilPengujianSampel extends javax.swing.JDialog {
 
         TCariPeriksa.setDocument(new batasInput((int)100).getKata(TCariPeriksa));
         
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCariPeriksa.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -129,6 +144,8 @@ public final class LabKeslingHasilPengujianSampel extends javax.swing.JDialog {
             });
         }  
         
+=======
+>>>>>>> master
         ChkJln.setSelected(true);
         jam();
     }
@@ -629,7 +646,11 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         if(KodeSampel.getText().trim().equals("")||NamaSampel.getText().trim().equals("")){
             Valid.textKosong(TCariPeriksa,"Kode Sampel");
         }else{
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
         }
     }//GEN-LAST:event_btnCariPeriksaActionPerformed
 
@@ -638,7 +659,11 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             if(KodeSampel.getText().trim().equals("")||NamaSampel.getText().trim().equals("")){
                 Valid.textKosong(TCariPeriksa,"Kode Sampel");
             }else{
+<<<<<<< HEAD
                 tampil();
+=======
+                runBackground(() ->tampil());
+>>>>>>> master
             }
         }else{
             Valid.pindah(evt, TCariPeriksa, BtnAllPeriksa);
@@ -650,7 +675,11 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             Valid.textKosong(TCariPeriksa,"Kode Sampel");
         }else{
             TCariPeriksa.setText("");
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
         }
     }//GEN-LAST:event_BtnAllPeriksaActionPerformed
 
@@ -746,10 +775,39 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     }//GEN-LAST:event_BtnCariKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         tampil();
         for(i=0;i<tbPengujian.getRowCount();i++){
             tbPengujian.setValueAt(true,i,0);
         }
+=======
+        runBackground(() ->tampil());
+        for(i=0;i<tbPengujian.getRowCount();i++){
+            tbPengujian.setValueAt(true,i,0);
+        }
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCariPeriksa.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCariPeriksa.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCariPeriksa.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCariPeriksa.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        } 
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void TNoPenugasanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TNoPenugasanKeyPressed
@@ -927,7 +985,11 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             myObj.close();
         } catch (Exception ex) {
             if(ex.toString().contains("java.io.FileNotFoundException")){
+<<<<<<< HEAD
                 tampil();
+=======
+                runBackground(() ->tampil());
+>>>>>>> master
             }else{
                 System.out.println("Notifikasi : "+ex);
             }
@@ -1019,4 +1081,39 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             ChkInput.setVisible(true);
         }
     }
+<<<<<<< HEAD
+=======
+    
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

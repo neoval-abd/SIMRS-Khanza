@@ -64,7 +64,11 @@ public class DlgKabupaten extends javax.swing.JDialog {
         initComponents();
 
         this.setLocation(10,10);
+<<<<<<< HEAD
         setSize(459,539);
+=======
+        
+>>>>>>> master
 
         Object[] row={"Nama Kabupaten","Kode"};
         tabMode=new DefaultTableModel(null,row){
@@ -444,6 +448,10 @@ public class DlgKabupaten extends javax.swing.JDialog {
     }//GEN-LAST:event_formWindowActivated
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
+=======
+        emptTeks();
+>>>>>>> master
         try {
             if(Valid.daysOld("./cache/masterkabupaten.iyem")<30){
                 runBackground(() ->tampil2());

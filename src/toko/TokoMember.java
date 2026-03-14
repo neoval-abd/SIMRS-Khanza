@@ -104,6 +104,7 @@ public final class TokoMember extends javax.swing.JDialog {
         Alamat.setDocument(new batasInput((byte)60).getKata(Alamat));
         NoTelp.setDocument(new batasInput((byte)40).getOnlyAngka(NoTelp));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -126,6 +127,8 @@ public final class TokoMember extends javax.swing.JDialog {
                 }
             });
         }  
+=======
+>>>>>>> master
         
         ChkInput.setSelected(false);
         isForm(); 
@@ -788,6 +791,31 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         runBackground(() ->tampil());
+<<<<<<< HEAD
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        } 
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void tbPetugasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbPetugasKeyReleased
@@ -892,6 +920,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         Valid.tabelKosong(tabMode);
         try{
             ps=koneksi.prepareStatement(
+<<<<<<< HEAD
                     "select no_member, nama, jk, tmp_lahir, tgl_lahir, alamat, no_telp, email from tokomember "+
                     "where no_member like ? or nama like ? or alamat like ? or email like ? or tgl_lahir like ? order by no_member");
             try {
@@ -900,6 +929,20 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 ps.setString(3,"%"+TCari.getText().trim()+"%");
                 ps.setString(4,"%"+TCari.getText().trim()+"%");
                 ps.setString(5,"%"+TCari.getText().trim()+"%");
+=======
+                    "select tokomember.no_member,tokomember.nama,tokomember.jk,tokomember.tmp_lahir,tokomember.tgl_lahir,tokomember.alamat,tokomember.no_telp,tokomember.email from tokomember "+
+                    (TCari.getText().trim().equals("")?"":"where tokomember.no_member like ? or tokomember.nama like ? or tokomember.alamat like ? or tokomember.email like ? or tokomember.tgl_lahir like ? ")+
+                    "order by tokomember.no_member");
+            try {
+                if(!TCari.getText().trim().equals("")){
+                    ps.setString(1,"%"+TCari.getText().trim()+"%");
+                    ps.setString(2,"%"+TCari.getText().trim()+"%");
+                    ps.setString(3,"%"+TCari.getText().trim()+"%");
+                    ps.setString(4,"%"+TCari.getText().trim()+"%");
+                    ps.setString(5,"%"+TCari.getText().trim()+"%");
+                }
+                    
+>>>>>>> master
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new Object[]{
@@ -933,7 +976,11 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         NoTelp.setText("");
         Email.setText("");
         TglLahir.setDate(new Date());
+<<<<<<< HEAD
         Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(no_member,7),signed)),0) from tokomember ","M",7,NoMember);
+=======
+        Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(tokomember.no_member,7),signed)),0) from tokomember ","M",7,NoMember);
+>>>>>>> master
         NoMember.requestFocus();
     }
 

@@ -18,6 +18,13 @@ import javax.swing.JTable;
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+<<<<<<< HEAD
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 
 public class UTDKomponenDarah extends javax.swing.JDialog {
     private final DefaultTableModel tabModeKomponen;
@@ -27,6 +34,11 @@ public class UTDKomponenDarah extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private int i;
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
 
     /** Creates new form DlgProgramStudi
      * @param parent
@@ -77,6 +89,7 @@ public class UTDKomponenDarah extends javax.swing.JDialog {
         Total.setDocument(new batasInput((byte)10).getOnlyAngka(Total));  
         Pembatalan.setDocument(new batasInput((byte)10).getOnlyAngka(Pembatalan));        
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));    
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -99,6 +112,8 @@ public class UTDKomponenDarah extends javax.swing.JDialog {
                 }
             });
         }   
+=======
+>>>>>>> master
         ChkInput.setSelected(false);
         isForm();           
     }
@@ -591,7 +606,11 @@ public class UTDKomponenDarah extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -632,7 +651,11 @@ public class UTDKomponenDarah extends javax.swing.JDialog {
             tbKomponen.requestFocus();
         }else{
             Valid.hapusTable(tabModeKomponen,Kode,"utd_komponen_darah","kode");
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
             emptTeks();
         }
 }//GEN-LAST:event_BtnHapusActionPerformed
@@ -672,7 +695,11 @@ public class UTDKomponenDarah extends javax.swing.JDialog {
                 tabModeKomponen.getValueAt(tbKomponen.getSelectedRow(),0).toString()
               })==true){
                 emptTeks();
+<<<<<<< HEAD
                 tampil();
+=======
+                runBackground(() ->tampil());
+>>>>>>> master
             }
         }
 }//GEN-LAST:event_BtnEditActionPerformed
@@ -716,7 +743,11 @@ public class UTDKomponenDarah extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
@@ -762,7 +793,11 @@ public class UTDKomponenDarah extends javax.swing.JDialog {
                 KSO.getText(),Manajemen.getText(),Total.getText(),Pembatalan.getText()
               })==true){
                 emptTeks();
+<<<<<<< HEAD
                 tampil();
+=======
+                runBackground(() ->tampil());
+>>>>>>> master
             }
         }
 }//GEN-LAST:event_BtnSimpanActionPerformed
@@ -829,7 +864,33 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 }//GEN-LAST:event_ChkInputActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        } 
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void JasaSaranaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JasaSaranaKeyPressed
@@ -927,10 +988,21 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         Valid.tabelKosong(tabModeKomponen);
         try{
             ps=koneksi.prepareStatement(
+<<<<<<< HEAD
                 "select * from utd_komponen_darah where kode like ? or nama like ? order by nama");
             try {
                 ps.setString(1,"%"+TCari.getText().trim()+"%");
                 ps.setString(2,"%"+TCari.getText().trim()+"%");
+=======
+                "select * from utd_komponen_darah "+(TCari.getText().trim().equals("")?"":"where utd_komponen_darah.kode like ? or utd_komponen_darah.nama like ? ")+"order by utd_komponen_darah.nama"
+            );
+            try {
+                if(!TCari.getText().trim().equals("")){
+                    ps.setString(1,"%"+TCari.getText().trim()+"%");
+                    ps.setString(2,"%"+TCari.getText().trim()+"%");
+                }
+                    
+>>>>>>> master
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabModeKomponen.addRow(new Object[]{
@@ -1014,4 +1086,38 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
     }
  
+<<<<<<< HEAD
+=======
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

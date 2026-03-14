@@ -59,8 +59,11 @@ public final class DlgCariPerawatanRanap2 extends javax.swing.JDialog {
     private String[] kode,nama,kategori,kelastarif;
     private double[] totaltnd,bagianrs,bhp,jmdokter,jmperawat,kso,menejemen;
     private int jml=0,i=0,index=0;
+<<<<<<< HEAD
     public  DlgCariDokter dokter=new DlgCariDokter(null,false);
     public  DlgCariPetugas petugas=new DlgCariPetugas(null,false);
+=======
+>>>>>>> master
     private double ttljmdokter=0,ttljmperawat=0,ttlkso=0,ttlpendapatan=0,ttljasasarana=0,ttlbhp=0,ttlmenejemen=0,
             hapusttljasasarana=0,hapusttlbhp=0,hapusttlmenejemen=0,hapusttljmdokter=0,hapusttljmperawat=0,hapusttlkso=0,hapusttlpendapatan=0;
     private Jurnal jur=new Jurnal();
@@ -134,6 +137,7 @@ public final class DlgCariPerawatanRanap2 extends javax.swing.JDialog {
             }
         }
         tbKamar.setDefaultRenderer(Object.class, new WarnaTable());
+<<<<<<< HEAD
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));  
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -274,6 +278,10 @@ public final class DlgCariPerawatanRanap2 extends javax.swing.JDialog {
         } catch (Exception e) {
             System.out.println(e);
         }
+=======
+        TCari.setDocument(new batasInput((byte)100).getKata(TCari)); 
+        TCari.requestFocus();
+>>>>>>> master
     }
     
 
@@ -1842,6 +1850,7 @@ private void kddokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
 private void btnDokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDokterActionPerformed
         switch (pilihtable) {
             case "rawat_inap_dr":
+<<<<<<< HEAD
                 dokter.isCek();
                 dokter.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                 dokter.setLocationRelativeTo(internalFrame1);
@@ -1861,6 +1870,102 @@ private void btnDokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 dokter.setLocationRelativeTo(internalFrame1);
                 dokter.setAlwaysOnTop(false);
                 dokter.setVisible(true);
+=======
+                {
+                    DlgCariDokter dokter=new DlgCariDokter(null,false);
+                    dokter.addWindowListener(new WindowListener() {
+                        @Override
+                        public void windowOpened(WindowEvent e) {}
+                        @Override
+                        public void windowClosing(WindowEvent e) {}
+                        @Override
+                        public void windowClosed(WindowEvent e) {
+                            if(dokter.getTable().getSelectedRow()!= -1){
+                                kddokter.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),0).toString());
+                                nmdokter.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),1).toString());
+                            }   
+                            kddokter.requestFocus();
+                        }
+                        @Override
+                        public void windowIconified(WindowEvent e) {}
+                        @Override
+                        public void windowDeiconified(WindowEvent e) {}
+                        @Override
+                        public void windowActivated(WindowEvent e) {}
+                        @Override
+                        public void windowDeactivated(WindowEvent e) {}
+                    });
+                    dokter.isCek();
+                    dokter.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                    dokter.setLocationRelativeTo(internalFrame1);
+                    dokter.setAlwaysOnTop(false);
+                    dokter.setVisible(true);
+                }
+                break;
+            case "rawat_inap_pr":
+                {
+                    DlgCariPetugas petugas=new DlgCariPetugas(null,false);
+                    petugas.addWindowListener(new WindowListener() {
+                        @Override
+                        public void windowOpened(WindowEvent e) {}
+                        @Override
+                        public void windowClosing(WindowEvent e) {}
+                        @Override
+                        public void windowClosed(WindowEvent e) {
+                            if(petugas.getTable().getSelectedRow()!= -1){    
+                                kddokter.setText(petugas.getTable().getValueAt(petugas.getTable().getSelectedRow(),0).toString());
+                                nmdokter.setText(petugas.getTable().getValueAt(petugas.getTable().getSelectedRow(),1).toString());
+                                kddokter.requestFocus();
+                            }                  
+                        }
+                        @Override
+                        public void windowIconified(WindowEvent e) {}
+                        @Override
+                        public void windowDeiconified(WindowEvent e) {}
+                        @Override
+                        public void windowActivated(WindowEvent e) {}
+                        @Override
+                        public void windowDeactivated(WindowEvent e) {}
+                    });
+                    petugas.isCek();
+                    petugas.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                    petugas.setLocationRelativeTo(internalFrame1);
+                    petugas.setAlwaysOnTop(false);
+                    petugas.setVisible(true);
+                }
+                break;
+            case "rawat_inap_drpr":
+                {
+                    DlgCariDokter dokter=new DlgCariDokter(null,false);
+                    dokter.addWindowListener(new WindowListener() {
+                        @Override
+                        public void windowOpened(WindowEvent e) {}
+                        @Override
+                        public void windowClosing(WindowEvent e) {}
+                        @Override
+                        public void windowClosed(WindowEvent e) {
+                            if(dokter.getTable().getSelectedRow()!= -1){
+                                kddokter.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),0).toString());
+                                nmdokter.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),1).toString());
+                            }   
+                            kddokter.requestFocus();
+                        }
+                        @Override
+                        public void windowIconified(WindowEvent e) {}
+                        @Override
+                        public void windowDeiconified(WindowEvent e) {}
+                        @Override
+                        public void windowActivated(WindowEvent e) {}
+                        @Override
+                        public void windowDeactivated(WindowEvent e) {}
+                    });
+                    dokter.isCek();
+                    dokter.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                    dokter.setLocationRelativeTo(internalFrame1);
+                    dokter.setAlwaysOnTop(false);
+                    dokter.setVisible(true);
+                }
+>>>>>>> master
                 break;      
         }       
 }//GEN-LAST:event_btnDokterActionPerformed
@@ -1908,6 +2013,41 @@ private void ppPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     }//GEN-LAST:event_KdPtg2KeyPressed
 
     private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPetugasActionPerformed
+<<<<<<< HEAD
+=======
+        DlgCariPetugas petugas=new DlgCariPetugas(null,false);
+        petugas.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(petugas.getTable().getSelectedRow()!= -1){                   
+                    switch (pilihtable) {
+                        case "rawat_inap_pr":
+                            kddokter.setText(petugas.getTable().getValueAt(petugas.getTable().getSelectedRow(),0).toString());
+                            nmdokter.setText(petugas.getTable().getValueAt(petugas.getTable().getSelectedRow(),1).toString());
+                            kddokter.requestFocus();
+                            break;
+                        case "rawat_inap_drpr":
+                            KdPtg2.setText(petugas.getTable().getValueAt(petugas.getTable().getSelectedRow(),0).toString());
+                            NmPtg2.setText(petugas.getTable().getValueAt(petugas.getTable().getSelectedRow(),1).toString());                        
+                            KdPtg2.requestFocus();
+                            break;
+                    }
+                }                  
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
+>>>>>>> master
         petugas.isCek();
         petugas.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         petugas.setLocationRelativeTo(internalFrame1);
@@ -1994,7 +2134,99 @@ private void ppPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     }//GEN-LAST:event_btnKategoriKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         
+=======
+        try {
+            psrekening=koneksi.prepareStatement(
+                "select set_akun_ranap.Suspen_Piutang_Tindakan_Ranap,set_akun_ranap.Tindakan_Ranap,set_akun_ranap.Beban_Jasa_Medik_Dokter_Tindakan_Ranap,"+
+                "set_akun_ranap.Utang_Jasa_Medik_Dokter_Tindakan_Ranap,set_akun_ranap.Beban_Jasa_Medik_Paramedis_Tindakan_Ranap,set_akun_ranap.Utang_Jasa_Medik_Paramedis_Tindakan_Ranap,"+
+                "set_akun_ranap.Beban_KSO_Tindakan_Ranap,set_akun_ranap.Utang_KSO_Tindakan_Ranap,set_akun_ranap.Beban_Jasa_Sarana_Tindakan_Ranap,set_akun_ranap.Utang_Jasa_Sarana_Tindakan_Ranap,"+
+                "set_akun_ranap.Beban_Jasa_Menejemen_Tindakan_Ranap,set_akun_ranap.Utang_Jasa_Menejemen_Tindakan_Ranap,set_akun_ranap.HPP_BHP_Tindakan_Ranap,"+
+                "set_akun_ranap.Persediaan_BHP_Tindakan_Ranap from set_akun_ranap"
+            );
+            try {
+                rsrekening=psrekening.executeQuery();
+                while(rsrekening.next()){
+                    Suspen_Piutang_Tindakan_Ranap=rsrekening.getString("Suspen_Piutang_Tindakan_Ranap");
+                    Tindakan_Ranap=rsrekening.getString("Tindakan_Ranap");
+                    Beban_Jasa_Medik_Dokter_Tindakan_Ranap=rsrekening.getString("Beban_Jasa_Medik_Dokter_Tindakan_Ranap");
+                    Utang_Jasa_Medik_Dokter_Tindakan_Ranap=rsrekening.getString("Utang_Jasa_Medik_Dokter_Tindakan_Ranap");
+                    Beban_Jasa_Medik_Paramedis_Tindakan_Ranap=rsrekening.getString("Beban_Jasa_Medik_Paramedis_Tindakan_Ranap");
+                    Utang_Jasa_Medik_Paramedis_Tindakan_Ranap=rsrekening.getString("Utang_Jasa_Medik_Paramedis_Tindakan_Ranap");
+                    Beban_KSO_Tindakan_Ranap=rsrekening.getString("Beban_KSO_Tindakan_Ranap");
+                    Utang_KSO_Tindakan_Ranap=rsrekening.getString("Utang_KSO_Tindakan_Ranap");
+                    Beban_Jasa_Sarana_Tindakan_Ranap=rsrekening.getString("Beban_Jasa_Sarana_Tindakan_Ranap");
+                    Utang_Jasa_Sarana_Tindakan_Ranap=rsrekening.getString("Utang_Jasa_Sarana_Tindakan_Ranap");
+                    Beban_Jasa_Menejemen_Tindakan_Ranap=rsrekening.getString("Beban_Jasa_Menejemen_Tindakan_Ranap");
+                    Utang_Jasa_Menejemen_Tindakan_Ranap=rsrekening.getString("Utang_Jasa_Menejemen_Tindakan_Ranap");
+                    HPP_BHP_Tindakan_Ranap=rsrekening.getString("HPP_BHP_Tindakan_Ranap");
+                    Persediaan_BHP_Tindakan_Ranap=rsrekening.getString("Persediaan_BHP_Tindakan_Ranap");
+                }
+            } catch (Exception e) {
+                System.out.println("Notif Rekening : "+e);
+            } finally{
+                if(rsrekening!=null){
+                    rsrekening.close();
+                }
+                if(psrekening!=null){
+                    psrekening.close();
+                }
+            }            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+        try {
+            pstarif=koneksi.prepareStatement("select set_tarif.ruang_ranap,set_tarif.cara_bayar_ranap,set_tarif.kelas_ranap from set_tarif");
+            try {
+                rstarif=pstarif.executeQuery();
+                if(rstarif.next()){
+                    ruang_ranap=rstarif.getString("ruang_ranap");
+                    cara_bayar_ranap=rstarif.getString("cara_bayar_ranap");
+                    kelas_ranap=rstarif.getString("kelas_ranap");
+                }else{
+                    ruang_ranap="Yes";
+                    cara_bayar_ranap="Yes";
+                    kelas_ranap="Yes";
+                }
+            } catch (Exception e) {
+                System.out.println("Notifikasi : "+e);
+            } finally{
+                if(rstarif != null){
+                    rstarif.close();
+                }
+                if(pstarif != null){
+                    pstarif.close();
+                }
+            }                 
+        } catch (Exception e) {
+            System.out.println("Notifikasi : "+e);
+        }
+        
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**

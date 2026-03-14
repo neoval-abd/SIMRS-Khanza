@@ -60,7 +60,11 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
     private final DefaultTableModel tabMode;
     private validasi Valid=new validasi();
     private sekuel Sequel=new sekuel();
+<<<<<<< HEAD
     private int i=0;
+=======
+    private int i=0,reply=0;
+>>>>>>> master
     private ApiApotekBPJS api=new ApiApotekBPJS();
     private String URL="",link="",utc="",requestJson="";
     private HttpHeaders headers;
@@ -68,7 +72,11 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
     private ObjectMapper mapper = new ObjectMapper();
     private JsonNode root;
     private JsonNode nameNode;
+<<<<<<< HEAD
     private JsonNode response,responsedetailsep;
+=======
+    private JsonNode response;
+>>>>>>> master
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
 
@@ -83,7 +91,11 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
         setSize(628,674);
 
         tabMode=new DefaultTableModel(null,new String[]{
+<<<<<<< HEAD
                 "No.SEP Apotek","No.SEP Asal","No.Resep","No.Kartu","Nama Peserta","Kode Jenis","Jenis Obat","Tgl.Pelayanan",
+=======
+                "No.SEP Apotek","No.SEP Asal","No.Resep","No.Kartu","Nama Peserta","Kode","Jenis Obat","Tgl.Pelayanan",
+>>>>>>> master
                 "Kode Obat","Nama Obat","Tipe Obat","Signa 1","Signa 2","Hari","Permintaan","Jumlah","Harga"
             }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
@@ -97,6 +109,7 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
         for (i = 0; i < 17; i++) {
             TableColumn column = tbKamar.getColumnModel().getColumn(i);
             if(i==0){
+<<<<<<< HEAD
                 column.setPreferredWidth(110);
             }else if(i==1){
                 column.setPreferredWidth(110);
@@ -110,12 +123,31 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
                 column.setPreferredWidth(65);
             }else if(i==6){
                 column.setPreferredWidth(100);
+=======
+                column.setPreferredWidth(125);
+            }else if(i==1){
+                column.setPreferredWidth(125);
+            }else if(i==2){
+                column.setPreferredWidth(55);
+            }else if(i==3){
+                column.setPreferredWidth(90);
+            }else if(i==4){
+                column.setPreferredWidth(150);
+            }else if(i==5){
+                column.setPreferredWidth(30);
+            }else if(i==6){
+                column.setPreferredWidth(120);
+>>>>>>> master
             }else if(i==7){
                 column.setPreferredWidth(75);
             }else if(i==8){
                 column.setPreferredWidth(90);
             }else if(i==9){
+<<<<<<< HEAD
                 column.setPreferredWidth(150);
+=======
+                column.setPreferredWidth(160);
+>>>>>>> master
             }else if(i==10){
                 column.setPreferredWidth(57);
             }else if(i==11){
@@ -136,6 +168,7 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
         
         NomorSEP.setDocument(new batasInput((byte)100).getKata(NomorSEP));
         
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             NomorSEP.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -159,6 +192,8 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
             });
         } 
         
+=======
+>>>>>>> master
         try {
             link=koneksiDB.URLAPIAPOTEKBPJS();
         } catch (Exception e) {
@@ -195,6 +230,14 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
         setIconImages(null);
         setUndecorated(true);
         setResizable(false);
+<<<<<<< HEAD
+=======
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+>>>>>>> master
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Daftar Pelayanan Obat Apotek BPJS ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
@@ -336,9 +379,16 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
                                 tabMode.getValueAt(i,10).toString()+"','"+
                                 tabMode.getValueAt(i,11).toString()+"','"+
                                 tabMode.getValueAt(i,12).toString()+"','"+
+<<<<<<< HEAD
                                 tabMode.getValueAt(i,14).toString()+"','"+
                                 tabMode.getValueAt(i,15).toString()+"','"+
                                 tabMode.getValueAt(i,16).toString()+"','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Daftar Pelayanan Obat Apotek BPJS"); 
+=======
+                                tabMode.getValueAt(i,13).toString()+"','"+
+                                tabMode.getValueAt(i,14).toString()+"','"+
+                                tabMode.getValueAt(i,15).toString()+"','"+
+                                tabMode.getValueAt(i,16).toString()+"','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Daftar Pelayanan Obat Apotek BPJS"); 
+>>>>>>> master
             }
             
             Map<String, Object> param = new HashMap<>();                 
@@ -386,10 +436,20 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
 
     private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHapusActionPerformed
         if(tbKamar.getSelectedRow()!= -1){
+<<<<<<< HEAD
             try {
                 bodyWithDeleteRequest();
             }catch (Exception ex) {
                 System.out.println("Notifikasi Bridging : "+ex);
+=======
+            reply = JOptionPane.showConfirmDialog(rootPane, "Eeiiiiiits, udah yakin data No.SEP Apotek : "+tbKamar.getValueAt(tbKamar.getSelectedRow(),0).toString()+",\nNo.Resep : "+tbKamar.getValueAt(tbKamar.getSelectedRow(),2).toString()+",Kode Obat : "+tbKamar.getValueAt(tbKamar.getSelectedRow(),8).toString()+",\nTipe Obat : "+tbKamar.getValueAt(tbKamar.getSelectedRow(),10).toString()+" mau dihapus?\nData hanya dihapus di sisi BPJS, data yang disimpan lokal tidak ikut terhapus..!!\nGunakan fitur ini untuk perbaikan data Apotek Online BPJS..!!!", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+            if (reply == JOptionPane.YES_OPTION) {
+                try {
+                    bodyWithDeleteRequest();
+                }catch (Exception ex) {
+                    System.out.println("Notifikasi Bridging : "+ex);
+                }
+>>>>>>> master
             }
         }else{
             JOptionPane.showMessageDialog(null,"Silahkan pilih dulu data yang mau dihapus..!!");
@@ -404,6 +464,34 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_BtnHapusKeyPressed
 
+<<<<<<< HEAD
+=======
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            NomorSEP.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(NomorSEP.getText().length()>2){
+                        runBackground(() ->tampil(NomorSEP.getText()));
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(NomorSEP.getText().length()>2){
+                        runBackground(() ->tampil(NomorSEP.getText()));
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(NomorSEP.getText().length()>2){
+                        runBackground(() ->tampil(NomorSEP.getText()));
+                    }
+                }
+            });
+        } 
+    }//GEN-LAST:event_formWindowOpened
+
+>>>>>>> master
     /**
     * @param args the command line arguments
     */
@@ -445,11 +533,16 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
 	    headers.add("user_key",koneksiDB.USERKEYAPIAPOTEKBPJS());
             requestEntity = new HttpEntity(headers);
             URL = link+"/pelayanan/obat/daftar/"+keyword;	
+<<<<<<< HEAD
             System.out.println(URL);
+=======
+            System.out.println("URL : "+URL);
+>>>>>>> master
             root = mapper.readTree(api.getRest().exchange(URL, HttpMethod.GET, requestEntity, String.class).getBody());
             nameNode = root.path("metaData");
             if(nameNode.path("code").asText().equals("200")){
                 Valid.tabelKosong(tabMode);
+<<<<<<< HEAD
                 response = mapper.readTree(api.Decrypt(root.path("response").asText(),utc));
                 responsedetailsep=response.path("detailsep");
                 if(response.path("detailsep").path("listobat").isArray()){
@@ -457,6 +550,16 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
                         tabMode.addRow(new Object[]{
                             responsedetailsep.path("noSepApotek").asText(),responsedetailsep.path("noSepAsal").asText(),responsedetailsep.path("noresep").asText(),responsedetailsep.path("nokartu").asText(),
                             responsedetailsep.path("nmpst").asText(),responsedetailsep.path("kdjnsobat").asText(),responsedetailsep.path("nmjnsobat").asText(),responsedetailsep.path("tglpelayanan").asText(),
+=======
+                requestJson=api.Decrypt(root.path("response").asText(),utc);
+                System.out.println("Respon JSON : "+requestJson);
+                response = mapper.readTree(requestJson);
+                if(response.path("listobat").isArray()){
+                    for(JsonNode list:response.path("listobat")){
+                        tabMode.addRow(new Object[]{
+                            response.path("noSepApotek").asText(),response.path("noSepAsal").asText(),response.path("noresep").asText(),response.path("nokartu").asText(),
+                            response.path("nmpst").asText(),response.path("kdjnsobat").asText(),response.path("nmjnsobat").asText(),response.path("tglpelayanan").asText(),
+>>>>>>> master
                             list.path("kodeobat").asText(),list.path("namaobat").asText(),list.path("tipeobat").asText(),list.path("signa1").asText(),list.path("signa2").asText(),list.path("hari").asText(),
                             list.path("permintaan").asText(),list.path("jumlah").asText(),Valid.SetAngka(list.path("harga").asDouble())
                         });
@@ -519,6 +622,7 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
         try {
             headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+<<<<<<< HEAD
             headers.add("X-Cons-ID",koneksiDB.CONSIDAPIBPJS());
             utc=String.valueOf(api.GetUTCdatetimeAsString());
 	    headers.add("X-Timestamp",utc);
@@ -526,6 +630,17 @@ public final class ApotekBPJSDaftarPelayananObat extends javax.swing.JDialog {
             headers.add("user_key",koneksiDB.USERKEYAPIBPJS());
             URL = link+"/pelayanan/obat/hapus/";
             requestJson ="{\"nosepapotek\":\""+tbKamar.getValueAt(tbKamar.getSelectedRow(),0).toString()+"\",\"noresep\":\""+tbKamar.getValueAt(tbKamar.getSelectedRow(),2).toString()+"\",\"kodeobat\":\""+tbKamar.getValueAt(tbKamar.getSelectedRow(),8).toString()+"\",\"tipeobat\":\""+tbKamar.getValueAt(tbKamar.getSelectedRow(),10).toString()+"\"}  ";            
+=======
+            headers.add("x-cons-id",koneksiDB.CONSIDAPIAPOTEKBPJS());
+	    utc=String.valueOf(api.GetUTCdatetimeAsString());
+	    headers.add("x-timestamp",utc);
+	    headers.add("x-signature",api.getHmac(utc));
+	    headers.add("user_key",koneksiDB.USERKEYAPIAPOTEKBPJS());
+            URL = link+"/pelayanan/obat/hapus";
+            requestJson ="{\"nosepapotek\":\""+tbKamar.getValueAt(tbKamar.getSelectedRow(),0).toString()+"\",\"noresep\":\""+tbKamar.getValueAt(tbKamar.getSelectedRow(),2).toString()+"\",\"kodeobat\":\""+tbKamar.getValueAt(tbKamar.getSelectedRow(),8).toString()+"\",\"tipeobat\":\""+tbKamar.getValueAt(tbKamar.getSelectedRow(),10).toString()+"\"}";
+            System.out.println(URL);
+            System.out.println("JSON Dikirim : "+requestJson);
+>>>>>>> master
             requestEntity = new HttpEntity(requestJson,headers);
             root = mapper.readTree(restTemplate.exchange(URL, HttpMethod.DELETE,requestEntity, String.class).getBody());
             nameNode = root.path("metaData");

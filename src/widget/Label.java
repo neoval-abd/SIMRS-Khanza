@@ -25,8 +25,11 @@ public class Label extends usu.widget.Label {
         setHorizontalTextPosition(CENTER);
         setVerticalTextPosition(CENTER);
     }
+<<<<<<< HEAD
 
     public void setGlassColor(Color color) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+=======
+>>>>>>> master
 }

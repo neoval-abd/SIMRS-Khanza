@@ -54,7 +54,11 @@ public final class DlgJabatan extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setLocation(10,10);
+<<<<<<< HEAD
         setSize(459,539);
+=======
+        
+>>>>>>> master
 
         Object[] row={"Kode Jabatan","Nama Jabatan"};
         tabMode=new DefaultTableModel(null,row){
@@ -587,12 +591,23 @@ public final class DlgJabatan extends javax.swing.JDialog {
     private void tampil() {
         Valid.tabelKosong(tabMode);
         try{
+<<<<<<< HEAD
             ps=koneksi.prepareStatement("select jabatan.kd_jbtn, jabatan.nm_jbtn "+
                     " from jabatan where  jabatan.kd_jbtn like ? or "+
                     " jabatan.nm_jbtn like ? order by jabatan.kd_jbtn");
             try {
                 ps.setString(1,"%"+TCari.getText().trim()+"%");
                 ps.setString(2,"%"+TCari.getText().trim()+"%");
+=======
+            ps=koneksi.prepareStatement(
+                "select jabatan.kd_jbtn,jabatan.nm_jbtn from jabatan "+(TCari.getText().trim().equals("")?"":"where jabatan.kd_jbtn like ? or jabatan.nm_jbtn like ? ")+"order by jabatan.kd_jbtn"
+            );
+            try {
+                if(!TCari.getText().trim().equals("")){
+                    ps.setString(1,"%"+TCari.getText().trim()+"%");
+                    ps.setString(2,"%"+TCari.getText().trim()+"%");
+                }   
+>>>>>>> master
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new Object[]{

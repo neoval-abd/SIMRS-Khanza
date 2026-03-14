@@ -142,6 +142,7 @@ public final class DlgBayarPiutang extends javax.swing.JDialog {
         Kdmem.setDocument(new batasInput((byte)15).getKata(Kdmem));
         
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -164,6 +165,8 @@ public final class DlgBayarPiutang extends javax.swing.JDialog {
                 }
             });
         }  
+=======
+>>>>>>> master
         
         Cicilan.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
             @Override
@@ -239,6 +242,7 @@ public final class DlgBayarPiutang extends javax.swing.JDialog {
         
         ChkInput.setSelected(false);
         isForm();
+<<<<<<< HEAD
         
         try {
             ps=koneksi.prepareStatement(
@@ -262,6 +266,8 @@ public final class DlgBayarPiutang extends javax.swing.JDialog {
         } catch (Exception e) {
             System.out.println("Notif : "+e);
         }
+=======
+>>>>>>> master
     }
 
 
@@ -1347,6 +1353,53 @@ private void BtnSeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             }
         } catch (Exception e) {
         }
+<<<<<<< HEAD
+=======
+        try {
+            ps=koneksi.prepareStatement(
+                    "select set_akun.Diskon_Piutang,set_akun.Piutang_Tidak_Terbayar from set_akun");
+            try {
+                rs=ps.executeQuery();
+                if(rs.next()){
+                    Diskon_Piutang=rs.getString("Diskon_Piutang");
+                    Piutang_Tidak_Terbayar=rs.getString("Piutang_Tidak_Terbayar");
+                }
+            } catch (Exception e) {
+                System.out.println("Notif : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif : "+e);
+        }
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void BtnAll1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAll1ActionPerformed

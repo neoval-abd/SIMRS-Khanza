@@ -8467,6 +8467,7 @@ public final class RMPenilaianAwalKeperawatanRanapBayiAnak extends javax.swing.J
         } catch (Exception e) {
             System.out.println("Notif : "+e);
         }
+<<<<<<< HEAD
         
         
         
@@ -8558,6 +8559,8 @@ public final class RMPenilaianAwalKeperawatanRanapBayiAnak extends javax.swing.J
         });
     }
 
+=======
+>>>>>>> master
     }
     
     public void setNoRm(String norwt,Date tgl2) {

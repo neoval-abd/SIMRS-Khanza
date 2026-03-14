@@ -88,6 +88,7 @@ public final class DlgSetHargaObatRanap extends javax.swing.JDialog {
         harga.setDocument(new batasInput((byte)4).getOnlyAngka(harga));
         kdpj.setDocument(new batasInput((byte)8).getKata(kdpj));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -110,6 +111,8 @@ public final class DlgSetHargaObatRanap extends javax.swing.JDialog {
                 }
             });
         }  
+=======
+>>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -603,6 +606,31 @@ private void hargaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_har
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         runBackground(() ->tampil());
         emptTeks();
+<<<<<<< HEAD
+=======
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        } 
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void KelasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KelasKeyPressed

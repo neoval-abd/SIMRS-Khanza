@@ -24,8 +24,17 @@ import java.sql.ResultSet;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -44,6 +53,11 @@ public final class SuratBebasTato extends javax.swing.JDialog {
     private ResultSet rs;
     private int i=0;
     private String tgl,finger="";
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
     /** Creates new form DlgRujuk
      * @param parent
      * @param modal */
@@ -91,6 +105,7 @@ public final class SuratBebasTato extends javax.swing.JDialog {
         TNoRw.setDocument(new batasInput((byte)25).getKata(TNoRw));           
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));          
         Keperluan.setDocument(new batasInput((byte)50).getKata(Keperluan));           
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -113,6 +128,8 @@ public final class SuratBebasTato extends javax.swing.JDialog {
                 }
             });
         }
+=======
+>>>>>>> master
         ChkInput.setSelected(false);
         isForm();
     }
@@ -188,6 +205,14 @@ public final class SuratBebasTato extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+<<<<<<< HEAD
+=======
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+>>>>>>> master
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Surat Keterangan Bebas Tato ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -363,7 +388,11 @@ public final class SuratBebasTato extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
+<<<<<<< HEAD
         DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-09-2021" }));
+=======
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-02-2026" }));
+>>>>>>> master
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -376,7 +405,11 @@ public final class SuratBebasTato extends javax.swing.JDialog {
         panelGlass9.add(DTPCari1);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
+<<<<<<< HEAD
         DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-09-2021" }));
+=======
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-02-2026" }));
+>>>>>>> master
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -515,7 +548,11 @@ public final class SuratBebasTato extends javax.swing.JDialog {
         FormInput.add(jLabel14);
         jLabel14.setBounds(218, 40, 110, 23);
 
+<<<<<<< HEAD
         TanggalPeriksa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-09-2021" }));
+=======
+        TanggalPeriksa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-02-2026" }));
+>>>>>>> master
         TanggalPeriksa.setDisplayFormat("dd-MM-yyyy");
         TanggalPeriksa.setName("TanggalPeriksa"); // NOI18N
         FormInput.add(TanggalPeriksa);
@@ -595,7 +632,11 @@ public final class SuratBebasTato extends javax.swing.JDialog {
             if(Sequel.menyimpantf("surat_bebas_tato","?,?,?,?,?","No.Surat",5,new String[]{
                     NoSurat.getText(),TNoRw.getText(),Valid.SetTgl(TanggalPeriksa.getSelectedItem()+""),HasilPeriksa.getSelectedItem()+"",Keperluan.getText()
             })==true){
+<<<<<<< HEAD
                 tampil();
+=======
+                runBackground(() ->tampil());
+>>>>>>> master
                 emptTeks();
             }
         }
@@ -740,7 +781,11 @@ public final class SuratBebasTato extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -753,12 +798,20 @@ public final class SuratBebasTato extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
             TCari.setText("");
         }else{
             Valid.pindah(evt, BtnCari, TPasien);
@@ -837,6 +890,34 @@ public final class SuratBebasTato extends javax.swing.JDialog {
         Valid.pindah(evt,NoSurat,Keperluan);
     }//GEN-LAST:event_HasilPeriksaKeyPressed
 
+<<<<<<< HEAD
+=======
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        }
+    }//GEN-LAST:event_formWindowOpened
+
+>>>>>>> master
     /**
     * @param args the command line arguments
     */
@@ -894,7 +975,11 @@ public final class SuratBebasTato extends javax.swing.JDialog {
     private widget.Table tbObat;
     // End of variables declaration//GEN-END:variables
 
+<<<<<<< HEAD
     public void tampil() {
+=======
+    private void tampil() {
+>>>>>>> master
         Valid.tabelKosong(tabMode);
         try{
             tgl=" surat_bebas_tato.tanggalperiksa between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' ";
@@ -984,6 +1069,10 @@ public final class SuratBebasTato extends javax.swing.JDialog {
         TPasien.setText(pasien);
         ChkInput.setSelected(true);
         isForm();
+<<<<<<< HEAD
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
     }
     
     private void isForm(){
@@ -1006,6 +1095,41 @@ public final class SuratBebasTato extends javax.swing.JDialog {
         BtnHapus.setEnabled(akses.getsurat_bebas_tato());
         BtnEdit.setEnabled(akses.getsurat_bebas_tato());
     }
+<<<<<<< HEAD
+=======
+    
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }
 
 

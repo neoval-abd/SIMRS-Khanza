@@ -20,14 +20,27 @@ import fungsi.sekuel;
 import fungsi.validasi;
 import fungsi.akses;
 import inventory.riwayatobat;
+<<<<<<< HEAD
+=======
+import java.awt.Cursor;
+>>>>>>> master
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Date;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -59,6 +72,11 @@ public final class DlgBarcodeRanap extends javax.swing.JDialog {
     private String aktifkanbatch="no",norm="";
     private boolean sukses=true;
     private Jurnal jur=new Jurnal();
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
     private double ttljmdokter=0,ttlkso=0,ttlpendapatan=0,ttlhpp=0,ttljual=0,ttljasasarana=0,ttlbhp=0,ttlmenejemen=0;
     private String Suspen_Piutang_Tindakan_Ranap="",Tindakan_Ranap="",Beban_Jasa_Medik_Dokter_Tindakan_Ranap="",Utang_Jasa_Medik_Dokter_Tindakan_Ranap="",
             Beban_KSO_Tindakan_Ranap="",Utang_KSO_Tindakan_Ranap="",Beban_Jasa_Sarana_Tindakan_Ranap="",Utang_Jasa_Sarana_Tindakan_Ranap="",
@@ -191,6 +209,7 @@ public final class DlgBarcodeRanap extends javax.swing.JDialog {
         warna.kolom=1;
         tbObat.setDefaultRenderer(Object.class,warna);
         TCariObat.setDocument(new batasInput((byte)100).getKata(TCariObat));
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCariTindakan.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -235,6 +254,8 @@ public final class DlgBarcodeRanap extends javax.swing.JDialog {
                 }
             });
         }
+=======
+>>>>>>> master
         
         try {
             aktifkanbatch = koneksiDB.AKTIFKANBATCHOBAT();
@@ -244,6 +265,7 @@ public final class DlgBarcodeRanap extends javax.swing.JDialog {
         }
         
         try {
+<<<<<<< HEAD
             psrekening=koneksi.prepareStatement("select * from set_akun_ranap");
             try {
                 rsrekening=psrekening.executeQuery();
@@ -280,6 +302,8 @@ public final class DlgBarcodeRanap extends javax.swing.JDialog {
         }
         
         try {
+=======
+>>>>>>> master
             hppfarmasi=koneksiDB.HPPFARMASI();
         } catch (Exception e) {
             hppfarmasi="dasar";
@@ -580,8 +604,13 @@ public final class DlgBarcodeRanap extends javax.swing.JDialog {
     private void NoRawatKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NoRawatKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             setNoRm(NoRawat.getText());
+<<<<<<< HEAD
             tampiltindakan();
             tampilobat();
+=======
+            runBackground(() ->tampiltindakan());
+            runBackground(() ->tampilobat());
+>>>>>>> master
         }
     }//GEN-LAST:event_NoRawatKeyPressed
 
@@ -851,7 +880,11 @@ public final class DlgBarcodeRanap extends javax.swing.JDialog {
 
     private void BtnAllPeriksaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllPeriksaActionPerformed
         TCariTindakan.setText("");
+<<<<<<< HEAD
         tampiltindakan();
+=======
+        runBackground(() ->tampiltindakan());
+>>>>>>> master
     }//GEN-LAST:event_BtnAllPeriksaActionPerformed
 
     private void BtnAllPeriksaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllPeriksaKeyPressed
@@ -866,13 +899,21 @@ public final class DlgBarcodeRanap extends javax.swing.JDialog {
         }else if(evt.getKeyCode()==KeyEvent.VK_UP){
             tbObat.requestFocus();
         }else if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+<<<<<<< HEAD
             tampilobat();
+=======
+            runBackground(() ->tampilobat());
+>>>>>>> master
         }
     }//GEN-LAST:event_TCariObatKeyPressed
 
     private void BtnAllBhpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllBhpActionPerformed
         TCariObat.setText("");
+<<<<<<< HEAD
         tampilobat();
+=======
+        runBackground(() ->tampilobat());
+>>>>>>> master
     }//GEN-LAST:event_BtnAllBhpActionPerformed
 
     private void BtnAllBhpKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllBhpKeyPressed
@@ -940,7 +981,11 @@ public final class DlgBarcodeRanap extends javax.swing.JDialog {
         }else if(evt.getKeyCode()==KeyEvent.VK_UP){
             tbTindakan.requestFocus();
         }else if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+<<<<<<< HEAD
             tampiltindakan();
+=======
+            runBackground(() ->tampiltindakan());
+>>>>>>> master
         }
     }//GEN-LAST:event_TCariTindakanKeyPressed
 
@@ -953,6 +998,89 @@ public final class DlgBarcodeRanap extends javax.swing.JDialog {
         embalase=Sequel.cariIsiAngka("select embalase_per_obat from set_embalase");
         tuslah=Sequel.cariIsiAngka("select tuslah_per_obat from set_embalase");
         NoRawat.requestFocus();
+<<<<<<< HEAD
+=======
+        try {
+            psrekening=koneksi.prepareStatement("select * from set_akun_ranap");
+            try {
+                rsrekening=psrekening.executeQuery();
+                while(rsrekening.next()){
+                    Suspen_Piutang_Tindakan_Ranap=rsrekening.getString("Suspen_Piutang_Tindakan_Ranap");
+                    Tindakan_Ranap=rsrekening.getString("Tindakan_Ranap");
+                    Beban_Jasa_Medik_Dokter_Tindakan_Ranap=rsrekening.getString("Beban_Jasa_Medik_Dokter_Tindakan_Ranap");
+                    Utang_Jasa_Medik_Dokter_Tindakan_Ranap=rsrekening.getString("Utang_Jasa_Medik_Dokter_Tindakan_Ranap");
+                    Beban_KSO_Tindakan_Ranap=rsrekening.getString("Beban_KSO_Tindakan_Ranap");
+                    Utang_KSO_Tindakan_Ranap=rsrekening.getString("Utang_KSO_Tindakan_Ranap");
+                    Beban_Jasa_Sarana_Tindakan_Ranap=rsrekening.getString("Beban_Jasa_Sarana_Tindakan_Ranap");
+                    Utang_Jasa_Sarana_Tindakan_Ranap=rsrekening.getString("Utang_Jasa_Sarana_Tindakan_Ranap");
+                    Beban_Jasa_Menejemen_Tindakan_Ranap=rsrekening.getString("Beban_Jasa_Menejemen_Tindakan_Ranap");
+                    Utang_Jasa_Menejemen_Tindakan_Ranap=rsrekening.getString("Utang_Jasa_Menejemen_Tindakan_Ranap");
+                    HPP_BHP_Tindakan_Ranap=rsrekening.getString("HPP_BHP_Tindakan_Ranap");
+                    Persediaan_BHP_Tindakan_Ranap=rsrekening.getString("Persediaan_BHP_Tindakan_Ranap");
+                    Suspen_Piutang_Obat_Ranap=rsrekening.getString("Suspen_Piutang_Obat_Ranap");
+                    Obat_Ranap=rsrekening.getString("Obat_Ranap");
+                    HPP_Obat_Rawat_Inap=rsrekening.getString("HPP_Obat_Rawat_Inap");
+                    Persediaan_Obat_Rawat_Inap=rsrekening.getString("Persediaan_Obat_Rawat_Inap");
+                }
+            } catch (Exception e) {
+                System.out.println("Notif Rekening : "+e);
+            } finally{
+                if(rsrekening!=null){
+                    rsrekening.close();
+                }
+                if(psrekening!=null){
+                    psrekening.close();
+                }
+            }            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCariTindakan.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCariTindakan.getText().length()>2){
+                        runBackground(() ->tampiltindakan());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCariTindakan.getText().length()>2){
+                        runBackground(() ->tampiltindakan());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCariTindakan.getText().length()>2){
+                        runBackground(() ->tampiltindakan());
+                    }
+                }
+            });
+            TCariObat.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCariObat.getText().length()>2){
+                        runBackground(() ->tampilobat());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCariObat.getText().length()>2){
+                        runBackground(() ->tampilobat());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCariObat.getText().length()>2){
+                        runBackground(() ->tampilobat());
+                    }if(TCariObat.getText().length()>2){
+                        runBackground(() ->tampilobat());
+                    }
+                }
+            });
+        }
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void tbObatKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbObatKeyReleased
@@ -1671,4 +1799,38 @@ public final class DlgBarcodeRanap extends javax.swing.JDialog {
         }
     }
 
+<<<<<<< HEAD
+=======
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

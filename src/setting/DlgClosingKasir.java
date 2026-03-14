@@ -25,8 +25,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+=======
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+>>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -42,6 +51,11 @@ public class DlgClosingKasir extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private PreparedStatement ps;
     private ResultSet rs;
+<<<<<<< HEAD
+=======
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private volatile boolean ceksukses = false;
+>>>>>>> master
 
     /** Creates new form DlgJadwal
      * @param parent
@@ -86,6 +100,7 @@ public class DlgClosingKasir extends javax.swing.JDialog {
         tbJadwal.setDefaultRenderer(Object.class, new WarnaTable());
 
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));    
+<<<<<<< HEAD
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -113,6 +128,8 @@ public class DlgClosingKasir extends javax.swing.JDialog {
         } catch (Exception e) {
             System.out.println(e);
         }
+=======
+>>>>>>> master
     }
    
 
@@ -509,7 +526,11 @@ public class DlgClosingKasir extends javax.swing.JDialog {
             cmbJam1.getSelectedItem()+":"+cmbMnt1.getSelectedItem()+":"+cmbDtk1.getSelectedItem(),
             cmbJam2.getSelectedItem()+":"+cmbMnt2.getSelectedItem()+":"+cmbDtk2.getSelectedItem()
         });
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
         emptTeks();
 }//GEN-LAST:event_BtnSimpanActionPerformed
 
@@ -537,7 +558,11 @@ public class DlgClosingKasir extends javax.swing.JDialog {
                 Sequel.queryu("delete from closing_kasir where shift='"+tbJadwal.getValueAt(i,1).toString()+"'");
             }
         } 
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
         emptTeks();
 }//GEN-LAST:event_BtnHapusActionPerformed
 
@@ -555,7 +580,11 @@ public class DlgClosingKasir extends javax.swing.JDialog {
             cmbJam2.getSelectedItem()+":"+cmbMnt2.getSelectedItem()+":"+cmbDtk2.getSelectedItem(),
             cmbShift.getSelectedItem().toString()
         });
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
         emptTeks();
 }//GEN-LAST:event_BtnEditActionPerformed
 
@@ -621,7 +650,11 @@ public class DlgClosingKasir extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -633,13 +666,21 @@ public class DlgClosingKasir extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnCariKeyPressed
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+>>>>>>> master
         TCari.setText("");
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
+<<<<<<< HEAD
             tampil();
+=======
+            runBackground(() ->tampil());
+>>>>>>> master
             TCari.setText("");
         }else{
             Valid.pindah(evt, BtnCari,cmbShift);
@@ -667,7 +708,33 @@ public class DlgClosingKasir extends javax.swing.JDialog {
 }//GEN-LAST:event_tbJadwalKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+<<<<<<< HEAD
         tampil();
+=======
+        runBackground(() ->tampil());
+        if(koneksiDB.CARICEPAT().equals("aktif")){
+            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    if(TCari.getText().length()>2){
+                        runBackground(() ->tampil());
+                    }
+                }
+            });
+        } 
+>>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -721,6 +788,7 @@ public class DlgClosingKasir extends javax.swing.JDialog {
     private void tampil() {
         Valid.tabelKosong(tabMode);
         try{
+<<<<<<< HEAD
             ps.setString(1,"%"+TCari.getText().trim()+"%");
             rs=ps.executeQuery();
             while(rs.next()){
@@ -730,6 +798,30 @@ public class DlgClosingKasir extends javax.swing.JDialog {
                 tabMode.addRow(data);
             }
             
+=======
+            ps=koneksi.prepareStatement("select * from closing_kasir "+(TCari.getText().trim().equals("")?"":"where closing_kasir.shift like ? ")+" order by closing_kasir.shift");
+            try {
+                if(!TCari.getText().trim().equals("")){
+                    ps.setString(1,"%"+TCari.getText().trim()+"%");
+                }
+                rs=ps.executeQuery();
+                while(rs.next()){
+                    Object[] data={
+                        false,rs.getString(1),rs.getString(2),rs.getString(3)
+                    };
+                    tabMode.addRow(data);
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }
+>>>>>>> master
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
         }
@@ -771,4 +863,39 @@ public class DlgClosingKasir extends javax.swing.JDialog {
     public JTable getTable(){
         return tbJadwal;
     }
+<<<<<<< HEAD
+=======
+    
+    private void runBackground(Runnable task) {
+        if (ceksukses) return;
+        if (executor.isShutdown() || executor.isTerminated()) return;
+        if (!isDisplayable()) return;
+
+        ceksukses = true;
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+        try {
+            executor.submit(() -> {
+                try {
+                    task.run();
+                } finally {
+                    ceksukses = false;
+                    SwingUtilities.invokeLater(() -> {
+                        if (isDisplayable()) {
+                            setCursor(Cursor.getDefaultCursor());
+                        }
+                    });
+                }
+            });
+        } catch (RejectedExecutionException ex) {
+            ceksukses = false;
+        }
+    }
+    
+    @Override
+    public void dispose() {
+        executor.shutdownNow();
+        super.dispose();
+    }
+>>>>>>> master
 }

@@ -3136,7 +3136,10 @@ public final class BPJSCekNIK2 extends javax.swing.JDialog {
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         BPJSDataSEP form=new BPJSDataSEP(null,false);
         form.isCek();
+<<<<<<< HEAD
         form.tampil();
+=======
+>>>>>>> master
         form.tutupInput();
         form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         form.setLocationRelativeTo(internalFrame1);
@@ -3573,6 +3576,11 @@ public final class BPJSCekNIK2 extends javax.swing.JDialog {
                     kel=null;
                 }
             });
+<<<<<<< HEAD
+=======
+            kel.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            kel.setLocationRelativeTo(internalFrame1);
+>>>>>>> master
         }
         
         if (kel == null) return;
@@ -3601,6 +3609,11 @@ public final class BPJSCekNIK2 extends javax.swing.JDialog {
                     kec=null;
                 }
             });
+<<<<<<< HEAD
+=======
+            kec.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            kec.setLocationRelativeTo(internalFrame1);
+>>>>>>> master
         }
         
         if (kec == null) return;
@@ -3629,6 +3642,11 @@ public final class BPJSCekNIK2 extends javax.swing.JDialog {
                     kab=null;
                 }
             });
+<<<<<<< HEAD
+=======
+            kab.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            kab.setLocationRelativeTo(internalFrame1);
+>>>>>>> master
         }
         if (kab == null) return;
         if (!kab.isVisible()) {
@@ -3784,6 +3802,11 @@ public final class BPJSCekNIK2 extends javax.swing.JDialog {
                     kec=null;
                 }
             });
+<<<<<<< HEAD
+=======
+            kec.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            kec.setLocationRelativeTo(internalFrame1);
+>>>>>>> master
         }
         
         if (kec == null) return;
@@ -3899,6 +3922,11 @@ public final class BPJSCekNIK2 extends javax.swing.JDialog {
                     kab=null;
                 }
             });
+<<<<<<< HEAD
+=======
+            kab.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            kab.setLocationRelativeTo(internalFrame1);
+>>>>>>> master
         }
         
         if (kab == null) return;
@@ -3926,6 +3954,11 @@ public final class BPJSCekNIK2 extends javax.swing.JDialog {
                     kel=null;
                 }
             });
+<<<<<<< HEAD
+=======
+            kel.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            kel.setLocationRelativeTo(internalFrame1);
+>>>>>>> master
         }
         
         if (kel == null) return;
@@ -4360,6 +4393,11 @@ public final class BPJSCekNIK2 extends javax.swing.JDialog {
                     prop=null;
                 }
             });
+<<<<<<< HEAD
+=======
+            prop.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            prop.setLocationRelativeTo(internalFrame1);
+>>>>>>> master
         }
         
         if (prop == null) return;
@@ -4466,6 +4504,11 @@ public final class BPJSCekNIK2 extends javax.swing.JDialog {
                     prop=null;
                 }
             });
+<<<<<<< HEAD
+=======
+            prop.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            prop.setLocationRelativeTo(internalFrame1);
+>>>>>>> master
         }
         
         if (prop == null) return;
