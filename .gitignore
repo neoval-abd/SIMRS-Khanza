@@ -9,6 +9,7 @@
 
 
 *.jar
+*.zip
+*.rar
+
 /nbproject/private/
-dist.zip
-dist.rar
