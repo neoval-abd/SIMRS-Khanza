@@ -31,13 +31,8 @@ import java.sql.ResultSet;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
-=======
 import javax.swing.SwingUtilities;
 import javax.swing.JOptionPane;
->>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.text.Document;
 import javax.swing.text.html.HTMLEditorKit;
@@ -51,10 +46,6 @@ public class SKPCariPenilaianPegawai extends javax.swing.JDialog {
     private PreparedStatement ps,ps2;
     private ResultSet rs,rs2;
     private final sekuel Sequel=new sekuel();
-<<<<<<< HEAD
-    private int i;
-=======
->>>>>>> master
     private StringBuilder htmlContent;
 
     /** Creates new form DlgProgramStudi
@@ -66,31 +57,6 @@ public class SKPCariPenilaianPegawai extends javax.swing.JDialog {
 
         NoPenilaian.setDocument(new batasInput((int)20).getKata(NoPenilaian));  
         TCari.setDocument(new batasInput((int)100).getKata(TCari));          
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-            });
-        }  
-=======
->>>>>>> master
         
         ChkInput.setSelected(false);
         isForm();
@@ -814,8 +780,6 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                        htmlContent.toString()+
                       "</table>"+
                     "</html>");
-<<<<<<< HEAD
-=======
         htmlContent=null;
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -839,7 +803,6 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                 }
             });
         } 
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void btnPenilaiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnPenilaiKeyPressed
@@ -1027,10 +990,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                        htmlContent.toString()+
                       "</table>"+
                     "</html>");
-<<<<<<< HEAD
-=======
             htmlContent=null;
->>>>>>> master
         } catch (Exception e) {
             System.out.println("Notif : "+e);
         }

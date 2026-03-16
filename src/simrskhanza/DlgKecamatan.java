@@ -64,11 +64,7 @@ public class DlgKecamatan extends javax.swing.JDialog {
         initComponents();
 
         this.setLocation(10,10);
-<<<<<<< HEAD
-        setSize(459,539);
-=======
         
->>>>>>> master
 
         Object[] row={"Nama Kecamatan","Kode"};
         tabMode=new DefaultTableModel(null,row){

@@ -49,11 +49,6 @@ public final class PCareCekFaskesSubspesialis extends javax.swing.JDialog {
     private final Properties prop = new Properties();
     private validasi Valid=new validasi();
     private sekuel Sequel=new sekuel();
-<<<<<<< HEAD
-    private PCareCekReferensiSubspesialis spesialis=new PCareCekReferensiSubspesialis(null,false);
-    private PCareCekReferensiSarana sarana=new PCareCekReferensiSarana(null,false);
-=======
->>>>>>> master
     private int i=0;
     private ApiPcare api=new ApiPcare();
     private String URL="",link="",otorisasi,utc="";
@@ -115,81 +110,6 @@ public final class PCareCekFaskesSubspesialis extends javax.swing.JDialog {
         }
         tbKamar.setDefaultRenderer(Object.class, new WarnaTable());
         
-<<<<<<< HEAD
-        spesialis.addWindowListener(new WindowListener() {
-            @Override
-            public void windowOpened(WindowEvent e) {}
-            @Override
-            public void windowClosing(WindowEvent e) {}
-            @Override
-            public void windowClosed(WindowEvent e) {
-                if(spesialis.getTable().getSelectedRow()!= -1){                   
-                    KdSpesialis.setText(spesialis.getTable().getValueAt(spesialis.getTable().getSelectedRow(),1).toString());
-                    NmSpesialis.setText(spesialis.getTable().getValueAt(spesialis.getTable().getSelectedRow(),2).toString());
-                    KdSpesialis.requestFocus();
-                }                  
-            }
-            @Override
-            public void windowIconified(WindowEvent e) {}
-            @Override
-            public void windowDeiconified(WindowEvent e) {}
-            @Override
-            public void windowActivated(WindowEvent e) {}
-            @Override
-            public void windowDeactivated(WindowEvent e) {}
-        });
-        
-        spesialis.getTable().addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {}
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode()==KeyEvent.VK_SPACE){
-                    spesialis.dispose();
-                }
-            }
-            @Override
-            public void keyReleased(KeyEvent e) {}
-        }); 
-        
-        sarana.addWindowListener(new WindowListener() {
-            @Override
-            public void windowOpened(WindowEvent e) {}
-            @Override
-            public void windowClosing(WindowEvent e) {}
-            @Override
-            public void windowClosed(WindowEvent e) {
-                if(sarana.getTable().getSelectedRow()!= -1){                   
-                    KdSarana.setText(sarana.getTable().getValueAt(sarana.getTable().getSelectedRow(),1).toString());
-                    NmSarana.setText(sarana.getTable().getValueAt(sarana.getTable().getSelectedRow(),2).toString());
-                    KdSarana.requestFocus();
-                }                  
-            }
-            @Override
-            public void windowIconified(WindowEvent e) {}
-            @Override
-            public void windowDeiconified(WindowEvent e) {}
-            @Override
-            public void windowActivated(WindowEvent e) {}
-            @Override
-            public void windowDeactivated(WindowEvent e) {}
-        });
-        
-        sarana.getTable().addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {}
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode()==KeyEvent.VK_SPACE){
-                    sarana.dispose();
-                }
-            }
-            @Override
-            public void keyReleased(KeyEvent e) {}
-        }); 
-        
-=======
->>>>>>> master
         try {
             prop.loadFromXML(new FileInputStream("setting/database.xml"));
             otorisasi=koneksiDB.USERPCARE()+":"+koneksiDB.PASSPCARE()+":095";
@@ -394,11 +314,6 @@ public final class PCareCekFaskesSubspesialis extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
-<<<<<<< HEAD
-        spesialis.dispose();
-        sarana.dispose();
-=======
->>>>>>> master
         dispose();
     }//GEN-LAST:event_BtnKeluarActionPerformed
 
@@ -409,8 +324,6 @@ public final class PCareCekFaskesSubspesialis extends javax.swing.JDialog {
     }//GEN-LAST:event_BtnKeluarKeyPressed
 
     private void BtnPropinsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPropinsiActionPerformed
-<<<<<<< HEAD
-=======
         PCareCekReferensiSubspesialis spesialis=new PCareCekReferensiSubspesialis(null,false);
         spesialis.addWindowListener(new WindowListener() {
             @Override
@@ -447,7 +360,6 @@ public final class PCareCekFaskesSubspesialis extends javax.swing.JDialog {
             @Override
             public void keyReleased(KeyEvent e) {}
         }); 
->>>>>>> master
         spesialis.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         spesialis.setLocationRelativeTo(internalFrame1);
         spesialis.setVisible(true);
@@ -492,8 +404,6 @@ public final class PCareCekFaskesSubspesialis extends javax.swing.JDialog {
     }//GEN-LAST:event_BtnPrintActionPerformed
 
     private void BtnPropinsi1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPropinsi1ActionPerformed
-<<<<<<< HEAD
-=======
         PCareCekReferensiSarana sarana=new PCareCekReferensiSarana(null,false);
         sarana.addWindowListener(new WindowListener() {
             @Override
@@ -530,7 +440,6 @@ public final class PCareCekFaskesSubspesialis extends javax.swing.JDialog {
             @Override
             public void keyReleased(KeyEvent e) {}
         }); 
->>>>>>> master
         sarana.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         sarana.setLocationRelativeTo(internalFrame1);
         sarana.setVisible(true);

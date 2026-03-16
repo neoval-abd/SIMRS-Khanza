@@ -5,11 +5,6 @@ import fungsi.validasi;
 import fungsi.akses;
 import java.awt.Cursor;
 import java.awt.Desktop;
-<<<<<<< HEAD
-import java.awt.Dimension;
-import java.awt.Toolkit;
-=======
->>>>>>> master
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowEvent;

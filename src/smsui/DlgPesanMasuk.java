@@ -25,10 +25,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
@@ -36,7 +32,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentEvent;
->>>>>>> master
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -52,11 +47,8 @@ public final class DlgPesanMasuk extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private int i=0;   
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     /** Creates new form DlgLhtBiaya
      * @param parent
      * @param modal */
@@ -64,11 +56,7 @@ public final class DlgPesanMasuk extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
-<<<<<<< HEAD
-        Object[] rowRwJlDr={"Id","SMS ","No.HP","PDU","Encoding","Id Gtateway","Tanggal&Jam SMS"};
-=======
         Object[] rowRwJlDr={"Id","SMS ","No.HP","PDU","Encoding","Id Gtateway","Tanggal & Jam SMS"};
->>>>>>> master
         tabMode=new DefaultTableModel(null,rowRwJlDr){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -90,19 +78,6 @@ public final class DlgPesanMasuk extends javax.swing.JDialog {
         tbBangsal.setDefaultRenderer(Object.class, new WarnaTable());
 
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-<<<<<<< HEAD
-
-        
-        try {
-            ps=koneksi.prepareStatement(
-                    "select * from sms where tgl_sms between ? and ? and sms_masuk like ? or "+
-                            "tgl_sms between ? and ? and no_hp like ? or "+
-                            "tgl_sms between ? and ? and pdu_pesan like ? order by id_pesan desc");
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-=======
->>>>>>> master
     }    
 
     /** This method is called from within the constructor to
@@ -134,12 +109,6 @@ public final class DlgPesanMasuk extends javax.swing.JDialog {
         setUndecorated(true);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
-<<<<<<< HEAD
-            public void windowActivated(java.awt.event.WindowEvent evt) {
-                formWindowActivated(evt);
-            }
-=======
->>>>>>> master
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
@@ -318,34 +287,17 @@ public final class DlgPesanMasuk extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnKeluarKeyPressed
 
 private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-       tampil();
-=======
        runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
 private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
-<<<<<<< HEAD
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); 
-            tampil();
-            this.setCursor(Cursor.getDefaultCursor());
-=======
             runBackground(() ->tampil());
->>>>>>> master
         }else{
             Valid.pindah(evt, TCari, BtnPrint);
         }
 }//GEN-LAST:event_BtnCariKeyPressed
 
-<<<<<<< HEAD
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        tampil();
-    }//GEN-LAST:event_formWindowOpened
-
-=======
->>>>>>> master
     private void TCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCariKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             BtnCariActionPerformed(null);
@@ -358,11 +310,7 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
            TCari.setText("");
-<<<<<<< HEAD
-           tampil();
-=======
            runBackground(() ->tampil());
->>>>>>> master
     }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
@@ -373,12 +321,6 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }
     }//GEN-LAST:event_BtnAllKeyPressed
 
-<<<<<<< HEAD
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        tampil();
-
-    }//GEN-LAST:event_formWindowActivated
-=======
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -403,7 +345,6 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
             });
         }
     }//GEN-LAST:event_formWindowOpened
->>>>>>> master
 
     /**
     * @param args the command line arguments
@@ -439,29 +380,6 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.Table tbBangsal;
     // End of variables declaration//GEN-END:variables
 
-<<<<<<< HEAD
-    public void tampil(){        
-        try{   
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); 
-            Valid.tabelKosong(tabMode);   
-            ps.setString(1,Valid.SetTgl(Tgl1.getSelectedItem()+"")+" 00:00:00");
-            ps.setString(2,Valid.SetTgl(Tgl2.getSelectedItem()+"")+" 23:59:59");
-            ps.setString(3,"%"+TCari.getText().trim()+"%");
-            ps.setString(4,Valid.SetTgl(Tgl1.getSelectedItem()+"")+" 00:00:00");
-            ps.setString(5,Valid.SetTgl(Tgl2.getSelectedItem()+"")+" 23:59:59");
-            ps.setString(6,"%"+TCari.getText().trim()+"%");
-            ps.setString(7,Valid.SetTgl(Tgl1.getSelectedItem()+"")+" 00:00:00");
-            ps.setString(8,Valid.SetTgl(Tgl2.getSelectedItem()+"")+" 23:59:59");
-            ps.setString(9,"%"+TCari.getText().trim()+"%");
-            rs=ps.executeQuery();
-            while(rs.next()){
-                tabMode.addRow(new Object[]{
-                    rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7)
-                });
-                i++;
-            }            
-            this.setCursor(Cursor.getDefaultCursor());
-=======
     private void tampil(){        
         try{   
             Valid.tabelKosong(tabMode);  
@@ -491,13 +409,10 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                     ps.close();
                 }
             }              
->>>>>>> master
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
         }
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -530,6 +445,5 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 
 }

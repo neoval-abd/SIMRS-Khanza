@@ -22,17 +22,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -54,10 +49,6 @@ public final class SatuSehatMapingOrganisasi extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;    
     private int i=0;
-<<<<<<< HEAD
-    private DlgCariDepartemen poli=new DlgCariDepartemen(null,false);
-=======
->>>>>>> master
     private String link="",json="";
     private ApiSatuSehat api=new ApiSatuSehat();
     private HttpHeaders headers ;
@@ -65,11 +56,8 @@ public final class SatuSehatMapingOrganisasi extends javax.swing.JDialog {
     private ObjectMapper mapper = new ObjectMapper();
     private JsonNode root;
     private JsonNode response;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
 
     /** Creates new form DlgJnsPerawatanRalan
      * @param parent
@@ -103,57 +91,7 @@ public final class SatuSehatMapingOrganisasi extends javax.swing.JDialog {
         tbJnsPerawatan.setDefaultRenderer(Object.class, new WarnaTable());
 
         KodeDepartemen.setDocument(new batasInput((byte)5).getKata(KodeDepartemen)); 
-<<<<<<< HEAD
-        TCari.setDocument(new batasInput((byte)100).getKata(TCari));                  
-        
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        }  
-        
-        poli.addWindowListener(new WindowListener() {
-            @Override
-            public void windowOpened(WindowEvent e) {}
-            @Override
-            public void windowClosing(WindowEvent e) {}
-            @Override
-            public void windowClosed(WindowEvent e) {
-                if(poli.getTable().getSelectedRow()!= -1){                    
-                    KodeDepartemen.setText(poli.getTable().getValueAt(poli.getTable().getSelectedRow(),0).toString());
-                    NamaDepartemen.setText(poli.getTable().getValueAt(poli.getTable().getSelectedRow(),1).toString());
-                }
-                KodeDepartemen.requestFocus();
-            }
-            @Override
-            public void windowIconified(WindowEvent e) {}
-            @Override
-            public void windowDeiconified(WindowEvent e) {}
-            @Override
-            public void windowActivated(WindowEvent e) {}
-            @Override
-            public void windowDeactivated(WindowEvent e) {}
-        }); 
-=======
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));        
->>>>>>> master
         
         try {
             link=koneksiDB.URLFHIRSATUSEHAT();
@@ -461,8 +399,6 @@ public final class SatuSehatMapingOrganisasi extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDepartemenRSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepartemenRSActionPerformed
-<<<<<<< HEAD
-=======
         DlgCariDepartemen poli=new DlgCariDepartemen(null,false);
         poli.addWindowListener(new WindowListener() {
             @Override
@@ -486,7 +422,6 @@ public final class SatuSehatMapingOrganisasi extends javax.swing.JDialog {
             @Override
             public void windowDeactivated(WindowEvent e) {}
         }); 
->>>>>>> master
         poli.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         poli.setLocationRelativeTo(internalFrame1);
         poli.setVisible(true);
@@ -917,11 +852,7 @@ public final class SatuSehatMapingOrganisasi extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -934,21 +865,13 @@ public final class SatuSehatMapingOrganisasi extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
             TCari.setText("");
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
         }else{
             Valid.pindah(evt, BtnPrint, BtnKeluar);
         }
@@ -964,10 +887,6 @@ public final class SatuSehatMapingOrganisasi extends javax.swing.JDialog {
 }//GEN-LAST:event_tbJnsPerawatanMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-        tampil();
-        emptTeks();
-=======
         runBackground(() ->tampil());
         emptTeks();
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -992,7 +911,6 @@ public final class SatuSehatMapingOrganisasi extends javax.swing.JDialog {
                 }
             });
         } 
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void tbJnsPerawatanKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbJnsPerawatanKeyReleased
@@ -1107,8 +1025,6 @@ public final class SatuSehatMapingOrganisasi extends javax.swing.JDialog {
     public JTable getTable(){
         return tbJnsPerawatan;
     }  
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -1141,5 +1057,4 @@ public final class SatuSehatMapingOrganisasi extends javax.swing.JDialog {
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

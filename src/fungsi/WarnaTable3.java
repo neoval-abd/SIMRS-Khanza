@@ -7,10 +7,7 @@ package fungsi;
 
 import java.awt.Color;
 import java.awt.Component;
-<<<<<<< HEAD
 import java.awt.Font;
-=======
->>>>>>> master
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -38,7 +35,6 @@ public class WarnaTable3 extends DefaultTableCellRenderer {
         }else{
             component.setForeground(new Color(70,70,70));
         }
-<<<<<<< HEAD
         
         // TAMBAHAN SENDIRI
         if (isSelected) {
@@ -47,8 +43,6 @@ public class WarnaTable3 extends DefaultTableCellRenderer {
         } else {
             component.setFont(component.getFont().deriveFont(Font.PLAIN));
         }
-=======
->>>>>>> master
         return component;
     }
 

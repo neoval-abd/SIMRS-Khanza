@@ -27,17 +27,12 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -56,11 +51,8 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
     private ResultSet rs;
     private String norawatibu="";
     private int i=0;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     /** Creates new form DlgRujuk
      * @param parent
      * @param modal */
@@ -109,32 +101,6 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
         TNoRw.setDocument(new batasInput((byte)17).getKata(TNoRw));
         TCari.setDocument(new batasInput((int)100).getKata(TCari));
         
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        }
-        
-=======
->>>>>>> master
         ChkInput.setSelected(false);
         isForm();
     }
@@ -191,14 +157,11 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
-<<<<<<< HEAD
-=======
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
->>>>>>> master
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Klasifikasi Pasien Ranap ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -381,11 +344,7 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-10-2020" }));
-=======
         DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-02-2026" }));
->>>>>>> master
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -399,11 +358,7 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-10-2020" }));
-=======
         DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-02-2026" }));
->>>>>>> master
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -494,11 +449,7 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
         TPasien.setBounds(322, 10, 294, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-10-2020" }));
-=======
         Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-02-2026" }));
->>>>>>> master
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -652,11 +603,7 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
                 if(Sequel.menyimpantf("data_klasifikasi_pasien_ranap","?,?,?,?,?,?","Data",6,new String[]{
                         Valid.SetTgl(Tanggal.getSelectedItem()+""),TNoRw.getText(),Minimal.getSelectedItem().toString(),Partial.getSelectedItem().toString(),Total.getSelectedItem().toString(),Kamar.getText()
                     })==true){
-<<<<<<< HEAD
-                        tampil();
-=======
                         runBackground(() ->tampil());
->>>>>>> master
                         emptTeks();
                 } 
             }
@@ -688,11 +635,7 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
             if(Sequel.queryu2tf("delete from data_klasifikasi_pasien_ranap where tanggal=? and no_rawat=?",2,new String[]{
                 tbObat.getValueAt(tbObat.getSelectedRow(),0).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),1).toString()
             })==true){
-<<<<<<< HEAD
-                tampil();
-=======
                 runBackground(() ->tampil());
->>>>>>> master
             }else{
                 JOptionPane.showMessageDialog(null,"Gagal menghapus..!!");
             }
@@ -721,11 +664,7 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
                         Minimal.getSelectedItem().toString(),Partial.getSelectedItem().toString(),Total.getSelectedItem().toString(),
                         tbObat.getValueAt(tbObat.getSelectedRow(),0).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),1).toString()
                     });
-<<<<<<< HEAD
-                    if(tabMode.getRowCount()!=0){tampil();}
-=======
                     if(tabMode.getRowCount()!=0){runBackground(() ->tampil());}
->>>>>>> master
                     emptTeks();
                 }
             }
@@ -800,11 +739,7 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -817,20 +752,12 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
             TCari.setText("");
         }else{
             Valid.pindah(evt, BtnCari, TPasien);
@@ -897,8 +824,6 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
         Valid.pindah(evt,Partial,BtnSimpan);
     }//GEN-LAST:event_TotalKeyPressed
 
-<<<<<<< HEAD
-=======
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -924,7 +849,6 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_formWindowOpened
 
->>>>>>> master
     /**
     * @param args the command line arguments
     */
@@ -1121,9 +1045,6 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
         BtnEdit.setEnabled(akses.getklasifikasi_pasien_ranap());
     }
 
-<<<<<<< HEAD
-   
-=======
     private void runBackground(Runnable task) {
         if (ceksukses) return;
         if (executor.isShutdown() || executor.isTerminated()) return;
@@ -1155,5 +1076,4 @@ public final class DlgDataKlasifikasiPasienRanap extends javax.swing.JDialog {
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

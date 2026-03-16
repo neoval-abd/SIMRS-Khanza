@@ -178,32 +178,6 @@ public final class InhealthDataSJP extends javax.swing.JDialog {
         Catatan.setDocument(new batasInput((byte)50).getKata(Catatan));
         LokasiLaka.setDocument(new batasInput((byte)100).getKata(LokasiLaka));
         
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-            });
-        }  
-        
-=======
->>>>>>> master
         try{
             KdPPK.setText(Sequel.cariIsi("select kode_ppkinhealth from setting")); 
             NmPPK.setText(Sequel.cariIsi("select setting.nama_instansi from setting"));           
@@ -1387,8 +1361,6 @@ public final class InhealthDataSJP extends javax.swing.JDialog {
                 }                 
             } 
         }
-<<<<<<< HEAD
-=======
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -1411,7 +1383,6 @@ public final class InhealthDataSJP extends javax.swing.JDialog {
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkInputActionPerformed

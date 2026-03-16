@@ -102,31 +102,6 @@ public class IPSRSPengambilanPenunjangUTD extends javax.swing.JDialog {
 
         Nip.setDocument(new batasInput((byte)10).getKata(Nip));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-            });
-        }        
-=======
->>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -447,21 +422,11 @@ public class IPSRSPengambilanPenunjangUTD extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         IPSRSCariPengambilanPenunjangUTD pindah=new IPSRSCariPengambilanPenunjangUTD(null,true);
-        pindah.tampil();
-=======
-        IPSRSCariPengambilanPenunjangUTD pindah=new IPSRSCariPengambilanPenunjangUTD(null,true);
->>>>>>> master
         pindah.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         pindah.setLocationRelativeTo(internalFrame1);
         pindah.setAlwaysOnTop(false);
         pindah.setVisible(true);
-<<<<<<< HEAD
-        this.setCursor(Cursor.getDefaultCursor());
-=======
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
@@ -596,8 +561,6 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         runBackground(() ->tampil());
-<<<<<<< HEAD
-=======
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -620,7 +583,6 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void NipKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NipKeyPressed

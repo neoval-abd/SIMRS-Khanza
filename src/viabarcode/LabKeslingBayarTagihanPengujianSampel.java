@@ -33,17 +33,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.Date;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -73,11 +68,8 @@ public final class LabKeslingBayarTagihanPengujianSampel extends javax.swing.JDi
     private FileWriter fileWriter;
     private WarnaTable2 warna=new WarnaTable2();
     private String[] Nama_Akun_Bayar,Kode_Rek_Bayar,Bayar,PPN_Persen,PPN_Besar;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
 
     /** Creates new form DlgPerawatan
      * @param parent
@@ -875,10 +867,6 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     }//GEN-LAST:event_TanggalValidasiItemStateChanged
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-        tampil();
-=======
->>>>>>> master
         try {
             if(Valid.daysOld("./cache/akunbayar.iyem")>30){
                 tampilAkunBayar();
@@ -887,10 +875,7 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             }
         } catch (Exception e) {
         }
-<<<<<<< HEAD
-=======
         runBackground(() ->tampil());
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void NoBayarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NoBayarKeyPressed
@@ -1046,15 +1031,7 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             }
             myObj.close();
         } catch (Exception ex) {
-<<<<<<< HEAD
-            if(ex.toString().contains("java.io.FileNotFoundException")){
-                tampil();
-            }else{
-                System.out.println("Notifikasi : "+ex);
-            }
-=======
             System.out.println("Notifikasi : "+ex);
->>>>>>> master
         }
     }
     
@@ -1345,8 +1322,6 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             }
         }
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -1379,5 +1354,4 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

@@ -206,108 +206,12 @@ public class UTDPemisahanDarah extends javax.swing.JDialog {
             }
         }
         tbKomponen.setDefaultRenderer(Object.class, new WarnaTable());
-<<<<<<< HEAD
-
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-            });
-            
-            TCariMedis.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCariMedis.getText().length()>2){
-                        runBackground(() ->tampilMedis());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCariMedis.getText().length()>2){
-                        runBackground(() ->tampilMedis());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCariMedis.getText().length()>2){
-                        runBackground(() ->tampilMedis());
-                    }
-                }
-            });
-            
-            TCariNonMedis.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCariNonMedis.getText().length()>2){
-                        runBackground(() ->tampilNonMedis());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCariNonMedis.getText().length()>2){
-                        runBackground(() ->tampilNonMedis());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCariNonMedis.getText().length()>2){
-                        runBackground(() ->tampilNonMedis());
-                    }
-                }
-            });
-            
-            Komponen.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(Komponen.getText().length()>2){
-                        runBackground(() ->tampilKomponen());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(Komponen.getText().length()>2){
-                        runBackground(() ->tampilKomponen());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(Komponen.getText().length()>2){
-                        runBackground(() ->tampilKomponen());
-                    }
-                }
-            });
-            
-            TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-            TCariMedis.setDocument(new batasInput((byte)100).getKata(TCariMedis));
-            TCariNonMedis.setDocument(new batasInput((byte)100).getKata(TCariNonMedis));
-            Komponen.setDocument(new batasInput((byte)100).getKata(Komponen));
-            KdPetugas.setDocument(new batasInput((byte)20).getKata(KdPetugas));
-        }
-
-=======
         
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
         TCariMedis.setDocument(new batasInput((byte)100).getKata(TCariMedis));
         TCariNonMedis.setDocument(new batasInput((byte)100).getKata(TCariNonMedis));
         Komponen.setDocument(new batasInput((byte)100).getKata(Komponen));
         KdPetugas.setDocument(new batasInput((byte)20).getKata(KdPetugas));
->>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -585,11 +489,7 @@ public class UTDPemisahanDarah extends javax.swing.JDialog {
         label32.setBounds(205, 12, 57, 23);
 
         Tanggal.setEditable(false);
-<<<<<<< HEAD
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-01-2026" }));
-=======
         Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-02-2026" }));
->>>>>>> master
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -917,11 +817,7 @@ public class UTDPemisahanDarah extends javax.swing.JDialog {
         panelisi2.add(jLabel20);
 
         TanggalCari1.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        TanggalCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-01-2026" }));
-=======
         TanggalCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-02-2026" }));
->>>>>>> master
         TanggalCari1.setDisplayFormat("dd-MM-yyyy");
         TanggalCari1.setName("TanggalCari1"); // NOI18N
         TanggalCari1.setOpaque(false);
@@ -935,11 +831,7 @@ public class UTDPemisahanDarah extends javax.swing.JDialog {
         panelisi2.add(jLabel21);
 
         TanggalCari2.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        TanggalCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-01-2026" }));
-=======
         TanggalCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-02-2026" }));
->>>>>>> master
         TanggalCari2.setDisplayFormat("dd-MM-yyyy");
         TanggalCari2.setName("TanggalCari2"); // NOI18N
         TanggalCari2.setOpaque(false);
@@ -1256,8 +1148,6 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         aktifkan="";
         runBackground(() ->tampil());
-<<<<<<< HEAD
-=======
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -1343,7 +1233,6 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void TCariMedisKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCariMedisKeyPressed
@@ -1516,19 +1405,11 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     }//GEN-LAST:event_tbKomponenKeyPressed
 
     private void btnTambahKomponenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahKomponenActionPerformed
-<<<<<<< HEAD
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-=======
->>>>>>> master
         UTDKomponenDarah form=new UTDKomponenDarah(null,true);
         form.isCek();
         form.setSize(internalFrame2.getWidth(), internalFrame2.getHeight());
         form.setLocationRelativeTo(internalFrame2);
         form.setVisible(true);
-<<<<<<< HEAD
-        this.setCursor(Cursor.getDefaultCursor());
-=======
->>>>>>> master
     }//GEN-LAST:event_btnTambahKomponenActionPerformed
 
     private void KomponenKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KomponenKeyPressed

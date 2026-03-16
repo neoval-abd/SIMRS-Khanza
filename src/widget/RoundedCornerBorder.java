@@ -27,24 +27,10 @@ public class RoundedCornerBorder extends AbstractBorder{
     Graphics2D g2 = (Graphics2D)g.create();
     g2.setRenderingHint(
         RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-<<<<<<< HEAD
-    
-    
-    // TAMBAHAN STYLE TIDAK ROUNDED EXTREAM
-    int r = 2;
-    int z = 2;
-    
-    int w = width  - 1;
-    int h = height - 1;
-    
-    Area round = new Area(new RoundRectangle2D.Float(x, y, w, h, r, z));
-
-=======
     int r = 12;
     int w = width  - 1;
     int h = height - 1;
     Area round = new Area(new RoundRectangle2D.Float(x, y, w, h, r, r));
->>>>>>> master
     Container parent = c.getParent();
     if(parent!=null) {
       g2.setColor(parent.getBackground());

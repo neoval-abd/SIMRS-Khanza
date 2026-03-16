@@ -15,29 +15,20 @@ import fungsi.batasInput;
 import fungsi.koneksiDB;
 import fungsi.sekuel;
 import fungsi.validasi;
-<<<<<<< HEAD
-=======
 import java.awt.Cursor;
->>>>>>> master
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-<<<<<<< HEAD
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
->>>>>>> master
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-<<<<<<< HEAD
-=======
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -53,11 +44,8 @@ public final class MandiriBankTujuanTransfer extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private PreparedStatement ps;
     private ResultSet rs;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
 
     /** Creates new form DlgJabatan
      * @param parent
@@ -66,11 +54,7 @@ public final class MandiriBankTujuanTransfer extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setLocation(10,10);
-<<<<<<< HEAD
-        setSize(459,539);
-=======
         
->>>>>>> master
 
         Object[] row={"Kode Bank","Nama Bank"};
         tabMode=new DefaultTableModel(null,row){
@@ -78,11 +62,7 @@ public final class MandiriBankTujuanTransfer extends javax.swing.JDialog {
         };
 
         tbJabatan.setModel(tabMode);
-<<<<<<< HEAD
-        //tampil();
-=======
         //runBackground(() ->tampil());
->>>>>>> master
         //tbJabatan.setDefaultRenderer(Object.class, new WarnaTable(Scroll.getBackground(),Color.GREEN));
         tbJabatan.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbJabatan.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
@@ -100,31 +80,6 @@ public final class MandiriBankTujuanTransfer extends javax.swing.JDialog {
         TKd.setDocument(new batasInput((byte)10).getKata(TKd));
         TNm.setDocument(new batasInput((byte)60).getKata(TNm));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        }
-=======
->>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -513,11 +468,7 @@ public final class MandiriBankTujuanTransfer extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -534,11 +485,7 @@ public final class MandiriBankTujuanTransfer extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         emptTeks();
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
@@ -570,9 +517,6 @@ public final class MandiriBankTujuanTransfer extends javax.swing.JDialog {
 }//GEN-LAST:event_tbJabatanKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -596,7 +540,6 @@ public final class MandiriBankTujuanTransfer extends javax.swing.JDialog {
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -693,8 +636,6 @@ public final class MandiriBankTujuanTransfer extends javax.swing.JDialog {
     public JButton getButton(){
         return BtnKeluar;
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -727,5 +668,4 @@ public final class MandiriBankTujuanTransfer extends javax.swing.JDialog {
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

@@ -16,13 +16,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.event.DocumentEvent;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
@@ -33,7 +26,6 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import kepegawaian.DlgCariPetugas;
->>>>>>> master
 import keuangan.Jurnal;
 
 public class DapurPengeluaran extends javax.swing.JDialog {
@@ -45,10 +37,6 @@ public class DapurPengeluaran extends javax.swing.JDialog {
     private riwayatdapur Trackbarang=new riwayatdapur();
     private PreparedStatement ps;
     private ResultSet rs;
-<<<<<<< HEAD
-    private DapurCariPengeluaran form=new DapurCariPengeluaran(null,false);
-=======
->>>>>>> master
     private int jml=0,i=0,row=0,index=0;
     private double ttl,keluar;
     private String[] kodebarang,namabarang,satuan,jumlah,stok;
@@ -56,11 +44,8 @@ public class DapurPengeluaran extends javax.swing.JDialog {
     private WarnaTable2 warna=new WarnaTable2();
     public boolean tampilkanpermintaan=true;
     private boolean sukses=true;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
 
     /** Creates new form DlgProgramStudi
      * @param parent
@@ -117,78 +102,7 @@ public class DapurPengeluaran extends javax.swing.JDialog {
         NoKeluar.setDocument(new batasInput((byte)15).getKata(NoKeluar));
         Keterangan.setDocument(new batasInput((byte)100).getKata(Keterangan));
         kdptg.setDocument(new batasInput((byte)25).getKata(kdptg));        
-<<<<<<< HEAD
-        TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        }  
-        
-        form.addWindowListener(new WindowListener() {
-            @Override
-            public void windowOpened(WindowEvent e) {}
-            @Override
-            public void windowClosing(WindowEvent e) {}
-            @Override
-            public void windowClosed(WindowEvent e) {
-                autoNomor();
-            }
-            @Override
-            public void windowIconified(WindowEvent e) {}
-            @Override
-            public void windowDeiconified(WindowEvent e) {}
-            @Override
-            public void windowActivated(WindowEvent e) {}
-            @Override
-            public void windowDeactivated(WindowEvent e) {}
-        });
-        
-        form.petugas.addWindowListener(new WindowListener() {
-            @Override
-            public void windowOpened(WindowEvent e) {}
-            @Override
-            public void windowClosing(WindowEvent e) {}
-            @Override
-            public void windowClosed(WindowEvent e) {
-                if(akses.getform().equals("DlgPengeluaranDapur")){
-                    if(form.petugas.getTable().getSelectedRow()!= -1){                   
-                        kdptg.setText(form.petugas.getTable().getValueAt(form.petugas.getTable().getSelectedRow(),0).toString());
-                        nmptg.setText(form.petugas.getTable().getValueAt(form.petugas.getTable().getSelectedRow(),1).toString());
-                    }  
-                    kdptg.requestFocus();
-                }
-            }
-            @Override
-            public void windowIconified(WindowEvent e) {}
-            @Override
-            public void windowDeiconified(WindowEvent e) {}
-            @Override
-            public void windowActivated(WindowEvent e) {}
-            @Override
-            public void windowDeactivated(WindowEvent e) {}
-        });        
-                  
-=======
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));     
->>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -509,9 +423,6 @@ public class DapurPengeluaran extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-=======
         DapurCariPengeluaran form=new DapurCariPengeluaran(null,false);
         form.addWindowListener(new WindowListener() {
             @Override
@@ -531,17 +442,12 @@ public class DapurPengeluaran extends javax.swing.JDialog {
             @Override
             public void windowDeactivated(WindowEvent e) {}
         });
->>>>>>> master
         form.emptTeks();    
         form.isCek();
         form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         form.setLocationRelativeTo(internalFrame1);
         form.setAlwaysOnTop(false);
         form.setVisible(true);
-<<<<<<< HEAD
-        this.setCursor(Cursor.getDefaultCursor());
-=======
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
@@ -647,11 +553,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
 
 private void TCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCariKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
         }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_DOWN){
             BtnCari1.requestFocus();
         }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_UP){
@@ -662,20 +564,12 @@ private void TCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCa
 }//GEN-LAST:event_TCariKeyPressed
 
 private void BtnCari1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCari1ActionPerformed
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnCari1ActionPerformed
 
 private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCari1KeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
         }else{
             Valid.pindah(evt, BtnSimpan, BtnKeluar);
         }
@@ -731,15 +625,6 @@ private void kdptgKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kdp
 }//GEN-LAST:event_kdptgKeyPressed
 
 private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPetugasActionPerformed
-<<<<<<< HEAD
-        akses.setform("DlgPengeluaranDapur");
-        form.petugas.emptTeks();
-        form.petugas.isCek();
-        form.petugas.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-        form.petugas.setLocationRelativeTo(internalFrame1);
-        form.petugas.setAlwaysOnTop(false);
-        form.petugas.setVisible(true);
-=======
         DlgCariPetugas petugas=new DlgCariPetugas(null,false);
         petugas.addWindowListener(new WindowListener() {
             @Override
@@ -769,15 +654,10 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         petugas.setLocationRelativeTo(internalFrame1);
         petugas.setAlwaysOnTop(false);
         petugas.setVisible(true);
->>>>>>> master
 }//GEN-LAST:event_btnPetugasActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         if(tampilkanpermintaan==true){
-<<<<<<< HEAD
-            tampil();
-        }            
-=======
             runBackground(() ->tampil());
         }  
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -802,7 +682,6 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
                 }
             });
         } 
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void KeteranganKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeteranganKeyPressed
@@ -984,13 +863,10 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     }
 
     public void tampil(String nopermintaan,String keterangan) {
-<<<<<<< HEAD
-=======
        runBackground(() ->LoadPengeluaran(nopermintaan,keterangan));         
     }
     
     private void LoadPengeluaran(String nopermintaan,String keterangan) {
->>>>>>> master
         Valid.tabelKosong(tabMode);        
         try{
             Keterangan.setText(keterangan);
@@ -1031,11 +907,7 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             isHitung();
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
-<<<<<<< HEAD
-        }        
-=======
         }
->>>>>>> master
     }
     
     private void isHitung(){
@@ -1063,8 +935,6 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         }
         LTotal.setText(Valid.SetAngka(ttl));
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -1097,5 +967,4 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

@@ -19110,7 +19110,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
             MnDataOperasi, MnPenilaianAwalKeperawatanRanapBayiAnak, MnCatatanObservasiRestrainNonFarmakologi, MnCatatanObservasiVentilator, MnCatatanAnastesiSedasi, MnChecklistPemberianFibrinolitik, MnPenilaianPsikologKlinis, MnPenilaianAwalMedisNeonatus,
             MnPenilaianDerajatDehidrasi, MnHasilPemeriksaanECHO, MnPenilaianBayiBaruLahir, MnLaporanTindakan, MnPelaksanaanInformasiEdukasi, MnCatatanObservasiHemodialisa, MnCatatanCairanHemodialisa, MnCatatanPengkajianPaskaOperasi, MnCatatanObservasiBayi,
             MnCheckListKesiapanAnestesi, MnHasilPemeriksaanSlitLamp, MnHasilPemeriksaanOCT, MnPersetujuanPemeriksaanHIV, MnSuratPernyataanMemilihDPJP, MnCheckListKriteriaMasukNICU, MnCheckListKriteriaKeluarNICU, MnPenilaianAwalMedisPsikiatri,
-            MnCheckListKriteriaMasukPICU, MnCheckListKriteriaKeluarPICU, MnHasilPemeriksaanTreadmill, MnHasilPemeriksaanECHOPediatrik, MnPenilaianAwalMedisJantung, MnSkriningGiziKehamilan;
+            MnCheckListKriteriaMasukPICU, MnCheckListKriteriaKeluarPICU, MnHasilPemeriksaanTreadmill, MnHasilPemeriksaanECHOPediatrik, MnPenilaianAwalMedisJantung, MnSkriningGiziKehamilan, MnSerahTerimaBarangAnggotaTubuh;
     private javax.swing.JMenu MnHasilUSG, MnHasilEndoskopi, MnCatatanObservasi, MnEdukasi, MnSuratPersetujuan, MnHasilPemeriksaanAlat;
 
     // TAMBAHAN FITUR INPUT DPJP DAN MENAMPILKAN DPJP

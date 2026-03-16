@@ -12,13 +12,10 @@ import java.io.FileWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-<<<<<<< HEAD
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.text.Document;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
@@ -32,11 +29,8 @@ public class DlgLaporanPenyakitTNI extends javax.swing.JDialog {
     private String[] kodecari,kodebayar;
     private StringBuilder htmlContent;
     private int kolom=0,jumlahcari=0,jumlahcarabayar=0,total=0,i=0,no=0;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     
     /** Creates new form DlgProgramStudi
      * @param parent
@@ -371,15 +365,6 @@ private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b
 
     private void TabRawatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabRawatMouseClicked
         if(TabRawat.getSelectedIndex()==0){
-<<<<<<< HEAD
-            prosesCari();
-        }else if(TabRawat.getSelectedIndex()==1){
-            prosesCari2();
-        }else if(TabRawat.getSelectedIndex()==2){
-            prosesCari3();
-        }else if(TabRawat.getSelectedIndex()==3){
-            prosesCari4();
-=======
             runBackground(() ->prosesCari());
         }else if(TabRawat.getSelectedIndex()==1){
             runBackground(() ->prosesCari2());
@@ -387,7 +372,6 @@ private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b
             runBackground(() ->prosesCari3());
         }else if(TabRawat.getSelectedIndex()==3){
             runBackground(() ->prosesCari4());
->>>>>>> master
         }
     }//GEN-LAST:event_TabRawatMouseClicked
 
@@ -967,8 +951,6 @@ private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b
         BtnPrint.setEnabled(akses.getlaporan_penyakit_tni());
     }
     
-<<<<<<< HEAD
-=======
     private void runBackground(Runnable task) {
         if (ceksukses) return;
         if (executor.isShutdown() || executor.isTerminated()) return;
@@ -1000,5 +982,4 @@ private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

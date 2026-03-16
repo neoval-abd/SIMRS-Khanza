@@ -41,20 +41,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-<<<<<<< HEAD
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
->>>>>>> master
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.X509TrustManager;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-<<<<<<< HEAD
-=======
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.Timer;
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
@@ -103,12 +97,9 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
     private String[] arrSplit;
     private Calendar cal = Calendar.getInstance();
     private int day = cal.get(Calendar.DAY_OF_WEEK);
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
     
->>>>>>> master
     /** Creates new form DlgRujuk
      * @param parent
      * @param modal */
@@ -429,32 +420,6 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
         Heartrate.setDocument(new batasInput((byte)3).getOnlyAngka(Heartrate));
         TSuhu.setDocument(new batasInput((byte)5).getFilter(TSuhu));
         
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        }  
-        
-=======
->>>>>>> master
         try {
             otorisasi=koneksiDB.USERPCARE()+":"+koneksiDB.PASSPCARE()+":095";
             divreg=koneksiDB.DIVREGPCARE();
@@ -3415,11 +3380,7 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        tampil();
-=======
         TabRawatMouseClicked(null);
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -3542,8 +3503,6 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
             } 
             TNoRw.requestFocus();
         }
-<<<<<<< HEAD
-=======
         
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -3567,7 +3526,6 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void TanggalDaftarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TanggalDaftarKeyPressed
@@ -3584,19 +3542,11 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
 
     private void TabRawatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabRawatMouseClicked
         if(TabRawat.getSelectedIndex()==1){
-<<<<<<< HEAD
-            tampil();
-        }else if(TabRawat.getSelectedIndex()==2){
-            tampil2();
-        }else if(TabRawat.getSelectedIndex()==3){
-            tampil3();
-=======
             runBackground(() ->tampil());
         }else if(TabRawat.getSelectedIndex()==2){
             runBackground(() ->tampil2());
         }else if(TabRawat.getSelectedIndex()==3){
             runBackground(() ->tampil3());
->>>>>>> master
         }
     }//GEN-LAST:event_TabRawatMouseClicked
 
@@ -4592,11 +4542,7 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
     }//GEN-LAST:event_TCari1KeyPressed
 
     private void BtnCari1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCari1ActionPerformed
-<<<<<<< HEAD
-        tampil2();
-=======
         runBackground(() ->tampil2());
->>>>>>> master
     }//GEN-LAST:event_BtnCari1ActionPerformed
 
     private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCari1KeyPressed
@@ -5075,20 +5021,12 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
 
     private void ppFilterTerkirimBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppFilterTerkirimBtnPrintActionPerformed
         status="Terkirim";
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
     }//GEN-LAST:event_ppFilterTerkirimBtnPrintActionPerformed
 
     private void ppFilterGagalBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppFilterGagalBtnPrintActionPerformed
         status="Gagal";
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
     }//GEN-LAST:event_ppFilterGagalBtnPrintActionPerformed
 
     private void ppSinkronGagalBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppSinkronGagalBtnPrintActionPerformed
@@ -5153,11 +5091,7 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
                 }
             }
         }
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
     }//GEN-LAST:event_ppSinkronGagalBtnPrintActionPerformed
 
     private void ppJadikanKunjunganBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppJadikanKunjunganBtnPrintActionPerformed
@@ -5868,11 +5802,7 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
     }//GEN-LAST:event_TCari2KeyPressed
 
     private void BtnCari2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCari2ActionPerformed
-<<<<<<< HEAD
-        tampil3();
-=======
         runBackground(() ->tampil3());
->>>>>>> master
     }//GEN-LAST:event_BtnCari2ActionPerformed
 
     private void BtnCari2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCari2KeyPressed
@@ -8496,19 +8426,11 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
             if(nameNode.path("code").asText().equals("200")){
                 Sequel.meghapus("pcare_pendaftaran","no_rawat",tbPendaftaran.getValueAt(tbPendaftaran.getSelectedRow(),0).toString());
                 Sequel.meghapus("reg_periksa","no_rawat",tbPendaftaran.getValueAt(tbPendaftaran.getSelectedRow(),0).toString());
-<<<<<<< HEAD
-                tampil();
-            }else if(nameNode.path("code").asText().equals("304")){
-                Sequel.meghapus("pcare_pendaftaran","no_rawat",tbPendaftaran.getValueAt(tbPendaftaran.getSelectedRow(),0).toString());
-                Sequel.meghapus("reg_periksa","no_rawat",tbPendaftaran.getValueAt(tbPendaftaran.getSelectedRow(),0).toString());
-                tampil();
-=======
                 runBackground(() ->tampil());
             }else if(nameNode.path("code").asText().equals("304")){
                 Sequel.meghapus("pcare_pendaftaran","no_rawat",tbPendaftaran.getValueAt(tbPendaftaran.getSelectedRow(),0).toString());
                 Sequel.meghapus("reg_periksa","no_rawat",tbPendaftaran.getValueAt(tbPendaftaran.getSelectedRow(),0).toString());
                 runBackground(() ->tampil());
->>>>>>> master
             }else{
                 JOptionPane.showMessageDialog(null,nameNode.path("message").asText());
             }
@@ -8644,11 +8566,7 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
             System.out.println("message : "+nameNode.path("message").asText());
             if(nameNode.path("code").asText().equals("200")){
                 Sequel.meghapus("pcare_kunjungan_umum","no_rawat",tbKunjungan.getValueAt(tbKunjungan.getSelectedRow(),0).toString());
-<<<<<<< HEAD
-                tampil2();
-=======
                 runBackground(() ->tampil2());
->>>>>>> master
             }else{
                 JOptionPane.showMessageDialog(null,nameNode.path("message").asText());
             }
@@ -8716,11 +8634,7 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
             System.out.println("message : "+nameNode.path("message").asText());
             if(nameNode.path("code").asText().equals("200")){
                 Sequel.meghapus("pcare_rujuk_subspesialis","no_rawat",tbSpesialis.getValueAt(tbSpesialis.getSelectedRow(),0).toString());
-<<<<<<< HEAD
-                tampil2();
-=======
                 runBackground(() ->tampil2());
->>>>>>> master
             }else{
                 JOptionPane.showMessageDialog(null,nameNode.path("message").asText());
             }
@@ -8787,11 +8701,7 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
 
                         try {
                             PesanKirim.append("MEMULAI PENGIRIMAN DATA\n");
-<<<<<<< HEAD
-                            tampil();
-=======
                             runBackground(() ->tampil());
->>>>>>> master
                             PesanKirim.append("Pengiriman data pendaftaran PCare dimulai\n");
                             for(i=0;i<tbPendaftaran.getRowCount();i++){
                                 if(tbPendaftaran.getValueAt(i,20).toString().equals("Gagal")){
@@ -9896,8 +9806,6 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
         }
         return statusantrean;
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -9930,5 +9838,4 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

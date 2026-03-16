@@ -124,31 +124,6 @@ public class DapurPemesanan extends javax.swing.JDialog {
         kdptg.setDocument(new batasInput((byte)25).getKata(kdptg)); 
         Meterai.setDocument(new batasInput((byte)15).getOnlyAngka(Meterai));        
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil2());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil2());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil2());
-                    }
-                }
-            });
-        }  
-=======
->>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -1005,8 +980,6 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 }//GEN-LAST:event_btnPetugasActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-=======
         try {
             if(Valid.daysOld("./cache/akunpemesanandapur.iyem")<8){
                 tampilAkun2();
@@ -1016,7 +989,6 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         } catch (Exception e) {
         }
         
->>>>>>> master
         if(tampikan==true){
             try {
                 if(Valid.daysOld("./cache/penerimaandapur.iyem")<8){
@@ -1028,15 +1000,6 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             }
         }
         
-<<<<<<< HEAD
-        try {
-            if(Valid.daysOld("./cache/akunpemesanandapur.iyem")<8){
-                tampilAkun2();
-            }else{
-                tampilAkun();
-            }
-        } catch (Exception e) {
-=======
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -1058,7 +1021,6 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
                     }
                 }
             });
->>>>>>> master
         }
     }//GEN-LAST:event_formWindowOpened
 

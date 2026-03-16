@@ -28,20 +28,14 @@ import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-<<<<<<< HEAD
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
->>>>>>> master
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-<<<<<<< HEAD
-=======
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -57,11 +51,8 @@ public final class TokoStokOpname extends javax.swing.JDialog {
     private Connection koneksi=koneksiDB.condb();
     private PreparedStatement pstampil;
     private ResultSet rstampil;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     /** Creates new form DlgPenyakit
      * @param parent
      * @param modal */
@@ -113,34 +104,7 @@ public final class TokoStokOpname extends javax.swing.JDialog {
         Stok.setDocument(new batasInput((byte)10).getKata(Stok));
         Real.setDocument(new batasInput((byte)10).getOnlyAngka(Real));
         Keterangan.setDocument(new batasInput((byte)60).getKata(Keterangan));
-<<<<<<< HEAD
-        
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        }
-=======
-        TCari.setDocument(new batasInput((byte)100).getKata(TCari));
->>>>>>> master
     } 
     private DecimalFormat df2 = new DecimalFormat("###,###,###,###,###,###,###");
     double total=0,totalreal=0;
@@ -633,11 +597,7 @@ public final class TokoStokOpname extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -682,11 +642,7 @@ public final class TokoStokOpname extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
     }//GEN-LAST:event_BtnAllActionPerformed
 
 private void KeteranganKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeteranganKeyPressed
@@ -706,9 +662,6 @@ private void StokKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Stok
 }//GEN-LAST:event_StokKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-       tampil();
-=======
        if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -731,7 +684,6 @@ private void StokKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Stok
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -800,32 +752,6 @@ private void StokKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Stok
         total=0;
         totalreal=0;
         try{     
-<<<<<<< HEAD
-            pstampil=koneksi.prepareStatement("select tokoopname.kode_brng, tokobarang.nama_brng,tokoopname.dasar, tokobarang.kode_sat, tokoopname.tanggal, tokoopname.stok, "+
-                     "tokoopname.real, tokoopname.selisih, (tokoopname.real*tokoopname.dasar) as totalreal,tokoopname.nomihilang, tokoopname.keterangan "+
-                     "from tokoopname inner join tokobarang on tokoopname.kode_brng=tokobarang.kode_brng "+
-                     "where tokoopname.tanggal between ? and ? and tokoopname.kode_brng like ? or "+
-                     "tokoopname.tanggal between ? and ? and tokobarang.nama_brng like ? or "+
-                     "tokoopname.tanggal between ? and ? and tokoopname.kode_brng like ? or "+
-                     "tokoopname.tanggal between ? and ? and tokobarang.kode_sat like ? or "+ 
-                     "tokoopname.tanggal between ? and ? and tokoopname.keterangan like ? order by tokoopname.tanggal");
-            try {                
-                pstampil.setString(1,Valid.SetTgl(Tgl1.getSelectedItem()+""));
-                pstampil.setString(2,Valid.SetTgl(Tgl2.getSelectedItem()+""));
-                pstampil.setString(3,"%"+TCari.getText().trim()+"%");
-                pstampil.setString(4,Valid.SetTgl(Tgl1.getSelectedItem()+""));
-                pstampil.setString(5,Valid.SetTgl(Tgl2.getSelectedItem()+""));
-                pstampil.setString(6,"%"+TCari.getText().trim()+"%");
-                pstampil.setString(7,Valid.SetTgl(Tgl1.getSelectedItem()+""));
-                pstampil.setString(8,Valid.SetTgl(Tgl2.getSelectedItem()+""));
-                pstampil.setString(9,"%"+TCari.getText().trim()+"%");
-                pstampil.setString(10,Valid.SetTgl(Tgl1.getSelectedItem()+""));
-                pstampil.setString(11,Valid.SetTgl(Tgl2.getSelectedItem()+""));
-                pstampil.setString(12,"%"+TCari.getText().trim()+"%");
-                pstampil.setString(13,Valid.SetTgl(Tgl1.getSelectedItem()+""));
-                pstampil.setString(14,Valid.SetTgl(Tgl2.getSelectedItem()+""));
-                pstampil.setString(15,"%"+TCari.getText().trim()+"%");
-=======
             pstampil=koneksi.prepareStatement(
                 "select tokoopname.kode_brng, tokobarang.nama_brng,tokoopname.dasar,tokobarang.kode_sat,tokoopname.tanggal,tokoopname.stok,"+
                 "tokoopname.real,tokoopname.selisih,(tokoopname.real*tokoopname.dasar) as totalreal,tokoopname.nomihilang,tokoopname.keterangan "+
@@ -843,7 +769,6 @@ private void StokKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Stok
                     pstampil.setString(7,"%"+TCari.getText().trim()+"%");
                 }
                     
->>>>>>> master
                 rstampil=pstampil.executeQuery();
                 total=0;
                 while(rstampil.next()){                
@@ -915,8 +840,6 @@ private void StokKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Stok
         BtnHapus.setEnabled(akses.getstok_opname_toko());
         BtnPrint.setEnabled(akses.getstok_opname_toko()); 
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -949,5 +872,4 @@ private void StokKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Stok
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

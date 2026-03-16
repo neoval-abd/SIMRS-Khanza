@@ -139,34 +139,7 @@ public final class KeuanganHutangToko extends javax.swing.JDialog {
 
         NoBukti.setDocument(new batasInput((byte)20).getKata(NoBukti));
         KdPetugas.setDocument(new batasInput((byte)20).getKata(KdPetugas));
-<<<<<<< HEAD
-        Keterangan.setDocument(new batasInput((byte)100).getKata(Keterangan));        
-        
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-            });
-        }  
-=======
         Keterangan.setDocument(new batasInput((byte)100).getKata(Keterangan)); 
->>>>>>> master
     }
     
 
@@ -1007,8 +980,6 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
             }
         } catch (Exception e) {
         }
-<<<<<<< HEAD
-=======
         
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -1032,7 +1003,6 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void KodeSuplierKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KodeSuplierKeyPressed

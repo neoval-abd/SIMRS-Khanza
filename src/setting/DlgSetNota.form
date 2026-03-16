@@ -790,12 +790,9 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Centang Dokter di Nota Ralan :"/>
                                 <Property name="name" type="java.lang.String" value="jLabel22" noResource="true"/>
-<<<<<<< HEAD
-=======
                                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                                   <Dimension value="null"/>
                                 </Property>
->>>>>>> master
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -829,12 +826,9 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Centang Dokter di Nota Ranap :"/>
                                 <Property name="name" type="java.lang.String" value="jLabel23" noResource="true"/>
-<<<<<<< HEAD
-=======
                                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                                   <Dimension value="null"/>
                                 </Property>
->>>>>>> master
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

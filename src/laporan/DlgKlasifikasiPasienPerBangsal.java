@@ -14,27 +14,16 @@ import java.io.FileWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-<<<<<<< HEAD
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentEvent;
->>>>>>> master
 import javax.swing.text.Document;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
 
 public class DlgKlasifikasiPasienPerBangsal extends javax.swing.JDialog {
-<<<<<<< HEAD
-    private sekuel Sequel=new sekuel();
-    private validasi Valid=new validasi();
-    private Connection koneksi=koneksiDB.condb();
-    private PreparedStatement ps;
-    private ResultSet rs;
-    private StringBuilder htmlContent;
-=======
     private final sekuel Sequel=new sekuel();
     private final validasi Valid=new validasi();
     private final Connection koneksi=koneksiDB.condb();
@@ -43,7 +32,6 @@ public class DlgKlasifikasiPasienPerBangsal extends javax.swing.JDialog {
     private StringBuilder htmlContent;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     private int i=0,jmlpasien=0,pasien=0,Minimal=0,Partial=0,Total=0,jmlMinimal=0,jmlPartial=0,jmlTotal=0;
     
     /** Creates new form DlgProgramStudi
@@ -304,11 +292,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     }//GEN-LAST:event_BtnKeluarKeyPressed
 
 private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
-<<<<<<< HEAD
-    prosesCari();
-=======
     runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_btnCariActionPerformed
 
 private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCariKeyPressed
@@ -320,9 +304,6 @@ private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b
 }//GEN-LAST:event_btnCariKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-        prosesCari();
-=======
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -345,7 +326,6 @@ private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void TCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCariKeyPressed
@@ -360,21 +340,13 @@ private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
-<<<<<<< HEAD
-        prosesCari();
-=======
         runBackground(() ->tampil());
->>>>>>> master
     }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
             TCari.setText("");
-<<<<<<< HEAD
-            prosesCari();
-=======
             runBackground(() ->tampil());
->>>>>>> master
         }else{
             Valid.pindah(evt, BtnPrint, BtnKeluar);
         }
@@ -415,11 +387,7 @@ private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b
     private widget.panelisi panelisi1;
     // End of variables declaration//GEN-END:variables
 
-<<<<<<< HEAD
-    private void prosesCari() {
-=======
     private void tampil() {
->>>>>>> master
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         try {
             htmlContent = new StringBuilder();
@@ -476,11 +444,7 @@ private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b
                     "</tr>"
                 ); 
             } catch (Exception e) {
-<<<<<<< HEAD
-                System.out.println("laporan.DlgHarianHAIs.prosesCari() : "+e);
-=======
                 System.out.println("laporan.DlgHarianHAIs.tampil() : "+e);
->>>>>>> master
             } finally{
                 if(rs!=null){
                     rs.close();
@@ -497,11 +461,7 @@ private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b
                       "</table>"+
                     "</html>");
         } catch (Exception e) {
-<<<<<<< HEAD
-            System.out.println("laporan.DlgRL4A.prosesCari() 5 : "+e);
-=======
             System.out.println("laporan.DlgRL4A.tampil() 5 : "+e);
->>>>>>> master
         } 
         this.setCursor(Cursor.getDefaultCursor());
         
@@ -511,8 +471,6 @@ private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b
         BtnPrint.setEnabled(akses.gethais_perbangsal());
     }
     
-<<<<<<< HEAD
-=======
     private void runBackground(Runnable task) {
         if (ceksukses) return;
         if (executor.isShutdown() || executor.isTerminated()) return;
@@ -544,5 +502,4 @@ private void btnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

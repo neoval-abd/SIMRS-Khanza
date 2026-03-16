@@ -697,14 +697,9 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                             }
                             rs=ps.executeQuery(); 
                             i=0;
-<<<<<<< HEAD
-                            while(rs.next()){
-                                Object[] row = new Object[]{
-=======
                             while(rs.next()){ 
                                 i++;
                                 publish(new Object[]{
->>>>>>> master
                                      rs.getString("kode_brng")+" "+rs.getString("nama_brng"),
                                      rs.getString("stok_awal"),rs.getString("masuk"),
                                      rs.getString("keluar"),rs.getString("stok_akhir"),
@@ -713,13 +708,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                                      rs.getString("kd_bangsal")+" "+rs.getString("nm_bangsal"),
                                      rs.getString("status"),rs.getString("no_batch"),
                                      rs.getString("no_faktur"),rs.getString("keterangan")
-<<<<<<< HEAD
-                                }; 
-                                i++;
-                                publish(row);
-=======
                                 });
->>>>>>> master
                             }    
                          } catch (Exception e) {
                              System.out.println("Notifikasi Data Barang : "+e);

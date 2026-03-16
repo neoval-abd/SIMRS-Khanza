@@ -23,17 +23,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.Timer;
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
@@ -51,11 +46,8 @@ public final class DlgAuditKamarJenazah extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private PreparedStatement ps;
     private ResultSet rs;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     private int i=0;    
     private double audit1=0,audit2=0,audit3=0,
                 audit4=0,audit5=0,ttlaudit1=0,audit6=0,
@@ -604,11 +596,7 @@ public final class DlgAuditKamarJenazah extends javax.swing.JDialog {
             Audit5.getSelectedItem().toString(),Audit6.getSelectedItem().toString(),Audit7.getSelectedItem().toString(),
             Audit8.getSelectedItem().toString()
         })==true){
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
             emptTeks();
         }  
 }//GEN-LAST:event_BtnSimpanActionPerformed
@@ -638,11 +626,7 @@ public final class DlgAuditKamarJenazah extends javax.swing.JDialog {
             if(Sequel.queryu2tf("delete from audit_kamar_jenazah where tanggal=?",1,new String[]{
                 tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
             })==true){
-<<<<<<< HEAD
-                tampil();
-=======
                 runBackground(() ->tampil());
->>>>>>> master
                 emptTeks();
             }else{
                 JOptionPane.showMessageDialog(null,"Gagal menghapus..!!");
@@ -668,11 +652,7 @@ public final class DlgAuditKamarJenazah extends javax.swing.JDialog {
                 Audit5.getSelectedItem().toString(),Audit6.getSelectedItem().toString(),Audit7.getSelectedItem().toString(),
                 Audit8.getSelectedItem().toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
             });
-<<<<<<< HEAD
-            if(tabMode.getRowCount()!=0){tampil();}
-=======
             if(tabMode.getRowCount()!=0){runBackground(() ->tampil());}
->>>>>>> master
             emptTeks();
         }
 }//GEN-LAST:event_BtnEditActionPerformed
@@ -732,11 +712,7 @@ public final class DlgAuditKamarJenazah extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnPrintKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -1070,8 +1046,6 @@ public final class DlgAuditKamarJenazah extends javax.swing.JDialog {
         // Timer
         new Timer(1000, taskPerformer).start();
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -1104,5 +1078,4 @@ public final class DlgAuditKamarJenazah extends javax.swing.JDialog {
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

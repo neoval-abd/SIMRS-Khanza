@@ -7,10 +7,7 @@ package fungsi;
 
 import java.awt.Color;
 import java.awt.Component;
-<<<<<<< HEAD
 import java.awt.Font;
-=======
->>>>>>> master
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -24,7 +21,6 @@ public class WarnaTable extends DefaultTableCellRenderer {
         Component component = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         if (row % 2 == 1){
             component.setBackground(new Color(255,244,244));
-<<<<<<< HEAD
             component.setForeground(new Color(50,50,50));
         }else{
             component.setBackground(new Color(255,255,255));
@@ -38,11 +34,6 @@ public class WarnaTable extends DefaultTableCellRenderer {
         } else {
             component.setFont(component.getFont().deriveFont(Font.PLAIN));
         }
-=======
-        }else{
-            component.setBackground(new Color(255,255,255));
-        } 
->>>>>>> master
         return component;
     }
 

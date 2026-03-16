@@ -17,10 +17,7 @@ import fungsi.koneksiDB;
 import fungsi.sekuel;
 import fungsi.validasi;
 import fungsi.akses;
-<<<<<<< HEAD
-=======
 import java.awt.Cursor;
->>>>>>> master
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
@@ -28,17 +25,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -55,11 +47,8 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private String keyword="";
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
 
     /** Creates new form DlgPemberianInfus
      * @param parent
@@ -112,32 +101,6 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
         tbObat1.setDefaultRenderer(Object.class, new WarnaTable());
 
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        } 
-
-=======
->>>>>>> master
    }
     
     private Dimension screen=Toolkit.getDefaultToolkit().getScreenSize();
@@ -392,11 +355,7 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
             }else{
                 try{
                     Sequel.queryu("delete from tracker");
-<<<<<<< HEAD
-                    tampil();
-=======
                     runBackground(() ->tampil());
->>>>>>> master
                 }catch(Exception e){
                     System.out.println("Notifikasi : "+e);
                     JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih terlebih dulu data yang mau anda hapus...\n Klik data pada table untuk memilih data...!!!!");
@@ -409,11 +368,7 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
             }else{
                 try{
                     Sequel.queryu("delete from trackersql");
-<<<<<<< HEAD
-                    tampil2();
-=======
                     runBackground(() ->tampil2());
->>>>>>> master
                 }catch(Exception e){
                     System.out.println("Notifikasi : "+e);
                     JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih terlebih dulu data yang mau anda hapus...\n Klik data pada table untuk memilih data...!!!!");
@@ -453,15 +408,9 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
         if(TabRawat.getSelectedIndex()==0){
-<<<<<<< HEAD
-            tampil();
-        }else if(TabRawat.getSelectedIndex()==1){
-            tampil2();
-=======
             runBackground(() ->tampil());
         }else if(TabRawat.getSelectedIndex()==1){
             runBackground(() ->tampil2());
->>>>>>> master
         }
 }//GEN-LAST:event_BtnCariActionPerformed
 
@@ -477,35 +426,21 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
         TCari.setText("");
         keyword="";
         if(TabRawat.getSelectedIndex()==0){
-<<<<<<< HEAD
-            tampil();
-        }else if(TabRawat.getSelectedIndex()==1){
-            tampil2();
-=======
             runBackground(() ->tampil());
         }else if(TabRawat.getSelectedIndex()==1){
             runBackground(() ->tampil2());
->>>>>>> master
         }
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
-<<<<<<< HEAD
-            TCari.setText("");
-            tampil();
-=======
             BtnAllActionPerformed(null);
->>>>>>> master
         }else{
             Valid.pindah(evt, BtnCari, BtnKeluar);
         }
 }//GEN-LAST:event_BtnAllKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -541,30 +476,19 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void TabRawatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabRawatMouseClicked
         if(TabRawat.getSelectedIndex()==0){
-<<<<<<< HEAD
-            tampil();
-        }else if(TabRawat.getSelectedIndex()==1){
-            tampil2();
-=======
             runBackground(() ->tampil());
         }else if(TabRawat.getSelectedIndex()==1){
             runBackground(() ->tampil2());
->>>>>>> master
         }
     }//GEN-LAST:event_TabRawatMouseClicked
 
     private void ppFilterPemulanganPasienBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppFilterPemulanganPasienBtnPrintActionPerformed
         keyword="update kamar_inap set tgl_keluar";
-<<<<<<< HEAD
-        tampil2();
-=======
         runBackground(() ->tampil2());
->>>>>>> master
     }//GEN-LAST:event_ppFilterPemulanganPasienBtnPrintActionPerformed
 
     /**
@@ -614,13 +538,6 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
         try{    
             ps=koneksi.prepareStatement(
                     "select tracker.nip,tracker.tgl_login,tracker.jam_login from tracker  "+
-<<<<<<< HEAD
-                    "where tracker.tgl_login between ? and ? and tracker.nip like ? order by tracker.tgl_login");
-            try {
-                ps.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
-                ps.setString(2,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
-                ps.setString(3,"%"+TCari.getText().trim()+"%");
-=======
                     "where tracker.tgl_login between ? and ? "+(TCari.getText().trim().equals("")?"":"and tracker.nip like ? ")+" order by tracker.tgl_login");
             try {
                 ps.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
@@ -628,7 +545,6 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
                 if(!TCari.getText().trim().equals("")){
                     ps.setString(3,"%"+TCari.getText().trim()+"%");
                 }
->>>>>>> master
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new Object[]{
@@ -656,16 +572,6 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
         Valid.tabelKosong(tabMode2);
         try{    
             ps=koneksi.prepareStatement(
-<<<<<<< HEAD
-                    "select tanggal,usere, replace(sqle,'|','\\',\\'') as sqle from trackersql where tanggal between ? and ? and usere like ? or tanggal between ? and ? and sqle like ?  order by trackersql.tanggal");
-            try {
-                ps.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+"")+" 00:00:00");
-                ps.setString(2,Valid.SetTgl(DTPCari2.getSelectedItem()+"")+" 23:59:59");
-                ps.setString(3,"%"+TCari.getText().trim()+"%");
-                ps.setString(4,Valid.SetTgl(DTPCari1.getSelectedItem()+"")+" 00:00:00");
-                ps.setString(5,Valid.SetTgl(DTPCari2.getSelectedItem()+"")+" 23:59:59");
-                ps.setString(6,"%"+TCari.getText().trim()+"%");
-=======
                     "select trackersql.tanggal,trackersql.usere, replace(trackersql.sqle,'|','\\',\\'') as sqle from trackersql where trackersql.tanggal between ? and ? "+(TCari.getText().trim().equals("")?"":"and (trackersql.usere like ? or trackersql.sqle like ?) ")+"order by trackersql.tanggal");
             try {
                 ps.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+"")+" 00:00:00");
@@ -674,7 +580,6 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
                     ps.setString(3,"%"+TCari.getText().trim()+"%");
                     ps.setString(4,"%"+TCari.getText().trim()+"%");
                 }
->>>>>>> master
                 rs=ps.executeQuery();
                 if(keyword.equals("")){
                     while(rs.next()){
@@ -690,12 +595,7 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
                             });
                         }
                     }
-<<<<<<< HEAD
-                }
-                    
-=======
                 }   
->>>>>>> master
             } catch (Exception e) {
                 System.out.println("Notif : "+e);
             } finally{
@@ -718,9 +618,6 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
         BtnHapus.setEnabled(akses.gettracer_login());
     }
 
-<<<<<<< HEAD
-    
-=======
     private void runBackground(Runnable task) {
         if (ceksukses) return;
         if (executor.isShutdown() || executor.isTerminated()) return;
@@ -752,5 +649,4 @@ public class DlgPenelusuranLogin extends javax.swing.JDialog {
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

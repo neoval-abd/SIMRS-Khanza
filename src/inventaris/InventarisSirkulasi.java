@@ -112,40 +112,9 @@ public class InventarisSirkulasi extends javax.swing.JDialog {
         
         WindowInput.setSize(735,245);
         WindowInput.setLocationRelativeTo(null);  
-<<<<<<< HEAD
-        
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-            });
-        }
-        
     }
 
     private DlgCariPetugas petugas;
-    private int pilihan=0;
-=======
-    }
-
-    private DlgCariPetugas petugas;
->>>>>>> master
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -405,11 +374,7 @@ public class InventarisSirkulasi extends javax.swing.JDialog {
         label12.setBounds(367, 55, 80, 23);
 
         tgl.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        tgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-04-2025" }));
-=======
         tgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-02-2026" }));
->>>>>>> master
         tgl.setDisplayFormat("dd-MM-yyyy");
         tgl.setName("tgl"); // NOI18N
         tgl.setOpaque(false);
@@ -452,14 +417,11 @@ public class InventarisSirkulasi extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
-<<<<<<< HEAD
-=======
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
->>>>>>> master
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Sirkulasi Iventaris ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
@@ -686,11 +648,7 @@ public class InventarisSirkulasi extends javax.swing.JDialog {
         ChkTanggal.setPreferredSize(new java.awt.Dimension(135, 23));
         panelCari.add(ChkTanggal);
 
-<<<<<<< HEAD
-        TglPinjam1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-04-2025" }));
-=======
         TglPinjam1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-02-2026" }));
->>>>>>> master
         TglPinjam1.setDisplayFormat("dd-MM-yyyy");
         TglPinjam1.setName("TglPinjam1"); // NOI18N
         TglPinjam1.setOpaque(false);
@@ -708,11 +666,7 @@ public class InventarisSirkulasi extends javax.swing.JDialog {
         jLabel22.setPreferredSize(new java.awt.Dimension(35, 23));
         panelCari.add(jLabel22);
 
-<<<<<<< HEAD
-        TglPinjam2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-04-2025" }));
-=======
         TglPinjam2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-02-2026" }));
->>>>>>> master
         TglPinjam2.setDisplayFormat("dd-MM-yyyy");
         TglPinjam2.setName("TglPinjam2"); // NOI18N
         TglPinjam2.setOpaque(false);
@@ -1244,8 +1198,6 @@ private void tlpKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tlpKe
         }
     }//GEN-LAST:event_tbKamInKeyReleased
 
-<<<<<<< HEAD
-=======
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         runBackground(() ->tampil());
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -1272,7 +1224,6 @@ private void tlpKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tlpKe
         }
     }//GEN-LAST:event_formWindowOpened
 
->>>>>>> master
     /**
     * @param args the command line arguments
     */

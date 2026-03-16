@@ -135,32 +135,6 @@ public class InventarisSirkulasiCSSD extends javax.swing.JDialog {
         WindowInput.setSize(735,245);
         WindowInput.setLocationRelativeTo(null);  
         
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-            });
-        }
-        
-=======
->>>>>>> master
         HTMLEditorKit kit = new HTMLEditorKit();
         LoadHTML.setEditable(true);
         LoadHTML.setEditorKit(kit);
@@ -1178,8 +1152,6 @@ public class InventarisSirkulasiCSSD extends javax.swing.JDialog {
 
 private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
     runBackground(() ->tampil());
-<<<<<<< HEAD
-=======
     if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -1202,7 +1174,6 @@ private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event
                 }
             });
         }
->>>>>>> master
 }//GEN-LAST:event_formWindowOpened
 
 private void NoInventarisKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NoInventarisKeyPressed

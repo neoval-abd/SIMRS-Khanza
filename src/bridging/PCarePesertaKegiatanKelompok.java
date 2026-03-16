@@ -26,20 +26,14 @@ import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-<<<<<<< HEAD
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
->>>>>>> master
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.X509TrustManager;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-<<<<<<< HEAD
-=======
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -64,10 +58,6 @@ public class PCarePesertaKegiatanKelompok extends javax.swing.JDialog {
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
     private Connection koneksi=koneksiDB.condb();
-<<<<<<< HEAD
-    private Dimension screen=Toolkit.getDefaultToolkit().getScreenSize();
-=======
->>>>>>> master
     private int i,a;
     private PreparedStatement ps,ps2;
     private ResultSet rs,rs2;
@@ -81,11 +71,8 @@ public class PCarePesertaKegiatanKelompok extends javax.swing.JDialog {
     private final Properties prop = new Properties();
     private ApiPcare api=new ApiPcare();
     private StringBuilder htmlContent;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     
     /** Creates new form DlgProgramStudi
      * @param parent
@@ -147,31 +134,6 @@ public class PCarePesertaKegiatanKelompok extends javax.swing.JDialog {
         tbDokter.setDefaultRenderer(Object.class, new WarnaTable());
         
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        } 
-=======
->>>>>>> master
         
         try {
             prop.loadFromXML(new FileInputStream("setting/database.xml")); 
@@ -608,9 +570,6 @@ private void BtnHapusKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
 }//GEN-LAST:event_BtnHapusKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -634,20 +593,13 @@ private void BtnHapusKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                 }
             });
         } 
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void TabRawatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabRawatMouseClicked
         if(TabRawat.getSelectedIndex()==0){
-<<<<<<< HEAD
-            tampil();
-        }else if(TabRawat.getSelectedIndex()==1){
-            tampil2();
-=======
             runBackground(() ->tampil());
         }else if(TabRawat.getSelectedIndex()==1){
             runBackground(() ->tampil2());
->>>>>>> master
         }
     }//GEN-LAST:event_TabRawatMouseClicked
 
@@ -983,11 +935,7 @@ private void BtnHapusKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                 if(Sequel.queryu2tf("delete from pcare_peserta_kegiatan_kelompok where eduId=? and no_rkm_medis=?",2,new String[]{
                     tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString(),tbDokter.getValueAt(tbDokter.getSelectedRow(),10).toString()
                 })==true){
-<<<<<<< HEAD
-                    tampil();
-=======
                     runBackground(() ->tampil());
->>>>>>> master
                 }                    
             }else{
                 JOptionPane.showMessageDialog(null,nameNode.path("message").asText());
@@ -1011,8 +959,6 @@ private void BtnHapusKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
             }
         }  
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -1045,5 +991,4 @@ private void BtnHapusKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

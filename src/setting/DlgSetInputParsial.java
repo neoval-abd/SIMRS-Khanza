@@ -57,11 +57,7 @@ public class DlgSetInputParsial extends javax.swing.JDialog {
         initComponents();
 
         this.setLocation(10,10);
-<<<<<<< HEAD
-        setSize(459,539);
-=======
         
->>>>>>> master
 
         Object[] row={"Kode Bayar","Cara Bayar"};
         tabMode=new DefaultTableModel(null,row){
@@ -94,31 +90,6 @@ public class DlgSetInputParsial extends javax.swing.JDialog {
 
         kdpj.setDocument(new batasInput((byte)3).getKata(kdpj));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-            });
-        }  
-=======
->>>>>>> master
     }
     
     /** This method is called from within the constructor to
@@ -409,8 +380,6 @@ public class DlgSetInputParsial extends javax.swing.JDialog {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         runBackground(() ->tampil());
-<<<<<<< HEAD
-=======
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -433,7 +402,6 @@ public class DlgSetInputParsial extends javax.swing.JDialog {
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void BtnPenjabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPenjabActionPerformed

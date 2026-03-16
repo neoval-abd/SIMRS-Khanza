@@ -25,11 +25,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
@@ -37,7 +32,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -53,11 +47,8 @@ public final class DlgICD9 extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private PreparedStatement ps;
     private ResultSet rs;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     private int z=0;
     /** Creates new form DlgPenyakit
      * @param parent
@@ -116,37 +107,8 @@ public final class DlgICD9 extends javax.swing.JDialog {
         Pendek.setDocument(new batasInput((int)100).getKata(Pendek));
         Panjang.setDocument(new batasInput((int)1500).getKata(Panjang));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        } 
-        
         ChkInput.setSelected(false);
         isForm(); 
-        
-=======
-        ChkInput.setSelected(false);
-        isForm(); 
->>>>>>> master
     }
     
     
@@ -578,11 +540,7 @@ public final class DlgICD9 extends javax.swing.JDialog {
                 Kode.getText(),Panjang.getText(),Pendek.getText(),cmbValidCode.getSelectedItem().toString(),
                 cmbACCPDX.getSelectedItem().toString(),cmbIM.getSelectedItem().toString()
             })==true){
-<<<<<<< HEAD
-                tampil();
-=======
                 runBackground(() ->tampil());
->>>>>>> master
                 emptTeks();
             }
         }
@@ -614,11 +572,7 @@ public final class DlgICD9 extends javax.swing.JDialog {
                 Sequel.meghapus("icd9","kode",tbPenyakit.getValueAt(z,1).toString());
             }
         } 
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
         emptTeks();
 }//GEN-LAST:event_BtnHapusActionPerformed
 
@@ -642,11 +596,7 @@ public final class DlgICD9 extends javax.swing.JDialog {
                 Panjang.getText(),Pendek.getText(),Kode.getText(),cmbValidCode.getSelectedItem().toString(),cmbACCPDX.getSelectedItem().toString(),
                 cmbIM.getSelectedItem().toString(),tbPenyakit.getValueAt(tbPenyakit.getSelectedRow(),1).toString()
             })==true){
-<<<<<<< HEAD
-                if(tabMode.getRowCount()!=0){tampil();}
-=======
                 if(tabMode.getRowCount()!=0){runBackground(() ->tampil());}
->>>>>>> master
                 emptTeks();
             }
         }
@@ -711,20 +661,12 @@ public final class DlgICD9 extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
         }else{
             Valid.pindah(evt, TCari, BtnAll);
         }
@@ -732,21 +674,13 @@ public final class DlgICD9 extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
             TCari.setText("");
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
         }else{
             Valid.pindah(evt, BtnCari,TCari);
         }
@@ -782,9 +716,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 }//GEN-LAST:event_ChkInputActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-        //tampil();
-=======
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -807,7 +738,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 }
             });
         } 
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void cmbValidCodeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbValidCodeKeyPressed
@@ -878,14 +808,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void tampil() {
         Valid.tabelKosong(tabMode);
         try{
-<<<<<<< HEAD
-            ps=koneksi.prepareStatement("select * from icd9 where icd9.kode like ? or "+
-                    " icd9.deskripsi_panjang like ? or icd9.deskripsi_pendek like ? order by icd9.kode");
-            try{
-                ps.setString(1,"%"+TCari.getText().trim()+"%");
-                ps.setString(2,"%"+TCari.getText().trim()+"%");
-                ps.setString(3,"%"+TCari.getText().trim()+"%");
-=======
             ps=koneksi.prepareStatement(
                 "select * from icd9 "+(TCari.getText().trim().equals("")?"":"where icd9.kode like ? or icd9.deskripsi_panjang like ? or icd9.deskripsi_pendek like ? ")+"order by icd9.kode");
             try{
@@ -894,7 +816,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     ps.setString(2,"%"+TCari.getText().trim()+"%");
                     ps.setString(3,"%"+TCari.getText().trim()+"%");
                 }   
->>>>>>> master
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new Object[]{
@@ -964,8 +885,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         BtnEdit.setEnabled(akses.geticd9());
         BtnPrint.setEnabled(akses.geticd9());
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -998,5 +917,4 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

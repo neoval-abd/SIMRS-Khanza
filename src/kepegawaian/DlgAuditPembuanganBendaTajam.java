@@ -25,17 +25,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.Timer;
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
@@ -54,12 +49,8 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private int i=0;    
-<<<<<<< HEAD
-    private DlgCariRuangAuditKepatuhan ruang=new DlgCariRuangAuditKepatuhan(null,false);
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     private double setiap_injeksi_needle_langsung_dimasukkan_safety_box=0,setiap_pemasangan_iv_canula_langsung_dimasukkan_safety_box=0,setiap_benda_tajam_jarum_dimasukkan_safety_box=0,
                 safety_box_tigaperempat_diganti=0,safety_box_keadaan_bersih=0,ttlsetiap_injeksi_needle_langsung_dimasukkan_safety_box=0,saftey_box_tertutup_setelah_digunakan=0,
                 ttlsetiap_pemasangan_iv_canula_langsung_dimasukkan_safety_box=0,ttlsetiap_benda_tajam_jarum_dimasukkan_safety_box=0,ttlsafety_box_tigaperempat_diganti=0,ttlsafety_box_keadaan_bersih=0,
@@ -117,59 +108,8 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
         KdRuang.setDocument(new batasInput((byte)20).getKata(KdRuang));
         TCari.setDocument(new batasInput((int)100).getKata(TCari));
         
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        }
-        
-        ruang.addWindowListener(new WindowListener() {
-            @Override
-            public void windowOpened(WindowEvent e) {}
-            @Override
-            public void windowClosing(WindowEvent e) {}
-            @Override
-            public void windowClosed(WindowEvent e) {
-                if(ruang.getTable().getSelectedRow()!= -1){                   
-                    KdRuang.setText(ruang.getTable().getValueAt(ruang.getTable().getSelectedRow(),0).toString());
-                    NmRuang.setText(ruang.getTable().getValueAt(ruang.getTable().getSelectedRow(),1).toString());
-                }  
-                KdRuang.requestFocus();
-            }
-            @Override
-            public void windowIconified(WindowEvent e) {}
-            @Override
-            public void windowDeiconified(WindowEvent e) {}
-            @Override
-            public void windowActivated(WindowEvent e) {}
-            @Override
-            public void windowDeactivated(WindowEvent e) {}
-        }); 
         ChkInput.setSelected(false);
         isForm();
-        
-=======
-        ChkInput.setSelected(false);
-        isForm();
->>>>>>> master
         jam();
     }
 
@@ -234,14 +174,11 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
-<<<<<<< HEAD
-=======
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
->>>>>>> master
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Audit Pembuangan Benda Tajam & Jarum ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -408,11 +345,7 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-06-2022" }));
-=======
         DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-02-2026" }));
->>>>>>> master
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -426,11 +359,7 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-06-2022" }));
-=======
         DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-02-2026" }));
->>>>>>> master
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -500,11 +429,7 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
         FormInput.setLayout(null);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-06-2022" }));
-=======
         Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-02-2026" }));
->>>>>>> master
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -734,11 +659,7 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
                 SetiapPemasanganIvCanulaLangsungDimasukkanSafetyBox.getSelectedItem().toString(),SetiapBendaTajamJarumDimasukkanSafetyXox.getSelectedItem().toString(),SafetyBoxTigaperempatDiganti.getSelectedItem().toString(),
                 SafetyBoxKeadaanBersih.getSelectedItem().toString(),SafteyBoxTertutupSetelahDigunakan.getSelectedItem().toString()
             })==true){
-<<<<<<< HEAD
-                tampil();
-=======
                 runBackground(() ->tampil());
->>>>>>> master
                 emptTeks();
             }  
         }
@@ -769,11 +690,7 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
             if(Sequel.queryu2tf("delete from audit_pembuangan_benda_tajam where id_ruang=? and tanggal=?",2,new String[]{
                 tbObat.getValueAt(tbObat.getSelectedRow(),1).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
             })==true){
-<<<<<<< HEAD
-                tampil();
-=======
                 runBackground(() ->tampil());
->>>>>>> master
                 emptTeks();
             }else{
                 JOptionPane.showMessageDialog(null,"Gagal menghapus..!!");
@@ -800,11 +717,7 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
                 SetiapPemasanganIvCanulaLangsungDimasukkanSafetyBox.getSelectedItem().toString(),SetiapBendaTajamJarumDimasukkanSafetyXox.getSelectedItem().toString(),SafetyBoxTigaperempatDiganti.getSelectedItem().toString(),
                 SafetyBoxKeadaanBersih.getSelectedItem().toString(),SafteyBoxTertutupSetelahDigunakan.getSelectedItem().toString(),tbObat.getValueAt(tbObat.getSelectedRow(),1).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
             });
-<<<<<<< HEAD
-            if(tabMode.getRowCount()!=0){tampil();}
-=======
             if(tabMode.getRowCount()!=0){runBackground(() ->tampil());}
->>>>>>> master
             emptTeks();
         }
 }//GEN-LAST:event_BtnEditActionPerformed
@@ -818,10 +731,6 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnEditKeyPressed
 
     private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
-<<<<<<< HEAD
-        ruang.dispose();
-=======
->>>>>>> master
         dispose();
 }//GEN-LAST:event_BtnKeluarActionPerformed
 
@@ -887,11 +796,7 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -904,21 +809,13 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
             TCari.setText("");
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
         }else{
             //Valid.pindah(evt, BtnCari, TPasien);
         }
@@ -975,8 +872,6 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
     }//GEN-LAST:event_KdRuangKeyPressed
 
     private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPetugasActionPerformed
-<<<<<<< HEAD
-=======
         DlgCariRuangAuditKepatuhan ruang=new DlgCariRuangAuditKepatuhan(null,false);
         ruang.addWindowListener(new WindowListener() {
             @Override
@@ -1000,7 +895,6 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
             @Override
             public void windowDeactivated(WindowEvent e) {}
         }); 
->>>>>>> master
         ruang.emptTeks();
         ruang.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         ruang.setLocationRelativeTo(internalFrame1);
@@ -1035,8 +929,6 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
         Valid.pindah(evt, SafetyBoxKeadaanBersih,BtnSimpan);
     }//GEN-LAST:event_SafteyBoxTertutupSetelahDigunakanKeyPressed
 
-<<<<<<< HEAD
-=======
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -1062,7 +954,6 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_formWindowOpened
 
->>>>>>> master
     /**
     * @param args the command line arguments
     */
@@ -1324,8 +1215,6 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
         // Timer
         new Timer(1000, taskPerformer).start();
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -1358,5 +1247,4 @@ public final class DlgAuditPembuanganBendaTajam extends javax.swing.JDialog {
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

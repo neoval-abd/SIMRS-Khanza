@@ -50,20 +50,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
-<<<<<<< HEAD
-import javax.swing.SwingUtilities;
-=======
->>>>>>> master
 import keuangan.DlgBilingRalan;
 import keuangan.DlgBilingRanap;
 import laporan.DlgDiagnosaPenyakit;
 import rekammedis.RMRiwayatPerawatan;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.SwingUtilities;
-<<<<<<< HEAD
-=======
 import javax.swing.WindowConstants;
->>>>>>> master
 
 /**
  *
@@ -85,13 +78,10 @@ public class INACBGHybrid extends javax.swing.JDialog {
     private String URL="";
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
-<<<<<<< HEAD
-=======
     private RMRiwayatPerawatan resume;
     private DlgBilingRalan dlgbil;
     private DlgBilingRanap billing;
     private DlgDiagnosaPenyakit diagnosa;
->>>>>>> master
                                     
     
     public INACBGHybrid(java.awt.Frame parent, boolean modal) {
@@ -191,31 +181,6 @@ public class INACBGHybrid extends javax.swing.JDialog {
                                     try {
                                         rs=ps.executeQuery();
                                         if(rs.next()){
-<<<<<<< HEAD
-                                            DlgDiagnosaPenyakit diagnosa=new DlgDiagnosaPenyakit(null,false);
-                                            diagnosa.addWindowListener(new WindowListener() {
-                                                @Override
-                                                public void windowOpened(WindowEvent e) {}
-                                                @Override
-                                                public void windowClosing(WindowEvent e) {}
-                                                @Override
-                                                public void windowClosed(WindowEvent e) {
-                                                    runBackground(() ->loadURL(URL));
-                                                }
-                                                @Override
-                                                public void windowIconified(WindowEvent e) {}
-                                                @Override
-                                                public void windowDeiconified(WindowEvent e) {}
-                                                @Override
-                                                public void windowActivated(WindowEvent e) {}
-                                                @Override
-                                                public void windowDeactivated(WindowEvent e) {}
-                                            });
-                                            diagnosa.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-                                            diagnosa.setLocationRelativeTo(internalFrame1);
-                                            diagnosa.isCek();
-                                            diagnosa.setNoRm(rs.getString("no_rawat"),rs.getDate("tgl_registrasi"),rs.getDate("tgl_registrasi"),rs.getString("status_lanjut"));
-=======
                                             if (diagnosa == null || !diagnosa.isDisplayable()) {
                                                 diagnosa=new DlgDiagnosaPenyakit(null,false);
                                                 diagnosa.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -252,7 +217,6 @@ public class INACBGHybrid extends javax.swing.JDialog {
                                                 return;
                                             } 
                                                 
->>>>>>> master
                                             diagnosa.setVisible(true); 
                                         }
                                     } catch (Exception e) {
@@ -317,31 +281,6 @@ public class INACBGHybrid extends javax.swing.JDialog {
                                     try {
                                         rs=ps.executeQuery();
                                         if(rs.next()){
-<<<<<<< HEAD
-                                            RMRiwayatPerawatan resume=new RMRiwayatPerawatan(null,false);
-                                            resume.addWindowListener(new WindowListener() {
-                                                @Override
-                                                public void windowOpened(WindowEvent e) {}
-                                                @Override
-                                                public void windowClosing(WindowEvent e) {}
-                                                @Override
-                                                public void windowClosed(WindowEvent e) {
-                                                    runBackground(() ->loadURL(URL));
-                                                }
-                                                @Override
-                                                public void windowIconified(WindowEvent e) {}
-                                                @Override
-                                                public void windowDeiconified(WindowEvent e) {}
-                                                @Override
-                                                public void windowActivated(WindowEvent e) {}
-                                                @Override
-                                                public void windowDeactivated(WindowEvent e) {}
-                                            });
-                                            resume.setNoRawat(rs.getString("no_rawat"));
-                                            resume.setNoRm(rs.getString("no_rkm_medis"),rs.getString("nm_pasien"));
-                                            resume.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-                                            resume.setLocationRelativeTo(internalFrame1);
-=======
                                             if (resume == null || !resume.isDisplayable()) {
                                                 resume=new RMRiwayatPerawatan(null,false);
                                                 resume.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -376,7 +315,6 @@ public class INACBGHybrid extends javax.swing.JDialog {
                                                 resume.toFront();
                                                 return;
                                             }    
->>>>>>> master
                                             resume.setVisible(true);
                                         }
                                     } catch (Exception e) {
@@ -396,58 +334,6 @@ public class INACBGHybrid extends javax.swing.JDialog {
                                         rs=ps.executeQuery();
                                         if(rs.next()){
                                             if(rs.getString("status_lanjut").equals("Ralan")){
-<<<<<<< HEAD
-                                                DlgBilingRalan dlgbil=new DlgBilingRalan(null,false);
-                                                dlgbil.addWindowListener(new WindowListener() {
-                                                    @Override
-                                                    public void windowOpened(WindowEvent e) {}
-                                                    @Override
-                                                    public void windowClosing(WindowEvent e) {}
-                                                    @Override
-                                                    public void windowClosed(WindowEvent e) {
-                                                        runBackground(() ->loadURL(URL));
-                                                    }
-                                                    @Override
-                                                    public void windowIconified(WindowEvent e) {}
-                                                    @Override
-                                                    public void windowDeiconified(WindowEvent e) {}
-                                                    @Override
-                                                    public void windowActivated(WindowEvent e) {}
-                                                    @Override
-                                                    public void windowDeactivated(WindowEvent e) {}
-                                                });
-                                                dlgbil.TNoRw.setText(rs.getString("no_rawat"));
-                                                dlgbil.isCek();
-                                                dlgbil.isRawat(); 
-                                                dlgbil.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-                                                dlgbil.setLocationRelativeTo(internalFrame1);
-                                                dlgbil.setVisible(true);
-                                            }else if(rs.getString("status_lanjut").equals("Ranap")){
-                                                DlgBilingRanap billing=new DlgBilingRanap( null,false);
-                                                billing.addWindowListener(new WindowListener() {
-                                                    @Override
-                                                    public void windowOpened(WindowEvent e) {}
-                                                    @Override
-                                                    public void windowClosing(WindowEvent e) {}
-                                                    @Override
-                                                    public void windowClosed(WindowEvent e) {
-                                                        runBackground(() ->loadURL(URL));
-                                                    }
-                                                    @Override
-                                                    public void windowIconified(WindowEvent e) {}
-                                                    @Override
-                                                    public void windowDeiconified(WindowEvent e) {}
-                                                    @Override
-                                                    public void windowActivated(WindowEvent e) {}
-                                                    @Override
-                                                    public void windowDeactivated(WindowEvent e) {}
-                                                });
-                                                billing.TNoRw.setText(rs.getString("no_rawat"));                   
-                                                billing.isCek();  
-                                                billing.isRawat();          
-                                                billing.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-                                                billing.setLocationRelativeTo(internalFrame1);
-=======
                                                 if (dlgbil == null || !dlgbil.isDisplayable()) {
                                                     dlgbil=new DlgBilingRalan(null,false);
                                                     dlgbil.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -524,7 +410,6 @@ public class INACBGHybrid extends javax.swing.JDialog {
                                                     return;
                                                 }  
                                                 
->>>>>>> master
                                                 billing.setVisible(true);
                                             }
                                         }

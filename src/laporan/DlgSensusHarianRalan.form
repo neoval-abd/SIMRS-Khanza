@@ -71,8 +71,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ppTampilkanLamaBtnPrintActionPerformed"/>
           </Events>
         </MenuItem>
-<<<<<<< HEAD
-=======
         <MenuItem class="javax.swing.JMenuItem" name="ppTampilkanLanjutRalan">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -125,7 +123,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ppTampilkanLanjutRanapBtnPrintActionPerformed"/>
           </Events>
         </MenuItem>
->>>>>>> master
       </SubComponents>
     </Container>
   </NonVisualComponents>
@@ -138,12 +135,9 @@
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
-<<<<<<< HEAD
-=======
   <Events>
     <EventHandler event="windowOpened" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowOpened"/>
   </Events>
->>>>>>> master
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>

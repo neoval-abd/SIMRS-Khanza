@@ -60,11 +60,7 @@ public class INACBGCoderNIK extends javax.swing.JDialog {
         initComponents();
 
         this.setLocation(10,10);
-<<<<<<< HEAD
-        setSize(459,539);
-=======
         
->>>>>>> master
 
         Object[] row={"NIP","Petugas","Coder NIK"};
         tabMode=new DefaultTableModel(null,row){

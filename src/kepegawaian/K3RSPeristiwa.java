@@ -191,32 +191,6 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
         Catatan.setDocument(new batasInput((int)200).getKata(Catatan));
         Wewenang.setDocument(new batasInput((int)100).getKata(Wewenang));
         LT.setDocument(new batasInput((byte)10).getOnlyAngka(LT));
-<<<<<<< HEAD
-        
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-            });
-        } 
-=======
->>>>>>> master
     }
     
     /** This method is called from within the constructor to
@@ -381,11 +355,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
         tbJnsPerawatan = new widget.Table();
 
         TglLahir.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        TglLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-06-2019" }));
-=======
         TglLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-02-2026" }));
->>>>>>> master
         TglLahir.setDisplayFormat("dd-MM-yyyy");
         TglLahir.setName("TglLahir"); // NOI18N
         TglLahir.setOpaque(false);
@@ -394,11 +364,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikBatangPeristiwaK3PerTahun.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikBatangPeristiwaK3PerTahun.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikBatangPeristiwaK3PerTahun.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikBatangPeristiwaK3PerTahun.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikBatangPeristiwaK3PerTahun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikBatangPeristiwaK3PerTahun.setText("Grafik Batang Peristiwa K3 Per Tahun");
         ppGrafikBatangPeristiwaK3PerTahun.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -414,11 +380,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikPiePeristiwaK3PerTahun.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikPiePeristiwaK3PerTahun.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikPiePeristiwaK3PerTahun.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikPiePeristiwaK3PerTahun.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikPiePeristiwaK3PerTahun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikPiePeristiwaK3PerTahun.setText("Grafik Pie Peristiwa K3 Per Tahun");
         ppGrafikPiePeristiwaK3PerTahun.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -434,11 +396,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikBatangPeristiwaK3PerBulan.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikBatangPeristiwaK3PerBulan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikBatangPeristiwaK3PerBulan.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikBatangPeristiwaK3PerBulan.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikBatangPeristiwaK3PerBulan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikBatangPeristiwaK3PerBulan.setText("Grafik Batang Peristiwa K3 Per Bulan");
         ppGrafikBatangPeristiwaK3PerBulan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -454,11 +412,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikPiePeristiwaK3PerBulan.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikPiePeristiwaK3PerBulan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikPiePeristiwaK3PerBulan.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikPiePeristiwaK3PerBulan.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikPiePeristiwaK3PerBulan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikPiePeristiwaK3PerBulan.setText("Grafik Pie Peristiwa K3 Per Bulan");
         ppGrafikPiePeristiwaK3PerBulan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -474,11 +428,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikBatangPeristiwaK3PerTanggal.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikBatangPeristiwaK3PerTanggal.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikBatangPeristiwaK3PerTanggal.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikBatangPeristiwaK3PerTanggal.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikBatangPeristiwaK3PerTanggal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikBatangPeristiwaK3PerTanggal.setText("Grafik Batang Peristiwa K3 Per Tanggal");
         ppGrafikBatangPeristiwaK3PerTanggal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -494,11 +444,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikPiePeristiwaK3PerTanggal.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikPiePeristiwaK3PerTanggal.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikPiePeristiwaK3PerTanggal.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikPiePeristiwaK3PerTanggal.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikPiePeristiwaK3PerTanggal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikPiePeristiwaK3PerTanggal.setText("Grafik Pie Peristiwa K3 Per Tanggal");
         ppGrafikPiePeristiwaK3PerTanggal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -514,11 +460,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikBatangPeristiwaK3PerJenisCidera.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikBatangPeristiwaK3PerJenisCidera.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikBatangPeristiwaK3PerJenisCidera.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikBatangPeristiwaK3PerJenisCidera.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikBatangPeristiwaK3PerJenisCidera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikBatangPeristiwaK3PerJenisCidera.setText("Grafik Batang Peristiwa K3 Per Jenis Cidera");
         ppGrafikBatangPeristiwaK3PerJenisCidera.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -534,11 +476,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikPiePeristiwaK3PerJenisCidera.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikPiePeristiwaK3PerJenisCidera.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikPiePeristiwaK3PerJenisCidera.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikPiePeristiwaK3PerJenisCidera.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikPiePeristiwaK3PerJenisCidera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikPiePeristiwaK3PerJenisCidera.setText("Grafik Pie Peristiwa K3 Per Jenis Cidera");
         ppGrafikPiePeristiwaK3PerJenisCidera.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -554,11 +492,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikBatangPeristiwaK3PerPenyebab.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikBatangPeristiwaK3PerPenyebab.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikBatangPeristiwaK3PerPenyebab.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikBatangPeristiwaK3PerPenyebab.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikBatangPeristiwaK3PerPenyebab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikBatangPeristiwaK3PerPenyebab.setText("Grafik Batang Peristiwa K3 Per Penyebab Kecelakaan");
         ppGrafikBatangPeristiwaK3PerPenyebab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -574,11 +508,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikPiePeristiwaK3PerPenyebab.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikPiePeristiwaK3PerPenyebab.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikPiePeristiwaK3PerPenyebab.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikPiePeristiwaK3PerPenyebab.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikPiePeristiwaK3PerPenyebab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikPiePeristiwaK3PerPenyebab.setText("Grafik Pie Peristiwa K3 Per Penyebab Kecelakaan");
         ppGrafikPiePeristiwaK3PerPenyebab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -594,11 +524,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikBatangPeristiwaK3PerJenisLuka.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikBatangPeristiwaK3PerJenisLuka.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikBatangPeristiwaK3PerJenisLuka.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikBatangPeristiwaK3PerJenisLuka.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikBatangPeristiwaK3PerJenisLuka.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikBatangPeristiwaK3PerJenisLuka.setText("Grafik Batang Peristiwa K3 Per Jenis Luka");
         ppGrafikBatangPeristiwaK3PerJenisLuka.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -614,11 +540,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikPiePeristiwaK3PerJenisLuka.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikPiePeristiwaK3PerJenisLuka.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikPiePeristiwaK3PerJenisLuka.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikPiePeristiwaK3PerJenisLuka.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikPiePeristiwaK3PerJenisLuka.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikPiePeristiwaK3PerJenisLuka.setText("Grafik Pie Peristiwa K3 Per Jenis Luka");
         ppGrafikPiePeristiwaK3PerJenisLuka.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -634,11 +556,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikBatangPeristiwaK3PerLokasiKejadian.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikBatangPeristiwaK3PerLokasiKejadian.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikBatangPeristiwaK3PerLokasiKejadian.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikBatangPeristiwaK3PerLokasiKejadian.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikBatangPeristiwaK3PerLokasiKejadian.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikBatangPeristiwaK3PerLokasiKejadian.setText("Grafik Batang Peristiwa K3 Per Lokasi Kejadian");
         ppGrafikBatangPeristiwaK3PerLokasiKejadian.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -654,11 +572,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikPiePeristiwaK3PerLokasiKejadian.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikPiePeristiwaK3PerLokasiKejadian.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikPiePeristiwaK3PerLokasiKejadian.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikPiePeristiwaK3PerLokasiKejadian.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikPiePeristiwaK3PerLokasiKejadian.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikPiePeristiwaK3PerLokasiKejadian.setText("Grafik Pie Peristiwa K3 Per Lokasi Kejadian");
         ppGrafikPiePeristiwaK3PerLokasiKejadian.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -674,11 +588,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikBatangPeristiwaK3PerDampakCidera.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikBatangPeristiwaK3PerDampakCidera.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikBatangPeristiwaK3PerDampakCidera.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikBatangPeristiwaK3PerDampakCidera.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikBatangPeristiwaK3PerDampakCidera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikBatangPeristiwaK3PerDampakCidera.setText("Grafik Batang Peristiwa K3 Per Dampak Cidera");
         ppGrafikBatangPeristiwaK3PerDampakCidera.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -694,11 +604,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikPiePeristiwaK3PerDampakCidera.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikPiePeristiwaK3PerDampakCidera.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikPiePeristiwaK3PerDampakCidera.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikPiePeristiwaK3PerDampakCidera.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikPiePeristiwaK3PerDampakCidera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikPiePeristiwaK3PerDampakCidera.setText("Grafik Pie Peristiwa K3 Per Dampak Cidera");
         ppGrafikPiePeristiwaK3PerDampakCidera.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -714,11 +620,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikBatangPeristiwaK3PerJenisPekerjaan.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikBatangPeristiwaK3PerJenisPekerjaan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikBatangPeristiwaK3PerJenisPekerjaan.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikBatangPeristiwaK3PerJenisPekerjaan.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikBatangPeristiwaK3PerJenisPekerjaan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikBatangPeristiwaK3PerJenisPekerjaan.setText("Grafik Batang Peristiwa K3 Per Jenis Pekerjaan");
         ppGrafikBatangPeristiwaK3PerJenisPekerjaan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -734,11 +636,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikPiePeristiwaK3PerJenisPekerjaan.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikPiePeristiwaK3PerJenisPekerjaan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikPiePeristiwaK3PerJenisPekerjaan.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikPiePeristiwaK3PerJenisPekerjaan.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikPiePeristiwaK3PerJenisPekerjaan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikPiePeristiwaK3PerJenisPekerjaan.setText("Grafik Pie Peristiwa K3 Per Jenis Pekerjaan");
         ppGrafikPiePeristiwaK3PerJenisPekerjaan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -754,11 +652,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikBatangPeristiwaK3PerBagianTubuh.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikBatangPeristiwaK3PerBagianTubuh.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikBatangPeristiwaK3PerBagianTubuh.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikBatangPeristiwaK3PerBagianTubuh.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikBatangPeristiwaK3PerBagianTubuh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikBatangPeristiwaK3PerBagianTubuh.setText("Grafik Batang Peristiwa K3 Per Bagian Tubuh");
         ppGrafikBatangPeristiwaK3PerBagianTubuh.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -774,11 +668,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
 
         ppGrafikPiePeristiwaK3PerBagianTubuh.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikPiePeristiwaK3PerBagianTubuh.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppGrafikPiePeristiwaK3PerBagianTubuh.setForeground(new java.awt.Color(50,50,50));
-=======
         ppGrafikPiePeristiwaK3PerBagianTubuh.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppGrafikPiePeristiwaK3PerBagianTubuh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikPiePeristiwaK3PerBagianTubuh.setText("Grafik Pie Peristiwa K3 Per Bagian Tubuh");
         ppGrafikPiePeristiwaK3PerBagianTubuh.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -799,18 +689,12 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
             }
-<<<<<<< HEAD
-        });
-
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Kejadian Kecelakaan Kerja ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50,50,50))); // NOI18N
-=======
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Kejadian Kecelakaan Kerja ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
->>>>>>> master
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
 
@@ -960,11 +844,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
         jLabel58.setPreferredSize(new java.awt.Dimension(55, 23));
         panelGlass9.add(jLabel58);
 
-<<<<<<< HEAD
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-06-2019" }));
-=======
         DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-02-2026" }));
->>>>>>> master
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -977,11 +857,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
         jLabel59.setPreferredSize(new java.awt.Dimension(24, 23));
         panelGlass9.add(jLabel59);
 
-<<<<<<< HEAD
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-06-2019" }));
-=======
         DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-02-2026" }));
->>>>>>> master
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -1035,11 +911,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
         internalFrame1.add(jPanel3, java.awt.BorderLayout.PAGE_END);
 
         TabRawat.setBackground(new java.awt.Color(254, 255, 254));
-<<<<<<< HEAD
-        TabRawat.setForeground(new java.awt.Color(50,50,50));
-=======
         TabRawat.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         TabRawat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TabRawat.setName("TabRawat"); // NOI18N
         TabRawat.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1083,11 +955,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
         jLabel13.setBounds(0, 60, 97, 23);
 
         TglInsiden.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        TglInsiden.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-06-2019" }));
-=======
         TglInsiden.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-02-2026" }));
->>>>>>> master
         TglInsiden.setDisplayFormat("dd-MM-yyyy");
         TglInsiden.setName("TglInsiden"); // NOI18N
         TglInsiden.setOpaque(false);
@@ -1173,11 +1041,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
         jLabel16.setBounds(0, 120, 97, 23);
 
         TglPelaporan.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        TglPelaporan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-06-2019" }));
-=======
         TglPelaporan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-02-2026" }));
->>>>>>> master
         TglPelaporan.setDisplayFormat("dd-MM-yyyy");
         TglPelaporan.setName("TglPelaporan"); // NOI18N
         TglPelaporan.setOpaque(false);
@@ -1769,11 +1633,7 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
         jLabel41.setBounds(400, 410, 100, 23);
 
         Target.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        Target.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-06-2019" }));
-=======
         Target.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-02-2026" }));
->>>>>>> master
         Target.setDisplayFormat("dd-MM-yyyy");
         Target.setName("Target"); // NOI18N
         Target.setOpaque(false);
@@ -3270,8 +3130,6 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
         cf.setVisible(true);  
     }//GEN-LAST:event_ppGrafikPiePeristiwaK3PerBagianTubuhActionPerformed
 
-<<<<<<< HEAD
-=======
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -3297,7 +3155,6 @@ public final class K3RSPeristiwa extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_formWindowOpened
 
->>>>>>> master
     /**
     * @param args the command line arguments
     */

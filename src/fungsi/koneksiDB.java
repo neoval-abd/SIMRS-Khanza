@@ -8,18 +8,11 @@ package fungsi;
 import AESsecurity.EnkripsiAES;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.io.FileInputStream;
-<<<<<<< HEAD
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.Properties;
-=======
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.SQLException;
 import java.util.Properties;
 import java.util.concurrent.atomic.AtomicBoolean;
->>>>>>> master
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -29,73 +22,6 @@ import javax.swing.JOptionPane;
  * @author khanzasoft
  */
 public class koneksiDB {
-<<<<<<< HEAD
-    private static Connection connection=null;
-    private static final Properties prop = new Properties();  
-    private static final MysqlDataSource dataSource=new MysqlDataSource();
-    private static String var="";
-    
-    public koneksiDB(){} 
-    public static synchronized Connection condb(){ 
-        try {
-            if (connection == null || connection.isClosed()) {
-                try (FileInputStream fis = new FileInputStream("setting/database.xml")) {
-                    prop.loadFromXML(fis);
-                    dataSource.setURL("jdbc:mysql://"+EnkripsiAES.decrypt(prop.getProperty("HOST"))+":"+EnkripsiAES.decrypt(prop.getProperty("PORT"))+"/"+EnkripsiAES.decrypt(prop.getProperty("DATABASE"))+"?zeroDateTimeBehavior=convertToNull&autoReconnect=true&useCompression=true");
-                    dataSource.setUser(EnkripsiAES.decrypt(prop.getProperty("USER")));
-                    dataSource.setPassword(EnkripsiAES.decrypt(prop.getProperty("PAS")));
-                    dataSource.setCachePreparedStatements(true);
-                    dataSource.setUseCompression(true);
-                    dataSource.setUseLocalSessionState(true);
-                    dataSource.setUseLocalTransactionState(true);
-                    
-                    int retries = 3;
-                    while (retries > 0) {
-                        try {
-                            connection=dataSource.getConnection();
-                            System.out.println("  Koneksi Berhasil. Sorry bro loading, silahkan baca dulu.... \n\n"+
-                                    "	Software ini adalah Software Menejemen Rumah Sakit/Klinik/\n" +
-                                    "  Puskesmas yang  gratis dan boleh digunakan siapa saja tanpa dikenai \n" +
-                                    "  biaya apapun. Dilarang keras memperjualbelikan/mengambil \n" +
-                                    "  keuntungan dari Software ini dalam bentuk apapun tanpa seijin pembuat \n" +
-                                    "  software (Khanza.Soft Media).\n"+
-                                    "                                                                           \n"+
-                                    "  #    ____  ___  __  __  ____   ____    _  __ _                              \n" +
-                                    "  #   / ___||_ _||  \\/  ||  _ \\ / ___|  | |/ /| |__    __ _  _ __   ____ __ _ \n" +
-                                    "  #   \\___ \\ | | | |\\/| || |_) |\\___ \\  | ' / | '_ \\  / _` || '_ \\ |_  // _` |\n" +
-                                    "  #    ___) || | | |  | ||  _ <  ___) | | . \\ | | | || (_| || | | | / /| (_| |\n" +
-                                    "  #   |____/|___||_|  |_||_| \\_\\|____/  |_|\\_\\|_| |_| \\__,_||_| |_|/___|\\__,_|\n" +
-                                    "  #                                                                           \n"+
-                                    "                                                                           \n"+
-                                    "  Licensi yang dianut di software ini https://en.wikipedia.org/wiki/Aladdin_Free_Public_License \n"+
-                                    "  Informasi dan panduan bisa dicek di halaman https://github.com/mas-elkhanza/SIMRS-Khanza/wiki \n"+
-                                    "  Bagi yang ingin berdonasi untuk pengembangan aplikasi ini bisa ke BSI 1015369872 atas nama Windiarto\n"+
-                                    "                                                                           ");
-                            break;
-                        } catch (SQLException e) {
-                            retries--;
-                            JOptionPane.showMessageDialog(null,"Gagal koneksi ke database. Sisa percobaan : " + retries);
-                            if (retries == 0) {
-                                JOptionPane.showMessageDialog(null, "Koneksi ke database gagal. Silakan periksa koneksi jaringan atau konfigurasi database.");
-                                throw new SQLException("Gagal koneksi ke database setelah beberapa percobaan.", e);
-                            }
-                            try {
-                                Thread.sleep(2000);
-                            } catch (InterruptedException ie) {
-                                Thread.currentThread().interrupt();
-                                throw new SQLException("Thread terinterupsi saat mencoba koneksi."+ie);
-                            }
-                        }
-                    }
-                }catch(IOException e){
-                    throw new SQLException("Notif : "+e);
-                }
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(koneksiDB.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return connection;        
-=======
     private static String var="";
     private static volatile Connection connection;
     private static final MysqlDataSource dataSource=new MysqlDataSource();
@@ -223,7 +149,6 @@ public class koneksiDB {
             Logger.getLogger(koneksiDB.class.getName()).log(Level.SEVERE, null, e);
         }
         connection = null;
->>>>>>> master
     }
     
     public static String HOST(){
@@ -606,12 +531,6 @@ public class koneksiDB {
         return var;
     }
     
-<<<<<<< HEAD
-    public static String JADIKANPIUTANGAPOTEKBPJS(){
-        try (FileInputStream fis = new FileInputStream("setting/database.xml")) {
-            prop.loadFromXML(fis);
-            var=EnkripsiAES.decrypt(prop.getProperty("JADIKANPIUTANGAPOTEKBPJS"));
-=======
     public static String KODEPPKAPOTEKBPJS(){
         try (FileInputStream fis = new FileInputStream("setting/database.xml")) {
             prop.loadFromXML(fis);
@@ -626,7 +545,6 @@ public class koneksiDB {
         try (FileInputStream fis = new FileInputStream("setting/database.xml")) {
             prop.loadFromXML(fis);
             var=prop.getProperty("JADIKANPIUTANGAPOTEKBPJS");
->>>>>>> master
         }catch(Exception e){
             var="no"; 
         }

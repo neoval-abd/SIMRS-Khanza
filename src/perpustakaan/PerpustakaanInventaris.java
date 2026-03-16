@@ -30,17 +30,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -53,19 +48,12 @@ public final class PerpustakaanInventaris extends javax.swing.JDialog {
     private final DefaultTableModel tabMode;
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
-<<<<<<< HEAD
-    private final Properties prop = new Properties();
-=======
->>>>>>> master
     private PreparedStatement ps;
     private ResultSet rs;
     private String namaruang="";
     private Connection koneksi=koneksiDB.condb();
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
 
     /** Creates new form DlgJnsPerawatan
      * @param parent
@@ -138,122 +126,8 @@ public final class PerpustakaanInventaris extends javax.swing.JDialog {
         
         ChkInput.setSelected(false);
         isForm(); 
-<<<<<<< HEAD
-        
-        barang.addWindowListener(new WindowListener() {
-            @Override
-            public void windowOpened(WindowEvent e) {}
-            @Override
-            public void windowClosing(WindowEvent e) {}
-            @Override
-            public void windowClosed(WindowEvent e) {
-                if(barang.getTable().getSelectedRow()!= -1){    
-                    kode_buku.setText(barang.getTable().getValueAt(barang.getTable().getSelectedRow(),0).toString());
-                    judul_buku.setText(barang.getTable().getValueAt(barang.getTable().getSelectedRow(),1).toString());
-                    nm_produsen.setText(barang.getTable().getValueAt(barang.getTable().getSelectedRow(),3).toString());
-                    nm_merk.setText(barang.getTable().getValueAt(barang.getTable().getSelectedRow(),4).toString());
-                    nm_kategori.setText(barang.getTable().getValueAt(barang.getTable().getSelectedRow(),7).toString());
-                    nm_jenis.setText(barang.getTable().getValueAt(barang.getTable().getSelectedRow(),8).toString());
-                }   
-                kode_buku.requestFocus();
-            }
-            @Override
-            public void windowIconified(WindowEvent e) {}
-            @Override
-            public void windowDeiconified(WindowEvent e) {}
-            @Override
-            public void windowActivated(WindowEvent e) {}
-            @Override
-            public void windowDeactivated(WindowEvent e) {}
-
-        });
-        
-        barang.getTable().addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {}
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode()==KeyEvent.VK_SPACE){
-                    barang.dispose();
-                }                
-            }
-            @Override
-            public void keyReleased(KeyEvent e) {}
-        });
-              
-        ruang.addWindowListener(new WindowListener() {
-            @Override
-            public void windowOpened(WindowEvent e) {}
-            @Override
-            public void windowClosing(WindowEvent e) {}
-            @Override
-            public void windowClosed(WindowEvent e) {
-                if(ruang.getTable().getSelectedRow()!= -1){ 
-                    if(pilihan==1){
-                        kd_ruang.setText(ruang.getTable().getValueAt(ruang.getTable().getSelectedRow(),0).toString());                    
-                        nm_ruang.setText(ruang.getTable().getValueAt(ruang.getTable().getSelectedRow(),1).toString());
-                        kd_ruang.requestFocus();
-                    }else if(pilihan==2){
-                        nm_ruangcari.setText(ruang.getTable().getValueAt(ruang.getTable().getSelectedRow(),1).toString());
-                        TCari.requestFocus();
-                    }                    
-                }                   
-            }
-            @Override
-            public void windowIconified(WindowEvent e) {}
-            @Override
-            public void windowDeiconified(WindowEvent e) {}
-            @Override
-            public void windowActivated(WindowEvent e) {}
-            @Override
-            public void windowDeactivated(WindowEvent e) {}
-
-        });
-        
-        ruang.getTable().addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {}
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode()==KeyEvent.VK_SPACE){
-                    ruang.dispose();
-                }                
-            }
-            @Override
-            public void keyReleased(KeyEvent e) {}
-        });
-        
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        }
-    }
-    private PerpustakaanKoleksi barang=new PerpustakaanKoleksi(null,false); 
-    private PerpustakaanRuang ruang=new PerpustakaanRuang(null,false); 
-    private double nilai_inven=0;
-    private int pilihan=0;
-=======
     }
     private double nilai_inven=0;
->>>>>>> master
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -326,11 +200,7 @@ public final class PerpustakaanInventaris extends javax.swing.JDialog {
 
         ppBarcode.setBackground(new java.awt.Color(255, 255, 254));
         ppBarcode.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-<<<<<<< HEAD
-        ppBarcode.setForeground(new java.awt.Color(50,50,50));
-=======
         ppBarcode.setForeground(new java.awt.Color(50, 50, 50));
->>>>>>> master
         ppBarcode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/b_print.png"))); // NOI18N
         ppBarcode.setText("Barcode");
         ppBarcode.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -347,10 +217,6 @@ public final class PerpustakaanInventaris extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
-<<<<<<< HEAD
-
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Inventaris Perpustakaan ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50,50,50))); // NOI18N
-=======
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -358,7 +224,6 @@ public final class PerpustakaanInventaris extends javax.swing.JDialog {
         });
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Inventaris Perpustakaan ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
->>>>>>> master
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
 
@@ -671,11 +536,7 @@ public final class PerpustakaanInventaris extends javax.swing.JDialog {
         FormInput.add(btnBarang);
         btnBarang.setBounds(495, 40, 25, 23);
 
-<<<<<<< HEAD
-        tgl_pengadaan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-05-2019" }));
-=======
         tgl_pengadaan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-02-2026" }));
->>>>>>> master
         tgl_pengadaan.setDisplayFormat("dd-MM-yyyy");
         tgl_pengadaan.setName("tgl_pengadaan"); // NOI18N
         tgl_pengadaan.setOpaque(false);
@@ -764,11 +625,7 @@ public final class PerpustakaanInventaris extends javax.swing.JDialog {
         FormInput.add(asal_buku);
         asal_buku.setBounds(610, 10, 100, 23);
 
-<<<<<<< HEAD
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(230, 235, 225)), "Posisi Inventaris Perpustakaan di :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50,50,50))); // NOI18N
-=======
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(230, 235, 225)), "Posisi Inventaris Perpustakaan di :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
->>>>>>> master
         jPanel1.setName("jPanel1"); // NOI18N
         jPanel1.setOpaque(false);
         jPanel1.setLayout(null);
@@ -890,11 +747,7 @@ public final class PerpustakaanInventaris extends javax.swing.JDialog {
                     no_inventaris.getText(),kode_buku.getText(),asal_buku.getSelectedItem().toString(),Valid.SetTgl(tgl_pengadaan.getSelectedItem()+""),
                     harga.getText(),status_buku.getSelectedItem().toString(),kd_ruang.getText(),no_rak.getSelectedItem().toString(),no_box.getSelectedItem().toString()
                 })==true){
-<<<<<<< HEAD
-                    tampil();
-=======
                     runBackground(() ->tampil());
->>>>>>> master
                     emptTeks();
             }
             
@@ -952,11 +805,7 @@ public final class PerpustakaanInventaris extends javax.swing.JDialog {
                         harga.getText(),status_buku.getSelectedItem().toString(),kd_ruang.getText(),no_rak.getSelectedItem().toString(),no_box.getSelectedItem().toString(),
                         tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),0).toString()
                     })==true){
-<<<<<<< HEAD
-                        tampil();
-=======
                         runBackground(() ->tampil());
->>>>>>> master
                         emptTeks();
                 }
             }
@@ -1060,11 +909,7 @@ public final class PerpustakaanInventaris extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -1081,20 +926,12 @@ public final class PerpustakaanInventaris extends javax.swing.JDialog {
         if(namaruang.equals("")){
             nm_ruangcari.setText("");
         }
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
             TCari.setText("");
         }else{
             Valid.pindah(evt, BtnPrint,BtnKeluar);
@@ -1142,8 +979,6 @@ private void kode_bukuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
 }//GEN-LAST:event_kode_bukuKeyPressed
 
 private void btnBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarangActionPerformed
-<<<<<<< HEAD
-=======
     PerpustakaanKoleksi barang=new PerpustakaanKoleksi(null,false); 
     barang.addWindowListener(new WindowListener() {
         @Override
@@ -1185,7 +1020,6 @@ private void btnBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         @Override
         public void keyReleased(KeyEvent e) {}
     });
->>>>>>> master
     barang.isCek();
     barang.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
     barang.setLocationRelativeTo(internalFrame1);
@@ -1206,9 +1040,6 @@ private void kd_ruangKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
 }//GEN-LAST:event_kd_ruangKeyPressed
 
 private void btnRuangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRuangActionPerformed
-<<<<<<< HEAD
-    pilihan=1;
-=======
     PerpustakaanRuang ruang=new PerpustakaanRuang(null,false); 
     ruang.addWindowListener(new WindowListener() {
         @Override
@@ -1246,7 +1077,6 @@ private void btnRuangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         @Override
         public void keyReleased(KeyEvent e) {}
     });
->>>>>>> master
     ruang.isCek();
     ruang.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
     ruang.setLocationRelativeTo(internalFrame1);
@@ -1332,9 +1162,6 @@ private void ppBarcodeBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {/
 }//GEN-LAST:event_ppBarcodeBtnPrintActionPerformed
 
     private void btnRuang1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRuang1ActionPerformed
-<<<<<<< HEAD
-        pilihan=2;
-=======
         PerpustakaanRuang ruang=new PerpustakaanRuang(null,false); 
         ruang.addWindowListener(new WindowListener() {
             @Override
@@ -1371,7 +1198,6 @@ private void ppBarcodeBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {/
             @Override
             public void keyReleased(KeyEvent e) {}
         });
->>>>>>> master
         ruang.isCek();
         ruang.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         ruang.setLocationRelativeTo(internalFrame1);
@@ -1390,8 +1216,6 @@ private void ppBarcodeBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {/
         }
     }//GEN-LAST:event_tbJnsPerawatanKeyReleased
 
-<<<<<<< HEAD
-=======
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         runBackground(() ->tampil());
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -1418,7 +1242,6 @@ private void ppBarcodeBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {/
         }
     }//GEN-LAST:event_formWindowOpened
 
->>>>>>> master
     /**
     * @param args the command line arguments
     */
@@ -1495,11 +1318,7 @@ private void ppBarcodeBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {/
     private widget.Tanggal tgl_pengadaan;
     // End of variables declaration//GEN-END:variables
 
-<<<<<<< HEAD
-    public void tampil() {
-=======
     private void tampil() {
->>>>>>> master
         try {
             Valid.tabelKosong(tabMode);
             if(TCari.getText().equals("")&&nm_ruangcari.getText().equals("")){
@@ -1710,8 +1529,6 @@ private void ppBarcodeBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {/
         }
     }   
 
-<<<<<<< HEAD
-=======
     private void runBackground(Runnable task) {
         if (ceksukses) return;
         if (executor.isShutdown() || executor.isTerminated()) return;
@@ -1743,6 +1560,5 @@ private void ppBarcodeBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {/
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
     
 }

@@ -10436,12 +10436,13 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_btnBarcodeRanapActionPerformed
 
-    private void btnSetObatRalanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetObatRalanActionPerformed
+    private void btnSetObatRalanActionPerformed(java.awt.event.ActionEvent evt) {                                                
         isTutup();
         DlgHome.dispose();
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         DlgSetHargaObatRalan aplikasi=new DlgSetHargaObatRalan(this,false);
         this.setCursor(Cursor.getDefaultCursor());
+    }
 
     private void btnSetObatRanapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetObatRanapActionPerformed
         isTutup();
@@ -41161,13 +41162,19 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             }                
         }
         
-        }
-        
-        if(akses.getmaster_triase_skala4()==true){
-                Panelmenu.add(btnMasterTriaseSkala4);
+        if(akses.getmaster_triase_skala3()==true){
+            if(btnMasterTriaseSkala3.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnMasterTriaseSkala3);
                 jmlmenu++;
             }                
         }
+        
+        if(akses.getmaster_triase_skala4()==true){
+            if(btnMasterTriaseSkala4.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnMasterTriaseSkala4);
+                jmlmenu++;
+            }                
+        }                
         
         if(akses.getmaster_triase_skala5()==true){
             if(btnMasterTriaseSkala5.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
@@ -50128,4 +50135,11 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         btnPermintaanResepIterasiApotekBPJS.setPreferredSize(new java.awt.Dimension(200, 90));
         btnPermintaanResepIterasiApotekBPJS.addActionListener(this::btnPermintaanResepIterasiApotekBPJSActionPerformed);
     }
+    
+    
+    // TAMBAHAN FITUR UNTUK DI PRIVATE VOID
+    private void BtnKlaimManual2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKlaimManual2ActionPerformed
+        // TAMBAHAN FITUR MENU CASEMIX
+        btnInaCBGKlaimBaruManual2ActionPerformed(evt);
+    }//GEN-LAST:event_BtnKlaimManual2ActionPerformed
 }

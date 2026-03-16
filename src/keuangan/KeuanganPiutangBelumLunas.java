@@ -133,68 +133,6 @@ public final class KeuanganPiutangBelumLunas extends javax.swing.JDialog {
 
         TKd.setDocument(new batasInput((byte)20).getKata(TKd));
         NilaiKapitasiPaket.setDocument(new batasInput((byte)20).getKata(NilaiKapitasiPaket));
-<<<<<<< HEAD
-        
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        if(nmpenjab.getText().equals("")){
-                            runBackground(() ->tampil());
-                        }else{
-                            runBackground(() ->tampilperakun());
-                        }
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        if(nmpenjab.getText().equals("")){
-                            runBackground(() ->tampil());
-                        }else{
-                            runBackground(() ->tampilperakun());
-                        }
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        if(nmpenjab.getText().equals("")){
-                            runBackground(() ->tampil());
-                        }else{
-                            runBackground(() ->tampilperakun());
-                        }
-                    }
-                }
-            });
-        }  
-        
-        try {
-            ps=koneksi.prepareStatement(
-                    "select set_akun.Diskon_Piutang,set_akun.Piutang_Tidak_Terbayar,set_akun.Lebih_Bayar_Piutang from set_akun");
-            try {
-                rs=ps.executeQuery();
-                if(rs.next()){
-                    Diskon_Piutang=rs.getString("Diskon_Piutang");
-                    Piutang_Tidak_Terbayar=rs.getString("Piutang_Tidak_Terbayar");
-                    Lebih_Bayar_Piutang=rs.getString("Lebih_Bayar_Piutang");
-                }
-            } catch (Exception e) {
-                System.out.println("Notif : "+e);
-            } finally{
-                if(rs!=null){
-                    rs.close();
-                }
-                if(ps!=null){
-                    ps.close();
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("Notif : "+e);
-        }
-=======
->>>>>>> master
     }
     
 
@@ -1149,8 +1087,6 @@ private void MnDetailPiutangActionPerformed(java.awt.event.ActionEvent evt) {//G
             }
         } catch (Exception e) {
         }
-<<<<<<< HEAD
-=======
         
         try {
             ps=koneksi.prepareStatement(
@@ -1210,7 +1146,6 @@ private void MnDetailPiutangActionPerformed(java.awt.event.ActionEvent evt) {//G
                 }
             });
         } 
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void BtnAll1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAll1ActionPerformed

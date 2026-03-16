@@ -70,31 +70,6 @@ public final class TokoCariJenis extends javax.swing.JDialog {
         tbKamar.setDefaultRenderer(Object.class, new WarnaTable());
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-            });
-        }
-=======
->>>>>>> master
     }    
 
 
@@ -332,8 +307,6 @@ public final class TokoCariJenis extends javax.swing.JDialog {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         runBackground(() ->tampil());
-<<<<<<< HEAD
-=======
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -356,7 +329,6 @@ public final class TokoCariJenis extends javax.swing.JDialog {
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -393,14 +365,6 @@ public final class TokoCariJenis extends javax.swing.JDialog {
     private void tampil() {
         Valid.tabelKosong(tabMode);
         try{            
-<<<<<<< HEAD
-            ps=koneksi.prepareStatement("select kd_jenis,nm_jenis  "+
-                    " from tokojenisbarang where  kd_jenis like ? or "+
-                    " nm_jenis like ? order by nm_jenis ");
-            try {
-                ps.setString(1,"%"+TCari.getText().trim()+"%");
-                ps.setString(2,"%"+TCari.getText().trim()+"%");
-=======
             ps=koneksi.prepareStatement(
                 "select tokojenisbarang.kd_jenis,tokojenisbarang.nm_jenis from tokojenisbarang "+(TCari.getText().trim().equals("")?"":"where tokojenisbarang.kd_jenis like ? or tokojenisbarang.nm_jenis like ? ")+" order by tokojenisbarang.nm_jenis "
             );
@@ -409,7 +373,6 @@ public final class TokoCariJenis extends javax.swing.JDialog {
                     ps.setString(1,"%"+TCari.getText().trim()+"%");
                     ps.setString(2,"%"+TCari.getText().trim()+"%");
                 }
->>>>>>> master
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new Object[]{

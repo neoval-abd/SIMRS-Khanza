@@ -27,13 +27,10 @@ import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-<<<<<<< HEAD
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.event.DocumentEvent;
 
 /**
@@ -43,19 +40,12 @@ import javax.swing.event.DocumentEvent;
 public final class PCareCekMappingPoli extends javax.swing.JDialog {
     private final DefaultTableModel tabMode;
     private validasi Valid=new validasi();
-<<<<<<< HEAD
-    private sekuel Sequel=new sekuel();
-=======
->>>>>>> master
     private Connection koneksi=koneksiDB.condb();
     private PreparedStatement ps;
     private ResultSet rs;    
     private int i=0;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     
     /** Creates new form DlgKamar
      * @param parent
@@ -91,33 +81,6 @@ public final class PCareCekMappingPoli extends javax.swing.JDialog {
         tbKamar.setDefaultRenderer(Object.class, new WarnaTable());
         
         Poli.setDocument(new batasInput((byte)100).getKata(Poli));
-<<<<<<< HEAD
-        
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            Poli.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(Poli.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(Poli.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(Poli.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        } 
-              
-=======
->>>>>>> master
     }
     
     
@@ -255,17 +218,10 @@ public final class PCareCekMappingPoli extends javax.swing.JDialog {
 
     private void PoliKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PoliKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-<<<<<<< HEAD
-            tampil();
-            BtnKeluar.requestFocus();
-        }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_DOWN){
-            tampil();
-=======
             runBackground(() ->tampil());
             BtnKeluar.requestFocus();
         }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_DOWN){
             runBackground(() ->tampil());
->>>>>>> master
         }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_UP){
             BtnKeluar.requestFocus();
         }else if(evt.getKeyCode()==KeyEvent.VK_UP){
@@ -275,11 +231,7 @@ public final class PCareCekMappingPoli extends javax.swing.JDialog {
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_BtnCariActionPerformed
 
@@ -303,9 +255,6 @@ public final class PCareCekMappingPoli extends javax.swing.JDialog {
     }//GEN-LAST:event_BtnTambahActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
         if(koneksiDB.CARICEPAT().equals("aktif")){
             Poli.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -329,7 +278,6 @@ public final class PCareCekMappingPoli extends javax.swing.JDialog {
                 }
             });
         } 
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -361,11 +309,7 @@ public final class PCareCekMappingPoli extends javax.swing.JDialog {
     private widget.Table tbKamar;
     // End of variables declaration//GEN-END:variables
 
-<<<<<<< HEAD
-    public void tampil() {
-=======
     private void tampil() {
->>>>>>> master
         Valid.tabelKosong(tabMode);
         try{
            ps=koneksi.prepareStatement(
@@ -405,8 +349,6 @@ public final class PCareCekMappingPoli extends javax.swing.JDialog {
     public void isCek(){
         BtnTambah.setEnabled(akses.getpcare_mapping_poli());
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -439,5 +381,4 @@ public final class PCareCekMappingPoli extends javax.swing.JDialog {
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

@@ -72,14 +72,11 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         
-<<<<<<< HEAD
         // KESALAHAN MERGER JADI INI DI TAMBAHKAN DI CONSTRUCTOR
         Tanggal = new widget.TextBox();
         Tanggal.setHighlighter(null);
         Tanggal.setName("Tanggal");
         
-=======
->>>>>>> master
         tabMode=new DefaultTableModel(null,new Object[]{
             "Tgl.Rawat","No.Rawat","No.RM","Nama Pasien","Kode Dokter","Dokter Penanggung Jawab","Pulang","Keluhan utama riwayat penyakit yang postif",
             "Jalannya penyakit selama perawatan","Pemeriksaan penunjang yang positif","Hasil laboratorium yang positif","Diagnosa Utama","ICD10 Utama","Diagnosa Sekunder 1",
@@ -207,11 +204,7 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         ppBerkasDigital = new javax.swing.JMenuItem();
         MnSPBK = new javax.swing.JMenuItem();
         MnSPBK2 = new javax.swing.JMenuItem();
-<<<<<<< HEAD
-        MnReqMekari = new javax.swing.JMenuItem();
-=======
         Tanggal = new widget.TextBox();
->>>>>>> master
         internalFrame1 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbObat = new widget.Table();
@@ -297,11 +290,7 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         BtnDokter3 = new widget.Button();
         BtnDokter4 = new widget.Button();
         BtnDokter5 = new widget.Button();
-<<<<<<< HEAD
-        jLabel13 = new widget.Label();
-=======
         BtnDokter6 = new widget.Button();
->>>>>>> master
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
 
@@ -381,26 +370,8 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         });
         jPopupMenu1.add(MnSPBK2);
 
-<<<<<<< HEAD
-        MnReqMekari.setBackground(new java.awt.Color(255, 255, 254));
-        MnReqMekari.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnReqMekari.setForeground(new java.awt.Color(50, 50, 50));
-        MnReqMekari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnReqMekari.setText("Request TTE Mekari");
-        MnReqMekari.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        MnReqMekari.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        MnReqMekari.setName("MnReqMekari"); // NOI18N
-        MnReqMekari.setPreferredSize(new java.awt.Dimension(250, 26));
-        MnReqMekari.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnReqMekariActionPerformed(evt);
-            }
-        });
-        jPopupMenu1.add(MnReqMekari);
-=======
         Tanggal.setHighlighter(null);
         Tanggal.setName("Tanggal"); // NOI18N
->>>>>>> master
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -685,19 +656,10 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         FormInput.setPreferredSize(new java.awt.Dimension(100, 651));
         FormInput.setLayout(null);
 
-<<<<<<< HEAD
-        jLabel4.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel4.setText("Klik logo \"KLIP\" untuk mencari data");
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setName("jLabel4"); // NOI18N
-        FormInput.add(jLabel4);
-        jLabel4.setBounds(790, 10, 210, 23);
-=======
         jLabel4.setText("Keluhan Utama Riwayat Penyakit Yang Positif :");
         jLabel4.setName("jLabel4"); // NOI18N
         FormInput.add(jLabel4);
         jLabel4.setBounds(0, 70, 240, 23);
->>>>>>> master
 
         TNoRw.setHighlighter(null);
         TNoRw.setName("TNoRw"); // NOI18N
@@ -1197,12 +1159,6 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         FormInput.add(BtnDokter5);
         BtnDokter5.setBounds(212, 96, 28, 23);
 
-<<<<<<< HEAD
-        jLabel13.setText("Keluhan Utama Riwayat Penyakit Yang Positif :");
-        jLabel13.setName("jLabel13"); // NOI18N
-        FormInput.add(jLabel13);
-        jLabel13.setBounds(0, 70, 240, 23);
-=======
         BtnDokter6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
         BtnDokter6.setMnemonic('2');
         BtnDokter6.setToolTipText("Alt+2");
@@ -1215,7 +1171,6 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         });
         FormInput.add(BtnDokter6);
         BtnDokter6.setBounds(212, 153, 28, 23);
->>>>>>> master
 
         scrollInput.setViewportView(FormInput);
 
@@ -1231,10 +1186,6 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
     private void TNoRwKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TNoRwKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_PAGE_DOWN){
             isRawat();
-<<<<<<< HEAD
-            isPsien();
-=======
->>>>>>> master
         }else{            
             Valid.pindah(evt,TCari,BtnDokter);
         }
@@ -2056,11 +2007,6 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_BtnDokter5ActionPerformed
 
-<<<<<<< HEAD
-    private void MnReqMekariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnReqMekariActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MnReqMekariActionPerformed
-=======
     private void BtnDokter6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDokter6ActionPerformed
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         RMRiwayatPerawatan resume=new RMRiwayatPerawatan(null,true);
@@ -2070,7 +2016,6 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         resume.setVisible(true);
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_BtnDokter6ActionPerformed
->>>>>>> master
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -2123,10 +2068,7 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
     private widget.Button BtnDokter3;
     private widget.Button BtnDokter4;
     private widget.Button BtnDokter5;
-<<<<<<< HEAD
-=======
     private widget.Button BtnDokter6;
->>>>>>> master
     private widget.Button BtnEdit;
     private widget.Button BtnHapus;
     private widget.Button BtnKeluar;
@@ -2158,10 +2100,6 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
     private widget.Label LCount;
     private javax.swing.JMenuItem MnInputDiagnosa;
     private javax.swing.JMenuItem MnLaporanResume;
-<<<<<<< HEAD
-    private javax.swing.JMenuItem MnReqMekari;
-=======
->>>>>>> master
     private javax.swing.JMenuItem MnSPBK;
     private javax.swing.JMenuItem MnSPBK2;
     private widget.TextBox NmDokter;
@@ -2177,18 +2115,11 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
     private widget.TextBox TNoRM;
     private widget.TextBox TNoRw;
     private widget.TextBox TPasien;
-<<<<<<< HEAD
-=======
     private widget.TextBox Tanggal;
->>>>>>> master
     private widget.InternalFrame internalFrame1;
     private widget.Label jLabel10;
     private widget.Label jLabel11;
     private widget.Label jLabel12;
-<<<<<<< HEAD
-    private widget.Label jLabel13;
-=======
->>>>>>> master
     private widget.Label jLabel19;
     private widget.Label jLabel21;
     private widget.Label jLabel25;
@@ -2222,12 +2153,7 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
     private widget.ScrollPane scrollPane6;
     private widget.Table tbObat;
     // End of variables declaration//GEN-END:variables
-<<<<<<< HEAD
-    private widget.TextBox Tanggal;
     
-=======
-
->>>>>>> master
     private void tampil() {
         Valid.tabelKosong(tabMode);
         try{
@@ -2280,11 +2206,7 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
                 }   
                 rs=ps.executeQuery();
                 while(rs.next()){
-<<<<<<< HEAD
-                    tabMode.addRow(new String[]{
-=======
                     tabMode.addRow(new Object[]{
->>>>>>> master
                         rs.getString("tgl_registrasi"),rs.getString("no_rawat"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),
                         rs.getString("kd_dokter"),rs.getString("nm_dokter"),rs.getString("kondisi_pulang"),rs.getString("keluhan_utama"),
                         rs.getString("jalannya_penyakit"),rs.getString("pemeriksaan_penunjang"),rs.getString("hasil_laborat"),rs.getString("diagnosa_utama"),
@@ -2308,12 +2230,7 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         }catch(SQLException e){
             System.out.println("Notifikasi : "+e);
         }
-<<<<<<< HEAD
-        int b=tabMode.getRowCount();
-        LCount.setText(""+b);
-=======
         LCount.setText(""+tabMode.getRowCount());
->>>>>>> master
     }
 
     public void emptTeks() {
@@ -2345,10 +2262,7 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
 
     private void getData() {
         if(tbObat.getSelectedRow()!= -1){
-<<<<<<< HEAD
-=======
             Tanggal.setText(tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());  
->>>>>>> master
             TNoRw.setText(tbObat.getValueAt(tbObat.getSelectedRow(),1).toString());  
             TNoRM.setText(tbObat.getValueAt(tbObat.getSelectedRow(),2).toString());  
             TPasien.setText(tbObat.getValueAt(tbObat.getSelectedRow(),3).toString());  
@@ -2380,102 +2294,6 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
     }
 
     private void isRawat() {
-<<<<<<< HEAD
-         Sequel.cariIsi("select reg_periksa.no_rkm_medis from reg_periksa where reg_periksa.no_rawat='"+TNoRw.getText()+"' ",TNoRM);
-         if(Sequel.cariInteger("select count(no_rawat) from penilaian_medis_igd where no_rawat='"+TNoRw.getText()+"' ")>0){
-            Keluhan.setText(Sequel.cariIsi("select keluhan_utama from penilaian_medis_igd where no_rawat=?",TNoRw.getText())); 
-            JalannyaPenyakit.setText(Sequel.cariIsi("select concat(rps,'\n',ket_fisik)as keluhan from penilaian_medis_igd where no_rawat=?",TNoRw.getText()));
-            PemeriksaanPenunjang.setText(Sequel.cariIsi("select rad from penilaian_medis_igd where no_rawat=?",TNoRw.getText())); 
-            HasilLaborat.setText(Sequel.cariIsi("select lab from penilaian_medis_igd where no_rawat=?",TNoRw.getText())); 
-            Obat2an.setText(Sequel.cariIsi("select tata from penilaian_medis_igd where no_rawat=?",TNoRw.getText())); 
-        
-         }else if(Sequel.cariInteger("select count(no_rawat) from penilaian_medis_ralan where no_rawat='"+TNoRw.getText()+"' ")>0){ 
-            Keluhan.setText(Sequel.cariIsi("select keluhan_utama from penilaian_medis_ralan where no_rawat=?",TNoRw.getText())); 
-            JalannyaPenyakit.setText(Sequel.cariIsi("select concat(rps,'\n',ket_fisik)as keluhan from penilaian_medis_ralan where no_rawat=?",TNoRw.getText()));
-            PemeriksaanPenunjang.setText(Sequel.cariIsi("select penunjang from penilaian_medis_ralan where no_rawat=?",TNoRw.getText()));
-            Obat2an.setText(Sequel.cariIsi("select tata from penilaian_medis_ralan where no_rawat=?",TNoRw.getText())); 
-         
-         }else if(Sequel.cariInteger("select count(no_rawat) from penilaian_medis_ralan_kandungan where no_rawat='"+TNoRw.getText()+"' ")>0){
-            Keluhan.setText(Sequel.cariIsi("select keluhan_utama from penilaian_medis_ralan_kandungan where no_rawat=?",TNoRw.getText())); 
-            JalannyaPenyakit.setText(Sequel.cariIsi("select concat(rps,'\n',ket_fisik)as keluhan from penilaian_medis_ralan_kandungan where no_rawat=?",TNoRw.getText())); 
-            HasilLaborat.setText(Sequel.cariIsi("select lab from penilaian_medis_ralan_kandungan where no_rawat=?",TNoRw.getText())); 
-            Obat2an.setText(Sequel.cariIsi("select tata from penilaian_medis_ralan_kandungan where no_rawat=?",TNoRw.getText())); 
-            
-        }else if(Sequel.cariInteger("select count(no_rawat) from penilaian_medis_ralan_tht where no_rawat='"+TNoRw.getText()+"' ")>0){
-            Keluhan.setText(Sequel.cariIsi("select keluhan_utama from penilaian_medis_ralan_tht where no_rawat=?",TNoRw.getText()));
-            JalannyaPenyakit.setText(Sequel.cariIsi("select concat(rps,'\n',kondisi)as keluhan from penilaian_medis_ralan_tht where no_rawat=?",TNoRw.getText()));
-            PemeriksaanPenunjang.setText(Sequel.cariIsi("select rad from penilaian_medis_ralan_tht where no_rawat=?",TNoRw.getText())); 
-            HasilLaborat.setText(Sequel.cariIsi("select lab from penilaian_medis_ralan_tht where no_rawat=?",TNoRw.getText())); 
-            Obat2an.setText(Sequel.cariIsi("select tata from penilaian_medis_ralan_tht where no_rawat=?",TNoRw.getText()));   
-            
-            
-        }else if(Sequel.cariInteger("select count(no_rawat) from penilaian_medis_ralan_penyakit_dalam where no_rawat='"+TNoRw.getText()+"' ")>0){
-            Keluhan.setText(Sequel.cariIsi("select keluhan_utama from penilaian_medis_ralan_penyakit_dalam where no_rawat=?",TNoRw.getText()));
-            JalannyaPenyakit.setText(Sequel.cariIsi("select concat(rps,'\n',kondisi)as keluhan from penilaian_medis_ralan_penyakit_dalam where no_rawat=?",TNoRw.getText()));
-            PemeriksaanPenunjang.setText(Sequel.cariIsi("select rad from penilaian_medis_ralan_penyakit_dalam where no_rawat=?",TNoRw.getText())); 
-            HasilLaborat.setText(Sequel.cariIsi("select lab from penilaian_medis_ralan_penyakit_dalam where no_rawat=?",TNoRw.getText())); 
-            Obat2an.setText(Sequel.cariIsi("select terapi from penilaian_medis_ralan_penyakit_dalam where no_rawat=?",TNoRw.getText()));
-            
-         }else if(Sequel.cariInteger("select count(no_rawat) from penilaian_medis_ralan_bedah where no_rawat='"+TNoRw.getText()+"' ")>0){
-            Keluhan.setText(Sequel.cariIsi("select keluhan_utama from penilaian_medis_ralan_bedah where no_rawat=?",TNoRw.getText()));
-            JalannyaPenyakit.setText(Sequel.cariIsi("select concat(rps,'\n',lainnya)as keluhan from penilaian_medis_ralan_bedah where no_rawat=?",TNoRw.getText()));
-            PemeriksaanPenunjang.setText(Sequel.cariIsi("select rad from penilaian_medis_ralan_bedah where no_rawat=?",TNoRw.getText())); 
-            HasilLaborat.setText(Sequel.cariIsi("select lab from penilaian_medis_ralan_bedah where no_rawat=?",TNoRw.getText())); 
-            Obat2an.setText(Sequel.cariIsi("select terapi from penilaian_medis_ralan_bedah where no_rawat=?",TNoRw.getText()));
-         
-        }else if(Sequel.cariInteger("select count(no_rawat) from penilaian_medis_ralan_mata where no_rawat='"+TNoRw.getText()+"' ")>0){
-            Keluhan.setText(Sequel.cariIsi("select keluhan_utama from penilaian_medis_ralan_mata where no_rawat=?",TNoRw.getText()));
-            JalannyaPenyakit.setText(Sequel.cariIsi("select rps from penilaian_medis_ralan_mata where no_rawat=?",TNoRw.getText())); 
-            PemeriksaanPenunjang.setText(Sequel.cariIsi("select rad from penilaian_medis_ralan_mata where no_rawat=?",TNoRw.getText())); 
-            HasilLaborat.setText(Sequel.cariIsi("select lab from penilaian_medis_ralan_mata where no_rawat=?",TNoRw.getText())); 
-            Obat2an.setText(Sequel.cariIsi("select terapi from penilaian_medis_ralan_mata where no_rawat=?",TNoRw.getText())); 
-            
-        }else if(Sequel.cariInteger("select count(no_rawat) from penilaian_medis_ralan_orthopedi where no_rawat='"+TNoRw.getText()+"' ")>0){
-            Keluhan.setText(Sequel.cariIsi("select keluhan_utama from penilaian_medis_ralan_orthopedi where no_rawat=?",TNoRw.getText()));
-            JalannyaPenyakit.setText(Sequel.cariIsi("select concat(rps,'\n',lainnya)as keluhan from penilaian_medis_ralan_orthopedi where no_rawat=?",TNoRw.getText())); 
-            PemeriksaanPenunjang.setText(Sequel.cariIsi("select rad from penilaian_medis_ralan_orthopedi where no_rawat=?",TNoRw.getText())); 
-            HasilLaborat.setText(Sequel.cariIsi("select lab from penilaian_medis_ralan_orthopedi where no_rawat=?",TNoRw.getText())); 
-            Obat2an.setText(Sequel.cariIsi("select terapi from penilaian_medis_ralan_orthopedi where no_rawat=?",TNoRw.getText()));    
-            
-       
-         }else if(Sequel.cariInteger("select count(no_rawat) from penilaian_medis_ralan_anak where no_rawat='"+TNoRw.getText()+"' ")>0){ 
-            Keluhan.setText(Sequel.cariIsi("select keluhan_utama from penilaian_medis_ralan_anak where no_rawat=?",TNoRw.getText()));
-            JalannyaPenyakit.setText(Sequel.cariIsi("select concat(rps,'\n',ket_fisik)as keluhan from penilaian_medis_ralan_anak where no_rawat=?",TNoRw.getText()));
-            PemeriksaanPenunjang.setText(Sequel.cariIsi("select penunjang from penilaian_medis_ralan_anak where no_rawat=?",TNoRw.getText()));
-            Obat2an.setText(Sequel.cariIsi("select tata from penilaian_medis_ralan_anak where no_rawat=?",TNoRw.getText())); 
-         
-         
-         }else if(Sequel.cariInteger("select count(no_rawat) from penilaian_medis_ralan_bedah_mulut where no_rawat='"+TNoRw.getText()+"' ")>0){
-            Keluhan.setText(Sequel.cariIsi("select keluhan_utama from penilaian_medis_ralan_bedah_mulut where no_rawat=?",TNoRw.getText()));
-            JalannyaPenyakit.setText(Sequel.cariIsi("select rps from penilaian_medis_ralan_bedah_mulut where no_rawat=?",TNoRw.getText())); 
-            PemeriksaanPenunjang.setText(Sequel.cariIsi("select rad from penilaian_medis_ralan_bedah_mulut where no_rawat=?",TNoRw.getText())); 
-            HasilLaborat.setText(Sequel.cariIsi("select lab from penilaian_medis_ralan_bedah_mulut where no_rawat=?",TNoRw.getText())); 
-            Obat2an.setText(Sequel.cariIsi("select terapi from penilaian_medis_ralan_bedah_mulut where no_rawat=?",TNoRw.getText())); 
-            
-        }else if(Sequel.cariInteger("select count(no_rawat) from penilaian_medis_ralan_neurologi where no_rawat='"+TNoRw.getText()+"' ")>0){
-            Keluhan.setText(Sequel.cariIsi("select keluhan_utama from penilaian_medis_ralan_neurologi where no_rawat=?",TNoRw.getText()));
-            JalannyaPenyakit.setText(Sequel.cariIsi("select concat(rps,'\n',ket_fisik)as keluhan from penilaian_medis_ralan_neurologi where no_rawat=?",TNoRw.getText())); 
-            PemeriksaanPenunjang.setText(Sequel.cariIsi("select rad from penilaian_medis_ralan_neurologi where no_rawat=?",TNoRw.getText())); 
-            HasilLaborat.setText(Sequel.cariIsi("select lab from penilaian_medis_ralan_neurologi where no_rawat=?",TNoRw.getText())); 
-            Obat2an.setText(Sequel.cariIsi("select terapi from penilaian_medis_ralan_neurologi where no_rawat=?",TNoRw.getText())); 
-            
-        }else if(Sequel.cariInteger("select count(no_rawat) from penilaian_medis_ralan_paru where no_rawat='"+TNoRw.getText()+"' ")>0){
-            Keluhan.setText(Sequel.cariIsi("select keluhan_utama from penilaian_medis_ralan_paru where no_rawat=?",TNoRw.getText()));
-            JalannyaPenyakit.setText(Sequel.cariIsi("select concat(rps,'\n',lainnya)as keluhan from penilaian_medis_ralan_paru where no_rawat=?",TNoRw.getText())); 
-            PemeriksaanPenunjang.setText(Sequel.cariIsi("select rad from penilaian_medis_ralan_paru where no_rawat=?",TNoRw.getText())); 
-            HasilLaborat.setText(Sequel.cariIsi("select lab from penilaian_medis_ralan_paru where no_rawat=?",TNoRw.getText())); 
-            Obat2an.setText(Sequel.cariIsi("select terapi from penilaian_medis_ralan_paru where no_rawat=?",TNoRw.getText()));  
-              
-            
-        }else if(Sequel.cariInteger("select count(no_rawat) from pemeriksaan_ralan where no_rawat='"+TNoRw.getText()+"' ")>0){
-            Keluhan.setText(Sequel.cariIsi("select concat(keluhan,'\n',pemeriksaan)as keluhan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText())); 
-            Obat2an.setText(Sequel.cariIsi("select rtl from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));       
-        }
-    }
-
-    private void isPsien() {
-        Sequel.cariIsi("select pasien.nm_pasien from pasien where pasien.no_rkm_medis='"+TNoRM.getText()+"' ",TPasien);
-=======
         try {
             ps=koneksi.prepareStatement(
                     "select reg_periksa.no_rkm_medis,concat(pasien.nm_pasien,' (',reg_periksa.umurdaftar,' ',reg_periksa.sttsumur,')') as pasien,reg_periksa.tgl_registrasi from reg_periksa inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis where reg_periksa.no_rawat=?");
@@ -2500,22 +2318,14 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         } catch (Exception e) {
             System.out.println("Notif : "+e);
         } 
->>>>>>> master
     }
     
     public void setNoRm(String norwt, Date tgl2) {
         TNoRw.setText(norwt);
         TCari.setText(norwt);
-<<<<<<< HEAD
-        Sequel.cariIsi("select reg_periksa.tgl_registrasi from reg_periksa where reg_periksa.no_rawat='"+norwt+"'", DTPCari1);
-        DTPCari2.setDate(tgl2);    
-        isRawat();
-        isPsien();              
-=======
         isRawat();
         Tanggal.setText(Valid.SetTgl(DTPCari1.getSelectedItem()+""));
         DTPCari2.setDate(tgl2);    
->>>>>>> master
         ChkInput.setSelected(true);
         isForm();
         Kondisi.requestFocus();
@@ -2523,11 +2333,7 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
             ps=koneksi.prepareStatement(
                     "select diagnosa_pasien.kd_penyakit,penyakit.nm_penyakit,diagnosa_pasien.prioritas "+
                     "from diagnosa_pasien inner join penyakit on diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
-<<<<<<< HEAD
-                    "where diagnosa_pasien.no_rawat=? order by diagnosa_pasien.prioritas ");
-=======
                     "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.status='Ralan' order by diagnosa_pasien.prioritas ");
->>>>>>> master
             try {
                 ps.setString(1,norwt);
                 rs=ps.executeQuery();
@@ -2569,10 +2375,6 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
             }
         } catch (Exception e) {
             System.out.println("Notif : "+e);
-<<<<<<< HEAD
-        
-=======
->>>>>>> master
         } 
         
         try {

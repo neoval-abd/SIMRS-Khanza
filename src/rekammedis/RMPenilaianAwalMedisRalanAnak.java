@@ -2381,7 +2381,6 @@ public final class RMPenilaianAwalMedisRalanAnak extends javax.swing.JDialog {
         } catch (Exception e) {
             System.out.println("Notif : "+e);
         }
-<<<<<<< HEAD
         
         // TAMBAHAN FITUR OTOMATIS ISI SENDIRI
         if (Sequel.cariInteger("select count(no_rawat) from penilaian_awal_keperawatan_ralan_bayi where no_rawat='" + TNoRw.getText() + "' ") > 0) {
@@ -2397,8 +2396,6 @@ public final class RMPenilaianAwalMedisRalanAnak extends javax.swing.JDialog {
             RPS.setText(Sequel.cariIsi("select keluhan_utama from penilaian_awal_keperawatan_ralan_bayi where no_rawat=?", TNoRw.getText()));
             RPD.setText(Sequel.cariIsi("select rpd from penilaian_awal_keperawatan_ralan_bayi where no_rawat=?", TNoRw.getText()));
         }
-=======
->>>>>>> master
     }
  
     public void setNoRm(String norwt,Date tgl2) {

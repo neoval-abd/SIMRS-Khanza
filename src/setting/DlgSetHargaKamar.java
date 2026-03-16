@@ -59,11 +59,7 @@ public class DlgSetHargaKamar extends javax.swing.JDialog {
         initComponents();
 
         this.setLocation(10,10);
-<<<<<<< HEAD
-        setSize(459,539);
-=======
         
->>>>>>> master
 
         Object[] row={"No.Bed/Kamar","Kode Bangsal","Nama Bangsal/Kamar","Kode Bayar","Cara Bayar","Tarif Kamar"};
         tabMode=new DefaultTableModel(null,row){
@@ -109,43 +105,6 @@ public class DlgSetHargaKamar extends javax.swing.JDialog {
         kdpj.setDocument(new batasInput((byte)3).getKata(kdpj));
         Tarif.setDocument(new batasInput((byte)15).getKata(Tarif));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-            });
-        }  
-        
-        try {
-            ps=koneksi.prepareStatement(
-                   "select set_harga_kamar.kd_kamar,bangsal.kd_bangsal,bangsal.nm_bangsal,"+
-                   "set_harga_kamar.kd_pj,penjab.png_jawab,set_harga_kamar.tarif "+
-                   "from set_harga_kamar inner join kamar inner join bangsal inner join penjab "+
-                   "on set_harga_kamar.kd_kamar=kamar.kd_kamar and kamar.kd_bangsal=bangsal.kd_bangsal "+
-                   "and set_harga_kamar.kd_pj=penjab.kd_pj where set_harga_kamar.kd_kamar like ? "+
-                   "or bangsal.nm_bangsal like ? or penjab.png_jawab like ? order by set_harga_kamar.kd_pj"); 
-        } catch (Exception e) {
-            System.out.println("Notifikasi : "+e);
-        }
-=======
->>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -711,8 +670,6 @@ private void BtnKamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         runBackground(() ->tampil());
-<<<<<<< HEAD
-=======
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -735,7 +692,6 @@ private void BtnKamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void kdpjKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kdpjKeyPressed
@@ -847,18 +803,6 @@ private void BtnKamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void tampil() {
         Valid.tabelKosong(tabMode);
         try{
-<<<<<<< HEAD
-            ps.setString(1,"%"+TCari.getText().trim()+"%");
-            ps.setString(2,"%"+TCari.getText().trim()+"%");
-            ps.setString(3,"%"+TCari.getText().trim()+"%");
-            rs=ps.executeQuery();
-            while(rs.next()){                
-                tabMode.addRow(new Object[]{
-                    rs.getString(1),rs.getString(2),rs.getString(3),
-                    rs.getString(4),rs.getString(5),rs.getDouble(6)
-                });
-            }
-=======
             ps=koneksi.prepareStatement(
                    "select set_harga_kamar.kd_kamar,bangsal.kd_bangsal,bangsal.nm_bangsal,"+
                    "set_harga_kamar.kd_pj,penjab.png_jawab,set_harga_kamar.tarif "+
@@ -891,7 +835,6 @@ private void BtnKamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     ps.close();
                 }
             } 
->>>>>>> master
         }catch(SQLException e){
             System.out.println("Notifikasi : "+e);
         }

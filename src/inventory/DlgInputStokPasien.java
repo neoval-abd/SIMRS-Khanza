@@ -2131,13 +2131,10 @@ private void BtnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     public void tampil3(String nopermintaan) {
         runBackground(() -> tampil2(nopermintaan));
     }
-<<<<<<< HEAD
-=======
     
     public void tampil4(){
         runBackground(() ->tampil());
     }
->>>>>>> master
      
     public void isCek(){
         BtnSimpan.setEnabled(akses.getstok_obat_pasien());   
@@ -2169,10 +2166,6 @@ private void BtnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         kenaikan=Sequel.cariIsiAngka2("select (set_harga_obat_ranap.hargajual/100) from set_harga_obat_ranap where set_harga_obat_ranap.kd_pj=? and set_harga_obat_ranap.kelas=?",KdPj.getText(),kelas.getText());
         kdgudang.setText(akses.getkdbangsal());
         nmgudang.setText(Sequel.CariBangsal(kdgudang.getText()));  
-<<<<<<< HEAD
-        runBackground(() ->tampil());
-=======
->>>>>>> master
     }
 
     private void getData() {

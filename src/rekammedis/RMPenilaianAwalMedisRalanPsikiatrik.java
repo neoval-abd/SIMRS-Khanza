@@ -2925,7 +2925,6 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
         } catch (Exception e) {
             System.out.println("Notif : "+e);
         }
-<<<<<<< HEAD
         
         
         // TAMBAHAN FITUR OTOMATIS ISI SENDIRI DI AWAL MEDIS DOKTER
@@ -2943,8 +2942,6 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
             RPD.setText(Sequel.cariIsi("select rkd_keluhan from penilaian_awal_keperawatan_ralan_psikiatri where no_rawat=?", TNoRw.getText()));
         }
         
-=======
->>>>>>> master
     }
  
     public void setNoRm(String norwt,Date tgl2) {

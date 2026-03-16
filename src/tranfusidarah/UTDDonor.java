@@ -224,73 +224,6 @@ public final class UTDDonor extends javax.swing.JDialog {
         NomorTelp.setDocument(new batasInput((byte)10).getKata(NomorTelp));
         KdPetugas.setDocument(new batasInput((byte)20).getKata(KdPetugas));
         KdPetugas2.setDocument(new batasInput((byte)20).getKata(KdPetugas2));
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        runBackground(() ->tampil());
-                    }
-                }
-            });
-            TCariMedis.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCariMedis.getText().length()>2){
-                        runBackground(() ->tampilMedis());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCariMedis.getText().length()>2){
-                        runBackground(() ->tampilMedis());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCariMedis.getText().length()>2){
-                        runBackground(() ->tampilMedis());
-                    }
-                }
-            });
-            TCariNonMedis.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCariNonMedis.getText().length()>2){
-                        runBackground(() ->tampilNonMedis());
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCariNonMedis.getText().length()>2){
-                        runBackground(() ->tampilNonMedis());
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCariNonMedis.getText().length()>2){
-                        runBackground(() ->tampilNonMedis());
-                    }
-                }
-            });
-        }
-
-        
-=======
->>>>>>> master
     }
 
 
@@ -1409,8 +1342,6 @@ public final class UTDDonor extends javax.swing.JDialog {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         emptTeks();
         runBackground(() ->LoadData());
-<<<<<<< HEAD
-=======
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -1473,7 +1404,6 @@ public final class UTDDonor extends javax.swing.JDialog {
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void TCariMedisKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCariMedisKeyPressed

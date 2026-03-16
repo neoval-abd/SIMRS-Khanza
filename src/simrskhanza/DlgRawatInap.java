@@ -14481,4 +14481,688 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         executor.shutdownNow();
         super.dispose();
     }
+
+    // TAMBAHAN FITUR TCARIPEMERIKSAAN DI PRIVATE VOID
+    // TAMBAHAN FITUR TCARIPEMERIKSAAN RANAP
+    private void TCariActionPerformedPemeriksaan(java.awt.event.ActionEvent evt) {
+        String cari = TCariPemeriksaan.getText().toLowerCase();
+
+        BtnRiwayat.setVisible("riwayat pasien".contains(cari));
+        BtnResepObat.setVisible("resep obat".contains(cari));
+        BtnCopyResep.setVisible("copy resep".contains(cari));
+        BtnPermintaanStok.setVisible("permintaan stok".contains(cari));
+        BtnPermintaanResepPulang.setVisible("permintaan resep pulang".contains(cari));
+        BtnInputObat.setVisible("input obat".contains(cari));
+        BtnObatBhp.setVisible("obat bhp".contains(cari));
+        BtnBerkasDigital.setVisible("berkas digital".contains(cari));
+        BtnPermintaanLab.setVisible("permintaan lab".contains(cari));
+        BtnPermintaanRad.setVisible("permintaan rad".contains(cari));
+        BtnPermintaanKonsultasiMedik.setVisible("permintaan konsultasi medik".contains(cari));
+        BtnJadwalOperasi.setVisible("jadwal operasi".contains(cari));
+        BtnSKDP.setVisible("skdp".contains(cari));
+        BtnRujukKeluar.setVisible("rujuk keluar".contains(cari));
+        BtnDiagnosa.setVisible("diagnosa".contains(cari));
+        BtnResume.setVisible("resume".contains(cari));
+        BtnAwalKeperawatanUmum.setVisible("awal keperawatan umum".contains(cari));
+        BtnAwalKeperawatanKandungan.setVisible("awal keperawatan kandungan".contains(cari));
+        BtnAwalKeperawatanNeonatus.setVisible("awal keperawatan neonatus".contains(cari));
+        BtnAwalKeperawatanBayiAnak.setVisible("awal keperawatan bayi anak".contains(cari));
+        BtnAwalFisioterapi.setVisible("awal fisioterapi".contains(cari));
+        BtnAwalMedis.setVisible("awal medis".contains(cari));
+        BtnAwalMedisKandungan.setVisible("awal medis kandungan".contains(cari));
+        BtnAwalMedisNeonatus.setVisible("awal medis neonatus".contains(cari));
+        BtnAwalMedisHemodialisa.setVisible("awal medis hemodialisa".contains(cari));
+        BtnPenilaianPreInduksi.setVisible("penilaian pre induksi".contains(cari));
+        BtnChecklistPreOperasi.setVisible("checklist pre operasi".contains(cari));
+        BtnSignInSebelumAnestesi.setVisible("signin sebelum anestesi".contains(cari));
+        BtnTimeOutSebelumInsisi.setVisible("timeout sebelum insisi".contains(cari));
+        BtnSignOutSebelumMenutupLuka.setVisible("signout sebelum menutup luka".contains(cari));
+        BtnChecklistPostOperasi.setVisible("checklist post operasi".contains(cari));
+        BtnPenilaianPreOperasi.setVisible("penilaian pre operasi".contains(cari));
+        BtnCatatanAnastesiSedasi.setVisible("catatan anastesi sedasi".contains(cari));
+        BtnPenilaianPreAnestesi.setVisible("penilaian pre anestesi".contains(cari));
+        BtnChecklistKesiapanAnestesi.setVisible("checklist kesiapan anestesi".contains(cari));
+        BtnSkorAldrettePascaAnestesi.setVisible("skor aldrette pasca anestesi".contains(cari));
+        BtnSkorStewardPascaAnestesi.setVisible("skor steward pasca anestesi".contains(cari));
+        BtnSkorBromagePascaAnestesi.setVisible("skor bromage pasca anestesi".contains(cari));
+        BtnCatatanPengkajianPaskaOperasi.setVisible("catatan pengkajian pasca operasi".contains(cari));
+        BtnPenilaianPsikolog.setVisible("penilaian psikolog".contains(cari));
+        BtnPenilaianPsikologKlinis.setVisible("penilaian psikolog klinis".contains(cari));
+        BtnPerencanaanPemulangan.setVisible("perencanaan pemulangan".contains(cari));
+        BtnPenilaianLanjutanResikoJatuhDewasa.setVisible("resiko jatuh dewasa".contains(cari));
+        BtnPenilaianLanjutanResikoJatuhAnak.setVisible("resiko jatuh anak".contains(cari));
+        BtnPenilaianLanjutanResikoJatuhLansia.setVisible("resiko jatuh lansia".contains(cari));
+        BtnPenilaianLanjutanResikoJatuhNeonatus.setVisible("resiko jatuh neonatus".contains(cari));
+        BtnPenilaianLanjutanResikoJatuhGeriatri.setVisible("resiko jatuh geriatri".contains(cari));
+        BtnPenilaianLanjutanResikoJatuhPsikiatri.setVisible("resiko jatuh psikiatri".contains(cari));
+        BtnPenilaianLanjutanSkriningFungsional.setVisible("skrining fungsional".contains(cari));
+        BtnPenilaianResikoDekubitus.setVisible("resiko dekubitus".contains(cari));
+        BtnHasilPemeriksaanUSG.setVisible("hasil usg".contains(cari));
+        BtnHasilPemeriksaanUSGUrologi.setVisible("hasil usg urologi".contains(cari));
+        BtnHasilPemeriksaanUSGNeonatus.setVisible("hasil usg neonatus".contains(cari));
+        BtnHasilPemeriksaanUSGGynecologi.setVisible("hasil usg gynecologi".contains(cari));
+        BtnHasilPemeriksaanEKG.setVisible("hasil ekg".contains(cari));
+        BtnHasilPemeriksaanECHO.setVisible("hasil echo".contains(cari));
+        BtnHasilPemeriksaanSlitLamp.setVisible("hasil slit lamp".contains(cari));
+        BtnHasilPemeriksaanOCT.setVisible("hasil oct".contains(cari));
+        BtnHasilEndoskopiFaringLaring.setVisible("endoskopi faring laring".contains(cari));
+        BtnHasilEndoskopiHidung.setVisible("endoskopi hidung".contains(cari));
+        BtnHasilEndoskopiTelinga.setVisible("endoskopi telinga".contains(cari));
+        BtnDokumentasiESWL.setVisible("dokumentasi eswl".contains(cari));
+        BtnCatatanPersalinan.setVisible("catatan persalinan".contains(cari));
+        BtnLaporanTindakan.setVisible("laporan tindakan".contains(cari));
+        BtnCatatan.setVisible("catatan".contains(cari));
+        BtnCatatanObservasiRanap.setVisible("observasi ranap".contains(cari));
+        BtnCatatanObservasiRanapKebidanan.setVisible("observasi ranap kebidanan".contains(cari));
+        BtnCatatanObservasiRanapPostPartum.setVisible("observasi ranap postpartum".contains(cari));
+        BtnCatatanObservasiCHBP.setVisible("observasi chbp".contains(cari));
+        BtnCatatanObservasiInduksiPersalinan.setVisible("observasi induksi persalinan".contains(cari));
+        BtnCatatanObservasiBayi.setVisible("observasi bayi".contains(cari));
+        BtnCatatanObservasiRestrainNonfarmakologi.setVisible("restrain nonfarmakologi".contains(cari));
+        BtnCatatanObservasiVentilator.setVisible("observasi ventilator".contains(cari));
+        BtnCatatanObservasiHemodialisa.setVisible("observasi hemodialisa".contains(cari));
+        BtnCatatanKeseimbanganCairan.setVisible("keseimbangan cairan".contains(cari));
+        BtnCatatanCairanHemodialisa.setVisible("cairan hemodialisa".contains(cari));
+        BtnChecklistPemberianFibrinolitik.setVisible("checklist fibrinolitik".contains(cari));
+        BtnFollowUpDBD.setVisible("follow up dbd".contains(cari));
+        BtnCatatanKeperawatan.setVisible("catatan keperawatan".contains(cari));
+        BtnCatatanCekGDS.setVisible("cek gds".contains(cari));
+        BtnPenilaianUlangNyeri.setVisible("penilaian ulang nyeri".contains(cari));
+        BtnPemantauanPEWSAnak.setVisible("pews anak".contains(cari));
+        BtnPemantauanPEWSDewasa.setVisible("pews dewasa".contains(cari));
+        BtnPemantauanMEOWS.setVisible("meows".contains(cari));
+        BtnPemantauanEWSNeonatus.setVisible("ews neonatus".contains(cari));
+        BtnChecklistKriteriaMasukHCU.setVisible("masuk hcu".contains(cari));
+        BtnChecklistKriteriaKeluarHCU.setVisible("keluar hcu".contains(cari));
+        BtnChecklistKriteriaMasukICU.setVisible("masuk icu".contains(cari));
+        BtnChecklistKriteriaKeluarICU.setVisible("keluar icu".contains(cari));
+        BtnMonitoringReaksiTranfusi.setVisible("reaksi transfusi".contains(cari));
+        BtnSkriningNutrisiDewasa.setVisible("skrining nutrisi dewasa".contains(cari));
+        BtnSkriningNutrisiLansia.setVisible("skrining nutrisi lansia".contains(cari));
+        BtnSkriningNutrisiAnak.setVisible("skrining nutrisi anak".contains(cari));
+        BtnSkriningGiziLanjut.setVisible("skrining gizi lanjut".contains(cari));
+        BtnAsuhanGizi.setVisible("asuhan gizi".contains(cari));
+        BtnMonitoringAsuhanGizi.setVisible("monitoring gizi".contains(cari));
+        BtnCatatanADIMEGizi.setVisible("adime gizi".contains(cari));
+        BtnKonselingFarmasi.setVisible("konseling farmasi".contains(cari));
+        BtnInformasiObat.setVisible("informasi obat".contains(cari));
+        BtnRekonsiliasiObat.setVisible("rekonsiliasi obat".contains(cari));
+        BtnTransferAntarRuang.setVisible("transfer antar ruang".contains(cari));
+        BtnPelaksanaanInformasiEdukasi.setVisible("informasi edukasi".contains(cari));
+        BtnPengkajianRestrain.setVisible("pengkajian restrain".contains(cari));
+        BtnPenilaianBayiBaruLahir.setVisible("penilaian bayi baru lahir".contains(cari));
+        BtnPenilaianPasienTerminal.setVisible("pasien terminal".contains(cari));
+        BtnPenilaianKorbanKekerasan.setVisible("korban kekerasan".contains(cari));
+        BtnPenilaianKecemasanAnak.setVisible("kecemasan anak".contains(cari));
+        BtnPenilaianPasienPenyakitMenular.setVisible("penyakit menular".contains(cari));
+        BtnPenilaianPasienImunitasRendah.setVisible("imunitas rendah".contains(cari));
+        BtnPenilaianTambahanGeriatri.setVisible("penilaian geriatri".contains(cari));
+        BtnPenilaianTambahanBunuhDiri.setVisible("bunuh diri".contains(cari));
+        BtnPenilaianTambahanPerilakuKekerasan.setVisible("perilaku kekerasan".contains(cari));
+        BtnPenilaianTambahanMelarikanDiri.setVisible("melarikan diri".contains(cari));
+        BtnPenilaianDerajatDehidrasi.setVisible("derajat dehidrasi".contains(cari));
+        BtnChecklistKriteriaMasukNICU.setVisible("check list kriteria masuk nicu".contains(cari));
+        BtnChecklistKriteriaKeluarNICU.setVisible("check list kriteria keluar nicu".contains(cari));
+        BtnChecklistKriteriaMasukPICU.setVisible("check list kriteria masuk picu".contains(cari));
+        BtnChecklistKriteriaKeluarPICU.setVisible("check list kriteria keluar picu".contains(cari));
+        BtnAwalMedisPsikiatri.setVisible("awal medis psikiatri".contains(cari));
+
+        FormMenu.revalidate(); // Refresh UI
+        FormMenu.repaint();
+    }
+
+
+    // TAMBAHAN PAKET UNTUK PEMERIKSAAN
+    // AWAL TAMBAHAN FITUR SOAPIE
+    private void BtnSoapPerawatActionPerformed(java.awt.event.ActionEvent evt) {
+        akses.setform("DlgRawatJalan");
+        templatesoapieperawat.emptTeks();
+        templatesoapieperawat.isCek();
+        templatesoapieperawat.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+        templatesoapieperawat.setLocationRelativeTo(internalFrame1);
+        templatesoapieperawat.setVisible(true);
+    }
+
+    private void SimpanTemplateSOAPIEPerawat() {
+        if (ChkTemplatePerawat.isSelected()) {
+            Valid.autoNomer("template_soapie_perawat", "S", 4, KdNoRawat);
+            if (KdNoRawat.getText().trim().equals("")) {
+                Valid.textKosong(KdNoRawat, "No.Template");
+            } else if (TKeluhan.getText().trim().equals("")) {
+                Valid.textKosong(TKeluhan, "Subyek");
+            } else if (TPemeriksaan.getText().trim().equals("")) {
+                Valid.textKosong(TPemeriksaan, "Obyek");
+            } else if (TPenilaian.getText().trim().equals("")) {
+                Valid.textKosong(TPenilaian, "Asesmen");
+            } else if (TInstruksi.getText().trim().equals("")) {
+                Valid.textKosong(TInstruksi, "Instruksi");
+            } else if (TEvaluasi.getText().trim().equals("")) {
+                Valid.textKosong(TEvaluasi, "Evaluasi");
+            } else {
+                if (Sequel.menyimpantf("template_soapie_perawat", "?,?,?,?,?,?,?", "No.Template", 7, new String[]{
+                    KdNoRawat.getText(), TKeluhan.getText(), TPemeriksaan.getText(), TPenilaian.getText(), TindakLanjut.getText(),
+                    TInstruksi.getText(), TEvaluasi.getText()
+                }) == true) {
+                    JOptionPane.showMessageDialog(null, "Template SOAPIE Sukses Tersimpan");
+                    TEvaluasi.requestFocus();
+                }
+            }
+        }
+    }
+
+    private void SimpanTemplateSOAPIE() {
+        if (ChkTemplate.isSelected()) {
+            Valid.autoNomer("template_pemeriksaan_dokter", "S", 4, KdNoRawat);
+            if (KdNoRawat.getText().trim().equals("")) {
+                Valid.textKosong(KdNoRawat, "No.Template");
+            } else if (KdDok.getText().trim().equals("")) {
+                Valid.textKosong(KdDok, "Kode Dokter");
+            } else if (TKeluhan.getText().trim().equals("")) {
+                Valid.textKosong(TKeluhan, "Subyek");
+            } else if (TPemeriksaan.getText().trim().equals("")) {
+                Valid.textKosong(TPemeriksaan, "Obyek");
+            } else if (TPenilaian.getText().trim().equals("")) {
+                Valid.textKosong(TPenilaian, "Asesmen");
+            } else if (TInstruksi.getText().trim().equals("")) {
+                Valid.textKosong(TInstruksi, "Instruksi");
+            } else if (TEvaluasi.getText().trim().equals("")) {
+                Valid.textKosong(TEvaluasi, "Evaluasi");
+            } else {
+                if (Sequel.menyimpantf("template_pemeriksaan_dokter", "?,?,?,?,?,?,?,?", "No.Template", 8, new String[]{
+                    KdNoRawat.getText(), KdDok.getText(), TKeluhan.getText(), TPemeriksaan.getText(), TPenilaian.getText(), TindakLanjut.getText(),
+                    TInstruksi.getText(), TEvaluasi.getText()
+                }) == true) {
+                    JOptionPane.showMessageDialog(null, "Template SOAPIE Sukses Tersimpan");
+                    TEvaluasi.requestFocus();
+                }
+            }
+        }
+    }
+
+    private void BtnSoapDokterActionPerformed(java.awt.event.ActionEvent evt) {
+        akses.setform("DlgRawatJalan");
+        templatesoapie.emptTeks();
+        templatesoapie.isCek();
+        //    templatesoapi.setRM(KdPeg.getText(), TPegawai.getText());
+        templatesoapie.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+        templatesoapie.setLocationRelativeTo(internalFrame1);
+        templatesoapie.setVisible(true);
+    }
+
+    private void BtnSoapDokter1ActionPerformed(java.awt.event.ActionEvent evt) {
+        akses.setform("DlgRawatJalan");
+        templatesoapieperawat.emptTeks();
+        templatesoapieperawat.isCek();
+        templatesoapieperawat.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+        templatesoapieperawat.setLocationRelativeTo(internalFrame1);
+        templatesoapieperawat.setVisible(true);
+    }
+    // AKHIR TAMBAHAN FITUR SOAPIE
+
+    // TAMBAHAN FITUR KOMUNIKASI SBAR
+    private void isFormAdime() {
+        if (ChkInput5.isSelected() == true) {
+            ChkInput5.setVisible(false);
+            PanelInput6.setPreferredSize(new Dimension(WIDTH, 308));
+            panelGlass18.setVisible(true);
+            ChkInput5.setVisible(true);
+        } else if (ChkInput5.isSelected() == false) {
+            ChkInput5.setVisible(false);
+            PanelInput6.setPreferredSize(new Dimension(WIDTH, 20));
+            panelGlass18.setVisible(false);
+            ChkInput5.setVisible(true);
+        }
+    }
+
+    private void getDataPemeriksaanSbar() {
+        if (tbPemeriksaanSbar.getSelectedRow() != -1) {
+            TNoRw.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 1).toString());
+            TNoRM.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 2).toString());
+            TPasien.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 3).toString());
+            TSituation.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 6).toString());
+            TBackground.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 7).toString());
+            TAssesment.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 8).toString());
+            TRecommendation.setText(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 9).toString());
+            cmbJam.setSelectedItem(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 5).toString().substring(0, 2));
+            cmbMnt.setSelectedItem(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 5).toString().substring(3, 5));
+            cmbDtk.setSelectedItem(tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 5).toString().substring(6, 8));
+            Valid.SetTgl(DTPTgl, tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(), 4).toString());
+        }
+    }
+
+    private void isForm4() {
+        if (ChkInput3.isSelected() == true) {
+            ChkInput3.setVisible(false);
+            PanelInput4.setPreferredSize(new Dimension(WIDTH, 260));
+            panelGlass16.setVisible(true);
+            ChkInput3.setVisible(true);
+        } else if (ChkInput3.isSelected() == false) {
+            ChkInput3.setVisible(false);
+            PanelInput4.setPreferredSize(new Dimension(WIDTH, 20));
+            panelGlass16.setVisible(false);
+            ChkInput3.setVisible(true);
+        }
+    }
+
+    private void tbPemeriksaanSbarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbPemeriksaanSbarMouseClicked
+        if (tabModePemeriksaanSbar.getRowCount() != 0) {
+            try {
+                getDataPemeriksaanSbar();
+            } catch (java.lang.NullPointerException e) {
+            }
+
+        }
+    }//GEN-LAST:event_tbPemeriksaanSbarMouseClicked
+
+    private void tbPemeriksaanSbarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbPemeriksaanSbarKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbPemeriksaanSbarKeyReleased
+
+    private void ChkInput3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkInput3ActionPerformed
+        isForm4();
+    }//GEN-LAST:event_ChkInput3ActionPerformed
+
+    private void TSituationKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TSituationKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TSituationKeyPressed
+
+    private void TBackgroundKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TBackgroundKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TBackgroundKeyPressed
+
+    private void TAssesmentKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TAssesmentKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TAssesmentKeyPressed
+
+    private void TRecommendationKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TRecommendationKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TRecommendationKeyPressed
+
+    private void KdPeg2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KdPeg2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KdPeg2ActionPerformed
+
+    private void KdPeg2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdPeg2KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
+            Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?", TPegawai2, KdPeg2.getText());
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            BtnSeekPegawai1ActionPerformed(null);
+        } else {
+            Valid.pindah(evt, TNoRw, TSituation);
+        }
+    }//GEN-LAST:event_KdPeg2KeyPressed
+
+    private void TPegawai2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TPegawai2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TPegawai2ActionPerformed
+
+    private void BtnSeekPegawai1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeekPegawai1ActionPerformed
+        akses.setform("DlgRawatInap");
+        pegawai2.emptTeks();
+        pegawai2.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+        pegawai2.setLocationRelativeTo(internalFrame1);
+        pegawai2.setVisible(true);
+    }//GEN-LAST:event_BtnSeekPegawai1ActionPerformed
+
+    private void KdPeg3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdPeg3KeyPressed
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KdPeg3KeyPressed
+
+    private void BtnVerifSbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerifSbarActionPerformed
+        if (TNoRw.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            TCari.requestFocus();
+        } else {
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            DlgSBAR soap = new DlgSBAR(null, false);
+            soap.setNoRawat(TNoRw.getText(), TNoRw.getText());
+            soap.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
+            soap.setLocationRelativeTo(internalFrame1);
+            soap.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_BtnVerifSbarActionPerformed
+
+    private void jLabel84MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel84MouseClicked
+        if (TNoRw.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            TCari.requestFocus();
+        } else {
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            DlgSBAR soap = new DlgSBAR(null, false);
+            soap.setNoRawat(TNoRw.getText(), TNoRw.getText());
+            soap.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
+            soap.setLocationRelativeTo(internalFrame1);
+            soap.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel84MouseClicked
+
+    private void jLabel86MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel86MouseClicked
+        if (TPasien.getText().trim().equals("") || TNoRw.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            TCari.requestFocus();
+        } else {
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            ValidasiSBAR form = new ValidasiSBAR(null, false);
+            form.isCek();
+            form.emptTeks();
+            form.setNoRm(TNoRw.getText(), DTPCari2.getDate());
+            form.tampil();
+            form.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+            form.setLocationRelativeTo(internalFrame1);
+            form.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_jLabel86MouseClicked
+
+    private void BtnVerifSbar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerifSbar3ActionPerformed
+        if (TPasien.getText().trim().equals("") || TNoRw.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            TCari.requestFocus();
+        } else {
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            ValidasiSBAR form = new ValidasiSBAR(null, false);
+            form.isCek();
+            form.emptTeks();
+            form.setNoRm(TNoRw.getText(), DTPCari2.getDate());
+            form.tampil();
+            form.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+            form.setLocationRelativeTo(internalFrame1);
+            form.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnVerifSbar3ActionPerformed
+
+    // TAMBAHAN FITUR KOMUNIKASI SBAR DAY 2
+    private void ChkInput4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkInput4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ChkInput4ActionPerformed
+
+    private void TSituation1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TSituation1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TSituation1KeyPressed
+
+    private void TBackground1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TBackground1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TBackground1KeyPressed
+
+    private void TAssesment1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TAssesment1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TAssesment1KeyPressed
+
+    private void TRecommendation1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TRecommendation1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TRecommendation1KeyPressed
+
+    private void KdPeg4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KdPeg4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KdPeg4ActionPerformed
+
+    private void KdPeg4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdPeg4KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KdPeg4KeyPressed
+
+    private void TPegawai4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TPegawai4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TPegawai4ActionPerformed
+
+    private void BtnSeekPegawai2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeekPegawai2ActionPerformed
+        akses.setform("DlgRawatInap");
+        pegawai2.emptTeks();
+        pegawai2.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+        pegawai2.setLocationRelativeTo(internalFrame1);
+        pegawai2.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_BtnSeekPegawai2ActionPerformed
+
+    private void KdPeg5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdPeg5KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KdPeg5KeyPressed
+
+//    private void BtnVerifSbar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerifSbar1ActionPerformed
+//        if (TNoRw.getText().trim().equals("")) {
+//            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+//            TCari.requestFocus();
+//        } else {
+//            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+//            DlgTBAK soap = new DlgTBAK(null, false);
+//            soap.setNoRawat(TNoRw.getText(), TNoRw.getText());
+//            soap.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
+//            soap.setLocationRelativeTo(internalFrame1);
+//            soap.setVisible(true);
+//            this.setCursor(Cursor.getDefaultCursor());
+//        }
+//        // TODO add your handling code here:
+//    }//GEN-LAST:event_BtnVerifSbar1ActionPerformed
+//
+//    private void jLabel87MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel87MouseClicked
+//        if (TPasien.getText().trim().equals("") || TNoRw.getText().trim().equals("")) {
+//            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+//            TCari.requestFocus();
+//        } else {
+//            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+//            ValidasiTBAK form = new ValidasiTBAK(null, false);
+//            form.isCek();
+//            form.emptTeks();
+//            form.setNoRm(TNoRw.getText(), DTPCari2.getDate());
+//            form.tampil();
+//            form.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+//            form.setLocationRelativeTo(internalFrame1);
+//            form.setVisible(true);
+//            this.setCursor(Cursor.getDefaultCursor());
+//        }         // TODO add your handling code here:
+//    }//GEN-LAST:event_jLabel87MouseClicked
+//    private void jLabel100MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel100MouseClicked
+//        if (TNoRw.getText().trim().equals("")) {
+//            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+//            TCari.requestFocus();
+//        } else {
+//            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+//            DlgTBAK soap = new DlgTBAK(null, false);
+//            soap.setNoRawat(TNoRw.getText(), TNoRw.getText());
+//            soap.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
+//            soap.setLocationRelativeTo(internalFrame1);
+//            soap.setVisible(true);
+//            this.setCursor(Cursor.getDefaultCursor());
+//        }        // TODO add your handling code here:
+//    }//GEN-LAST:event_jLabel100MouseClicked
+//
+//    private void BtnVerifSbar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerifSbar2ActionPerformed
+//        if (TPasien.getText().trim().equals("") || TNoRw.getText().trim().equals("")) {
+//            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+//            TCari.requestFocus();
+//        } else {
+//            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+//            ValidasiTBAK form = new ValidasiTBAK(null, false);
+//            form.isCek();
+//            form.emptTeks();
+//            form.setNoRm(TNoRw.getText(), DTPCari2.getDate());
+//            form.tampil();
+//            form.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+//            form.setLocationRelativeTo(internalFrame1);
+//            form.setVisible(true);
+//            this.setCursor(Cursor.getDefaultCursor());
+//        }        // TODO add your handling code here:
+//    }//GEN-LAST:event_BtnVerifSbar2ActionPerformed
+//    private void tbPemeriksaan1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbPemeriksaan1MouseClicked
+//        if (tabModePemeriksaanAdime.getRowCount() != 0) {
+//            try {
+//                getDataPemeriksaanAdime();
+//            } catch (java.lang.NullPointerException e) {
+//            }
+//
+//        }        // TODO add your handling code here:
+//    }//GEN-LAST:event_tbPemeriksaan1MouseClicked
+//
+//    private void tbPemeriksaan1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbPemeriksaan1KeyReleased
+//        if (tabModePemeriksaanAdime.getRowCount() != 0) {
+//            if ((evt.getKeyCode() == KeyEvent.VK_ENTER) || (evt.getKeyCode() == KeyEvent.VK_UP) || (evt.getKeyCode() == KeyEvent.VK_DOWN)) {
+//                try {
+//                    getDataPemeriksaanAdime();
+//                } catch (java.lang.NullPointerException e) {
+//                }
+//            }
+//
+//        }        // TODO add your handling code here:
+//    }//GEN-LAST:event_tbPemeriksaan1KeyReleased
+    // TAMABAHAN FITUR TBAK
+//    private void tbPemeriksaanTbakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbPemeriksaanTbakMouseClicked
+//        if(tabModePemeriksaanTbak.getRowCount()!=0){
+//            try {
+//                getDataPemeriksaanTbak();
+//            } catch (java.lang.NullPointerException e) {
+//            }
+//
+//        }
+//        // TODO add your handling code here:
+//    }//GEN-LAST:event_tbPemeriksaanTbakMouseClicked
+//
+//    private void tbPemeriksaanTbakKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbPemeriksaanTbakKeyReleased
+//        // TODO add your handling code here:
+//    }//GEN-LAST:event_tbPemeriksaanTbakKeyReleased
+    private void tampilPemeriksaanSbar() {
+        Valid.tabelKosong(tabModePemeriksaanSbar);
+        try {
+            ps7 = koneksi.prepareStatement("select pemeriksaan_ranap_sbar.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"
+                    + "pemeriksaan_ranap_sbar.tgl_perawatan,pemeriksaan_ranap_sbar.jam_rawat,pemeriksaan_ranap_sbar.situation,pemeriksaan_ranap_sbar.background, "
+                    + "pemeriksaan_ranap_sbar.assesment,pemeriksaan_ranap_sbar.recommendation,pemeriksaan_ranap_sbar.nip,pegawai.nama,pegawai.jbtn, IF(vps.no_rawat IS NOT NULL, 'Tervalidasi', 'Belum Divalidasi')"
+                    + "from pasien inner join reg_periksa on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "
+                    + "inner join pemeriksaan_ranap_sbar on pemeriksaan_ranap_sbar.no_rawat=reg_periksa.no_rawat "
+                    + "inner join pegawai on pemeriksaan_ranap_sbar.nip=pegawai.nik "
+                    + "LEFT JOIN validasi_pemeriksaan_sbar vps ON CONCAT(pemeriksaan_ranap_sbar.no_rawat, pemeriksaan_ranap_sbar.tgl_perawatan, pemeriksaan_ranap_sbar.jam_rawat) = CONCAT (vps.no_rawat, vps.tgl_perawatan, vps.jam_rawat) where "
+                    + "pemeriksaan_ranap_sbar.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? "
+                    + (TCari.getText().trim().equals("") ? "" : "and (pemeriksaan_ranap_sbar.no_rawat like ? or reg_periksa.no_rkm_medis like ? or pasien.nm_pasien like ? or "
+                    + "pemeriksaan_ranap_sbar.situation like ? or pemeriksaan_ranap_sbar.background like ? or pemeriksaan_ranap_sbar.assesment like ? or "
+                    + "pemeriksaan_ranap_sbar.recommendation like ?)")
+                    + "order by pemeriksaan_ranap_sbar.no_rawat,pemeriksaan_ranap_sbar.tgl_perawatan,pemeriksaan_ranap_sbar.jam_rawat desc");
+            try {
+                ps7.setString(1, Valid.SetTgl(DTPCari1.getSelectedItem() + ""));
+                ps7.setString(2, Valid.SetTgl(DTPCari2.getSelectedItem() + ""));
+                ps7.setString(3, "%" + TCariPasien.getText() + "%");
+                if (!TCari.getText().trim().equals("")) {
+                    ps7.setString(4, "%" + TCari.getText().trim() + "%");
+                    ps7.setString(5, "%" + TCari.getText().trim() + "%");
+                    ps7.setString(6, "%" + TCari.getText().trim() + "%");
+                    ps7.setString(7, "%" + TCari.getText().trim() + "%");
+                    ps7.setString(8, "%" + TCari.getText().trim() + "%");
+                    ps7.setString(9, "%" + TCari.getText().trim() + "%");
+                    ps7.setString(10, "%" + TCari.getText().trim() + "%");
+                }
+
+                rs = ps7.executeQuery();
+                while (rs.next()) {
+                    tabModePemeriksaanSbar.addRow(new Object[]{
+                        false, rs.getString(1), rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7),
+                        rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11),
+                        rs.getString(12), rs.getString(13)
+                    });
+                }
+            } catch (Exception e) {
+                System.out.println("Notifikasi : " + e);
+            } finally {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps4 != null) {
+                    ps4.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notifikasi : " + e);
+        }
+        LCount.setText("" + tabModePemeriksaanSbar.getRowCount());
+    }
+    // AKHIR TAMBAHAN FITUR KOMUNIKASI SBAR
+
+    // TAMBAHAN FITUR KOMUNIKASI SBAR TAPI SOAP
+    private void Btn5Soap1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn5Soap1ActionPerformed
+        if (TPasien.getText().trim().equals("") || TNoRw.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            TCari.requestFocus();
+        } else if (TPegawai.getText().trim().equals("") || KdPeg.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu petugas/dokter pemberi asuhan...!!!");
+            TCari.requestFocus();
+        } else {
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            soapterakhir.setNoRM(TNoRM.getText(), KdPeg.getText(), "Ranap");
+            soapterakhir.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+            soapterakhir.setLocationRelativeTo(internalFrame1);
+            soapterakhir.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_Btn5Soap1ActionPerformed
+
+//    private void Btn5Soap2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn5Soap2ActionPerformed
+//        if(TNoRw.getText().trim().equals("")){
+//            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
+//            TCari.requestFocus();
+//        }else{
+//            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+//            RMRiwayatSOAPIECPPT resume=new RMRiwayatSOAPIECPPT(null,true);
+//            resume.setNoRm(TNoRM.getText(),TPasien.getText());
+//            resume.setSize(internalFrame1.getWidth(),internalFrame1.getHeight());
+//            resume.setLocationRelativeTo(internalFrame1);
+//            resume.setVisible(true);
+//            this.setCursor(Cursor.getDefaultCursor());
+//        }
+//    }//GEN-LAST:event_Btn5Soap2ActionPerformed
+    // TAMBAHAN FITUR GRAFIK TTV PRIVATE VOID
+    private void BtnCekGrafikTTV(java.awt.event.ActionEvent evt) {
+        grafiksqlttv kas = new grafiksqlttv("Grafik TTV Pasien " + TPasien.getText(),
+                "select DATE_FORMAT(tgl_perawatan , '%d/%m/%Y') as tgl,jam_rawat,replace(suhu_tubuh,',','.') as suhu_tubuh,nadi,respirasi,spo2 from pemeriksaan_ranap where no_rawat='" + TNoRw.getText() + "' and suhu_tubuh <>''", "Suhu", "Nadi", "Respirasi", "Spo2");
+        kas.setModal(true);
+        kas.setAlwaysOnTop(true);
+        kas.setLocationRelativeTo(panelBiasa3);
+        kas.setSize(screen.width, 600);
+        kas.setLocation(0, 100);
+        kas.setVisible(true);
+    }
+
+    // TAMBAHAN FITUR PINTASAN PENUNJANG
+    private void BtnHasilRadiologiActionPerformed(java.awt.event.ActionEvent evt) {
+        if (TNoRw.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu pasien...!!!");
+            TCari.requestFocus();
+        } else {
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            RMRiwayatPenunjang resume = new RMRiwayatPenunjang(null, true);
+            resume.setNoRm(TNoRM.getText(), TPasien.getText());
+            resume.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
+            resume.setLocationRelativeTo(internalFrame1);
+            resume.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }        // TODO add your handling code here:
+    }
+
+    private void BtnHasilPengobatanActionPerformed(java.awt.event.ActionEvent evt) {
+        if (TNoRw.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu pasien...!!!");
+            TCari.requestFocus();
+        } else {
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            RMRiwayatPengobatan resume = new RMRiwayatPengobatan(null, true);
+            resume.setNoRm(TNoRM.getText(), TPasien.getText());
+            resume.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
+            resume.setLocationRelativeTo(internalFrame1);
+            resume.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }
+
+    private void BtnHasilPengobatan1ActionPerformed(java.awt.event.ActionEvent evt) {
+        if (TNoRw.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu pasien...!!!");
+            TCari.requestFocus();
+        } else {
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            RMRiwayatOperasi resume = new RMRiwayatOperasi(null, true);
+            resume.setNoRm(TNoRM.getText(), TPasien.getText());
+            resume.setSize(internalFrame1.getWidth(), internalFrame1.getHeight());
+            resume.setLocationRelativeTo(internalFrame1);
+            resume.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        } // TODO add your handling code here:
+    }
 }

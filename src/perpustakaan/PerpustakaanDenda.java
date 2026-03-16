@@ -17,24 +17,17 @@ import fungsi.koneksiDB;
 import fungsi.sekuel;
 import fungsi.validasi;
 import fungsi.akses;
-<<<<<<< HEAD
-=======
 import java.awt.Cursor;
->>>>>>> master
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-<<<<<<< HEAD
-import javax.swing.JTable;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -50,11 +43,8 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private PreparedStatement ps;
     private ResultSet rs;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
 
     /** Creates new form DlgSpesialis
      * @param parent
@@ -69,11 +59,7 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
         };
 
         tbSpesialis.setModel(tabMode);
-<<<<<<< HEAD
-        //tampil();
-=======
         //runBackground(() ->tampil());
->>>>>>> master
         //tbJabatan.setDefaultRenderer(Object.class, new WarnaTable(Scroll.getBackground(),Color.GREEN));
         tbSpesialis.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbSpesialis.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
@@ -95,31 +81,6 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
         NmDenda.setDocument(new batasInput((byte)40).getKata(NmDenda));
         BesarDenda.setDocument(new batasInput((byte)10).getOnlyAngka(BesarDenda));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        }
-=======
->>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -447,11 +408,7 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
             Valid.textKosong(BesarDenda,"Besarnya Denda");
         }else{
             Sequel.menyimpan("perpustakaan_denda","'"+KodeDenda.getText()+"','"+NmDenda.getText()+"','"+BesarDenda.getText()+"'","Kode Denda");
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
             emptTeks();
         }
 }//GEN-LAST:event_BtnSimpanActionPerformed
@@ -476,11 +433,7 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
 
     private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHapusActionPerformed
         Valid.hapusTable(tabMode,KodeDenda,"perpustakaan_denda","kode_denda");
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
         emptTeks();
 }//GEN-LAST:event_BtnHapusActionPerformed
 
@@ -504,11 +457,7 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
                 Sequel.mengedit("perpustakaan_denda","kode_denda=?","kode_denda=?,jenis_denda=?,besar_denda=?",4,new String[]{
                     KodeDenda.getText(),NmDenda.getText(),BesarDenda.getText(),tbSpesialis.getValueAt(tbSpesialis.getSelectedRow(),0).toString()
                 });
-<<<<<<< HEAD
-                if(tabMode.getRowCount()!=0){tampil();}
-=======
                 if(tabMode.getRowCount()!=0){runBackground(() ->tampil());}
->>>>>>> master
                 emptTeks();
             }
         }
@@ -545,11 +494,7 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -566,11 +511,7 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
        emptTeks();
-<<<<<<< HEAD
-       tampil();
-=======
        runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
@@ -604,9 +545,6 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
     }//GEN-LAST:event_formWindowActivated
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -630,7 +568,6 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
                 }
             });
         }
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void tbSpesialisKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbSpesialisKeyReleased
@@ -692,15 +629,6 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
     private widget.Table tbSpesialis;
     // End of variables declaration//GEN-END:variables
 
-<<<<<<< HEAD
-    public void tampil() {
-        Valid.tabelKosong(tabMode);
-        try{
-            ps=koneksi.prepareStatement("select * from perpustakaan_denda where kode_denda like ? or jenis_denda like ? order by kode_denda");
-            try {
-                ps.setString(1,"%"+TCari.getText().trim()+"%");
-                ps.setString(2,"%"+TCari.getText().trim()+"%");
-=======
     private void tampil() {
         Valid.tabelKosong(tabMode);
         try{
@@ -710,7 +638,6 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
                     ps.setString(1,"%"+TCari.getText().trim()+"%");
                     ps.setString(2,"%"+TCari.getText().trim()+"%");
                 }   
->>>>>>> master
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3)});
@@ -758,8 +685,6 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
        BtnHapus.setEnabled(akses.getdenda_perpustakaan());
        BtnEdit.setEnabled(akses.getdenda_perpustakaan());
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -792,5 +717,4 @@ public class PerpustakaanDenda extends javax.swing.JDialog {
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

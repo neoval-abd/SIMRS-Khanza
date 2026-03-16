@@ -27,12 +27,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
-<<<<<<< HEAD
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
->>>>>>> master
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -82,11 +79,8 @@ public class DlgBerkasRawat extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private final Connection koneksi=koneksiDB.condb();
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     public DlgBerkasRawat(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -95,11 +89,7 @@ public class DlgBerkasRawat extends javax.swing.JDialog {
     
     private void initComponents2() {           
         txtURL.addActionListener((ActionEvent e) -> {
-<<<<<<< HEAD
-            loadURL(txtURL.getText());
-=======
             runBackground(() ->loadURL(txtURL.getText()));
->>>>>>> master
         });
   
         progressBar.setPreferredSize(new Dimension(150, 18));
@@ -336,8 +326,6 @@ public class DlgBerkasRawat extends javax.swing.JDialog {
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), Judul, javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50,50,50))); 
         this.halaman=Pages;
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -370,5 +358,4 @@ public class DlgBerkasRawat extends javax.swing.JDialog {
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

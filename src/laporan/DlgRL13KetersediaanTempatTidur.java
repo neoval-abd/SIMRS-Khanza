@@ -11,13 +11,10 @@ import java.io.FileWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-<<<<<<< HEAD
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.text.Document;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
@@ -28,11 +25,8 @@ public class DlgRL13KetersediaanTempatTidur extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private StringBuilder htmlContent;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     private int tersedia=0,terpakai=0,totaltersedia=0,totalterpakai=0;
     
     /** Creates new form DlgProgramStudi
@@ -206,11 +200,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     }//GEN-LAST:event_BtnKeluarKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-        prosesCari();
-=======
         runBackground(() ->prosesCari());
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -342,8 +332,6 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     public void isCek(){
         BtnPrint.setEnabled(akses.getrl1_3_ketersediaan_kamar());
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -376,5 +364,4 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

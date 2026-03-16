@@ -9048,7 +9048,6 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
         } catch (Exception e) {
             System.out.println("Notif : "+e);
         }
-<<<<<<< HEAD
         
         
         // TAMBAHAN FITUR OTOMATIS ISI SENDIRI AMBIL DARI PENILAIAN AWAL MEDIS IGD
@@ -9080,8 +9079,6 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
             RPS.setText(Sequel.cariIsi("select keluhan_utama from penilaian_awal_keperawatan_ralan where no_rawat=?", TNoRw.getText()));
             RPD.setText(Sequel.cariIsi("select rpd from penilaian_awal_keperawatan_ralan where no_rawat=?", TNoRw.getText()));
         }
-=======
->>>>>>> master
     }
     
     public void setNoRm(String norwt, Date tgl2,String carabayar,String norm) {

@@ -91,31 +91,6 @@ public final class BPJSCekReferensiFaskes extends javax.swing.JDialog {
         tbKamar.setDefaultRenderer(Object.class, new WarnaTable());
         diagnosa.setDocument(new batasInput((byte)100).getKata(diagnosa));
         
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            diagnosa.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(diagnosa.getText().length()>2){
-                        runBackground(() ->tampil(diagnosa.getText()));
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(diagnosa.getText().length()>2){
-                        runBackground(() ->tampil(diagnosa.getText()));
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(diagnosa.getText().length()>2){
-                        runBackground(() ->tampil(diagnosa.getText()));
-                    }
-                }
-            });
-        }   
-=======
->>>>>>> master
         try {
             link=koneksiDB.URLAPIBPJS();
         } catch (Exception e) {
@@ -150,10 +125,6 @@ public final class BPJSCekReferensiFaskes extends javax.swing.JDialog {
         setIconImages(null);
         setUndecorated(true);
         setResizable(false);
-<<<<<<< HEAD
-
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Pencarian Data Referensi Faskes VClaim ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50,50,50))); // NOI18N
-=======
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -161,7 +132,6 @@ public final class BPJSCekReferensiFaskes extends javax.swing.JDialog {
         });
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Pencarian Data Referensi Faskes VClaim ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
->>>>>>> master
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
 
@@ -317,8 +287,6 @@ public final class BPJSCekReferensiFaskes extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_BtnCariKeyPressed
 
-<<<<<<< HEAD
-=======
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         if(koneksiDB.CARICEPAT().equals("aktif")){
             diagnosa.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -344,7 +312,6 @@ public final class BPJSCekReferensiFaskes extends javax.swing.JDialog {
         } 
     }//GEN-LAST:event_formWindowOpened
 
->>>>>>> master
     /**
     * @param args the command line arguments
     */

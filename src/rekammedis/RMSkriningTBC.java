@@ -19,10 +19,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
-<<<<<<< HEAD
-import java.awt.event.WindowListener;
-=======
->>>>>>> master
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -33,10 +29,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
@@ -45,7 +37,6 @@ import java.awt.event.WindowAdapter;
 import javax.swing.WindowConstants;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
->>>>>>> master
 import javax.swing.Timer;
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
@@ -68,13 +59,9 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private int i=0;    
-<<<<<<< HEAD
-    private DlgCariPetugas petugas=new DlgCariPetugas(null,false);
-=======
     private DlgCariPetugas petugas;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
     private String finger="";
     private StringBuilder htmlContent;
     private String TANGGALMUNDUR="yes";
@@ -189,55 +176,6 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         KetHasilSkrining.setDocument(new batasInput((byte)40).getKata(KetHasilSkrining));
         TCari.setDocument(new batasInput((int)100).getKata(TCari));
         
-<<<<<<< HEAD
-        if(koneksiDB.CARICEPAT().equals("aktif")){
-            TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    if(TCari.getText().length()>2){
-                        tampil();
-                    }
-                }
-            });
-        }
-        
-        petugas.addWindowListener(new WindowListener() {
-            @Override
-            public void windowOpened(WindowEvent e) {}
-            @Override
-            public void windowClosing(WindowEvent e) {}
-            @Override
-            public void windowClosed(WindowEvent e) {
-                if(petugas.getTable().getSelectedRow()!= -1){                   
-                    KdPetugas.setText(petugas.getTable().getValueAt(petugas.getTable().getSelectedRow(),0).toString());
-                    NmPetugas.setText(petugas.getTable().getValueAt(petugas.getTable().getSelectedRow(),1).toString());
-                }  
-                KdPetugas.requestFocus();
-            }
-            @Override
-            public void windowIconified(WindowEvent e) {}
-            @Override
-            public void windowDeiconified(WindowEvent e) {}
-            @Override
-            public void windowActivated(WindowEvent e) {}
-            @Override
-            public void windowDeactivated(WindowEvent e) {}
-        }); 
-        
-=======
->>>>>>> master
         BB.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -383,11 +321,7 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         jLabel18 = new widget.Label();
         KdPetugas = new widget.TextBox();
         NmPetugas = new widget.TextBox();
-<<<<<<< HEAD
-        btnPetugas = new widget.Button();
-=======
         BtnPetugas = new widget.Button();
->>>>>>> master
         jLabel12 = new widget.Label();
         jLabel13 = new widget.Label();
         TB = new widget.TextBox();
@@ -512,14 +446,11 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
-<<<<<<< HEAD
-=======
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
->>>>>>> master
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Skrining TBC ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -689,11 +620,7 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-09-2025" }));
-=======
         DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-02-2026" }));
->>>>>>> master
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -707,11 +634,7 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-09-2025" }));
-=======
         DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-02-2026" }));
->>>>>>> master
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -832,11 +755,7 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         TPasien.setBounds(336, 10, 285, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-<<<<<<< HEAD
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-09-2025" }));
-=======
         Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-02-2026" }));
->>>>>>> master
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -920,24 +839,6 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         FormInput.add(NmPetugas);
         NmPetugas.setBounds(570, 40, 187, 23);
 
-<<<<<<< HEAD
-        btnPetugas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
-        btnPetugas.setMnemonic('2');
-        btnPetugas.setToolTipText("ALt+2");
-        btnPetugas.setName("btnPetugas"); // NOI18N
-        btnPetugas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPetugasActionPerformed(evt);
-            }
-        });
-        btnPetugas.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnPetugasKeyPressed(evt);
-            }
-        });
-        FormInput.add(btnPetugas);
-        btnPetugas.setBounds(761, 40, 28, 23);
-=======
         BtnPetugas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
         BtnPetugas.setMnemonic('2');
         BtnPetugas.setToolTipText("ALt+2");
@@ -954,7 +855,6 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         });
         FormInput.add(BtnPetugas);
         BtnPetugas.setBounds(761, 40, 28, 23);
->>>>>>> master
 
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel12.setText("BB ");
@@ -968,10 +868,6 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         FormInput.add(jLabel13);
         jLabel13.setBounds(120, 90, 25, 23);
 
-<<<<<<< HEAD
-        TB.setBackground(new java.awt.Color(255, 255, 255));
-=======
->>>>>>> master
         TB.setFocusTraversalPolicyProvider(true);
         TB.setName("TB"); // NOI18N
         TB.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1094,11 +990,7 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         jLabel84.setText("5.");
         jLabel84.setName("jLabel84"); // NOI18N
         FormInput.add(jLabel84);
-<<<<<<< HEAD
-        jLabel84.setBounds(44, 340, 10, 23);
-=======
         jLabel84.setBounds(44, 340, 9, 23);
->>>>>>> master
 
         jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel85.setText("Riwayat DM / Kencing Manis ?");
@@ -1790,10 +1682,6 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnEditKeyPressed
 
     private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
-<<<<<<< HEAD
-        petugas.dispose();
-=======
->>>>>>> master
         dispose();
 }//GEN-LAST:event_BtnKeluarActionPerformed
 
@@ -1957,11 +1845,7 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -1974,20 +1858,12 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
 }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
             TCari.setText("");
         }else{
             Valid.pindah(evt, BtnCari, TPasien);
@@ -2031,22 +1907,6 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
     }//GEN-LAST:event_MenitKeyPressed
 
     private void DetikKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DetikKeyPressed
-<<<<<<< HEAD
-        Valid.pindah(evt,Menit,btnPetugas);
-    }//GEN-LAST:event_DetikKeyPressed
-
-    private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPetugasActionPerformed
-        petugas.emptTeks();
-        petugas.isCek();
-        petugas.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-        petugas.setLocationRelativeTo(internalFrame1);
-        petugas.setVisible(true);
-    }//GEN-LAST:event_btnPetugasActionPerformed
-
-    private void btnPetugasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnPetugasKeyPressed
-        Valid.pindah(evt,Detik,BB);
-    }//GEN-LAST:event_btnPetugasKeyPressed
-=======
         Valid.pindah(evt,Menit,BtnPetugas);
     }//GEN-LAST:event_DetikKeyPressed
 
@@ -2085,7 +1945,6 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
     private void BtnPetugasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnPetugasKeyPressed
         Valid.pindah(evt,Detik,BB);
     }//GEN-LAST:event_BtnPetugasKeyPressed
->>>>>>> master
 
     private void MnSkriningTBCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSkriningTBCActionPerformed
         if(tbObat.getSelectedRow()>-1){
@@ -2229,8 +2088,6 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         Valid.pindah(evt,PernahTerdiagnosaTBC,PernahberobatTBC);
     }//GEN-LAST:event_KetPernahTerdiagnosaKeyPressed
 
-<<<<<<< HEAD
-=======
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -2256,7 +2113,6 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_formWindowOpened
 
->>>>>>> master
     /**
     * @param args the command line arguments
     */
@@ -2285,10 +2141,7 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
     private widget.Button BtnEdit;
     private widget.Button BtnHapus;
     private widget.Button BtnKeluar;
-<<<<<<< HEAD
-=======
     private widget.Button BtnPetugas;
->>>>>>> master
     private widget.Button BtnPrint;
     private widget.Button BtnSimpan;
     private widget.CekBox ChkInput;
@@ -2336,10 +2189,6 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
     private widget.TextBox TglLahir;
     private widget.ComboBox Tingaldiwilayahkumuh;
     private widget.ComboBox WargaBinaan;
-<<<<<<< HEAD
-    private widget.Button btnPetugas;
-=======
->>>>>>> master
     private javax.swing.ButtonGroup buttonGroup1;
     private widget.InternalFrame internalFrame1;
     private widget.Label jLabel10;
@@ -2423,11 +2272,7 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
     private widget.Table tbObat;
     // End of variables declaration//GEN-END:variables
     
-<<<<<<< HEAD
-    public void tampil() {
-=======
     private void tampil() {
->>>>>>> master
         Valid.tabelKosong(tabMode);
         try{
             if(TCari.getText().trim().equals("")){
@@ -2616,10 +2461,7 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         isRawat(); 
         ChkInput.setSelected(true);
         isForm();
-<<<<<<< HEAD
-=======
         runBackground(() ->tampil());
->>>>>>> master
     }
     
     private void isForm(){
@@ -2643,15 +2485,9 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         BtnPrint.setEnabled(akses.getskrining_tbc()); 
         if(akses.getjml2()>=1){
             KdPetugas.setEditable(false);
-<<<<<<< HEAD
-            btnPetugas.setEnabled(false);
-            KdPetugas.setText(akses.getkode());
-            NmPetugas.setText(petugas.tampil3(KdPetugas.getText()));
-=======
             BtnPetugas.setEnabled(false);
             KdPetugas.setText(akses.getkode());
             NmPetugas.setText(Sequel.CariPetugas(KdPetugas.getText()));
->>>>>>> master
             if(NmPetugas.getText().equals("")){
                 KdPetugas.setText("");
                 JOptionPane.showMessageDialog(null,"User login bukan petugas...!!");
@@ -2965,8 +2801,6 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
             emptTeks();
         } 
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -2999,5 +2833,4 @@ public final class RMSkriningTBC extends javax.swing.JDialog {
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

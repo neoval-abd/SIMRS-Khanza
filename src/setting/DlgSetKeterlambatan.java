@@ -22,12 +22,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-=======
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
@@ -37,7 +31,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.awt.Cursor;
->>>>>>> master
 
 /**
  *
@@ -50,11 +43,8 @@ public class DlgSetKeterlambatan extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private PreparedStatement ps;
     private ResultSet rs;
-<<<<<<< HEAD
-=======
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
->>>>>>> master
 
     /** Creates new form DlgAdmin
      * @param parent
@@ -71,11 +61,7 @@ public class DlgSetKeterlambatan extends javax.swing.JDialog {
         };
 
         tbAdmin.setModel(tabMode);
-<<<<<<< HEAD
-        //tampil();
-=======
         //runBackground(() ->tampil());
->>>>>>> master
         //tbJabatan.setDefaultRenderer(Object.class, new WarnaTable(Scroll.getBackground(),Color.GREEN));
         tbAdmin.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbAdmin.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
@@ -88,15 +74,6 @@ public class DlgSetKeterlambatan extends javax.swing.JDialog {
         tbAdmin.setDefaultRenderer(Object.class, new WarnaTable());
 
         Toleransi.setDocument(new batasInput((byte)10).getKata(Toleransi));
-<<<<<<< HEAD
-        try {
-            ps=koneksi.prepareStatement("select * from set_keterlambatan ");
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        
-=======
->>>>>>> master
     }
 
     /** This method is called from within the constructor to
@@ -340,11 +317,7 @@ public class DlgSetKeterlambatan extends javax.swing.JDialog {
             Valid.textKosong(Terlambat1,"Terlambat 1");
         }else if(tabMode.getRowCount()==0){
             Sequel.menyimpan("set_keterlambatan","'"+Toleransi.getText()+"','"+Terlambat1.getText()+"','"+Terlambat2.getText()+"'","Set Keterlambatan");
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
             emptTeks();
         }else if(tabMode.getRowCount()>0){
             JOptionPane.showMessageDialog(null,"Maaf, Hanya diijinkan satu Set Keterlambatan ...!!!!");
@@ -378,11 +351,7 @@ public class DlgSetKeterlambatan extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null,"Maaf, Gagal menghapus. Pilih dulu data yang mau dihapus.\nKlik data pada table untuk memilih...!!!!");
         }else if(! Toleransi.getText().trim().equals("")){
             Sequel.queryu("delete from set_keterlambatan");
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
             emptTeks();
         }
 }//GEN-LAST:event_BtnHapusActionPerformed
@@ -436,11 +405,7 @@ private void ToleransiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
 }//GEN-LAST:event_ToleransiKeyPressed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-<<<<<<< HEAD
-        tampil();
-=======
         runBackground(() ->tampil());
->>>>>>> master
     }//GEN-LAST:event_formWindowOpened
 
     private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditActionPerformed
@@ -451,11 +416,7 @@ private void ToleransiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         }else{
             Sequel.queryu("delete from set_keterlambatan");
             Sequel.menyimpan("set_keterlambatan","'"+Toleransi.getText()+"','"+Terlambat1.getText()+"','"+Terlambat2.getText()+"'","Set Keterlambatan");
-<<<<<<< HEAD
-            tampil();
-=======
             runBackground(() ->tampil());
->>>>>>> master
             emptTeks();
         }
     }//GEN-LAST:event_BtnEditActionPerformed
@@ -516,13 +477,6 @@ private void ToleransiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
 
     private void tampil() {
         Valid.tabelKosong(tabMode);
-<<<<<<< HEAD
-        try{            
-            rs=ps.executeQuery();
-            while(rs.next()){
-                tabMode.addRow(new Object[]{rs.getString(1)+" Menit",rs.getString(2)+" Menit",rs.getString(3)+" Menit"});
-            }
-=======
         try{   
             ps=koneksi.prepareStatement("select * from set_keterlambatan ");
             try {
@@ -540,7 +494,6 @@ private void ToleransiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     ps.close();
                 }
             }   
->>>>>>> master
         }catch(SQLException e){
             System.out.println("Notifikasi : "+e);
         }
@@ -561,8 +514,6 @@ private void ToleransiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         Terlambat2.setText("");
         Toleransi.requestFocus();
     }
-<<<<<<< HEAD
-=======
     
     private void runBackground(Runnable task) {
         if (ceksukses) return;
@@ -595,5 +546,4 @@ private void ToleransiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         executor.shutdownNow();
         super.dispose();
     }
->>>>>>> master
 }

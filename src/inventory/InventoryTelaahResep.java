@@ -1604,11 +1604,7 @@ public final class InventoryTelaahResep extends javax.swing.JDialog {
     private widget.Table tbObat;
     // End of variables declaration//GEN-END:variables
     
-<<<<<<< HEAD
-    public void tampil() {
-=======
     private void tampil() {
->>>>>>> master
         Valid.tabelKosong(tabMode);
         try{
             ps=koneksi.prepareStatement(
@@ -1757,10 +1753,7 @@ public final class InventoryTelaahResep extends javax.swing.JDialog {
         isPsien();
         ChkInput.setSelected(true);
         isForm();
-<<<<<<< HEAD
-=======
         runBackground(() ->tampil());
->>>>>>> master
     }
     
     private void isForm(){
