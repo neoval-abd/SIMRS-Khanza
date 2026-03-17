@@ -11,5 +11,9 @@
 *.jar
 *.zip
 *.rar
+*.pdf
+*.csv
+*.wps
+*.html
 
 /nbproject/private/
