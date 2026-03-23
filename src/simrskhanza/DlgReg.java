@@ -17526,7 +17526,8 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
     private void isForm(){
         if(ChkInput.isSelected()==true){
             ChkInput.setVisible(false);
-            PanelInput.setPreferredSize(new Dimension(WIDTH,188));
+            // TAMBAHAN SENDIRI SIZE
+            PanelInput.setPreferredSize(new Dimension(WIDTH,225));
             FormInput.setVisible(true);      
             ChkInput.setVisible(true);
         }else if(ChkInput.isSelected()==false){           
@@ -19189,9 +19190,135 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
         MnSkriningParu.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         MnSkriningParu.setName("MnSkriningParu"); 
         MnSkriningParu.setPreferredSize(new java.awt.Dimension(200, 26));
+
+        // TAMBAHAN SENDIRI TOMBOL ANTRIAN
+        nomor_antrian = new javax.swing.JLabel();
+        nomor_antrian.setFont(new java.awt.Font("Liberation Sans", 1, 48)); // NOI18N
+        nomor_antrian.setForeground(new java.awt.Color(204, 0, 0));
+        nomor_antrian.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nomor_antrian.setText("0");
+        nomor_antrian.setToolTipText("Display nomor Antrian");
+        nomor_antrian.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        nomor_antrian.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        nomor_antrian.setName("nomor_antrian"); // NOI18N
+        FormInput.add(nomor_antrian);
+        nomor_antrian.setBounds(900, 50, 150, 70);
+
+        Panggil = new widget.Button();
+        Panggil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/next.png"))); // NOI18N
+        Panggil.setMnemonic('M');
+        Panggil.setText("BERIKUTNYA");
+        Panggil.setToolTipText("Alt+M");
+        Panggil.setGlassColor(new java.awt.Color(211, 211, 211));
+        Panggil.setName("Panggil"); // NOI18N
+        Panggil.setPreferredSize(new java.awt.Dimension(100, 30));
+        Panggil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PanggilActionPerformed(evt);
+            }
+        });
+
+        FormInput.add(Panggil);
+        Panggil.setBounds(1060, 50, 150, 30);
+
+        sisa_antrian = new widget.Label();
+        sisa_antrian.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        sisa_antrian.setText("0");
+        sisa_antrian.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        sisa_antrian.setName("sisa_antrian"); // NOI18N
+        FormInput.add(sisa_antrian);
+        sisa_antrian.setBounds(1155, 130, 50, 23);
+
+        loket_antrian = new javax.swing.JComboBox<>();
+        loket_antrian.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        loket_antrian.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"LOKET 1", "LOKET 2"}));
+        loket_antrian.setName("loket_antrian"); // NOI18N
+        FormInput.add(loket_antrian);
+        loket_antrian.setBounds(942, 130, 105, 20);
+
+        Ulang = new widget.Button();
+        Ulang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/recall.png"))); // NOI18N
+        Ulang.setMnemonic('M');
+        Ulang.setText("PANGGIL ULANG");
+        Ulang.setToolTipText("Alt+M");
+        Ulang.setGlassColor(new java.awt.Color(211, 211, 211));
+        Ulang.setName("Ulang"); // NOI18N
+        Ulang.setPreferredSize(new java.awt.Dimension(100, 30));
+        Ulang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UlangActionPerformed(evt);
+            }
+        });
+
+        FormInput.add(Ulang);
+        Ulang.setBounds(1060, 90, 150, 30);
+
+//        btnPanggil = new widget.Button();
+//        btnPanggil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/recall.png"))); // NOI18N
+//        btnPanggil.setMnemonic('M');
+//        btnPanggil.setText("ANTRIAN TERLEWAT");
+//        btnPanggil.setToolTipText("Alt+M");
+//        btnPanggil.setName("btnPanggil"); // NOI18N
+//        btnPanggil.setPreferredSize(new java.awt.Dimension(100, 30));
+//        btnPanggil.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                btnPanggilActionPerformed(evt);
+//            }
+//        });
+//
+//        FormInput.add(btnPanggil);
+//        btnPanggil.setBounds(960, 160, 190, 30);
+        jLabel25 = new widget.Label();
+        jLabel25.setText("SISA ANTRIAN :");
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel25.setName("jLabel25"); // NOI18N
+        FormInput.add(jLabel25);
+        jLabel25.setBounds(1060, 130, 100, 23);
+
+        jLabel12 = new widget.Label();
+        jLabel12.setText("Loket :");
+        jLabel12.setName("jLabel12"); // NOI18N
+        FormInput.add(jLabel12);
+        jLabel12.setBounds(900, 130, 40, 23);
+
+        btn_riwayat = new widget.Button();
+        btn_riwayat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/kunjungan.png"))); // NOI18N
+        btn_riwayat.setMnemonic('Q');
+        btn_riwayat.setText("Lihat Kunjungan");
+        btn_riwayat.setToolTipText("Alt+Q");
+        btn_riwayat.setName("btn_riwayat"); // NOI18N
+        btn_riwayat.setPreferredSize(new java.awt.Dimension(80, 30));
+        btn_riwayat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_riwayatActionPerformed(evt);
+            }
+        });
+
+        FormInput.add(btn_riwayat);
+        btn_riwayat.setBounds(880, 10, 180, 30);
+
+        // TAMBAHAN FITUR UNTUK SORTCUT BRIDGING SEP
+        BtnLabelNama11.setMnemonic('G');
+        BtnLabelNama11.setText("CETAK SEP BPJS");
+        BtnLabelNama11.setToolTipText("Alt+G");
+        BtnLabelNama11.setGlassColor(new java.awt.Color(0, 255, 0));
+        BtnLabelNama11.setName("BtnLabelNama11"); // NOI18N
+        BtnLabelNama11.setPreferredSize(new java.awt.Dimension(100, 30));
+        BtnLabelNama11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLabelNama11ActionPerformed(evt);
+            }
+        });
+        BtnLabelNama11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                BtnLabelNama11KeyPressed(evt);
+            }
+        });
+        FormInput.add(BtnLabelNama11);
+        BtnLabelNama11.setBounds(80, 165, 150, 30);
         
         MnRMOperasi.add(MnPenilaianPreInduksi);
-	MnRMOperasi.add(MnChecklistPreOperasi);
+	    MnRMOperasi.add(MnChecklistPreOperasi);
         MnRMOperasi.add(MnSignInSebelumAnestesi);
         MnRMOperasi.add(MnTimeOutSebelumInsisi);
         MnRMOperasi.add(MnSignOutSebelumMenutupLuka);
@@ -19433,4 +19560,75 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             emptTeks();
         }
     }
+
+    // TAMBAHAN SENDIRI ANTRIAN LOKET
+    private void PanggilActionPerformed(java.awt.event.ActionEvent evt) {
+        // Cek apakah ada nomor antrian yang belum dipanggil (status = 0)
+        if (Sequel.cariIsi("SELECT nomor FROM antripendaftaran_nomor WHERE status='0' AND date_format(jam, '%Y-%m-%d')=current_date ORDER BY CAST(nomor AS UNSIGNED) ASC LIMIT 1").equals("")) {
+            // Jika tidak ada antrian yang tersedia, tampilkan pesan
+            JOptionPane.showMessageDialog(null, "Antrian sudah habis..!");
+        } else {
+            // Ambil nomor antrian paling kecil yang belum dipanggil
+            String nomorTerkecil = Sequel.cariIsi("SELECT nomor FROM antripendaftaran_nomor WHERE status='0' AND date_format(jam, '%Y-%m-%d')=current_date ORDER BY CAST(nomor AS UNSIGNED) ASC LIMIT 1");
+
+            // Set text field nomor antrian dengan nomor yang diperoleh
+            nomor_antrian.setText(nomorTerkecil);
+
+            // Hitung sisa antrian yang belum dipanggil
+            String sisaAntrian = Sequel.cariIsi("SELECT COUNT(nomor) FROM antripendaftaran_nomor WHERE status='0' AND date_format(jam, '%Y-%m-%d')=current_date");
+            sisa_antrian.setText(sisaAntrian);
+
+            // Update status nomor antrian yang dipanggil menjadi '1' (sudah dipanggil) dan tentukan loketnya
+            Sequel.mengedit("antripendaftaran_nomor", "nomor='" + nomorTerkecil + "' AND date_format(jam,'%Y-%m-%d')=current_date", "status='1', loket='" + loket_antrian.getSelectedItem().toString() + "'");
+        }
+    }
+
+    private void UlangActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+        Sequel.mengedit("antripendaftaran_nomor", "nomor='" + nomor_antrian.getText() + "'", "status='1', loket='" + loket_antrian.getSelectedItem().toString() + "'");
+    }
+
+    private void btnPanggilActionPerformed(java.awt.event.ActionEvent evt) {
+        nomor_antrian.setText(txtNoAntriUlang.getText());
+        Sequel.mengedit("antripendaftaran_nomor", "nomor='" + txtNoAntriUlang.getText() + "' and date_format(jam,'%Y-%m-%d')=current_date", "status='1',jam='" + Valid.SetTgl(DTPReg.getSelectedItem() + "") + " " + CmbJam.getSelectedItem() + ":" + CmbMenit.getSelectedItem() + ":" + CmbDetik.getSelectedItem() + "',loket='" + loket_antrian.getSelectedItem().toString() + "'");
+    }
+    // AKHIR TAMBAHAN TOMBOL
+
+    // TAMBAHAN TOMBOL RIWAYAT
+    private void btn_riwayatActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        RMRiwayatPerawatan resume = new RMRiwayatPerawatan(null, true);
+        resume.setNoRm(TNoRM.getText(), TPasien.getText());
+        resume.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+        resume.setLocationRelativeTo(internalFrame1);
+        resume.setVisible(true);
+        this.setCursor(Cursor.getDefaultCursor());
+    }
+
+    // TAMBAHAN FITUR SORTCUT BRIDGING SEP
+    private void BtnLabelNama11ActionPerformed(java.awt.event.ActionEvent evt) {
+        if (tabMode.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Maaf, table masih kosong...!!!!");
+            TNoReg.requestFocus();
+        } else if (TPasien.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            tbPetugas.requestFocus();
+        } else {
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            akses.setform("DlgReg");
+            BPJSDataSEP dlgki = new BPJSDataSEP(null, false);
+            dlgki.setSize(internalFrame1.getWidth() - 20, internalFrame1.getHeight() - 20);
+            dlgki.setLocationRelativeTo(internalFrame1);
+            dlgki.isCek();
+            dlgki.setNoRm2(TNoRw.getText(), DTPReg.getDate(), "2. Ralan", kdpoli.getText(), TPoli.getText(), KdDokter.getText(), TNoReg.getText());
+            dlgki.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }        // TODO add your handling code here:
+    }
+
+    private void BtnLabelNama11KeyPressed(java.awt.event.KeyEvent evt) {
+        // TODO add your handling code here:
+    }
+
 }
