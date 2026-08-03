@@ -2623,6 +2623,25 @@ private void ChkJlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
                                 JOptionPane.showMessageDialog(rootPane,"Maaf stok tidak mencukupi..!!");
                                 tbObat.setValueAt("",row,1);
                             }
+                            // Auto isi embalase dan tuslah flat per obat ranap
+                            try {
+                                double jmlObat = Double.parseDouble(tbObat.getValueAt(row,1).toString());
+                                if(jmlObat > 0) {
+                                    if(tbObat.getValueAt(row,8).toString().equals("0") || 
+                                       tbObat.getValueAt(row,8).toString().equals("") || 
+                                       tbObat.getValueAt(row,8).toString().equals("0.0")) {
+                                        tbObat.setValueAt(embalase, row, 8);
+                                    }
+                                    if(tbObat.getValueAt(row,9).toString().equals("0") || 
+                                       tbObat.getValueAt(row,9).toString().equals("") || 
+                                       tbObat.getValueAt(row,9).toString().equals("0.0")) {
+                                        tbObat.setValueAt(tuslah, row, 9);
+                                    }
+                                }
+                            } catch (Exception e) {
+                                tbObat.setValueAt(embalase, row, 8);
+                                tbObat.setValueAt(tuslah, row, 9);
+                            }
                         }
                         if((tbObat.getSelectedColumn()==16)||(tbObat.getSelectedColumn()==17)){
                             cariBatch();   
@@ -2945,6 +2964,27 @@ private void ChkJlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
                         tbDetailObatRacikan.setValueAt(0,row,11);
                         tbDetailObatRacikan.setValueAt(0,row,12);
                     }
+                    
+                    // Auto isi embalase dan tuslah per obat racikan ranap
+                    try {
+                        double jmlRacik = Double.parseDouble(tbDetailObatRacikan.getValueAt(row,10).toString());
+                        if(jmlRacik > 0) {
+                            if(tbDetailObatRacikan.getValueAt(row,11).toString().equals("0") || 
+                               tbDetailObatRacikan.getValueAt(row,11).toString().equals("") || 
+                               tbDetailObatRacikan.getValueAt(row,11).toString().equals("0.0")) {
+                                tbDetailObatRacikan.setValueAt(embalase, row, 11);
+                            }
+                            if(tbDetailObatRacikan.getValueAt(row,12).toString().equals("0") || 
+                               tbDetailObatRacikan.getValueAt(row,12).toString().equals("") || 
+                               tbDetailObatRacikan.getValueAt(row,12).toString().equals("0.0")) {
+                                tbDetailObatRacikan.setValueAt(tuslah, row, 12);
+                            }
+                        }
+                    } catch (Exception e) {
+                        tbDetailObatRacikan.setValueAt(embalase, row, 11);
+                        tbDetailObatRacikan.setValueAt(tuslah, row, 12);
+                    }
+                    
                 }    
                 if((tbDetailObatRacikan.getSelectedColumn()==16)||(tbDetailObatRacikan.getSelectedColumn()==17)){
                     cariBatch();   
@@ -4287,6 +4327,25 @@ private void ChkJlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
                     if(stokbarang<y){
                         JOptionPane.showMessageDialog(rootPane,"Maaf stok tidak mencukupi..!!");
                         tbObat.setValueAt("",tbObat.getSelectedRow(),1);
+                    }
+                    // Auto isi embalase dan tuslah per obat ranap
+                    try {
+                        double jmlObat = Double.parseDouble(tbObat.getValueAt(row,1).toString());
+                        if(jmlObat > 0) {
+                            if(tbObat.getValueAt(row,8).toString().equals("0") || 
+                               tbObat.getValueAt(row,8).toString().equals("") || 
+                               tbObat.getValueAt(row,8).toString().equals("0.0")) {
+                                tbObat.setValueAt(embalase, row, 8);
+                            }
+                            if(tbObat.getValueAt(row,9).toString().equals("0") || 
+                               tbObat.getValueAt(row,9).toString().equals("") || 
+                               tbObat.getValueAt(row,9).toString().equals("0.0")) {
+                                tbObat.setValueAt(tuslah, row, 9);
+                            }
+                        }
+                    } catch (Exception e) {
+                        tbObat.setValueAt(embalase, row, 8);
+                        tbObat.setValueAt(tuslah, row, 9);
                     }
                 } catch (Exception e) {
                     tbObat.setValueAt(0,tbObat.getSelectedRow(),10);

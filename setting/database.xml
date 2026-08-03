@@ -47,7 +47,7 @@
 
 
     <entry key="URLAPIBPJS">https://apijkn.bpjs-kesehatan.go.id/vclaim-rest/</entry>
-    <entry key="SECRETKEYAPIBPJS">BCM8xFNFed27UCWAtpmMjg==</entry>
+    <entry key="SECRETKEYAPIBPJS">TcRMq2dAmfS0WvxjKnDAyg==</entry>
     <entry key="CONSIDAPIBPJS">aAyrkOcuXhiq24RxZQ3opw==</entry>
     <entry key="USERKEYAPIBPJS">pNWxl3StDjvFN3f0wUb7dLYbNLcGnwC3P3ASzRAcPihga8FYOV8aV4BOn1c2SW+6</entry>
 
@@ -56,16 +56,16 @@
     <entry key="JADIKANBOOKINGSURATKONTROLAPIBPJS">yes</entry>
 
 
-    <entry key="URLAPIAPLICARE">https://new-apijkn.bpjs-kesehatan.go.id/antreanrs/</entry>
-    <entry key="SECRETKEYAPIAPLICARE">BCM8xFNFed27UCWAtpmMjg==</entry>
+    <entry key="URLAPIAPLICARE">https://new-api.bpjs-kesehatan.go.id/aplicaresws</entry>
+    <entry key="SECRETKEYAPIAPLICARE">TcRMq2dAmfS0WvxjKnDAyg==</entry>
     <entry key="CONSIDAPIAPLICARE">aAyrkOcuXhiq24RxZQ3opw==</entry>
-    <entry key="USERKEYAPIAPLICARE">DseOq7sqe2YpcZkMWRPxzCEzSJaYEfQJYeSZZJlVEBpxrAYNhRzjmqruRW169V4q</entry>
+    <entry key="USERKEYAPIAPLICARE">/ljj/nRyOf/ACkf4mGmLSg==</entry>
 
 
     <entry key="URLAPIMOBILEJKN">https://new-apijkn.bpjs-kesehatan.go.id/antreanrs/</entry>
-    <entry key="SECRETKEYAPIMOBILEJKN">BCM8xFNFed27UCWAtpmMjg==</entry>
+    <entry key="SECRETKEYAPIMOBILEJKN">TcRMq2dAmfS0WvxjKnDAyg==</entry>
     <entry key="CONSIDAPIMOBILEJKN">aAyrkOcuXhiq24RxZQ3opw==</entry>
-    <entry key="USERKEYAPIMOBILEJKN">DseOq7sqe2YpcZkMWRPxzCEzSJaYEfQJYeSZZJlVEBpxrAYNhRzjmqruRW169V4q</entry>
+    <entry key="USERKEYAPIMOBILEJKN">pNWxl3StDjvFN3f0wUb7dLYbNLcGnwC3P3ASzRAcPihga8FYOV8aV4BOn1c2SW+6</entry>
     <entry key="ADDANTRIANAPIMOBILEJKN">yes</entry>
 
 
@@ -77,9 +77,9 @@
 
 
     <entry key="URLAPIICARE">https://apijkn.bpjs-kesehatan.go.id/wsihs</entry>
-    <entry key="SECRETKEYAPIICARE">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="CONSIDAPIICARE">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="USERKEYAPIICARE">l4nh5eVYrLAER/I2A4b3Tw==</entry>
+    <entry key="SECRETKEYAPIICARE">TcRMq2dAmfS0WvxjKnDAyg==</entry>
+    <entry key="CONSIDAPIICARE">aAyrkOcuXhiq24RxZQ3opw==</entry>
+    <entry key="USERKEYAPIICARE">pNWxl3StDjvFN3f0wUb7dLYbNLcGnwC3P3ASzRAcPihga8FYOV8aV4BOn1c2SW+6</entry>
 
 
     <entry key="URLAPISMARTCLAIM">https://dvlp.bpjs-kesehatan.go.id/eRekamMedis</entry>
@@ -113,8 +113,8 @@
 
 
     <entry key="URLAPISIRS">https://sirs.kemkes.go.id/fo/index.php/Fasyankes</entry>
-    <entry key="IDSIRS">jhPSu1xlQkh+stLFrcin5w==</entry>
-    <entry key="PASSSIRS">BYptJvsq544HinWKjX8VTA==</entry>
+    <entry key="IDSIRS">hN8S+NkXMdfD1PRYDm7p+g==</entry>
+    <entry key="PASSSIRS">+eMleH1B9wkGPPAqCYxblw==</entry>
 
 
     <entry key="URLAPISITT">http://sirs.yankes.kemkes.go.id/sirsservice/sitbtraining/sitb/senddata</entry>
@@ -124,7 +124,7 @@
 
 
     <entry key="URLAPICORONA">https://sirs.kemkes.go.id/fo/index.php    </entry>
-    <entry key="IDCORONA">l4nh5eVYrLAER/I2A4b3Tw==</entry>
+    <entry key="IDCORONA">hN8S+NkXMdfD1PRYDm7p+g==</entry>
     <entry key="PASSCORONA">l4nh5eVYrLAER/I2A4b3Tw==</entry>
 
 
@@ -259,4 +259,9 @@
     <entry key="PORTDUTAPARKING">nioxtijcpDaKSUiUiP5FAg==</entry>
     <entry key="USERDUTAPARKING">kMR3WfAwUK6MbhCyydxa0g==</entry>
     <entry key="PASDUTAPARKING">l4nh5eVYrLAER/I2A4b3Tw==</entry>
+    
+    <entry key="KEYEKLAIM">LrJOr4b0qByF0k/irYDm2xjo0DDJ03H/U8d1LEFqal6IMAsyZLNbDS4auO0eLXb8gTuwbxKr3MEuqjt2h2kjAR+v2DGS/pgTrA7uX784UEs=</entry>
+    <entry key="WSEKLAIM">6r51QLoKgxNkMzNK9Ipa0dupSZVig+lWs5ptlbLpzsL5iLZScUw/PmbGzcP0nqSO</entry>
+    <entry key="KELASRSEKLAIM">DS</entry>
+    
 </properties>

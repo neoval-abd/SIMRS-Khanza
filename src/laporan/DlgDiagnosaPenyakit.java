@@ -11,6 +11,7 @@
 
 package laporan;
 
+import bridging.INACBGDataIDRG;
 import fungsi.batasInput;
 import fungsi.koneksiDB;
 import fungsi.sekuel;
@@ -32,6 +33,7 @@ import javax.swing.event.DocumentEvent;
 public class DlgDiagnosaPenyakit extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private final sekuel Sequel=new sekuel();
+    private String Verif;
 
     /** Creates new form DlgPemberianObat
      * @param parent
@@ -136,6 +138,7 @@ public class DlgDiagnosaPenyakit extends javax.swing.JDialog {
         BtnHapus = new widget.Button();
         BtnPrint = new widget.Button();
         BtnAll = new widget.Button();
+        BtnINACBG = new widget.Button();
         jLabel10 = new widget.Label();
         LCount = new widget.Label();
         BtnKeluar = new widget.Button();
@@ -272,6 +275,24 @@ public class DlgDiagnosaPenyakit extends javax.swing.JDialog {
         });
         panelGlass8.add(BtnAll);
 
+        BtnINACBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/kemenkes.png"))); // NOI18N
+        BtnINACBG.setMnemonic('M');
+        BtnINACBG.setText("Bridging INACBG");
+        BtnINACBG.setToolTipText("Alt+M");
+        BtnINACBG.setName("BtnINACBG"); // NOI18N
+        BtnINACBG.setPreferredSize(new java.awt.Dimension(180, 30));
+        BtnINACBG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnINACBGActionPerformed(evt);
+            }
+        });
+        BtnINACBG.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                BtnINACBGKeyPressed(evt);
+            }
+        });
+        panelGlass8.add(BtnINACBG);
+
         jLabel10.setText("Record :");
         jLabel10.setName("jLabel10"); // NOI18N
         jLabel10.setPreferredSize(new java.awt.Dimension(90, 23));
@@ -312,7 +333,7 @@ public class DlgDiagnosaPenyakit extends javax.swing.JDialog {
         jLabel14.setPreferredSize(new java.awt.Dimension(63, 23));
         panelGlass9.add(jLabel14);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2019" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-05-2026" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -324,7 +345,7 @@ public class DlgDiagnosaPenyakit extends javax.swing.JDialog {
         jLabel19.setPreferredSize(new java.awt.Dimension(18, 23));
         panelGlass9.add(jLabel19);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2019" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-05-2026" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -593,6 +614,73 @@ public class DlgDiagnosaPenyakit extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_formWindowActivated
 
+    private void BtnINACBGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnINACBGActionPerformed
+        // TODO add your handling code here:
+        if (TNoRw.getText().trim().equals("") || TPasien.getText().trim().equals("")) {
+                Valid.textKosong(TNoRw, "No.Rawat");
+                return;
+            }
+
+        // cek verifikator
+        if (akses.getkode().equals("Admin Utama")) {
+            Verif = Sequel.cariIsi(
+                "select no_ik from inacbg_coder_nik limit 1"
+            );
+        } else {
+            Verif = Sequel.cariIsi(
+                "select no_ik from inacbg_coder_nik where nik='" 
+                + akses.getkode() + "'"
+            );
+        }
+
+        if (Verif.equals("")) {
+            JOptionPane.showMessageDialog(null, "Maaf, Anda bukan VERIFIKATOR KLAIM !!!");
+        } else {
+            if (Sequel.cariIsi(
+                    "select no_sep from bridging_sep where no_rawat='" 
+                    + TNoRw.getText() + "'"
+                ).equals("")) {
+
+                JOptionPane.showMessageDialog(null, "Maaf, TIDAK ADA NOMOR SEP PASIEN INI !!!");
+
+            } else {
+
+                this.setCursor(java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.WAIT_CURSOR));
+
+                INACBGDataIDRG ina = new INACBGDataIDRG(
+                    (java.awt.Frame) javax.swing.SwingUtilities.getWindowAncestor(this), 
+                    true
+                );
+
+                ina.setSize(
+                    internalFrame1.getWidth() - 20,
+                    internalFrame1.getHeight() - 20
+                );
+
+                ina.setLocationRelativeTo(internalFrame1);
+                
+                String nosep = Sequel.cariIsi(
+                    "select no_sep from bridging_sep where no_rawat='" + TNoRw.getText() + "'"
+                );
+
+                ina.setDiagnosa(
+                    TNoRw.getText(),    
+                    TNoRM.getText(),    
+                    TPasien.getText(),
+                    nosep
+                );
+
+                ina.setVisible(true);
+
+                this.setCursor(java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.DEFAULT_CURSOR));
+            }
+        }
+    }//GEN-LAST:event_BtnINACBGActionPerformed
+
+    private void BtnINACBGKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnINACBGKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnINACBGKeyPressed
+
     /**
     * @param args the command line arguments
     */
@@ -614,6 +702,7 @@ public class DlgDiagnosaPenyakit extends javax.swing.JDialog {
     private widget.Button BtnBatal;
     private widget.Button BtnCari;
     private widget.Button BtnHapus;
+    private widget.Button BtnINACBG;
     private widget.Button BtnKeluar;
     private widget.Button BtnPrint;
     private widget.Button BtnSimpan;

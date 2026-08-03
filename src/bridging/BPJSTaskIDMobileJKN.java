@@ -57,7 +57,7 @@ public final class BPJSTaskIDMobileJKN extends javax.swing.JDialog {
     private JsonNode response;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private volatile boolean ceksukses = false;
-
+    
     /** Creates new form DlgJnsPerawatanRalan
      * @param parent
      * @param modal */
@@ -443,6 +443,22 @@ public final class BPJSTaskIDMobileJKN extends javax.swing.JDialog {
                                         list.path("wakturs").asText(),list.path("waktu").asText(),list.path("taskname").asText(),
                                         list.path("taskid").asText()
                                     });
+                                    // Di blok pertama, setelah tabMode.addRow(...)
+                                    String upsertSql =
+                                        "INSERT INTO bpjs_taskid_live (no_rawat, kodebooking, taskid, taskname, wakturs, waktu) " +
+                                        "VALUES (?, ?, ?, ?, ?, ?) " +
+                                        "ON DUPLICATE KEY UPDATE taskname=VALUES(taskname), wakturs=VALUES(wakturs), waktu=VALUES(waktu), tgl_sync=NOW()";
+                                    try (PreparedStatement psUpsert = koneksi.prepareStatement(upsertSql)) {
+                                        psUpsert.setString(1, rs.getString("no_rawat"));
+                                        psUpsert.setString(2, rs.getString("no_rawat"));
+                                        psUpsert.setInt   (3, list.path("taskid").asInt());
+                                        psUpsert.setString(4, list.path("taskname").asText());
+                                        psUpsert.setString(5, fixDatetime(list.path("wakturs").asText()));
+                                        psUpsert.setString(6, fixDatetime(list.path("waktu").asText()));
+                                        psUpsert.executeUpdate();
+                                    } catch (Exception exUpsert) {
+                                        System.out.println("Gagal simpan taskid lokal: " + exUpsert);
+                                    }
                                 }
                             }
                         }else {
@@ -471,7 +487,7 @@ public final class BPJSTaskIDMobileJKN extends javax.swing.JDialog {
         
         try{
             ps=koneksi.prepareStatement(
-                   "SELECT referensi_mobilejkn_bpjs.nobooking,reg_periksa.no_rkm_medis,pasien.nm_pasien,referensi_mobilejkn_bpjs.nohp,referensi_mobilejkn_bpjs.nomorkartu,"+
+                   "SELECT referensi_mobilejkn_bpjs.nobooking,referensi_mobilejkn_bpjs.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,referensi_mobilejkn_bpjs.nohp,referensi_mobilejkn_bpjs.nomorkartu,"+
                    "referensi_mobilejkn_bpjs.nik,referensi_mobilejkn_bpjs.tanggalperiksa,poliklinik.nm_poli,dokter.nm_dokter "+
                    "FROM referensi_mobilejkn_bpjs INNER JOIN reg_periksa ON referensi_mobilejkn_bpjs.no_rawat=reg_periksa.no_rawat "+
                    "INNER JOIN pasien ON reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
@@ -526,6 +542,22 @@ public final class BPJSTaskIDMobileJKN extends javax.swing.JDialog {
                                         list.path("wakturs").asText(),list.path("waktu").asText(),list.path("taskname").asText(),
                                         list.path("taskid").asText()
                                     });
+                                    // Simpan/update ke tabel lokal bpjs_taskid_live
+                                    String upsertSql = 
+                                        "INSERT INTO bpjs_taskid_live (no_rawat, kodebooking, taskid, taskname, wakturs, waktu) " +
+                                        "VALUES (?, ?, ?, ?, ?, ?) " +
+                                        "ON DUPLICATE KEY UPDATE taskname=VALUES(taskname), wakturs=VALUES(wakturs), waktu=VALUES(waktu), tgl_sync=NOW()";
+                                    try (PreparedStatement psUpsert = koneksi.prepareStatement(upsertSql)) {
+                                        psUpsert.setString(1, rs.getString("no_rawat"));
+                                        psUpsert.setString(2, rs.getString("nobooking"));
+                                        psUpsert.setInt   (3, list.path("taskid").asInt());
+                                        psUpsert.setString(4, list.path("taskname").asText());
+                                        psUpsert.setString(5, fixDatetime(list.path("wakturs").asText()));
+                                        psUpsert.setString(6, fixDatetime(list.path("waktu").asText()));
+                                        psUpsert.executeUpdate();
+                                    } catch (Exception exUpsert) {
+                                        System.out.println("Gagal simpan taskid lokal: " + exUpsert);
+                                    }
                                 }
                             }
                         }else {
@@ -578,6 +610,18 @@ public final class BPJSTaskIDMobileJKN extends javax.swing.JDialog {
         } catch (RejectedExecutionException ex) {
             ceksukses = false;
         }
+    }
+    
+    private String fixDatetime(String raw) {
+        if (raw == null || raw.isEmpty()) return null;
+        raw = raw.trim().replace("T", " ");
+        if (raw.length() < 19) return null;
+        raw = raw.substring(0, 19);
+        // format dd-MM-yyyy → ubah ke yyyy-MM-dd
+        if (raw.charAt(2) == '-' && raw.charAt(5) == '-') {
+            return raw.substring(6,10) + "-" + raw.substring(3,5) + "-" + raw.substring(0,2) + " " + raw.substring(11,19);
+        }
+        return raw; // sudah yyyy-MM-dd
     }
     
     @Override

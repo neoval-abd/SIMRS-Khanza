@@ -2031,10 +2031,12 @@ public class frmUtama extends javax.swing.JFrame {
         internalFrame3.add(panelGlass1);
         panelGlass1.setBounds(0, 25, 342, 80);
 
+        BtnLogin.setBackground(new java.awt.Color(255, 255, 255));
         BtnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/lock.png"))); // NOI18N
         BtnLogin.setMnemonic('Z');
         BtnLogin.setText("Log-in");
         BtnLogin.setToolTipText("Alt+Z");
+        BtnLogin.setGlassColor(new java.awt.Color(255, 255, 255));
         BtnLogin.setName("BtnLogin"); // NOI18N
         BtnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2044,10 +2046,12 @@ public class frmUtama extends javax.swing.JFrame {
         internalFrame3.add(BtnLogin);
         BtnLogin.setBounds(12, 110, 105, 32);
 
+        BtnCancel.setBackground(new java.awt.Color(255, 255, 255));
         BtnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/exit.png"))); // NOI18N
         BtnCancel.setMnemonic('Y');
         BtnCancel.setText("Batal");
         BtnCancel.setToolTipText("Alt+Y");
+        BtnCancel.setGlassColor(new java.awt.Color(255, 255, 255));
         BtnCancel.setName("BtnCancel"); // NOI18N
         BtnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2168,7 +2172,7 @@ public class frmUtama extends javax.swing.JFrame {
 
         tanggal.setEditable(false);
         tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17/03/2026" }));
+        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26/05/2026" }));
         tanggal.setDisplayFormat("dd/MM/yyyy");
         tanggal.setName("tanggal"); // NOI18N
         tanggal.setOpaque(false);
@@ -7561,7 +7565,7 @@ public class frmUtama extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("YASKI & IT RSU ADELLA");
+        jLabel7.setText("YASKI & IT RS ADELLA");
         jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jLabel7.setIconTextGap(3);
         jLabel7.setName("jLabel7"); // NOI18N
@@ -7590,7 +7594,7 @@ public class frmUtama extends javax.swing.JFrame {
         LblIP1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         LblIP1.setForeground(new java.awt.Color(255, 255, 255));
         LblIP1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        LblIP1.setText("v.1.20260317");
+        LblIP1.setText("v.1.20260622");
         LblIP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         LblIP1.setName("LblIP1"); // NOI18N
         LblIP1.setPreferredSize(new java.awt.Dimension(160, 23));

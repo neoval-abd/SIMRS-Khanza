@@ -6,7 +6,7 @@
 	<property name="ireport.y" value="0"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="0"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="1000"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="koneksi"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="parameter" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
@@ -28,19 +28,57 @@
 	<parameter name="lebihsatujam" class="java.lang.String"/>
 	<parameter name="rata" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select reg_periksa.no_rkm_medis,pasien.nm_pasien,dokter.nm_dokter,poliklinik.nm_poli,
-reg_periksa.tgl_registrasi,reg_periksa.jam_reg,pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat,
-round((TIME_TO_SEC(concat(pemeriksaan_ralan.tgl_perawatan,' ',pemeriksaan_ralan.jam_rawat))-TIME_TO_SEC(concat(reg_periksa.tgl_registrasi,' ',reg_periksa.jam_reg)))/60,2) as durasi 
-from reg_periksa inner join dokter inner join pasien inner join poliklinik inner join pemeriksaan_ralan 
-on reg_periksa.kd_dokter=dokter.kd_dokter 
-and reg_periksa.no_rkm_medis=pasien.no_rkm_medis
-and reg_periksa.kd_poli=poliklinik.kd_poli 
-and reg_periksa.no_rawat=pemeriksaan_ralan.no_rawat
-where reg_periksa.tgl_registrasi between $P{tanggal1} and $P{tanggal2} and poliklinik.nm_poli like $P{parameter} or 
-reg_periksa.tgl_registrasi between $P{tanggal1} and $P{tanggal2} and dokter.nm_dokter like $P{parameter} or 
-reg_periksa.tgl_registrasi between $P{tanggal1} and $P{tanggal2} and reg_periksa.no_rkm_medis like $P{parameter} or 
-reg_periksa.tgl_registrasi between $P{tanggal1} and $P{tanggal2} and pasien.nm_pasien like $P{parameter} 
-order by reg_periksa.tgl_registrasi,reg_periksa.jam_reg]]>
+		<![CDATA[select 
+			reg_periksa.no_rkm_medis,
+			pasien.nm_pasien,
+			dokter.nm_dokter,
+			poliklinik.nm_poli,
+			reg_periksa.tgl_registrasi,
+			reg_periksa.jam_reg,
+			min(pemeriksaan_ralan.tgl_perawatan) as tgl_perawatan,
+			min(pemeriksaan_ralan.jam_rawat) as jam_rawat,
+			
+			round(
+			(
+			TIME_TO_SEC(
+			concat(
+			min(pemeriksaan_ralan.tgl_perawatan),' ',
+			min(pemeriksaan_ralan.jam_rawat)
+			)
+			)
+			-
+			TIME_TO_SEC(
+			concat(
+			reg_periksa.tgl_registrasi,' ',
+			reg_periksa.jam_reg
+			)
+			)
+			)/60,2
+			) as durasi
+			
+			from reg_periksa
+			inner join dokter
+			inner join pasien
+			inner join poliklinik
+			inner join pemeriksaan_ralan
+			
+			on reg_periksa.kd_dokter=dokter.kd_dokter
+			and reg_periksa.no_rkm_medis=pasien.no_rkm_medis
+			and reg_periksa.kd_poli=poliklinik.kd_poli
+			and reg_periksa.no_rawat=pemeriksaan_ralan.no_rawat
+			
+			where 
+			reg_periksa.tgl_registrasi between $P{tanggal1} and $P{tanggal2}
+			and (
+			poliklinik.nm_poli like $P{parameter}
+			or dokter.nm_dokter like $P{parameter}
+			or reg_periksa.no_rkm_medis like $P{parameter}
+			or pasien.nm_pasien like $P{parameter}
+			)
+			
+			group by reg_periksa.no_rawat
+			
+			order by reg_periksa.tgl_registrasi,reg_periksa.jam_reg]]>
 	</queryString>
 	<field name="no_rkm_medis" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="no_rkm_medis"/>

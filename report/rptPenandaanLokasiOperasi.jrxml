@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- RM.36a/b Formulir Penandaan Lokasi Operasi (Wanita/Pria) - parameter-driven -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptPenandaanLokasiOperasi" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e4c5d6f7-a8b9-4ac0-9d1e-334455667788">
+	<parameter name="namars" class="java.lang.String"/>
+	<parameter name="alamatrs" class="java.lang.String"/>
+	<parameter name="kotars" class="java.lang.String"/>
+	<parameter name="propinsirs" class="java.lang.String"/>
+	<parameter name="kontakrs" class="java.lang.String"/>
+	<parameter name="emailrs" class="java.lang.String"/>
+	<parameter name="norm" class="java.lang.String"/>
+	<parameter name="nama" class="java.lang.String"/>
+	<parameter name="tgllahir" class="java.lang.String"/>
+	<parameter name="rmkode" class="java.lang.String"/>
+	<parameter name="judul2" class="java.lang.String"/>
+	<parameter name="info" class="java.lang.String"/>
+	<parameter name="petugas" class="java.lang.String"/>
+	<parameter name="revisi" class="java.lang.String"/>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<parameter name="diagram" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="760" splitType="Stretch">
+			<image onErrorType="Blank">
+				<reportElement x="0" y="0" width="45" height="45" uuid="e0000001-0000-0000-0000-000000000001"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="50" y="0" width="280" height="13" uuid="e0000001-0000-0000-0000-000000000002"/>
+				<textElement><font fontName="SansSerif" size="10" isBold="true"/></textElement>
+				<textFieldExpression><![CDATA[$P{namars}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="50" y="13" width="280" height="11" uuid="e0000001-0000-0000-0000-000000000003"/>
+				<textElement><font fontName="SansSerif" size="6"/></textElement>
+				<textFieldExpression><![CDATA[$P{alamatrs}+", "+$P{kotars}+", "+$P{propinsirs}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="50" y="24" width="280" height="11" uuid="e0000001-0000-0000-0000-000000000004"/>
+				<textElement><font fontName="SansSerif" size="6"/></textElement>
+				<textFieldExpression><![CDATA["Telp: "+$P{kontakrs}+"  Email: "+$P{emailrs}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="46" width="555" height="1" uuid="e0000001-0000-0000-0000-000000000005"/>
+				<graphicElement><pen lineWidth="1.5"/></graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="338" y="0" width="42" height="20" uuid="e0000001-0000-0000-0000-000000000006"/>
+				<box><pen lineWidth="0.75"/></box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"><font fontName="SansSerif" size="9" isBold="true"/></textElement>
+				<textFieldExpression><![CDATA[$P{rmkode}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="388" y="0" width="167" height="38" uuid="e0000001-0000-0000-0000-000000000007"/>
+				<graphicElement><pen lineWidth="0.75"/></graphicElement>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="392" y="2" width="159" height="11" uuid="e0000001-0000-0000-0000-000000000008"/>
+				<textElement><font fontName="SansSerif" size="7"/></textElement>
+				<textFieldExpression><![CDATA["No. RM    : "+$P{norm}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="392" y="14" width="159" height="11" uuid="e0000001-0000-0000-0000-000000000009"/>
+				<textElement><font fontName="SansSerif" size="7"/></textElement>
+				<textFieldExpression><![CDATA["Nama      : "+$P{nama}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="392" y="26" width="159" height="11" uuid="e0000001-0000-0000-0000-00000000000a"/>
+				<textElement><font fontName="SansSerif" size="7"/></textElement>
+				<textFieldExpression><![CDATA["Tgl Lahir : "+$P{tgllahir}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="52" width="555" height="20" uuid="e0000001-0000-0000-0000-00000000000b"/>
+				<textElement textAlignment="Center"><font fontName="SansSerif" size="13" isBold="true"/></textElement>
+				<textFieldExpression><![CDATA["FORMULIR PENANDAAN LOKASI OPERASI"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="72" width="555" height="14" uuid="e0000001-0000-0000-0000-00000000000c"/>
+				<textElement textAlignment="Center"><font fontName="SansSerif" size="10" isBold="true"/></textElement>
+				<textFieldExpression><![CDATA["( "+$P{judul2}+" )"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="92" width="555" height="60" uuid="e0000001-0000-0000-0000-00000000000d"/>
+				<box leftPadding="4" topPadding="3"><pen lineWidth="0.5"/></box>
+				<textElement><font fontName="SansSerif" size="8"/></textElement>
+				<textFieldExpression><![CDATA[$P{info}]]></textFieldExpression>
+			</textField>
+			<image onErrorType="Blank" scaleImage="RetainShape" hAlign="Center" vAlign="Top">
+				<reportElement x="80" y="160" width="395" height="500" uuid="e0000001-0000-0000-0000-00000000000e"/>
+				<imageExpression><![CDATA[$P{diagram}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="330" y="668" width="225" height="40" uuid="e0000001-0000-0000-0000-00000000000f"/>
+				<textElement textAlignment="Center"><font fontName="SansSerif" size="8"/></textElement>
+				<textFieldExpression><![CDATA[$P{petugas}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="712" width="300" height="12" uuid="e0000001-0000-0000-0000-000000000010"/>
+				<textElement><font fontName="SansSerif" size="8" isItalic="true"/></textElement>
+				<textFieldExpression><![CDATA[$P{revisi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

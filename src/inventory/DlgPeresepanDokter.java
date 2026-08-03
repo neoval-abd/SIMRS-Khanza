@@ -120,7 +120,8 @@ public final class DlgPeresepanDokter extends javax.swing.JDialog {
         for (i = 0; i < 12; i++) {
             TableColumn column = tbResep.getColumnModel().getColumn(i);
             if(i==0){
-                column.setPreferredWidth(20);
+                column.setMinWidth(0);
+                column.setMaxWidth(0);
             }else if(i==1){
                 column.setPreferredWidth(45);
             }else if(i==2){
@@ -177,7 +178,8 @@ public final class DlgPeresepanDokter extends javax.swing.JDialog {
         for (i = 0; i < 7; i++) {
             TableColumn column = tbObatResepRacikan.getColumnModel().getColumn(i);
             if(i==0){
-                column.setPreferredWidth(25);
+                column.setMinWidth(0);
+                column.setMaxWidth(0);
             }else if(i==1){
                 column.setPreferredWidth(250);
             }else if(i==2){
@@ -230,7 +232,8 @@ public final class DlgPeresepanDokter extends javax.swing.JDialog {
         for (i = 0; i < 16; i++) {
             TableColumn column = tbDetailResepObatRacikan.getColumnModel().getColumn(i);
             if(i==0){
-                column.setPreferredWidth(25);
+                column.setMinWidth(0);
+                column.setMaxWidth(0);
             }else if(i==1){
                 column.setPreferredWidth(75);
             }else if(i==2){
@@ -1011,6 +1014,20 @@ public final class DlgPeresepanDokter extends javax.swing.JDialog {
     }//GEN-LAST:event_BtnTambahActionPerformed
 
 private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSimpanActionPerformed
+        // Paksa commit sel yang masih dalam mode editing sebelum baca data
+        if (tbResep.isEditing()) {
+            tbResep.getCellEditor().stopCellEditing();
+        }
+        if (tbObatResepRacikan.isEditing()) {
+            tbObatResepRacikan.getCellEditor().stopCellEditing();
+        }
+        if (tbDetailResepObatRacikan.isEditing()) {
+            tbDetailResepObatRacikan.getCellEditor().stopCellEditing();
+        }
+    
+        // Hitung ulang total setelah data ter-commit, biar ttl akurat
+        hitungResep();
+        
         if(TNoRw.getText().trim().equals("")||TPasien.getText().trim().equals("")){
             Valid.textKosong(TNoRw,"pasien");
         }else if(KdDokter.getText().trim().equals("")||NmDokter.getText().trim().equals("")){

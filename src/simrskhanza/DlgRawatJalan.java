@@ -227,6 +227,8 @@ import javax.swing.event.DocumentListener;
 // TAMBAHAN FITUR GRAFIK TTV
 import java.awt.Toolkit;
 import grafikanalisa.grafiksqlttv;
+import java.awt.Color;
+import java.awt.Font;
 
 // TAMBAHAN FITRU PINTASAN PENUNJANG
 import rekammedis.RMRiwayatPenunjang;
@@ -3981,13 +3983,13 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         FormMenu.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 1, 1));
 
         // TAMBAHAN FITUR PINTASAN
-        BtnTemplateResep1.setForeground(new java.awt.Color(0, 0, 0));
+        BtnTemplateResep1.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnTemplateResep1.setBackground(new Color(200,230,201));
+        BtnTemplateResep1.setForeground(new Color(20,70,25));
         BtnTemplateResep1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Agenda-1-16x16.png"))); // NOI18N
         BtnTemplateResep1.setMnemonic('4');
         BtnTemplateResep1.setText("Input Resep");
         BtnTemplateResep1.setToolTipText("");
-        BtnTemplateResep1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnTemplateResep1.setGlassColor(new java.awt.Color(255, 153, 153));
         BtnTemplateResep1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnTemplateResep1.setName("BtnTemplateResep1"); // NOI18N
         BtnTemplateResep1.addActionListener(new java.awt.event.ActionListener() {
@@ -3996,15 +3998,15 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(BtnTemplateResep1);
-        BtnTemplateResep1.setBounds(930, 50, 160, 26);
+        BtnTemplateResep1.setBounds(930, 50, 165, 26);
 
-        BtnPintasanResume.setForeground(new java.awt.Color(0, 0, 0));
+        BtnPintasanResume.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnPintasanResume.setBackground(new Color(200,230,201));
+        BtnPintasanResume.setForeground(new Color(20,70,25));
         BtnPintasanResume.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Edit.png"))); // NOI18N
         BtnPintasanResume.setMnemonic('4');
         BtnPintasanResume.setText("Resume Pasien");
         BtnPintasanResume.setToolTipText("");
-        BtnPintasanResume.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnPintasanResume.setGlassColor(new java.awt.Color(255, 153, 153));
         BtnPintasanResume.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnPintasanResume.setName("BtnPintasanResume"); // NOI18N
         BtnPintasanResume.addActionListener(new java.awt.event.ActionListener() {
@@ -4013,15 +4015,15 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(BtnPintasanResume);
-        BtnPintasanResume.setBounds(930, 80, 160, 26);
+        BtnPintasanResume.setBounds(930, 80, 165, 26);
 
-        BtnHasilRadiologi.setForeground(new java.awt.Color(0, 0, 0));
+        BtnHasilRadiologi.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnHasilRadiologi.setBackground(new Color(200,230,201));
+        BtnHasilRadiologi.setForeground(new Color(20,70,25));
         BtnHasilRadiologi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/TestTubes.png"))); // NOI18N
         BtnHasilRadiologi.setMnemonic('4');
         BtnHasilRadiologi.setText("Riwayat Penunjang");
         BtnHasilRadiologi.setToolTipText("");
-        BtnHasilRadiologi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnHasilRadiologi.setGlassColor(new java.awt.Color(0, 255, 0));
         BtnHasilRadiologi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnHasilRadiologi.setName("BtnHasilRadiologi"); // NOI18N
         BtnHasilRadiologi.addActionListener(new java.awt.event.ActionListener() {
@@ -4030,16 +4032,16 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(BtnHasilRadiologi);
-        BtnHasilRadiologi.setBounds(930, 130, 160, 26);
+        BtnHasilRadiologi.setBounds(930, 130, 165, 26);
 
         // TAMBAHAN FITUR PINTASAN RIWAYAT PENGOBATAN
-        BtnHasilPengobatan.setForeground(new java.awt.Color(0, 0, 0));
+        BtnHasilPengobatan.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnHasilPengobatan.setBackground(new Color(200,230,201));
+        BtnHasilPengobatan.setForeground(new Color(20,70,25));
         BtnHasilPengobatan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Vial-Pills.png"))); // NOI18N
         BtnHasilPengobatan.setMnemonic('4');
         BtnHasilPengobatan.setText("Riwayat Pengobatan");
         BtnHasilPengobatan.setToolTipText("");
-        BtnHasilPengobatan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnHasilPengobatan.setGlassColor(new java.awt.Color(0, 255, 0));
         BtnHasilPengobatan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnHasilPengobatan.setName("BtnHasilPengobatan"); // NOI18N
         BtnHasilPengobatan.addActionListener(new java.awt.event.ActionListener() {
@@ -4048,16 +4050,16 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(BtnHasilPengobatan);
-        BtnHasilPengobatan.setBounds(930, 160, 160, 26);
+        BtnHasilPengobatan.setBounds(930, 160, 165, 26);
 
         // TAMBAHAN FITUR PINTASAN RIWAYAT OPERASI
-        BtnHasilPengobatan1.setForeground(new java.awt.Color(0, 0, 0));
+        BtnHasilPengobatan1.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnHasilPengobatan1.setBackground(new Color(200,230,201));
+        BtnHasilPengobatan1.setForeground(new Color(20,70,25));
         BtnHasilPengobatan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Surgeon SH.png"))); // NOI18N
         BtnHasilPengobatan1.setMnemonic('4');
         BtnHasilPengobatan1.setText("Riwayat Operasi");
         BtnHasilPengobatan1.setToolTipText("");
-        BtnHasilPengobatan1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnHasilPengobatan1.setGlassColor(new java.awt.Color(0, 255, 0));
         BtnHasilPengobatan1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnHasilPengobatan1.setName("BtnHasilPengobatan1"); // NOI18N
         BtnHasilPengobatan1.addActionListener(new java.awt.event.ActionListener() {
@@ -4066,16 +4068,16 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(BtnHasilPengobatan1);
-        BtnHasilPengobatan1.setBounds(930, 190, 160, 26);
+        BtnHasilPengobatan1.setBounds(930, 190, 165, 26);
 
         // TAMBAHAN FITUR PINTASAN PERMINTAAN PENUNJANG
-        BtnInputLAB.setForeground(new java.awt.Color(0, 0, 0));
+        BtnInputLAB.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnInputLAB.setBackground(new Color(200,230,201));
+        BtnInputLAB.setForeground(new Color(20,70,25));
         BtnInputLAB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Bar Chart.png"))); // NOI18N
         BtnInputLAB.setMnemonic('4');
         BtnInputLAB.setText("Permintaan LAB");
         BtnInputLAB.setToolTipText("");
-        BtnInputLAB.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnInputLAB.setGlassColor(new java.awt.Color(255, 153, 153));
         BtnInputLAB.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnInputLAB.setName("BtnInputLAB"); // NOI18N
         BtnInputLAB.addActionListener(new java.awt.event.ActionListener() {
@@ -4084,15 +4086,15 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(BtnInputLAB);
-        BtnInputLAB.setBounds(1100, 50, 160, 26);
+        BtnInputLAB.setBounds(1100, 50, 165, 26);
 
-        BtnInputRAD.setForeground(new java.awt.Color(0, 0, 0));
+        BtnInputRAD.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnInputRAD.setBackground(new Color(200,230,201));
+        BtnInputRAD.setForeground(new Color(20,70,25));
         BtnInputRAD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/barranap.png"))); // NOI18N
         BtnInputRAD.setMnemonic('4');
         BtnInputRAD.setText("Permintaan RAD");
         BtnInputRAD.setToolTipText("");
-        BtnInputRAD.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnInputRAD.setGlassColor(new java.awt.Color(255, 153, 153));
         BtnInputRAD.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnInputRAD.setName("BtnInputRAD"); // NOI18N
         BtnInputRAD.addActionListener(new java.awt.event.ActionListener() {
@@ -4101,16 +4103,16 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(BtnInputRAD);
-        BtnInputRAD.setBounds(1100, 80, 160, 26);
+        BtnInputRAD.setBounds(1100, 80, 165, 26);
 
         // TAMBAHAN FITUR GRAFIK TTV
-        BtnBalanceCairan1.setForeground(new java.awt.Color(0, 0, 0));
+        BtnBalanceCairan1.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnBalanceCairan1.setBackground(new Color(200,230,201));
+        BtnBalanceCairan1.setForeground(new Color(20,70,25));
         BtnBalanceCairan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Bar Chart.png"))); // NOI18N
         BtnBalanceCairan1.setMnemonic('4');
         BtnBalanceCairan1.setText("Grafik TTV");
         BtnBalanceCairan1.setToolTipText("");
-        BtnBalanceCairan1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnBalanceCairan1.setGlassColor(new java.awt.Color(255, 153, 153));
         BtnBalanceCairan1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnBalanceCairan1.setName("BtnBalanceCairan1"); // NOI18N
         BtnBalanceCairan1.addActionListener(new java.awt.event.ActionListener() {
@@ -4119,18 +4121,17 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(BtnBalanceCairan1);
-        BtnBalanceCairan1.setBounds(930, 220, 160, 26);
+        BtnBalanceCairan1.setBounds(930, 220, 165, 26);
         // AKHIR TAMBAHAN FITUR GRAFIK TTV
 
         // TAMBAHAN FITUR TCARIPEMERIKSAAN
         FormMenu.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 5, 1));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/icons-search.png")));
-        jLabel10.setPreferredSize(new java.awt.Dimension(23, 23)); // ukuran icon agar konsisten
-        jLabel10.setText(""); // pastikan tidak ada teks
+        jLabel10.setPreferredSize(new java.awt.Dimension(23, 23)); 
+        jLabel10.setText(""); 
         FormMenu.add(jLabel10);
 
         TCariPemeriksaan.setName("TCariPemeriksaan"); // NOI18N
-        TCariPemeriksaan.setBackground(new java.awt.Color(98, 98, 98));
         TCariPemeriksaan.setPreferredSize(new java.awt.Dimension(120, 23));
         TCariPemeriksaan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -12381,7 +12382,8 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private void isForm() {
         if (ChkInput.isSelected() == true) {
             ChkInput.setVisible(false);
-            PanelInput.setPreferredSize(new Dimension(WIDTH, 300));
+            // EDIT NAIK TURUN TINGGI FORM
+            PanelInput.setPreferredSize(new Dimension(WIDTH, 270));
             panelGlass12.setVisible(true);
             ChkInput.setVisible(true);
         } else if (ChkInput.isSelected() == false) {
@@ -15694,7 +15696,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         if (TNoRw.getText().trim().equals("") || TNoRM.getText().trim().equals("")) {
             Valid.textKosong(TNoRw, "No Rawat dan No RM");
         } else {
-            Sequel.queryu("delete from antripoli where kd_dokter='" + KdDok.getText() + "' and kd_poli='" + poli + "'");
+            Sequel.queryu("update antripoli set status='3' where kd_dokter='" + KdDok.getText() + "' and kd_poli='" + poli + "'");
             Sequel.queryu("insert into antripoli values('" + KdDok.getText() + "','" + poli + "','1','" + TNoRw.getText() + "')");
         }
     }

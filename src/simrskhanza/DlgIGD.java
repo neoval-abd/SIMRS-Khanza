@@ -51,6 +51,8 @@ import fungsi.akses;
 import inventory.DlgCopyResep;
 import inventory.DlgPeresepanDokter;
 import java.awt.Cursor;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -836,7 +838,12 @@ public final class DlgIGD extends javax.swing.JDialog {
         btnPenjab1 = new widget.Button();
         ChkTracker = new widget.CekBox();
         ChkInput = new widget.CekBox();
-
+        
+        // TAMBAHAN FITUR SORTCUT
+        BtnLabelNama10 = new widget.Button();
+        BtnLabelNama11 = new widget.Button();
+        BtnLabelNama12 = new widget.Button();
+        
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
 
         MnDataRM.setBackground(new java.awt.Color(255, 255, 254));
@@ -4935,6 +4942,57 @@ public final class DlgIGD extends javax.swing.JDialog {
             }
         });
         PanelInput.add(ChkInput, java.awt.BorderLayout.PAGE_END);
+        
+        // TAMBAHAN FITUR UNTUK SORTCUT BRIDGING SPRI
+        BtnLabelNama10.setBackground(new Color(200,230,201));
+        BtnLabelNama10.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnLabelNama10.setForeground(new Color(46,125,50));
+        BtnLabelNama10.setMnemonic('G');
+        BtnLabelNama10.setText("CETAK SPRI");
+        BtnLabelNama10.setToolTipText("Alt+P");
+        BtnLabelNama10.setName("BtnLabelNama10"); // NOI18N
+        BtnLabelNama10.setPreferredSize(new java.awt.Dimension(100, 30));
+        BtnLabelNama10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppSuratPRIBtnPrintActionPerformed(evt);
+            }
+        });
+        FormInput.add(BtnLabelNama10);
+        BtnLabelNama10.setBounds(150, 130, 100, 30);
+        
+        // TAMBAHAN FITUR UNTUK SORTCUT BRIDGING SEP 
+        BtnLabelNama11.setBackground(new Color(200,230,201));
+        BtnLabelNama11.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnLabelNama11.setForeground(new Color(46,125,50));
+        BtnLabelNama11.setMnemonic('G');
+        BtnLabelNama11.setText("CETAK SEP");
+        BtnLabelNama11.setToolTipText("Alt+S");
+        BtnLabelNama11.setName("BtnLabelNama11"); // NOI18N
+        BtnLabelNama11.setPreferredSize(new java.awt.Dimension(100, 30));
+        BtnLabelNama11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnSEPActionPerformed(evt);
+            }
+        });
+        FormInput.add(BtnLabelNama11);
+        BtnLabelNama11.setBounds(40, 130, 100, 30);
+        
+        // TAMBAHAN FITUR UNTUK SORTCUT CETAK LABEL
+        BtnLabelNama12.setBackground(new Color(200,230,201));
+        BtnLabelNama12.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnLabelNama12.setForeground(new Color(46,125,50));
+        BtnLabelNama12.setMnemonic('G');
+        BtnLabelNama12.setText("CETAK LABEL");
+        BtnLabelNama12.setToolTipText("Alt+L");
+        BtnLabelNama12.setName("BtnLabelNama12"); // NOI18N
+        BtnLabelNama12.setPreferredSize(new java.awt.Dimension(100, 30));
+        BtnLabelNama12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnLabelTrackerActionPerformed(evt);
+            }
+        });
+        FormInput.add(BtnLabelNama12);
+        BtnLabelNama12.setBounds(260, 130, 100, 30);
 
         internalFrame1.add(PanelInput, java.awt.BorderLayout.PAGE_START);
 
@@ -6322,9 +6380,9 @@ private void MnRawatJalanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
             tbPetugas.requestFocus();
         }else{
             if(tbPetugas.getSelectedRow()!= -1){
-                if(Sequel.cariInteger("select count(kamar_inap.no_rawat) from kamar_inap where kamar_inap.no_rawat=?",TNoRw.getText())>0){
-                            JOptionPane.showMessageDialog(null,"Maaf, Pasien sudah masuk Kamar Inap. Gunakan billing Ranap..!!!");
-                }else {
+            //  if(Sequel.cariInteger("select count(kamar_inap.no_rawat) from kamar_inap where kamar_inap.no_rawat=?",TNoRw.getText())>0){
+                //  JOptionPane.showMessageDialog(null,"Maaf, Pasien sudah masuk Kamar Inap. Gunakan billing Ranap..!!!");
+            //  }else {
                     if (dlgrwjl == null || !dlgrwjl.isDisplayable()) {
                         dlgrwjl=new DlgRawatJalan(null,false);
                         dlgrwjl.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -6352,7 +6410,7 @@ private void MnRawatJalanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                     }
                     dlgrwjl.setVisible(true);
                 }
-            }
+            // }
                                 
         }
 }//GEN-LAST:event_MnRawatJalanActionPerformed
@@ -12524,6 +12582,11 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                                   MnSkriningInstrumenACRS,MnPernyataanMemilihDPJP,MnSkriningInstrumenMentalEmosional,MnCheckListKriteriaMasukNICU,MnCheckListKriteriaMasukPICU,MnSkriningInstrumenAMT,MnSkriningPneumoniaSeverityIndex,
                                   MnHasilPemeriksaanTreadmill,MnHasilPemeriksaanECHOPediatrik,MnSkriningInstrumenESAT,MnSkriningCURB65,MnSkriningGiziKehamilan,MnSerahTerimaBarangAnggotaTubuh;
     private javax.swing.JMenu MnRMSkrining,MnEdukasi,MnRMSkriningRisikoKanker,MnRMSkriningKesehatanGigiMulut,MnSuratPersetujuan,MnSkriningInstrumen,MnSkriningParu;
+    
+    // TAMBAHAN FITUR SORTCUT
+    private widget.Button BtnLabelNama10;
+    private widget.Button BtnLabelNama11;
+    private widget.Button BtnLabelNama12;
     
     private void tampil() {
         if(ceksukses==false){

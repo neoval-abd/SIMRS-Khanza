@@ -278,8 +278,6 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         ChkAccor = new widget.CekBox();
         ScrollMenu = new widget.ScrollPane();
         FormMenu = new widget.PanelBiasa();
-        TCariPemeriksaan = new widget.TextBox();
-        BtnCari2 = new widget.Button();
         chkSemua = new widget.CekBox();
         chkDiagnosaPenyakit = new widget.CekBox();
         chkProsedurTindakan = new widget.CekBox();
@@ -513,6 +511,8 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         Bahasa = new widget.TextBox();
         label29 = new widget.Label();
         CacatFisik = new widget.TextBox();
+        label30 = new widget.Label();
+        NoSEP = new widget.TextBox();
 
         Pekerjaan.setEditable(false);
         Pekerjaan.setName("Pekerjaan"); // NOI18N
@@ -639,7 +639,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         WindowPhrase.getContentPane().add(internalFrame8, java.awt.BorderLayout.CENTER);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-01-2026 14:43:38" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-06-2026 10:18:36" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -2784,6 +2784,22 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         FormInput.add(CacatFisik);
         CacatFisik.setBounds(757, 70, 105, 23);
 
+        label30.setText("No. SEP :");
+        label30.setName("label30"); // NOI18N
+        label30.setPreferredSize(new java.awt.Dimension(55, 23));
+        FormInput.add(label30);
+        label30.setBounds(870, 10, 50, 23);
+
+        NoSEP.setName("NoSEP"); // NOI18N
+        NoSEP.setPreferredSize(new java.awt.Dimension(150, 23));
+        NoSEP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                NoSEPKeyPressed(evt);
+            }
+        });
+        FormInput.add(NoSEP);
+        NoSEP.setBounds(930, 10, 150, 23);
+
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
         internalFrame1.add(PanelInput, java.awt.BorderLayout.PAGE_START);
@@ -3916,6 +3932,57 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         }
     }//GEN-LAST:event_ChkTampilPhraseActionPerformed
 
+    // TAMBAHAN FITUR PENCARIAN RIWAYAT PERAWATAN BERDASARKAN NO SEP
+    private void NoSEPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NoSEPKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER || 
+            evt.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
+            isCariPerSEP();
+        }
+    }//GEN-LAST:event_NoSEPKeyPressed
+
+    private void isCariPerSEP() {
+        String noSep = NoSEP.getText().trim();
+        if (noSep.isEmpty()) return;
+
+        try {
+            ps = koneksi.prepareStatement(
+                "SELECT nomr FROM bridging_sep WHERE no_sep = ?"
+            );
+            ps.setString(1, noSep);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                String noRM = rs.getString("nomr");
+                rs.close();
+                ps.close();
+
+                if (noRM == null || noRM.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(this,
+                        "SEP ditemukan tapi No. RM belum terhubung ke pasien lokal.",
+                        "Perhatian", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+                // Set NoRM lalu reuse flow yang sudah ada
+                NoRM.setText(noRM.trim());
+                isPasien();
+                BtnCari1ActionPerformed(null);   // trigger load riwayat otomatis
+
+            } else {
+                rs.close();
+                ps.close();
+                JOptionPane.showMessageDialog(this,
+                    "No. SEP [" + noSep + "] tidak ditemukan!",
+                    "Info", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,
+                "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     /**
     * @param args the command line arguments
     */
@@ -3966,6 +4033,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.TextBox NmPasien;
     private widget.TextBox NoRM;
     private widget.TextBox NoRawat;
+    private widget.TextBox NoSEP;
     private widget.PanelBiasa PanelAccor;
     private javax.swing.JPanel PanelInput;
     private widget.TextBox Pekerjaan;
@@ -4214,14 +4282,11 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.Label label27;
     private widget.Label label28;
     private widget.Label label29;
+    private widget.Label label30;
     private widget.panelisi panelGlass5;
     private widget.panelisi panelisi5;
     private widget.panelisi panelisi6;
     private widget.Table tbRegistrasi;
-    
-    // TAMBAHAN FITUR PANCARIAN
-    private widget.TextBox TCariPemeriksaan;
-    private widget.Button BtnCari2;
     // End of variables declaration//GEN-END:variables
 
     public void setNoRm(String norm,String nama) {

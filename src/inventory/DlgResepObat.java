@@ -1291,8 +1291,14 @@ public final class DlgResepObat extends javax.swing.JDialog {
                 param.put("kotars",akses.getkabupatenrs());
                 param.put("propinsirs",akses.getpropinsirs());
                 param.put("kontakrs",akses.getkontakrs());
-                param.put("emailrs",akses.getemailrs());   
-                param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
+                param.put("emailrs",akses.getemailrs()); 
+                param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
+                param.put("petugas",
+                    Sequel.cariIsi(
+                        "select nama from petugas where nip=?",
+                        akses.getkode()
+                    )
+                ); // <-- tambah untuk di jasper report
             Valid.MyReportqry("rptResep.jasper","report","::[ Daftar Pemberian Obat Resep ]::","select * from temporary_resep where temporary_resep.temp37='"+akses.getalamatip()+"' order by temporary_resep.no",param);
             this.setCursor(Cursor.getDefaultCursor());
         }        
@@ -1473,7 +1479,13 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("kotars",akses.getkabupatenrs());
             param.put("propinsirs",akses.getpropinsirs());
             param.put("kontakrs",akses.getkontakrs());
-            param.put("emailrs",akses.getemailrs());   
+            param.put("emailrs",akses.getemailrs());
+                            param.put("petugas",
+                    Sequel.cariIsi(
+                        "select nama from petugas where nip=?",
+                        akses.getkode()
+                    )
+                ); // <-- tambah untuk di jasper report
             param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
             if(Sequel.cariInteger(
                     "select count(*) from resep_obat inner join "+
@@ -1534,6 +1546,11 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("kotars",akses.getkabupatenrs());
             param.put("propinsirs",akses.getpropinsirs());
             param.put("emailrs",akses.getemailrs());
+            param.put("petugas",Sequel.cariIsi(
+                        "select nama from petugas where nip=?",
+                        akses.getkode()
+                    )
+                ); // <-- tambah untuk di jasper report
             param.put("kontakrs",akses.getkontakrs());
             param.put("penanggung",Sequel.cariIsi("select penjab.png_jawab from penjab where penjab.kd_pj=?",Sequel.cariIsi("select reg_periksa.kd_pj from reg_periksa where reg_periksa.no_rawat=?",TNoRw.getText())));               
             param.put("propinsirs",akses.getpropinsirs());
@@ -1722,7 +1739,13 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("kotars",akses.getkabupatenrs());
             param.put("propinsirs",akses.getpropinsirs());
             param.put("kontakrs",akses.getkontakrs());
-            param.put("emailrs",akses.getemailrs());   
+            param.put("emailrs",akses.getemailrs());
+                            param.put("petugas",
+                    Sequel.cariIsi(
+                        "select nama from petugas where nip=?",
+                        akses.getkode()
+                    )
+                ); // <-- tambah untuk di jasper report
             param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
             if(Sequel.cariInteger(
                     "select count(*) from resep_obat inner join "+
@@ -1783,7 +1806,13 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("kotars",akses.getkabupatenrs());
             param.put("propinsirs",akses.getpropinsirs());
             param.put("kontakrs",akses.getkontakrs());
-            param.put("emailrs",akses.getemailrs());   
+            param.put("emailrs",akses.getemailrs());
+                            param.put("petugas",
+                    Sequel.cariIsi(
+                        "select nama from petugas where nip=?",
+                        akses.getkode()
+                    )
+                ); // <-- tambah untuk di jasper report
             param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
             if(Sequel.cariInteger(
                     "select count(*) from resep_obat inner join "+
@@ -1955,6 +1984,12 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("kotars",akses.getkabupatenrs());
             param.put("propinsirs",akses.getpropinsirs());
             param.put("emailrs",akses.getemailrs());
+                            param.put("petugas",
+                    Sequel.cariIsi(
+                        "select nama from petugas where nip=?",
+                        akses.getkode()
+                    )
+                ); // <-- tambah untuk di jasper report
             param.put("kontakrs",akses.getkontakrs());
             param.put("penanggung",Sequel.cariIsi("select penjab.png_jawab from penjab where penjab.kd_pj=?",Sequel.cariIsi("select reg_periksa.kd_pj from reg_periksa where reg_periksa.no_rawat=?",TNoRw.getText())));               
             param.put("propinsirs",akses.getpropinsirs());
@@ -2030,6 +2065,12 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("kotars",akses.getkabupatenrs());
             param.put("propinsirs",akses.getpropinsirs());
             param.put("emailrs",akses.getemailrs());
+                            param.put("petugas",
+                    Sequel.cariIsi(
+                        "select nama from petugas where nip=?",
+                        akses.getkode()
+                    )
+                ); // <-- tambah untuk di jasper report
             param.put("kontakrs",akses.getkontakrs());
             param.put("penanggung",Sequel.cariIsi("select penjab.png_jawab from penjab where penjab.kd_pj=?",Sequel.cariIsi("select reg_periksa.kd_pj from reg_periksa where reg_periksa.no_rawat=?",TNoRw.getText())));               
             param.put("propinsirs",akses.getpropinsirs());
@@ -2215,6 +2256,12 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("kotars",akses.getkabupatenrs());
             param.put("propinsirs",akses.getpropinsirs());
             param.put("emailrs",akses.getemailrs());
+                            param.put("petugas",
+                    Sequel.cariIsi(
+                        "select nama from petugas where nip=?",
+                        akses.getkode()
+                    )
+                ); // <-- tambah untuk di jasper report
             param.put("kontakrs",akses.getkontakrs());
             param.put("penanggung",Sequel.cariIsi("select penjab.png_jawab from penjab where penjab.kd_pj=?",Sequel.cariIsi("select reg_periksa.kd_pj from reg_periksa where reg_periksa.no_rawat=?",TNoRw.getText())));               
             param.put("propinsirs",akses.getpropinsirs());

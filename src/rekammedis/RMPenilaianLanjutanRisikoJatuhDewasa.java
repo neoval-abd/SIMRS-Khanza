@@ -1873,16 +1873,18 @@ public final class RMPenilaianLanjutanRisikoJatuhDewasa extends javax.swing.JDia
     private void isTotalResikoJatuh(){
         try {
             NilaiResikoTotal.setText((Integer.parseInt(NilaiResiko1.getText())+Integer.parseInt(NilaiResiko2.getText())+Integer.parseInt(NilaiResiko3.getText())+Integer.parseInt(NilaiResiko4.getText())+Integer.parseInt(NilaiResiko5.getText())+Integer.parseInt(NilaiResiko6.getText()))+"");
-            if(Integer.parseInt(NilaiResikoTotal.getText())<25){
-                TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (0-24), Tindakan : Intervensi pencegahan risiko jatuh standar");
-            }else if(Integer.parseInt(NilaiResikoTotal.getText())<45){
-                TingkatResiko.setText("Tingkat Resiko : Risiko Sedang (25-44), Tindakan : Intervensi pencegahan risiko jatuh standar");
+            if(Integer.parseInt(NilaiResikoTotal.getText())<45){
+                TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (< 45), Tindakan : Intervensi pencegahan risiko jatuh standar");
+                // TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (0-24), Tindakan : Intervensi pencegahan risiko jatuh standar");
+            // }else if(Integer.parseInt(NilaiResikoTotal.getText())<45){
+            //    TingkatResiko.setText("Tingkat Resiko : Risiko Sedang (25-44), Tindakan : Intervensi pencegahan risiko jatuh standar");
             }else if(Integer.parseInt(NilaiResikoTotal.getText())>=45){
                 TingkatResiko.setText("Tingkat Resiko : Risiko Tinggi (> 45), Tindakan : Intervensi pencegahan risiko jatuh standar dan Intervensi risiko jatuh tinggi");
             }
         } catch (Exception e) {
             NilaiResikoTotal.setText("0");
-            TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (0-24), Tindakan : Intervensi pencegahan risiko jatuh standar");
+            TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (< 45), Tindakan : Intervensi pencegahan risiko jatuh standar");
+            //TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (0-24), Tindakan : Intervensi pencegahan risiko jatuh standar");
         }
     }
     

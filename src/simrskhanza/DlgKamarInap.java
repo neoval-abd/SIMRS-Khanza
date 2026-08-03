@@ -5379,14 +5379,14 @@ public class DlgKamarInap extends javax.swing.JDialog {
 
         BtnDpjp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Surgeon SH.png"))); // NOI18N
         BtnDpjp.setMnemonic('K');
-        BtnDpjp.setText("Tampilkan DPJP Ranap");
+        BtnDpjp.setText("Filter DPJP RANAP");
         BtnDpjp.setToolTipText("Alt+K");
         BtnDpjp.setGlassColor(new java.awt.Color(153, 255, 153));
         BtnDpjp.setName("BtnDpjp"); // NOI18N
         BtnDpjp.setPreferredSize(new java.awt.Dimension(180, 30));
         BtnDpjp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnDpjpActionPerformed(evt);
+                MnFilterDPJPActionPerformed(evt);
             }
         });
         BtnDpjp.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -8960,27 +8960,41 @@ public class DlgKamarInap extends javax.swing.JDialog {
         row=tbKamIn.getRowCount();
         for(i=0;i<row;i++){
             try{
-                psdpjp=koneksi.prepareStatement("select dokter.nm_dokter from dpjp_ranap inner join dokter "+
-                    "on dpjp_ranap.kd_dokter=dokter.kd_dokter where dpjp_ranap.no_rawat=? ");
+
+                String norawat = tbKamIn.getValueAt(i,0).toString();
+
+                if(norawat.equals("")){
+                    norawat = Sequel.cariIsi(
+                        "select no_rawat2 from ranap_gabung where no_rawat=?",
+                        tbKamIn.getValueAt(i-1,0).toString()
+                    );
+                }
+
+                psdpjp=koneksi.prepareStatement(
+                    "select dokter.nm_dokter "+
+                    "from dpjp_ranap "+
+                    "inner join dokter on dpjp_ranap.kd_dokter=dokter.kd_dokter "+
+                    "where dpjp_ranap.no_rawat=? "
+                );
+
                 dokterranap="";
+
                 try {
-                    psdpjp.setString(1,tbKamIn.getValueAt(i,0).toString());
-                    rs=psdpjp.executeQuery();                    
+                    psdpjp.setString(1,norawat);
+                    rs=psdpjp.executeQuery();
+
                     while(rs.next()){
                         dokterranap=rs.getString("nm_dokter")+", "+dokterranap;
                     }
-                } catch (Exception e) {
-                    System.out.println("Notifikasi : "+e);
+
                 } finally{
-                    if(rs!=null){
-                        rs.close();
-                    }
-                    if(psdpjp!=null){
-                        psdpjp.close();
-                    }
+                    if(rs!=null){ rs.close(); }
+                    if(psdpjp!=null){ psdpjp.close(); }
                 }
+
                 tbKamIn.setValueAt(dokterranap,i,18);
-            } catch(Exception e){
+
+            }catch(Exception e){
                 System.out.println("Notifikasi : "+e);
             }
         }
@@ -19160,7 +19174,8 @@ public class DlgKamarInap extends javax.swing.JDialog {
                            "inner join kamar on kamar_inap.kd_kamar=kamar.kd_kamar inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal inner join kelurahan on pasien.kd_kel=kelurahan.kd_kel "+
                            "inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab inner join dokter on reg_periksa.kd_dokter=dokter.kd_dokter "+
                            "inner join penjab on reg_periksa.kd_pj=penjab.kd_pj "+
-                           (namadokter.equals("")?"where "+key+" "+order:"inner join dpjp_ranap on dpjp_ranap.no_rawat=reg_periksa.no_rawat where dpjp_ranap.kd_dokter='"+namadokter+"' and "+key+" "+order));
+                           (namadokter.equals("")? "where "+key+" "+order: "left join ranap_gabung on ranap_gabung.no_rawat=reg_periksa.no_rawat "+"inner join dpjp_ranap on "+"dpjp_ranap.no_rawat=reg_periksa.no_rawat "+"or dpjp_ranap.no_rawat=ranap_gabung.no_rawat2 "+"where dpjp_ranap.kd_dokter='"+namadokter+"' and "+key+" "+order));
+                            // QUERY UNTUK MENAMPILKAN DPJP BAYI
                         try {
                             rs=ps.executeQuery();
                             i=0;
@@ -19230,6 +19245,10 @@ public class DlgKamarInap extends javax.swing.JDialog {
                 @Override
                 protected void done() {
                     LCount.setText(""+i);
+                    
+                    // otomatis tampilkan DPJP Ranap
+                    MnDPJPRanapActionPerformed(null);
+                    
                     ceksukses = false;
                 }
             }.execute(); 

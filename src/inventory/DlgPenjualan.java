@@ -3538,6 +3538,20 @@ private void BtnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                                 } catch (Exception e) {
                                     tabMode.setValueAt(0, row,6);                   
                                 }
+                                // Auto isi embalase dan tuslah
+                                try {
+                                    double jmlBeli = Double.parseDouble(tabMode.getValueAt(row,0).toString());
+                                    if(jmlBeli > 0) {
+                                        tabMode.setValueAt(embalasen, row, 10); 
+                                        tabMode.setValueAt(tuslahn, row, 11);   
+                                    } else {
+                                        tabMode.setValueAt(0, row, 10);
+                                        tabMode.setValueAt(0, row, 11);
+                                    }
+                                } catch (Exception e) {
+                                    tabMode.setValueAt(0, row, 10);
+                                    tabMode.setValueAt(0, row, 11);
+                                }
 
                                 try {
                                     tabMode.setValueAt(Double.parseDouble(tabMode.getValueAt(row,6).toString())-Double.parseDouble(tabMode.getValueAt(row,8).toString())+Double.parseDouble(tabMode.getValueAt(row,9).toString())+Double.parseDouble(tabMode.getValueAt(row,10).toString())+Double.parseDouble(tabMode.getValueAt(row,11).toString()), row,13);
@@ -3705,6 +3719,21 @@ private void BtnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                                 tbDetailObatRacikan.setValueAt(Double.parseDouble(tbDetailObatRacikan.getValueAt(row,8).toString())*Double.parseDouble(tbDetailObatRacikan.getValueAt(row,5).toString()), row,9);                   
                             } catch (Exception e) {
                                 tbDetailObatRacikan.setValueAt(0, row,9);                   
+                            }
+                            
+                            // Auto isi embalase dan tuslah racikan 
+                            try {
+                                double jmlRacik = Double.parseDouble(tbDetailObatRacikan.getValueAt(row,8).toString());
+                                if(jmlRacik > 0) {
+                                    tbDetailObatRacikan.setValueAt(embalasen, row, 13); 
+                                    tbDetailObatRacikan.setValueAt(tuslahn, row, 14);   
+                                } else {
+                                    tbDetailObatRacikan.setValueAt(0, row, 13);
+                                    tbDetailObatRacikan.setValueAt(0, row, 14);
+                                }
+                            } catch (Exception e) {
+                                tbDetailObatRacikan.setValueAt(0, row, 13);
+                                tbDetailObatRacikan.setValueAt(0, row, 14);
                             }
 
                             try {

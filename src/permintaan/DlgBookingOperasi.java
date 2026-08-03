@@ -46,6 +46,8 @@ import rekammedis.RMSignInSebelumAnastesi;
 import rekammedis.RMSignOutSebelumMenutupLuka;
 import rekammedis.RMTimeOutSebelumInsisi;
 import rekammedis.RMTransferPasienAntarRuang;
+import rekammedis.RMPenandaanLokasiOperasi;
+import rekammedis.RMPenandaanLokasiOperasiPria;
 import setting.DlgCariRuangOperasi;
 import simrskhanza.DlgTagihanOperasi;
 
@@ -68,6 +70,22 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
     private volatile boolean ceksukses = false;
     private String status="",bangsal="",lokasistok="",kamar="",diagnosa="",order="",kelas="",penjab="",norawatibu="",posisi="",DEPOAKTIFOBAT="",norm="";
     
+    private String ambilJK(String noRawat) {
+        String jk = "";
+        try {
+            java.sql.PreparedStatement ps = koneksi.prepareStatement(
+                "select pasien.jk from pasien inner join reg_periksa "
+              + "on pasien.no_rkm_medis = reg_periksa.no_rkm_medis "
+              + "where reg_periksa.no_rawat = ?");
+            ps.setString(1, noRawat);
+            java.sql.ResultSet rs = ps.executeQuery();
+            if (rs.next()) jk = rs.getString(1);
+            rs.close(); ps.close();
+        } catch (Exception e) {
+            System.out.println("Notif ambilJK: " + e);
+        }
+        return jk;
+    }
 
     /** Creates new form DlgPemberianInfus
      * @param parent
@@ -230,6 +248,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnKamarInap = new widget.Button();
         BtnPermintaanLab = new widget.Button();
         BtnRiwayatPasien = new widget.Button();
+        BtnPenandaanOP = new widget.Button();
         BtnPenilaianPreInduksi = new widget.Button();
         BtnChecklistPreOperasi = new widget.Button();
         BtnSignInSebelumAnestesi = new widget.Button();
@@ -484,7 +503,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         R2.setPreferredSize(new java.awt.Dimension(90, 23));
         panelCari.add(R2);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-04-2025" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-02-2026" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -507,7 +526,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         jLabel22.setPreferredSize(new java.awt.Dimension(30, 23));
         panelCari.add(jLabel22);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-04-2025" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-02-2026" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -535,7 +554,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         R3.setPreferredSize(new java.awt.Dimension(75, 23));
         panelCari.add(R3);
 
-        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-04-2025" }));
+        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-02-2026" }));
         DTPCari3.setDisplayFormat("dd-MM-yyyy");
         DTPCari3.setName("DTPCari3"); // NOI18N
         DTPCari3.setOpaque(false);
@@ -558,7 +577,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         jLabel25.setPreferredSize(new java.awt.Dimension(30, 23));
         panelCari.add(jLabel25);
 
-        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-04-2025" }));
+        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-02-2026" }));
         DTPCari4.setDisplayFormat("dd-MM-yyyy");
         DTPCari4.setName("DTPCari4"); // NOI18N
         DTPCari4.setOpaque(false);
@@ -641,7 +660,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         TPasien.setBounds(195, 10, 208, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-04-2025" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-02-2026" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -887,7 +906,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnKamarInap.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnKamarInap.setName("BtnKamarInap"); // NOI18N
         BtnKamarInap.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnKamarInap.setRoundRect(false);
         BtnKamarInap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnKamarInapActionPerformed(evt);
@@ -904,7 +922,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnPermintaanLab.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnPermintaanLab.setName("BtnPermintaanLab"); // NOI18N
         BtnPermintaanLab.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnPermintaanLab.setRoundRect(false);
         BtnPermintaanLab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnPermintaanLabActionPerformed(evt);
@@ -921,13 +938,28 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnRiwayatPasien.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnRiwayatPasien.setName("BtnRiwayatPasien"); // NOI18N
         BtnRiwayatPasien.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnRiwayatPasien.setRoundRect(false);
         BtnRiwayatPasien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnRiwayatPasienActionPerformed(evt);
             }
         });
         FormMenu.add(BtnRiwayatPasien);
+
+        BtnPenandaanOP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnPenandaanOP.setText("Penandaan Lokasi OP");
+        BtnPenandaanOP.setFocusPainted(false);
+        BtnPenandaanOP.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnPenandaanOP.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnPenandaanOP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnPenandaanOP.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnPenandaanOP.setName("BtnPenandaanOP"); // NOI18N
+        BtnPenandaanOP.setPreferredSize(new java.awt.Dimension(190, 23));
+        BtnPenandaanOP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPenandaanOPActionPerformed(evt);
+            }
+        });
+        FormMenu.add(BtnPenandaanOP);
 
         BtnPenilaianPreInduksi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
         BtnPenilaianPreInduksi.setText("Penilaian Pre Induksi");
@@ -938,7 +970,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnPenilaianPreInduksi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnPenilaianPreInduksi.setName("BtnPenilaianPreInduksi"); // NOI18N
         BtnPenilaianPreInduksi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnPenilaianPreInduksi.setRoundRect(false);
         BtnPenilaianPreInduksi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnPenilaianPreInduksiActionPerformed(evt);
@@ -955,7 +986,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnChecklistPreOperasi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnChecklistPreOperasi.setName("BtnChecklistPreOperasi"); // NOI18N
         BtnChecklistPreOperasi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnChecklistPreOperasi.setRoundRect(false);
         BtnChecklistPreOperasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnChecklistPreOperasiActionPerformed(evt);
@@ -972,7 +1002,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnSignInSebelumAnestesi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnSignInSebelumAnestesi.setName("BtnSignInSebelumAnestesi"); // NOI18N
         BtnSignInSebelumAnestesi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnSignInSebelumAnestesi.setRoundRect(false);
         BtnSignInSebelumAnestesi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSignInSebelumAnestesiActionPerformed(evt);
@@ -989,7 +1018,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnTimeOutSebelumInsisi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnTimeOutSebelumInsisi.setName("BtnTimeOutSebelumInsisi"); // NOI18N
         BtnTimeOutSebelumInsisi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnTimeOutSebelumInsisi.setRoundRect(false);
         BtnTimeOutSebelumInsisi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnTimeOutSebelumInsisiActionPerformed(evt);
@@ -1006,7 +1034,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnSignOutSebelumMenutupLuka.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnSignOutSebelumMenutupLuka.setName("BtnSignOutSebelumMenutupLuka"); // NOI18N
         BtnSignOutSebelumMenutupLuka.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnSignOutSebelumMenutupLuka.setRoundRect(false);
         BtnSignOutSebelumMenutupLuka.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSignOutSebelumMenutupLukaActionPerformed(evt);
@@ -1023,7 +1050,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnChecklistPostOperasi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnChecklistPostOperasi.setName("BtnChecklistPostOperasi"); // NOI18N
         BtnChecklistPostOperasi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnChecklistPostOperasi.setRoundRect(false);
         BtnChecklistPostOperasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnChecklistPostOperasiActionPerformed(evt);
@@ -1040,7 +1066,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnPreOperasi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnPreOperasi.setName("BtnPreOperasi"); // NOI18N
         BtnPreOperasi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnPreOperasi.setRoundRect(false);
         BtnPreOperasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnPreOperasiActionPerformed(evt);
@@ -1057,7 +1082,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnCatatanAnastesiSedasi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnCatatanAnastesiSedasi.setName("BtnCatatanAnastesiSedasi"); // NOI18N
         BtnCatatanAnastesiSedasi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnCatatanAnastesiSedasi.setRoundRect(false);
         BtnCatatanAnastesiSedasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnCatatanAnastesiSedasiActionPerformed(evt);
@@ -1074,7 +1098,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnPreAnastesi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnPreAnastesi.setName("BtnPreAnastesi"); // NOI18N
         BtnPreAnastesi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnPreAnastesi.setRoundRect(false);
         BtnPreAnastesi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnPreAnastesiActionPerformed(evt);
@@ -1091,7 +1114,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnTagihanOperasi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnTagihanOperasi.setName("BtnTagihanOperasi"); // NOI18N
         BtnTagihanOperasi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnTagihanOperasi.setRoundRect(false);
         BtnTagihanOperasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnTagihanOperasiActionPerformed(evt);
@@ -1108,7 +1130,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnObatBhp.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnObatBhp.setName("BtnObatBhp"); // NOI18N
         BtnObatBhp.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnObatBhp.setRoundRect(false);
         BtnObatBhp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnObatBhpActionPerformed(evt);
@@ -1125,7 +1146,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnTransferAntarRuang.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnTransferAntarRuang.setName("BtnTransferAntarRuang"); // NOI18N
         BtnTransferAntarRuang.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnTransferAntarRuang.setRoundRect(false);
         BtnTransferAntarRuang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnTransferAntarRuangActionPerformed(evt);
@@ -1142,7 +1162,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnSkorAldrettePascaAnestesi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnSkorAldrettePascaAnestesi.setName("BtnSkorAldrettePascaAnestesi"); // NOI18N
         BtnSkorAldrettePascaAnestesi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnSkorAldrettePascaAnestesi.setRoundRect(false);
         BtnSkorAldrettePascaAnestesi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSkorAldrettePascaAnestesiActionPerformed(evt);
@@ -1159,7 +1178,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnSkorStewardPascaAnestesi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnSkorStewardPascaAnestesi.setName("BtnSkorStewardPascaAnestesi"); // NOI18N
         BtnSkorStewardPascaAnestesi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnSkorStewardPascaAnestesi.setRoundRect(false);
         BtnSkorStewardPascaAnestesi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSkorStewardPascaAnestesiActionPerformed(evt);
@@ -1176,7 +1194,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnSkorBromagePascaAnestesi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnSkorBromagePascaAnestesi.setName("BtnSkorBromagePascaAnestesi"); // NOI18N
         BtnSkorBromagePascaAnestesi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnSkorBromagePascaAnestesi.setRoundRect(false);
         BtnSkorBromagePascaAnestesi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSkorBromagePascaAnestesiActionPerformed(evt);
@@ -1193,7 +1210,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnPengkajianPaskaOperasi.setMargin(new java.awt.Insets(1, 1, 1, 1));
         BtnPengkajianPaskaOperasi.setName("BtnPengkajianPaskaOperasi"); // NOI18N
         BtnPengkajianPaskaOperasi.setPreferredSize(new java.awt.Dimension(190, 23));
-        BtnPengkajianPaskaOperasi.setRoundRect(false);
         BtnPengkajianPaskaOperasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnPengkajianPaskaOperasiActionPerformed(evt);
@@ -2115,6 +2131,45 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
     }//GEN-LAST:event_BtnPengkajianPaskaOperasiActionPerformed
 
+    private void BtnPenandaanOPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPenandaanOPActionPerformed
+        // TODO add your handling code here:
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            TCari.requestFocus();
+        }else{
+            if(tbObat.getSelectedRow()!= -1){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
+                String noRawat = TNoRw.getText();
+                String jk = ambilJK(noRawat); // helper baru, lihat di bawah
+
+                if (jk != null && jk.trim().toUpperCase().startsWith("P")) {
+                    // Perempuan -> form Wanita
+                    RMPenandaanLokasiOperasi form = new RMPenandaanLokasiOperasi(null,false);
+                    form.isCek();
+                    form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                    form.setLocationRelativeTo(internalFrame1);
+                    form.setVisible(true);
+                    form.setNoRm(noRawat, DTPCari2.getDate());
+                    form.emptTeks();
+                } else {
+                    // Laki-laki -> form Pria
+                    RMPenandaanLokasiOperasiPria form = new RMPenandaanLokasiOperasiPria(null,false);
+                    form.isCek();
+                    form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                    form.setLocationRelativeTo(internalFrame1);
+                    form.setVisible(true);
+                    form.setNoRm(noRawat, DTPCari2.getDate());
+                    form.emptTeks();
+                }
+
+                this.setCursor(Cursor.getDefaultCursor());
+            }else{
+                JOptionPane.showMessageDialog(null,"Maaf, silahkan pilih data...!!!!");
+            }
+        }
+    }//GEN-LAST:event_BtnPenandaanOPActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -2145,6 +2200,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Button BtnObatBhp;
     private widget.Button BtnOperasi;
     private widget.Button BtnOperator;
+    private widget.Button BtnPenandaanOP;
     private widget.Button BtnPengkajianPaskaOperasi;
     private widget.Button BtnPenilaianPreInduksi;
     private widget.Button BtnPermintaanLab;

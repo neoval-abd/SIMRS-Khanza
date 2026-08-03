@@ -171,12 +171,18 @@
                 </Container>
                 <Component class="widget.Button" name="BtnLogin">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/picture/lock.png"/>
                     </Property>
                     <Property name="mnemonic" type="int" value="90"/>
                     <Property name="text" type="java.lang.String" value="Log-in"/>
                     <Property name="toolTipText" type="java.lang.String" value="Alt+Z"/>
+                    <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="name" type="java.lang.String" value="BtnLogin" noResource="true"/>
                   </Properties>
                   <Events>
@@ -190,12 +196,18 @@
                 </Component>
                 <Component class="widget.Button" name="BtnCancel">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/picture/exit.png"/>
                     </Property>
                     <Property name="mnemonic" type="int" value="89"/>
                     <Property name="text" type="java.lang.String" value="Batal"/>
                     <Property name="toolTipText" type="java.lang.String" value="Alt+Y"/>
+                    <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="name" type="java.lang.String" value="BtnCancel" noResource="true"/>
                   </Properties>
                   <Events>
@@ -483,7 +495,7 @@
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
-            <StringItem index="0" value="17/03/2026"/>
+            <StringItem index="0" value="22/06/2026"/>
           </StringArray>
         </Property>
         <Property name="displayFormat" type="java.lang.String" value="dd/MM/yyyy"/>
@@ -9856,7 +9868,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="YASKI &amp; IT RSU ADELLA"/>
+            <Property name="text" type="java.lang.String" value="YASKI &amp; IT RS ADELLA"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
             <Property name="iconTextGap" type="int" value="3"/>
             <Property name="name" type="java.lang.String" value="jLabel7" noResource="true"/>
@@ -9917,7 +9929,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="2"/>
-            <Property name="text" type="java.lang.String" value="v.1.20260317"/>
+            <Property name="text" type="java.lang.String" value="v.1.20260622"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="name" type="java.lang.String" value="LblIP1" noResource="true"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">

@@ -32,6 +32,7 @@ import laporan.DlgDiagnosaPenyakit;
 import laporan.DlgFrekuensiPenyakitRalan;
 import keuangan.DlgBilingRalan;
 import fungsi.WarnaTable;
+import fungsi.WarnaTableRegistrasi;
 import fungsi.batasInput;
 import grafikanalisa.grafikperiksaperagama;
 import grafikanalisa.grafikperiksaperbulan;
@@ -87,6 +88,7 @@ import bridging.ICareRiwayatPerawatanFKTP;
 import bridging.INACBGPerawatanCorona;
 import bridging.PilihanBridgingAsuransi;
 import inventory.DlgCopyResep;
+import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.WindowAdapter;
 import javax.swing.SwingWorker;
@@ -281,6 +283,7 @@ import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 import surat.SuratSerahTerimaBarangAnggotaTubuh;
 /**
@@ -310,6 +313,7 @@ public final class DlgReg extends javax.swing.JDialog {
             URUTNOREG="",status="Baru",order="reg_periksa.tgl_registrasi,reg_periksa.jam_reg desc",alamatperujuk="-",aktifjadwal="",IPPRINTERTRACER="",umur="0",sttsumur="Th",terbitsep="",
             validasiregistrasi="No",validasicatatan="No",norawatdipilih="",normdipilih="";
     private SimpleDateFormat dateformat = new SimpleDateFormat("yyyy/MM/dd");
+    private WarnaTableRegistrasi warnaMJKN = new WarnaTableRegistrasi(); 
     private char ESC = 27;
     // ganti kertas
     private char[] FORM_FEED = {12};
@@ -453,7 +457,8 @@ public final class DlgReg extends javax.swing.JDialog {
                 column.setPreferredWidth(70);
             }
         }
-        tbPetugas.setDefaultRenderer(Object.class, new WarnaTable());
+        warnaMJKN.setKolomNoRawat(2); 
+        tbPetugas.setDefaultRenderer(Object.class, warnaMJKN);
 
         tabMode2=new DefaultTableModel(null,new Object[]{
             "P","No.Rawat","Tanggal","Jam","Kode Dokter","Dokter Rujukan","Nomer RM",
@@ -1532,6 +1537,8 @@ public final class DlgReg extends javax.swing.JDialog {
 
         // TAMBAHAN FITUR UNTUK SORTCUT BRIDGING SEP
         BtnLabelNama11 = new widget.Button();
+        BtnLabelNama10 = new widget.Button();
+        BtnLabelNama12 = new widget.Button();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
 
@@ -5277,7 +5284,7 @@ public final class DlgReg extends javax.swing.JDialog {
         MnHapusData.setBackground(new java.awt.Color(255, 255, 254));
         MnHapusData.setForeground(new java.awt.Color(50, 50, 50));
         MnHapusData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnHapusData.setText("Hapus & Ubah Data");
+        MnHapusData.setText("Hapus & Ubah Data Rawat");
         MnHapusData.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnHapusData.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         MnHapusData.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -10650,7 +10657,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             if(Sequel.cariInteger("select count(kamar_inap.no_rawat) from kamar_inap where kamar_inap.no_rawat=?",TNoRw.getText())>0){
                 JOptionPane.showMessageDialog(null,"Maaf, Pasien sudah masuk Kamar Inap. Gunakan billing Ranap..!!!");
             }else {
-                Valid.editTable(tabMode,"reg_periksa","no_rawat",TNoRw,"stts='Sudah'");
+                Valid.editTable(tabMode,"reg_periksa","no_rawat",TNoRw,"stts='Sudah Periksa'");
                 if(tbPetugas.getSelectedRow()>-1){
                     tabMode.setValueAt("Sudah",tbPetugas.getSelectedRow(),19);
                 }
@@ -17131,13 +17138,15 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
 
     // TAMBAHAN SENDIRI TOMBOL ANTRIAN | PRIVATE
     private javax.swing.JLabel nomor_antrian, jLabel25, jLabel12;
-    private widget.Button Panggil, Ulang, btn_riwayat, btnPanggil, BtnCheckin;
+    private widget.Button Panggil, Ulang, btn_riwayat, BtnCheckin;
     private widget.Label sisa_antrian;
     private javax.swing.JComboBox<String> loket_antrian;
     private widget.TextBox txtNoAntriUlang, Checkin, Booking;
 
     // TAMBAHAN FITUR UNTUK SORTCUT BRIDGING SEP
     private widget.Button BtnLabelNama11;
+    private widget.Button BtnLabelNama10;
+    private widget.Button BtnLabelNama12;
 
     private void tampil() {
         if (ceksukses == false) {
@@ -17232,6 +17241,8 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                 protected void done() {
                     LCount.setText(""+i);
                     ceksukses = false;
+                    loadNoRawatMJKN();
+                    tbPetugas2.repaint();
                 }
             }.execute(); 
         }
@@ -17316,6 +17327,8 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                 protected void done() {
                     LCount.setText(""+i);
                     ceksukses = false;
+                    loadNoRawatMJKN();
+                    tbPetugas2.repaint();
                 }
             }.execute(); 
         }   
@@ -19209,7 +19222,6 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
         Panggil.setMnemonic('M');
         Panggil.setText("BERIKUTNYA");
         Panggil.setToolTipText("Alt+M");
-        Panggil.setGlassColor(new java.awt.Color(211, 211, 211));
         Panggil.setName("Panggil"); // NOI18N
         Panggil.setPreferredSize(new java.awt.Dimension(100, 30));
         Panggil.addActionListener(new java.awt.event.ActionListener() {
@@ -19241,7 +19253,6 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
         Ulang.setMnemonic('M');
         Ulang.setText("PANGGIL ULANG");
         Ulang.setToolTipText("Alt+M");
-        Ulang.setGlassColor(new java.awt.Color(211, 211, 211));
         Ulang.setName("Ulang"); // NOI18N
         Ulang.setPreferredSize(new java.awt.Dimension(100, 30));
         Ulang.addActionListener(new java.awt.event.ActionListener() {
@@ -19295,13 +19306,31 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
         });
 
         FormInput.add(btn_riwayat);
-        btn_riwayat.setBounds(880, 10, 180, 30);
+        btn_riwayat.setBounds(900, 10, 180, 30);
+        
+        BtnCheckin = new widget.Button();
+        BtnCheckin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/save-16x16.png"))); // NOI18N
+        BtnCheckin.setMnemonic('Q');
+        BtnCheckin.setText("Checkin");
+        BtnCheckin.setToolTipText("Alt+Q");
+        BtnCheckin.setName("btn_checkin"); // NOI18N
+        BtnCheckin.setPreferredSize(new java.awt.Dimension(80, 30));
+        BtnCheckin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCheckinMJKNActionPerformed(evt);
+            }
+        });
+
+        FormInput.add(BtnCheckin);
+        BtnCheckin.setBounds(1100, 10, 100, 30);
 
         // TAMBAHAN FITUR UNTUK SORTCUT BRIDGING SEP
+        BtnLabelNama11.setBackground(new Color(200,230,201));
+        BtnLabelNama11.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnLabelNama11.setForeground(new Color(46,125,50));
         BtnLabelNama11.setMnemonic('G');
-        BtnLabelNama11.setText("CETAK SEP BPJS");
-        BtnLabelNama11.setToolTipText("Alt+G");
-        BtnLabelNama11.setGlassColor(new java.awt.Color(0, 255, 0));
+        BtnLabelNama11.setText("CETAK SEP");
+        BtnLabelNama11.setToolTipText("Alt+S");
         BtnLabelNama11.setName("BtnLabelNama11"); // NOI18N
         BtnLabelNama11.setPreferredSize(new java.awt.Dimension(100, 30));
         BtnLabelNama11.addActionListener(new java.awt.event.ActionListener() {
@@ -19315,7 +19344,46 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             }
         });
         FormInput.add(BtnLabelNama11);
-        BtnLabelNama11.setBounds(80, 165, 150, 30);
+        BtnLabelNama11.setBounds(40, 165, 100, 30);
+        
+        // TAMBAHAN FITUR UNTUK SORTCUT BRIDGING SEP KONTROL
+        BtnLabelNama10.setBackground(new Color(200,230,201));
+        BtnLabelNama10.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnLabelNama10.setForeground(new Color(46,125,50));
+        BtnLabelNama10.setMnemonic('G');
+        BtnLabelNama10.setText("CETAK SKDP");
+        BtnLabelNama10.setToolTipText("Alt+K");
+        BtnLabelNama10.setName("BtnLabelNama10"); // NOI18N
+        BtnLabelNama10.setPreferredSize(new java.awt.Dimension(100, 30));
+        BtnLabelNama10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLabelNama10ActionPerformed(evt);
+            }
+        });
+        BtnLabelNama10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                BtnLabelNama10KeyPressed(evt);
+            }
+        });
+        FormInput.add(BtnLabelNama10);
+        BtnLabelNama10.setBounds(150, 165, 100, 30);
+        
+        // TAMBAHAN FITUR UNTUK SORTCUT LABEL 1
+        BtnLabelNama12.setBackground(new Color(200,230,201));
+        BtnLabelNama12.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnLabelNama12.setForeground(new Color(46,125,50));
+        BtnLabelNama12.setMnemonic('G');
+        BtnLabelNama12.setText("CETAK LABEL");
+        BtnLabelNama12.setToolTipText("Alt+L");
+        BtnLabelNama12.setName("BtnLabelNama12"); // NOI18N
+        BtnLabelNama12.setPreferredSize(new java.awt.Dimension(100, 30));
+        BtnLabelNama12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnLabelTrackerActionPerformed(evt);
+            }
+        });
+        FormInput.add(BtnLabelNama12);
+        BtnLabelNama12.setBounds(260, 165, 105, 30);
         
         MnRMOperasi.add(MnPenilaianPreInduksi);
 	    MnRMOperasi.add(MnChecklistPreOperasi);
@@ -19626,9 +19694,107 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             this.setCursor(Cursor.getDefaultCursor());
         }        // TODO add your handling code here:
     }
-
-    private void BtnLabelNama11KeyPressed(java.awt.event.KeyEvent evt) {
+    
+    private void BtnLabelNama11KeyPressed(java.awt.event.KeyEvent evt) {                                          
         // TODO add your handling code here:
     }
+    
+    // TAMBAHAN FITUR SORTCUT BRIDGING SEP KONTROL
+    private void BtnLabelNama10ActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            TCari.requestFocus();
+        }else if(TNoRw.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            tbPetugas.requestFocus();
+        }else{
+            if(tbPetugas.getSelectedRow()!= -1){
+                try {
+                    ps=koneksi.prepareStatement("select no_sep,no_kartu,tanggal_lahir,jkel,nmdiagnosaawal from bridging_sep where no_rawat=?");
+                    try {
+                        ps.setString(1,TNoRw.getText());
+                        rs=ps.executeQuery();
+                        if(rs.next()){
+                            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                            BPJSSuratKontrol form=new BPJSSuratKontrol(null,false);
+                            form.setNoRm(TNoRw.getText(),rs.getString("no_sep"),rs.getString("no_kartu"),TNoRM.getText(),TPasien.getText(),rs.getString("tanggal_lahir"),rs.getString("jkel"),rs.getString("nmdiagnosaawal"));
+                            form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                            form.setLocationRelativeTo(internalFrame1);
+                            form.setVisible(true);
+                            this.setCursor(Cursor.getDefaultCursor());
+                        }else{
+                            JOptionPane.showMessageDialog(null,"Pasien tersebut belum terbit SEP, silahkan hubungi bagian terkait..!!");
+                            TCari.requestFocus();
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Notif : "+e);
+                    } finally{
+                        if(rs!=null){
+                            rs.close();
+                        }
+                        if(ps!=null){
+                            ps.close();
+                        }
+                    }
+                } catch (Exception e) {
+                    System.out.println("Notif : "+e);
+                }
+            }
+        }
+        // TODO add your handling code here:
+    }
+    
+    private void BtnLabelNama10KeyPressed(java.awt.event.KeyEvent evt) {                                          
+        // TODO add your handling code here:
+    }
+    
+    private void loadNoRawatMJKN() {
+        java.util.Set<String> set = new java.util.HashSet<>();
+        String q = "SELECT no_rawat FROM referensi_mobilejkn_bpjs WHERE status <> 'Batal'";
+        try (PreparedStatement pst = koneksi.prepareStatement(q);
+             ResultSet r = pst.executeQuery()) {
+            while (r.next()) {
+                set.add(r.getString("no_rawat"));
+            }
+        } catch (Exception e) {
+            System.out.println("Notif MJKN: " + e);
+        }
+        warnaMJKN.setNoRawatMJKN(set);
+    }
+    
+    private void BtnCheckinMJKNActionPerformed(java.awt.event.ActionEvent evt) {
+        int row = tbPetugas.getSelectedRow();
+        if (row == -1) {
+            JOptionPane.showMessageDialog(null, "Silahkan pilih dulu pasien yang mau di-checkin..!!");
+            return;
+        }
 
+        String noRawat = tbPetugas.getValueAt(row, 2).toString(); // kolom "No.Rawat" di tabMode
+
+        try {
+            String nobooking = Sequel.cariIsi(
+                "select nobooking from referensi_mobilejkn_bpjs where no_rawat=? and status='Belum'",
+                noRawat
+            );
+
+            if (nobooking == null || nobooking.trim().equals("")) {
+                JOptionPane.showMessageDialog(null, "Pasien ini bukan pendaftaran Mobile JKN, atau sudah di-checkin/dibatalkan sebelumnya.");
+                return;
+            }
+
+            if (Sequel.mengedittf(
+                    "referensi_mobilejkn_bpjs", "nobooking=?",
+                    "status='Checkin',validasi=now()", 1,
+                    new String[]{nobooking}
+                ) == true) {
+                Sequel.meghapus("referensi_mobilejkn_bpjs_batal", "nobooking", nobooking);
+                JOptionPane.showMessageDialog(null, "Checkin berhasil untuk No.Rawat: " + noRawat);
+                tampil();
+            } else {
+                JOptionPane.showMessageDialog(null, "Gagal update status checkin. Silahkan coba lagi.");
+            }
+        } catch (Exception e) {
+            System.out.println("Notif Checkin MJKN: " + e);
+        }
+    }
 }

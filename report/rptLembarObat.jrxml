@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="311" pageHeight="595" orientation="Landscape" columnWidth="277" leftMargin="17" rightMargin="17" topMargin="17" bottomMargin="17">
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="226" pageHeight="595" columnWidth="192" leftMargin="17" rightMargin="17" topMargin="17" bottomMargin="17" uuid="773c7712-b774-4466-9983-07bcffb90774">
 	<property name="ireport.zoom" value="3.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="143"/>
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<parameter name="penanggung" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -20,37 +23,38 @@
 	<parameter name="norm" class="java.lang.String"/>
 	<parameter name="peresep" class="java.lang.String"/>
 	<parameter name="noresep" class="java.lang.String"/>
+	<parameter name="petugas" class="java.lang.String"/>
+	<parameter name="alamatpasien" class="java.lang.String">
+		<defaultValueExpression><![CDATA["-"]]></defaultValueExpression>
+	</parameter>
 	<queryString>
-		<![CDATA[select databarang.kode_brng,databarang.nama_brng,detail_pemberian_obat.jml,
-detail_pemberian_obat.biaya_obat,detail_pemberian_obat.embalase,databarang.kode_sat,
-detail_pemberian_obat.tuslah,detail_pemberian_obat.total from
-detail_pemberian_obat inner join databarang on detail_pemberian_obat.kode_brng=databarang.kode_brng
-where detail_pemberian_obat.tgl_perawatan=$P{tanggal} and detail_pemberian_obat.jam=$P{jam} and detail_pemberian_obat.no_rawat=$P{norawat}]]>
+		<![CDATA[SELECT
+			databarang.kode_brng,
+			databarang.nama_brng,
+			detail_pemberian_obat.jml,
+			detail_pemberian_obat.biaya_obat,
+			detail_pemberian_obat.embalase,
+			databarang.kode_sat,
+			detail_pemberian_obat.tuslah,
+			detail_pemberian_obat.total,
+			detail_pemberian_obat.signa1,
+			detail_pemberian_obat.signa2
+		FROM detail_pemberian_obat
+		INNER JOIN databarang ON detail_pemberian_obat.kode_brng = databarang.kode_brng
+		WHERE detail_pemberian_obat.tgl_perawatan = $P{tanggal}
+		  AND detail_pemberian_obat.jam           = $P{jam}
+		  AND detail_pemberian_obat.no_rawat      = $P{norawat}]]>
 	</queryString>
-	<field name="kode_brng" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="nama_brng" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="jml" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="biaya_obat" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="embalase" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="kode_sat" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="tuslah" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="total" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
+	<field name="kode_brng" class="java.lang.String"/>
+	<field name="nama_brng" class="java.lang.String"/>
+	<field name="jml" class="java.lang.Double"/>
+	<field name="biaya_obat" class="java.lang.Double"/>
+	<field name="embalase" class="java.lang.Double"/>
+	<field name="kode_sat" class="java.lang.String"/>
+	<field name="tuslah" class="java.lang.Double"/>
+	<field name="total" class="java.lang.Double"/>
+	<field name="signa1" class="java.lang.String"/>
+	<field name="signa2" class="java.lang.String"/>
 	<variable name="no" class="java.lang.Integer" calculation="Count">
 		<variableExpression><![CDATA[$F{kode_brng}]]></variableExpression>
 	</variable>
@@ -61,170 +65,191 @@ where detail_pemberian_obat.tgl_perawatan=$P{tanggal} and detail_pemberian_obat.
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="110" splitType="Stretch">
+		<band height="137" splitType="Stretch">
 			<textField>
-				<reportElement x="48" y="14" width="229" height="14"/>
-				<textElement textAlignment="Center" lineSpacing="Single">
+				<reportElement x="0" y="-4" width="190" height="17" uuid="bb061663-fd4e-4d5f-bd3a-7418887aee87"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="10" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{namars}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="10" width="190" height="12" uuid="f546f15b-7712-4505-aeca-e54276e36a67"/>
+				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{alamatrs}+", "+$P{kotars}+", "+$P{propinsirs}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{alamatrs}+", "+$P{kotars}+", "+$P{propinsirs}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="48" y="35" width="229" height="14"/>
-				<textElement textAlignment="Center" lineSpacing="Single">
+				<reportElement x="0" y="21" width="190" height="12" uuid="036eaa64-922f-4247-b023-891e3d5807ef"/>
+				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["E-mail : "+$P{emailrs}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{kontakrs}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="48" y="25" width="229" height="14"/>
-				<textElement textAlignment="Center" lineSpacing="Single">
+				<reportElement x="0" y="31" width="190" height="12" uuid="c8ca6288-63f7-4ec1-844b-0c48f17c6712"/>
+				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{kontakrs}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["E-mail : "+$P{emailrs}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="48" y="0" width="229" height="17"/>
-				<textElement textAlignment="Center" lineSpacing="Single">
-					<font fontName="Tahoma" size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{namars}]]></textFieldExpression>
-			</textField>
-			<image scaleImage="FillFrame" onErrorType="Blank">
-				<reportElement x="0" y="2" width="48" height="45"/>
-				<imageExpression class="java.io.InputStream"><![CDATA[$P{logo}]]></imageExpression>
-			</image>
 			<line>
-				<reportElement x="0" y="48" width="277" height="1"/>
+				<reportElement x="0" y="48" width="190" height="1" uuid="ab626d7f-35eb-4944-84ae-b1e6e83724d4"/>
 				<graphicElement>
 					<pen lineWidth="2.0" lineStyle="Double"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement mode="Transparent" x="2" y="54" width="57" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="2" y="54" width="57" height="9" uuid="f3022891-8940-4443-b3af-d383318625b7"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
 				<text><![CDATA[Nama Pasien]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="2" y="63" width="57" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="2" y="63" width="57" height="9" uuid="7b799915-ff24-4f1b-a9ce-3ed773fb099a"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
 				<text><![CDATA[No. R.M.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="2" y="81" width="57" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="2" y="72" width="57" height="9" uuid="6844a5e0-e4ad-4b29-8f27-ac955e9a0fe0"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+				</textElement>
+				<text><![CDATA[No. Rawat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="81" width="57" height="9" uuid="a1b2c3d4-0001-0001-0001-000000000001"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="90" width="57" height="9" uuid="559bdcda-cb81-47c0-9575-cd2447370501"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
 				<text><![CDATA[Penanggung]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="2" y="90" width="57" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="2" y="99" width="57" height="9" uuid="bba31292-fc95-43b2-b26b-00fb7f201d6e"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
 				<text><![CDATA[Pemberi Resep]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="2" y="99" width="57" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="2" y="108" width="57" height="9" uuid="27683071-129d-46c8-aa3e-f2d025d3f7d6"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
 				<text><![CDATA[No. Resep]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="59" y="63" width="5" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="59" y="54" width="5" height="9" uuid="b366e672-5b9f-4f17-841f-91b0602308c4"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="59" y="54" width="5" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="59" y="63" width="5" height="9" uuid="85fd3a77-e871-4243-bf71-7a02e2b317a0"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="59" y="90" width="5" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="59" y="72" width="5" height="9" uuid="cc68b7d1-e64a-409f-be74-fb4e5d7dca6e"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="59" y="81" width="5" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="59" y="81" width="5" height="9" uuid="a1b2c3d4-0001-0001-0001-000000000002"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="59" y="99" width="5" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="59" y="90" width="5" height="9" uuid="2357eacf-faf1-491f-96d3-a0573fced533"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="59" y="72" width="5" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="59" y="99" width="5" height="9" uuid="16f18b78-de14-4338-8bb0-988909c6ea89"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="2" y="72" width="57" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="59" y="108" width="5" height="9" uuid="c8a486e4-bf07-4c1e-b1b1-da9bf3fa169b"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
-				<text><![CDATA[No. Rawat]]></text>
+				<text><![CDATA[:]]></text>
 			</staticText>
 			<textField>
-				<reportElement mode="Transparent" x="64" y="54" width="213" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="64" y="54" width="126" height="9" uuid="46200678-e154-4df5-82c6-02eba8a1d2c4"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{pasien}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{pasien}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement mode="Transparent" x="64" y="63" width="213" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="64" y="63" width="126" height="9" uuid="b6db0beb-2927-4be4-9566-3f1f791adba9"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{norm}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{norm}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement mode="Transparent" x="64" y="72" width="213" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="64" y="72" width="126" height="9" uuid="beb612cf-c969-4749-8040-48dee3342917"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{norawat}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{norawat}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="64" y="81" width="126" height="9" uuid="a1b2c3d4-0001-0001-0001-000000000003"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{alamatpasien}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement mode="Transparent" x="64" y="81" width="213" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="64" y="90" width="126" height="9" uuid="487c8020-f2e0-497d-b811-57fc17cb6bca"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{penanggung}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{penanggung}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement mode="Transparent" x="64" y="90" width="213" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="64" y="99" width="126" height="9" uuid="98a3034b-336c-4430-a0ec-45bbb3a7d5b0"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{peresep}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{peresep}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement mode="Transparent" x="64" y="99" width="213" height="9"/>
-				<textElement lineSpacing="Single" markup="none">
+				<reportElement x="64" y="108" width="126" height="9" uuid="3a7168f9-17f7-4671-9ff9-82cd6ef70bca"/>
+				<textElement>
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{noresep}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{noresep}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
@@ -232,34 +257,45 @@ where detail_pemberian_obat.tgl_perawatan=$P{tanggal} and detail_pemberian_obat.
 		<band splitType="Stretch"/>
 	</pageHeader>
 	<detail>
-		<band height="9" splitType="Stretch">
+		<band height="32">
 			<textField isStretchWithOverflow="true">
-				<reportElement mode="Transparent" x="16" y="0" width="158" height="9"/>
-				<textElement lineSpacing="Single">
-					<font fontName="Tahoma" size="7"/>
+				<reportElement x="0" y="0" width="192" height="10" uuid="1e89b43b-e0d4-4927-9460-8040f121f617"/>
+				<textElement>
+					<font size="7" isBold="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{nama_brng}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{no}+" "+$F{nama_brng}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement mode="Transparent" x="0" y="0" width="16" height="9"/>
-				<textElement lineSpacing="Single">
-					<font fontName="Tahoma" size="7"/>
+			<textField pattern="Rp #,##0.00">
+				<reportElement x="0" y="11" width="60" height="10" uuid="2e87d564-b651-432a-894f-1aefae8d500f"/>
+				<textElement>
+					<font size="7"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{no}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{biaya_obat}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="Rp #,##0.00">
-				<reportElement mode="Transparent" x="220" y="0" width="57" height="9"/>
-				<textElement textAlignment="Right" lineSpacing="Single">
-					<font fontName="Tahoma" size="7"/>
+			<textField>
+				<reportElement x="70" y="11" width="40" height="10" uuid="d6b9c573-ab1b-4586-b693-953950c5dec9"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$F{total}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{jml}+" "+$F{kode_sat}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement mode="Transparent" x="174" y="0" width="46" height="9"/>
-				<textElement lineSpacing="Single">
-					<font fontName="Tahoma" size="7"/>
+			<textField pattern="Rp #,##0.00">
+				<reportElement x="120" y="11" width="72" height="10" uuid="74836193-261e-4342-8b3f-2556cb844fbd"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{jml}+" "+$F{kode_sat}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="22" width="192" height="9" uuid="a1b2c3d4-0002-0002-0002-000000000001"/>
+				<textElement>
+					<font size="6.5" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{signa1} != null && !$F{signa1}.trim().isEmpty())
+					? ($F{signa2} != null && !$F{signa2}.trim().isEmpty()
+						? $F{signa1}+" - "+$F{signa2}
+						: $F{signa1})
+					: ""]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -267,34 +303,47 @@ where detail_pemberian_obat.tgl_perawatan=$P{tanggal} and detail_pemberian_obat.
 		<band splitType="Stretch"/>
 	</columnFooter>
 	<summary>
-		<band height="58" splitType="Stretch">
-			<textField isStretchWithOverflow="true" pattern="Rp #,##0.00">
-				<reportElement mode="Transparent" x="220" y="0" width="57" height="10"/>
-				<textElement textAlignment="Right" lineSpacing="Single">
-					<font fontName="Tahoma" size="7"/>
-				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$V{total}]]></textFieldExpression>
-			</textField>
+		<band height="84" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="5" width="190" height="1" uuid="c8677858-c2e9-4ba1-ba0d-158ef08f757a"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
 			<staticText>
-				<reportElement mode="Transparent" x="16" y="0" width="57" height="10"/>
-				<textElement lineSpacing="Single" markup="none">
-					<font fontName="Tahoma" size="7"/>
+				<reportElement x="0" y="10" width="57" height="10" uuid="6eda741c-8f1b-474f-97c0-16667c3da4df"/>
+				<textElement>
+					<font fontName="Tahoma" size="7" isBold="true"/>
 				</textElement>
 				<text><![CDATA[TOTAL :]]></text>
 			</staticText>
-			<textField isStretchWithOverflow="true">
-				<reportElement mode="Transparent" x="142" y="12" width="135" height="10"/>
-				<textElement textAlignment="Center" lineSpacing="Single">
+			<textField pattern="Rp #,##0.00">
+				<reportElement x="133" y="10" width="57" height="10" uuid="b6aa7531-3fdf-4b34-943f-d66af657dc63"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="37" width="135" height="10" uuid="cffa461d-bedf-4697-9c8d-bd855b17af83"/>
+				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="7"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{kotars}+", "+$P{tanggal}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{kotars}+", "+$P{tanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="55" width="131" height="10" uuid="9c59e373-6664-4ca4-9276-b89f12ea5cda"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{petugas}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Transparent" x="146" y="40" width="131" height="10"/>
-				<textElement textAlignment="Center" lineSpacing="Single" markup="none">
-					<font fontName="Tahoma" size="7"/>
+				<reportElement x="30" y="65" width="131" height="10" uuid="84d62924-a3ac-4be1-99ac-a2f936a6b515"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
 				</textElement>
-				<text><![CDATA[PETUGAS]]></text>
+				<text><![CDATA[Petugas]]></text>
 			</staticText>
 		</band>
 	</summary>
