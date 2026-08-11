@@ -20,6 +20,7 @@ import fungsi.koneksiDB;
 import fungsi.sekuel;
 import fungsi.validasi;
 import fungsi.akses;
+import fungsi.lokasidepoutama;
 import inventory.DlgCariObat;
 import inventory.DlgCariObat2;
 import java.awt.Cursor;
@@ -3466,7 +3467,7 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
                     nameNode = root.path("metaData");
                     if(nameNode.path("message").asText().equals("OK")){
                         response = mapper.readTree(api.Decrypt(root.path("response").asText(),utc));
-                        if(response.path("ketAktif").asText().equals("AKTIF")){
+                        if(response.path("ketAktif").asText().startsWith("AKTIF")){
                             TPasien.setText(response.path("nama").asText());
                             TglLahir.setText(response.path("tglLahir").asText());
                             JK.setText(response.path("sex").asText().replaceAll("L","Laki-Laki").replaceAll("P","Perempuan"));
@@ -4437,7 +4438,7 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
                         nameNode = root.path("metaData");
                         if(nameNode.path("message").asText().equals("OK")){
                             response = mapper.readTree(api.Decrypt(root.path("response").asText(),utc));
-                            if(response.path("ketAktif").asText().equals("AKTIF")){
+                            if(response.path("ketAktif").asText().startsWith("AKTIF")){
                                 TPasien.setText(response.path("nama").asText());
                                 TglLahir.setText(response.path("tglLahir").asText());
                                 JK.setText(response.path("sex").asText().replaceAll("L","Laki-Laki").replaceAll("P","Perempuan"));
@@ -4870,10 +4871,13 @@ public final class PCareDataPendaftaran extends javax.swing.JDialog {
                         kamar=Sequel.cariIsi("select ifnull(kamar_inap.kd_kamar,'') from kamar_inap where kamar_inap.no_rawat=? order by kamar_inap.tgl_masuk desc limit 1",TNoRw.getText());
                         bangsal=Sequel.cariIsi("select set_depo_ranap.kd_depo from set_depo_ranap where set_depo_ranap.kd_bangsal=?",Sequel.cariIsi("select kamar.kd_bangsal from kamar where kamar.kd_kamar=?",kamar));
                         if(bangsal.equals("")){
-                            if(Sequel.cariIsi("select set_lokasi.asal_stok from set_lokasi").equals("Gunakan Stok Bangsal")){
+                            if(lokasidepoutama.getDepoDefault().equals("")){
+                                lokasidepoutama.SetLokasiDepoUtama();
+                            }
+                            if(lokasidepoutama.getAsalStok().equals("Gunakan Stok Bangsal")){
                                 akses.setkdbangsal(Sequel.cariIsi("select kamar.kd_bangsal from kamar where kamar.kd_kamar=?",kamar));
                             }else{
-                                akses.setkdbangsal(Sequel.cariIsi("select set_lokasi.kd_bangsal from set_lokasi"));
+                                akses.setkdbangsal(lokasidepoutama.getDepoDefault());
                             }
                         }else{
                             akses.setkdbangsal(bangsal);

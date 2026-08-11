@@ -953,6 +953,35 @@ public final class sekuel {
         }    
     }
     
+    public void mengedit4(String table,String acuan_field,String update,int i,String[] a){
+        try {
+            ps=connect.prepareStatement("update ignore "+table+" set "+update+" where "+acuan_field);
+            try{
+                for(angka=1;angka<=i;angka++){
+                    ps.setString(angka,a[angka-1]);
+                } 
+                ps.executeUpdate();       
+             }catch(Exception e){
+                System.out.println("Notifikasi : "+e);
+                JOptionPane.showMessageDialog(null,"Maaf, Gagal Mengedit. Periksa kembali data...!!!!");
+             }finally{
+                if(ps != null){
+                    ps.close();
+                }
+            }
+            
+            if(AKTIFKANTRACKSQL.equals("yes")){
+                dicari="";
+                for(angka=1;angka<=i;angka++){
+                    dicari=dicari+"|"+a[angka-1];
+                }
+            }
+            SimpanTrack("update "+table+" set "+update+" "+dicari+" where "+acuan_field);
+        } catch (Exception e) {
+            System.out.println("Notifikasi : "+e);
+        }    
+    }
+    
     public boolean mengedittf(String table,String acuan_field,String update,int i,String[] a){
         bool=true;
         try {
@@ -2063,7 +2092,7 @@ public final class sekuel {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         JsonNode response;
-        FileReader myObj;
+        FileReader myObj=null;
         String iyem="";
         try {
             myObj = new FileReader("./cache/dokter.iyem");
@@ -2073,12 +2102,17 @@ public final class sekuel {
                 for(JsonNode list:response){
                     if(list.path("KodeDokter").asText().equalsIgnoreCase(kode)){
                         iyem=list.path("NamaDokter").asText();
+                        break;
                     }
                 }
             }
             myObj.close();
         } catch (Exception ex) {
             System.out.println("Notifikasi : "+ex);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
         if(iyem.equals("")){
             iyem=cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",kode);
@@ -2090,7 +2124,7 @@ public final class sekuel {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         JsonNode response;
-        FileReader myObj;
+        FileReader myObj=null;
         String iyem="";
         try {
             myObj = new FileReader("./cache/petugas.iyem");
@@ -2100,12 +2134,17 @@ public final class sekuel {
                 for(JsonNode list:response){
                     if(list.path("NIP").asText().equalsIgnoreCase(kode)){
                         iyem=list.path("NamaPetugas").asText();
+                        break;
                     }
                 }
             }
             myObj.close();
         } catch (Exception ex) {
             System.out.println("Notifikasi : "+ex);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
         if(iyem.equals("")){
             iyem=cariIsi("select petugas.nama from petugas where petugas.nip=?",kode);
@@ -2117,7 +2156,7 @@ public final class sekuel {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         JsonNode response;
-        FileReader myObj;
+        FileReader myObj = null;
         String iyem="";
         try {
             myObj = new FileReader("./cache/pegawai.iyem");
@@ -2127,12 +2166,17 @@ public final class sekuel {
                 for(JsonNode list:response){
                     if(list.path("NIP").asText().equalsIgnoreCase(kode)){
                         iyem=list.path("Nama").asText();
+                        break;
                     }
                 }
             }
             myObj.close();
         } catch (Exception ex) {
             System.out.println("Notifikasi : "+ex);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
         if(iyem.equals("")){
             iyem=cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",kode);
@@ -2144,7 +2188,7 @@ public final class sekuel {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         JsonNode response;
-        FileReader myObj;
+        FileReader myObj=null;
         String iyem="";
         try {
             myObj = new FileReader("./cache/pegawai.iyem");
@@ -2154,12 +2198,17 @@ public final class sekuel {
                 for(JsonNode list:response){
                     if(list.path("NIP").asText().toLowerCase().equals(kode)){
                         iyem=list.path("Jabatan").asText();
+                        break;
                     }
                 }
             }
             myObj.close();
         } catch (Exception ex) {
             System.out.println("Notifikasi : "+ex);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
         if(iyem.equals("")){
             iyem=cariIsi("select pegawai.jbtn from pegawai where pegawai.nik=?",kode);
@@ -2171,7 +2220,7 @@ public final class sekuel {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         JsonNode response;
-        FileReader myObj;
+        FileReader myObj=null;
         String iyem="";
         try {
             myObj = new FileReader("./cache/pegawai.iyem");
@@ -2181,12 +2230,17 @@ public final class sekuel {
                 for(JsonNode list:response){
                     if(list.path("NIP").asText().toLowerCase().equals(kode)){
                         iyem=list.path("Departemen").asText();
+                        break;
                     }
                 }
             }
             myObj.close();
         } catch (Exception ex) {
             System.out.println("Notifikasi : "+ex);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
         if(iyem.equals("")){
             iyem=cariIsi("select pegawai.departemen from pegawai where pegawai.nik=?",kode);
@@ -2198,7 +2252,7 @@ public final class sekuel {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         JsonNode response;
-        FileReader myObj;
+        FileReader myObj=null;
         String iyem="";
         try {
             myObj = new FileReader("./cache/bangsal.iyem");
@@ -2208,12 +2262,17 @@ public final class sekuel {
                 for(JsonNode list:response){
                     if(list.path("KodeKamar").asText().equalsIgnoreCase(kode)){
                         iyem=list.path("NamaKamar").asText();
+                        break;
                     }
                 }
             }
             myObj.close();
         } catch (Exception ex) {
             System.out.println("Notifikasi : "+ex);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
         if(iyem.equals("")){
             iyem=cariIsi("select bangsal.nm_bangsal from bangsal where bangsal.kd_bangsal=?",kode);
@@ -2225,7 +2284,7 @@ public final class sekuel {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         JsonNode response;
-        FileReader myObj;
+        FileReader myObj=null;
         String iyem="";
         try {
             myObj = new FileReader("./cache/masterpropinsi.iyem");
@@ -2235,12 +2294,17 @@ public final class sekuel {
                 for(JsonNode list:response){
                     if(list.path("NamaProp").asText().toLowerCase().equals(nama)){
                         iyem=list.path("KodeProp").asText();
+                        break;
                     }
                 }
             }
             myObj.close();
         } catch (Exception ex) {
             System.out.println("Notifikasi : "+ex);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
         if(iyem.equals("")){
             iyem=cariIsi("select propinsi.kd_prop from propinsi where propinsi.nm_prop=?",nama);
@@ -2252,7 +2316,7 @@ public final class sekuel {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         JsonNode response;
-        FileReader myObj;
+        FileReader myObj=null;
         String iyem="";
         try {
             myObj = new FileReader("./cache/masterkabupaten.iyem");
@@ -2262,12 +2326,17 @@ public final class sekuel {
                 for(JsonNode list:response){
                     if(list.path("NamaKab").asText().toLowerCase().equals(nama)){
                         iyem=list.path("KodeKab").asText();
+                        break;
                     }
                 }
             }
             myObj.close();
         } catch (Exception ex) {
             System.out.println("Notifikasi : "+ex);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
         if(iyem.equals("")){
             iyem=cariIsi("select kabupaten.kd_kab from kabupaten where kabupaten.nm_kab=?",nama);
@@ -2279,7 +2348,7 @@ public final class sekuel {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         JsonNode response;
-        FileReader myObj;
+        FileReader myObj=null;
         String iyem="";
         try {
             myObj = new FileReader("./cache/masterkecamatan.iyem");
@@ -2289,12 +2358,17 @@ public final class sekuel {
                 for(JsonNode list:response){
                     if(list.path("NamaKec").asText().toLowerCase().equals(nama)){
                         iyem=list.path("KodeKec").asText();
+                        break;
                     }
                 }
             }
             myObj.close();
         } catch (Exception ex) {
             System.out.println("Notifikasi : "+ex);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
         if(iyem.equals("")){
             iyem=cariIsi("select kecamatan.kd_kec from kecamatan where kecamatan.nm_kec=?",nama);
@@ -2306,7 +2380,7 @@ public final class sekuel {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root;
         JsonNode response;
-        FileReader myObj;
+        FileReader myObj=null;
         String iyem="";
         try {
             myObj = new FileReader("./cache/masterkelurahan.iyem");
@@ -2316,12 +2390,17 @@ public final class sekuel {
                 for(JsonNode list:response){
                     if(list.path("NamaKel").asText().toLowerCase().equals(nama)){
                         iyem=list.path("KodeKel").asText();
+                        break;
                     }
                 }
             }
             myObj.close();
         } catch (Exception ex) {
             System.out.println("Notifikasi : "+ex);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
         if(iyem.equals("")){
             iyem=cariIsi("select kelurahan.kd_kel from kelurahan where kelurahan.nm_kel=?",nama);

@@ -661,7 +661,7 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             if(Valid.daysOld("./cache/permintaanipsrs.iyem")<8){
                 runBackground(() ->tampil2());
             }else{
-                runBackground(() ->tampil());
+                runBackground(() ->LoadData());
             }
         } catch (Exception e) {
         }
@@ -708,7 +708,7 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
         TCari.setText("");
-        runBackground(() ->tampil());
+        runBackground(() ->LoadData());
     }//GEN-LAST:event_BtnAllActionPerformed
 
     private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
@@ -768,7 +768,6 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 
     private void tampil() {
         try{
-            Valid.tabelKosong(tabMode);
             file=new File("./cache/permintaanipsrs.iyem");
             file.createNewFile();
             fileWriter = new FileWriter(file);
@@ -781,10 +780,6 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             try {
                 rs=ps.executeQuery();
                 while(rs.next()){
-                    tabMode.addRow(new Object[]{
-                        "",rs.getString(1),rs.getString(2),rs.getString(3),
-                        rs.getString(4),""
-                    });
                     iyembuilder.append("{\"KodeBarang\":\"").append(rs.getString(1)).append("\",\"NamaBarang\":\"").append(rs.getString(2).replaceAll("\"","")).append("\",\"Satuan\":\"").append(rs.getString(3)).append("\",\"Jenis\":\"").append(rs.getString(4)).append("\"},");
                 } 
             } catch (Exception e) {
@@ -808,8 +803,9 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             iyembuilder=null;     
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+        }finally {
+            if (fileWriter != null) try { fileWriter.close(); } catch (Exception e) {}
         }
-        
     }
 
     private void tampil2() {
@@ -874,8 +870,16 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             myObj.close();           
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+        }finally {
+            if (myObj != null) try { myObj.close(); } catch (Exception e) {}
+            response = null;
+            root = null;
         }
-        
+    }
+    
+    private void LoadData(){
+        tampil();
+        tampil2();
     }
     
     public void isCek(){

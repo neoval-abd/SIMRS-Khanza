@@ -627,7 +627,7 @@ public class DlgFrekuensiPenyakitRanap extends javax.swing.JDialog {
             }
         });
         FormInput.add(BtnSeek5);
-        BtnSeek5.setBounds(782, 10, 28, 23);
+        BtnSeek5.setBounds(802, 10, 28, 23);
 
         BtnSeek6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
         BtnSeek6.setMnemonic('3');
@@ -640,7 +640,7 @@ public class DlgFrekuensiPenyakitRanap extends javax.swing.JDialog {
             }
         });
         FormInput.add(BtnSeek6);
-        BtnSeek6.setBounds(782, 40, 28, 23);
+        BtnSeek6.setBounds(802, 40, 28, 23);
 
         BtnSeek7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
         BtnSeek7.setMnemonic('3');
@@ -653,7 +653,7 @@ public class DlgFrekuensiPenyakitRanap extends javax.swing.JDialog {
             }
         });
         FormInput.add(BtnSeek7);
-        BtnSeek7.setBounds(782, 70, 28, 23);
+        BtnSeek7.setBounds(802, 70, 28, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -670,49 +670,53 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
 */
 
     private void BtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrintActionPerformed
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-        if(TabRawat.getSelectedIndex()==0){
-            if(tbDokter.getRowCount()==0){
-                JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
-                //TCari.requestFocus();
-            }else if(tbDokter.getRowCount()!=0){
-                Sequel.queryu("delete from temporary where temp37='"+akses.getalamatip()+"'");
-                int row=tbDokter.getRowCount();
-                for(int r=0;r<row;r++){  
-                    Sequel.menyimpan("temporary","'"+r+"','"+
-                                    tbDokter.getValueAt(r,0).toString().replaceAll("'","`") +"','"+
-                                    tbDokter.getValueAt(r,1).toString().replaceAll("'","`")+"','"+
-                                    tbDokter.getValueAt(r,2).toString().replaceAll("'","`")+"','"+
-                                    tbDokter.getValueAt(r,3).toString()+"','"+
-                                    tbDokter.getValueAt(r,4).toString()+"','"+
-                                    tbDokter.getValueAt(r,5).toString()+"','"+
-                                    tbDokter.getValueAt(r,6).toString()+"','"+
-                                    tbDokter.getValueAt(r,7).toString()+"','','','','','','','','','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Rekap Frekuensi Penyakit"); 
+        if(ceksukses==false){
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            if(TabRawat.getSelectedIndex()==0){
+                if(tbDokter.getRowCount()==0){
+                    JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
+                    //TCari.requestFocus();
+                }else if(tbDokter.getRowCount()!=0){
+                    Sequel.queryu("delete from temporary where temp37='"+akses.getalamatip()+"'");
+                    int row=tbDokter.getRowCount();
+                    for(int r=0;r<row;r++){  
+                        Sequel.menyimpan("temporary","'"+r+"','"+
+                                        tbDokter.getValueAt(r,0).toString().replaceAll("'","`") +"','"+
+                                        tbDokter.getValueAt(r,1).toString().replaceAll("'","`")+"','"+
+                                        tbDokter.getValueAt(r,2).toString().replaceAll("'","`")+"','"+
+                                        tbDokter.getValueAt(r,3).toString()+"','"+
+                                        tbDokter.getValueAt(r,4).toString()+"','"+
+                                        tbDokter.getValueAt(r,5).toString()+"','"+
+                                        tbDokter.getValueAt(r,6).toString()+"','"+
+                                        tbDokter.getValueAt(r,7).toString()+"','','','','','','','','','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Rekap Frekuensi Penyakit"); 
+                    }
+                    Valid.panggilUrl("billing/LaporanPenyakitRanap.php?tanggal1="+Valid.SetTgl(Tgl1.getSelectedItem()+"")+"&tanggal2="+Valid.SetTgl(Tgl2.getSelectedItem()+"")+"&alamatip="+akses.getalamatip()+"&usere="+koneksiDB.USERHYBRIDWEB()+"&passwordte="+koneksiDB.PASHYBRIDWEB());                       
                 }
-                Valid.panggilUrl("billing/LaporanPenyakitRanap.php?tanggal1="+Valid.SetTgl(Tgl1.getSelectedItem()+"")+"&tanggal2="+Valid.SetTgl(Tgl2.getSelectedItem()+"")+"&alamatip="+akses.getalamatip()+"&usere="+koneksiDB.USERHYBRIDWEB()+"&passwordte="+koneksiDB.PASHYBRIDWEB());                       
-            }
-        }else if(TabRawat.getSelectedIndex()==1){
-            if(tbDokter2.getRowCount()==0){
-                JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
-                //TCari.requestFocus();
-            }else if(tbDokter2.getRowCount()!=0){
-                Sequel.queryu("delete from temporary where temp37='"+akses.getalamatip()+"'");
-                int row=tbDokter2.getRowCount();
-                for(int r=0;r<row;r++){  
-                    Sequel.menyimpan("temporary","'"+r+"','"+
-                                    tbDokter2.getValueAt(r,0).toString().replaceAll("'","`") +"','"+
-                                    tbDokter2.getValueAt(r,1).toString().replaceAll("'","`")+"','"+
-                                    tbDokter2.getValueAt(r,2).toString().replaceAll("'","`")+"','"+
-                                    tbDokter2.getValueAt(r,3).toString()+"','"+
-                                    tbDokter2.getValueAt(r,4).toString()+"','"+
-                                    tbDokter2.getValueAt(r,5).toString()+"','"+
-                                    tbDokter2.getValueAt(r,6).toString()+"','"+
-                                    tbDokter2.getValueAt(r,7).toString()+"','','','','','','','','','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Rekap Frekuensi Penyakit"); 
+            }else if(TabRawat.getSelectedIndex()==1){
+                if(tbDokter2.getRowCount()==0){
+                    JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
+                    //TCari.requestFocus();
+                }else if(tbDokter2.getRowCount()!=0){
+                    Sequel.queryu("delete from temporary where temp37='"+akses.getalamatip()+"'");
+                    int row=tbDokter2.getRowCount();
+                    for(int r=0;r<row;r++){  
+                        Sequel.menyimpan("temporary","'"+r+"','"+
+                                        tbDokter2.getValueAt(r,0).toString().replaceAll("'","`") +"','"+
+                                        tbDokter2.getValueAt(r,1).toString().replaceAll("'","`")+"','"+
+                                        tbDokter2.getValueAt(r,2).toString().replaceAll("'","`")+"','"+
+                                        tbDokter2.getValueAt(r,3).toString()+"','"+
+                                        tbDokter2.getValueAt(r,4).toString()+"','"+
+                                        tbDokter2.getValueAt(r,5).toString()+"','"+
+                                        tbDokter2.getValueAt(r,6).toString()+"','"+
+                                        tbDokter2.getValueAt(r,7).toString()+"','','','','','','','','','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Rekap Frekuensi Penyakit"); 
+                    }
+                    Valid.panggilUrl("billing/LaporanPenyakitRanap.php?tanggal1="+Valid.SetTgl(Tgl1.getSelectedItem()+"")+"&tanggal2="+Valid.SetTgl(Tgl2.getSelectedItem()+"")+"&alamatip="+akses.getalamatip()+"&usere="+koneksiDB.USERHYBRIDWEB()+"&passwordte="+koneksiDB.PASHYBRIDWEB());                       
                 }
-                Valid.panggilUrl("billing/LaporanPenyakitRanap.php?tanggal1="+Valid.SetTgl(Tgl1.getSelectedItem()+"")+"&tanggal2="+Valid.SetTgl(Tgl2.getSelectedItem()+"")+"&alamatip="+akses.getalamatip()+"&usere="+koneksiDB.USERHYBRIDWEB()+"&passwordte="+koneksiDB.PASHYBRIDWEB());                       
-            }
-        }        
-        this.setCursor(Cursor.getDefaultCursor());
+            }        
+            this.setCursor(Cursor.getDefaultCursor());
+        }else{
+            JOptionPane.showMessageDialog(null,"Masih proses menampilkan data, harap tunggu terlebih dahulu...!");
+        } 
     }//GEN-LAST:event_BtnPrintActionPerformed
 
     private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnPrintKeyPressed
