@@ -510,7 +510,7 @@ public final class BPJSDataSEP extends javax.swing.JDialog {
         BtnCari1 = new widget.Button();
         NIK = new widget.TextBox();
         internalFrame1 = new widget.InternalFrame();
-        TabRawat = new javax.swing.JTabbedPane();
+        TabRawat = new widget.TabPane();
         internalFrame2 = new widget.InternalFrame();
         Scroll1 = new widget.ScrollPane();
         FormInput = new widget.PanelBiasa();
@@ -3177,7 +3177,11 @@ public final class BPJSDataSEP extends javax.swing.JDialog {
 }//GEN-LAST:event_TCariKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-        runBackground(() ->tampil());
+        if(TabRawat.getSelectedIndex()==1){
+            runBackground(() ->tampil());
+        }else if(TabRawat.getSelectedIndex()==2){
+            runBackground(() ->tampilInternal());
+        }
 }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
@@ -6065,7 +6069,7 @@ public final class BPJSDataSEP extends javax.swing.JDialog {
     private widget.TextBox TNoRM;
     private widget.TextBox TNoRw;
     private widget.TextBox TPasien;
-    private javax.swing.JTabbedPane TabRawat;
+    private widget.TabPane TabRawat;
     private widget.Tanggal TanggalKKL;
     private widget.Tanggal TanggalKematian;
     private widget.Tanggal TanggalKunjungRujukan;
@@ -6989,6 +6993,7 @@ public final class BPJSDataSEP extends javax.swing.JDialog {
                            } 
                         }
 
+                        JOptionPane.showMessageDialog(null,"No.SEP ini sudah terbit sebelumnya, terdeteksi sebagai SEP internal.\nBerpotensi tidak dibayar BPJS...!!");
                         emptTeks();
                     }
                  }                     

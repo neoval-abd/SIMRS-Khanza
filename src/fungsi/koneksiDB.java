@@ -1803,6 +1803,12 @@ public class koneksiDB {
             var=EnkripsiAES.decrypt(prop.getProperty("USERNEXTCLOUD"));
         }catch(Exception e){
             var=""; 
+    public static String TAMPILTARIFOPERASI(){
+        try (FileInputStream fis = new FileInputStream("setting/database.xml")) {
+            prop.loadFromXML(fis);
+            var=prop.getProperty("TAMPILTARIFOPERASI");
+        }catch(Exception e){
+            var="no"; 
         }
         return var;
     }
@@ -1832,6 +1838,10 @@ public class koneksiDB {
         try {
             prop.loadFromXML(new FileInputStream("setting/database.xml"));
             var = EnkripsiAES.decrypt(prop.getProperty("KEYEKLAIM"));
+    public static String URLAPPLINKSATUSEHAT() {
+        try {
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var = prop.getProperty("URLAPPLINKSATUSEHAT");
         } catch (Exception e) {
             var = "";
         }
@@ -1843,6 +1853,11 @@ public class koneksiDB {
         try {
             prop.loadFromXML(new FileInputStream("setting/database.xml"));
             var = EnkripsiAES.decrypt(prop.getProperty("WSEKLAIM"));
+    
+    public static String IDORGBPJSSATUSEHAT() {
+        try {
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var = prop.getProperty("IDORGBPJSSATUSEHAT");
         } catch (Exception e) {
             var = "";
         }
@@ -1854,6 +1869,11 @@ public class koneksiDB {
         try {
             prop.loadFromXML(new FileInputStream("setting/database.xml"));
             var = prop.getProperty("KELASRSEKLAIM");
+    
+    public static String KODEAKUNPENGELUARANHARIAN() {
+        try {
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var = prop.getProperty("KODEAKUNPENGELUARANHARIAN");
         } catch (Exception e) {
             var = "";
         }

@@ -1424,6 +1424,10 @@ public final class RMUjiFungsiKFR extends javax.swing.JDialog {
         }
     }
     
+    public JTable getTable(){
+        return tbObat;
+    }
+    
     private void runBackground(Runnable task) {
         if (ceksukses) return;
         if (executor.isShutdown() || executor.isTerminated()) return;

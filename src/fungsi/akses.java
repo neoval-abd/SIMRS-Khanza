@@ -263,7 +263,9 @@ public final class akses {
             mapping_penyakit_smart_klaim_bpjs=false,permintaan_binrohtal=false,surat_permintaan_perlindungan_dari_kekerasan=false,surat_permohonan_privasi=false,surat_permintaan_second_opinion=false,
             surat_keterangan_berobat=false,surat_penolakan_resusitasi=false,catatan_observasi_ruang_ok=false,hasil_pemeriksaan_usg_abdomen=false,intervensi_nyeri_farmakologi=false,
             intervensi_nyeri_nonfarmakologi=false,surat_pengajuan_cuti_pasien=false,checklist_kriteria_masuk_isolasi=false,satu_sehat_mapping_kptl_tindakan_ralan=false,
-            satu_sehat_mapping_kptl_tindakan_ranap=false,satu_sehat_mapping_kptl_tindakan_radiologi=false,satu_sehat_mapping_kptl_tindakan_laborat=false,satu_sehat_mapping_kptl_tindakan_operasi=false;
+            satu_sehat_mapping_kptl_tindakan_ranap=false,satu_sehat_mapping_kptl_tindakan_radiologi=false,satu_sehat_mapping_kptl_tindakan_laborat=false,satu_sehat_mapping_kptl_tindakan_operasi=false,
+            satu_sehat_mapping_kptl_tarif_kamar=false,checklist_kriteria_keluar_isolasi=false,satu_sehat_tanda_tangan_elektronik=false,satu_sehat_kirim_composition=false,
+            ringkasan_hutang_vendor_inventaris=false,ringkasan_beban_hutang_lain=false,set_resep_per_cara_bayar=false,skrining_tolac=false;
     
     public static void setData(String user, String pass) {
         try {        
@@ -1497,6 +1499,14 @@ public final class akses {
                         akses.satu_sehat_mapping_kptl_tindakan_radiologi=true;
                         akses.satu_sehat_mapping_kptl_tindakan_laborat=true;
                         akses.satu_sehat_mapping_kptl_tindakan_operasi=true;
+                        akses.satu_sehat_mapping_kptl_tarif_kamar=true;
+                        akses.checklist_kriteria_keluar_isolasi=true;
+                        akses.satu_sehat_tanda_tangan_elektronik=true;
+                        akses.satu_sehat_kirim_composition=true;
+                        akses.ringkasan_hutang_vendor_inventaris=true;
+                        akses.ringkasan_beban_hutang_lain=true;
+                        akses.set_resep_per_cara_bayar=true;
+                        akses.skrining_tolac=true;
                     }else if(rs2.getRow()>=1){   
                         rs2.beforeFirst();
                         rs2.next();
@@ -2714,6 +2724,14 @@ public final class akses {
                         akses.satu_sehat_mapping_kptl_tindakan_radiologi=rs2.getBoolean("satu_sehat_mapping_kptl_tindakan_radiologi");
                         akses.satu_sehat_mapping_kptl_tindakan_laborat=rs2.getBoolean("satu_sehat_mapping_kptl_tindakan_laborat");
                         akses.satu_sehat_mapping_kptl_tindakan_operasi=rs2.getBoolean("satu_sehat_mapping_kptl_tindakan_operasi");
+                        akses.satu_sehat_mapping_kptl_tarif_kamar=rs2.getBoolean("satu_sehat_mapping_kptl_tarif_kamar");
+                        akses.checklist_kriteria_keluar_isolasi=rs2.getBoolean("checklist_kriteria_keluar_isolasi");
+                        akses.satu_sehat_tanda_tangan_elektronik=rs2.getBoolean("satu_sehat_tanda_tangan_elektronik");
+                        akses.satu_sehat_kirim_composition=rs2.getBoolean("satu_sehat_kirim_composition");
+                        akses.ringkasan_hutang_vendor_inventaris=rs2.getBoolean("ringkasan_hutang_vendor_inventaris");
+                        akses.ringkasan_beban_hutang_lain=rs2.getBoolean("ringkasan_beban_hutang_lain");
+                        akses.set_resep_per_cara_bayar=rs2.getBoolean("set_resep_per_cara_bayar");
+                        akses.skrining_tolac=rs2.getBoolean("skrining_tolac");
                     }else if((rs.getRow()==0)&&(rs2.getRow()==0)){
                         setLogOut();
                     }
@@ -3953,6 +3971,14 @@ public final class akses {
         akses.satu_sehat_mapping_kptl_tindakan_radiologi=false;
         akses.satu_sehat_mapping_kptl_tindakan_laborat=false;
         akses.satu_sehat_mapping_kptl_tindakan_operasi=false;
+        akses.satu_sehat_mapping_kptl_tarif_kamar=false;
+        akses.checklist_kriteria_keluar_isolasi=false;
+        akses.satu_sehat_tanda_tangan_elektronik=false;
+        akses.satu_sehat_kirim_composition=false;
+        akses.ringkasan_hutang_vendor_inventaris=false;
+        akses.ringkasan_beban_hutang_lain=false;
+        akses.set_resep_per_cara_bayar=false;
+        akses.skrining_tolac=false;
     }
     
     public static int getjml1() {return akses.jml1;}    
@@ -5209,4 +5235,12 @@ public final class akses {
     public static boolean getsatu_sehat_mapping_kptl_tindakan_radiologi(){return akses.satu_sehat_mapping_kptl_tindakan_radiologi;}
     public static boolean getsatu_sehat_mapping_kptl_tindakan_laborat(){return akses.satu_sehat_mapping_kptl_tindakan_laborat;}
     public static boolean getsatu_sehat_mapping_kptl_tindakan_operasi(){return akses.satu_sehat_mapping_kptl_tindakan_operasi;}
+    public static boolean getsatu_sehat_mapping_kptl_tarif_kamar(){return akses.satu_sehat_mapping_kptl_tarif_kamar;}
+    public static boolean getchecklist_kriteria_keluar_isolasi(){return akses.checklist_kriteria_keluar_isolasi;}
+    public static boolean getsatu_sehat_tanda_tangan_elektronik(){return akses.satu_sehat_tanda_tangan_elektronik;}
+    public static boolean getsatu_sehat_kirim_composition(){return akses.satu_sehat_kirim_composition;}
+    public static boolean getringkasan_hutang_vendor_inventaris(){return akses.ringkasan_hutang_vendor_inventaris;}
+    public static boolean getringkasan_beban_hutang_lain(){return akses.ringkasan_beban_hutang_lain;}
+    public static boolean getset_resep_per_cara_bayar(){return akses.set_resep_per_cara_bayar;}
+    public static boolean getskrining_tolac(){return akses.skrining_tolac;}
 }   
