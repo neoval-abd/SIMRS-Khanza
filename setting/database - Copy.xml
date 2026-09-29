@@ -2,17 +2,17 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <comment>KhanzaHMS</comment> 
-    <entry key="HOST">jFIlLr3k/d8ZM9g9Q9JfCQ==</entry>
-    <entry key="DATABASE">ViUR2c79BuyCg3tRBgqbRQ==</entry>
-    <entry key="PORT">1IhhdBlbY5b+GiRzYgcF7A==</entry>
-    <entry key="USER">eFh39RnZoq+uPOqIqCMtEQ==</entry>
-    <entry key="PAS">yxACv6c0vyRobajoLPGZkA==</entry>
+    <entry key="HOST"></entry>
+    <entry key="DATABASE"></entry>
+    <entry key="PORT"></entry>
+    <entry key="USER"></entry>
+    <entry key="PAS"></entry>
     <entry key="CARICEPAT">aktif</entry>
-    <entry key="HOSTHYBRIDWEB">jFIlLr3k/d8ZM9g9Q9JfCQ==</entry>
-    <entry key="USERHYBRIDWEB">JMEMh1hACh84aKBmw8zIig==</entry>
-    <entry key="PASHYBRIDWEB">pHJ+j59NKpvcSHwafxL44Q==</entry>
-    <entry key="HYBRIDWEB">khanzaapps</entry>
-    <entry key="PORTWEB">8820</entry>
+    <entry key="HOSTHYBRIDWEB"></entry>
+    <entry key="USERHYBRIDWEB"></entry>
+    <entry key="PASHYBRIDWEB"></entry>
+    <entry key="HYBRIDWEB"></entry>
+    <entry key="PORTWEB"></entry>
     <entry key="AKTIFKANWARNARALAN">yes</entry>
     <entry key="ANTRIAN">player</entry>
     <entry key="LOKETANTRIAN">1</entry>
