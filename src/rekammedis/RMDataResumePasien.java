@@ -2313,7 +2313,22 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
             }
         } catch (Exception e) {
             System.out.println("Notif : "+e);
-        } 
+        }
+        
+        // TAMBAHAN AUTO FILL
+        if (Sequel.cariInteger("select count(no_rawat) from pemeriksaan_ralan where no_rawat='" + TNoRw.getText() + "' and nip='D043'") > 0) {
+            Keluhan.setText(Sequel.cariIsi("select concat(keluhan , '\n' , pemeriksaan) from pemeriksaan_ralan where no_rawat=? and nip='D043'", TNoRw.getText()));
+            //DiagnosisMedis.setText(Sequel.cariIsi("select penilaian from pemeriksaan_ralan where no_rawat=? and nip='D043'", TNoRw.getText()));
+            //TatalaksanaKFR.setText(Sequel.cariIsi("select rtl from pemeriksaan_ralan where no_rawat=? and nip='D043'", TNoRw.getText()));
+            //DiagnosaUtama.setText(Sequel.cariIsi("select diagnosa_fungsi from layanan_kedokteran_fisik_rehabilitasi where no_rawat=? and nip='D043'", TNoRw.getText()));
+            //DiagnosaSekunder1.setText(Sequel.cariIsi("select diagnosa_medis from layanan_kedokteran_fisik_rehabilitasi where no_rawat=? and nip='D043'", TNoRw.getText()));
+        }
+        
+        // TAMBAHAN AUTO FILL
+        if (Sequel.cariInteger("select count(no_rawat) from layanan_kedokteran_fisik_rehabilitasi where no_rawat='" + TNoRw.getText() + "' ") > 0) {
+            DiagnosaUtama.setText(Sequel.cariIsi("select diagnosa_fungsi from layanan_kedokteran_fisik_rehabilitasi where no_rawat=?", TNoRw.getText()));
+            DiagnosaSekunder1.setText(Sequel.cariIsi("select diagnosa_medis from layanan_kedokteran_fisik_rehabilitasi where no_rawat=?", TNoRw.getText()));
+        }
     }
     
     public void setNoRm(String norwt, Date tgl2) {

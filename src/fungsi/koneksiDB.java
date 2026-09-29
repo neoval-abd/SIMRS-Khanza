@@ -1796,4 +1796,67 @@ public class koneksiDB {
         }
         return var;
     }
+    
+    public static String USERNEXTCLOUD(){
+        try (FileInputStream fis = new FileInputStream("setting/database.xml")) {
+            prop.loadFromXML(fis);
+            var=EnkripsiAES.decrypt(prop.getProperty("USERNEXTCLOUD"));
+        }catch(Exception e){
+            var=""; 
+        }
+        return var;
+    }
+    
+    public static String PASNEXTCLOUD(){
+        try (FileInputStream fis = new FileInputStream("setting/database.xml")) {
+            prop.loadFromXML(fis);
+            var=EnkripsiAES.decrypt(prop.getProperty("PASNEXTCLOUD"));
+        }catch(Exception e){
+            var=""; 
+        }
+        return var;
+    }
+    
+    public static String URLNEXTCLOUD(){
+        try (FileInputStream fis = new FileInputStream("setting/database.xml")) {
+            prop.loadFromXML(fis);
+            var=prop.getProperty("URLNEXTCLOUD");
+        }catch(Exception e){
+            var=""; 
+        }
+        return var;
+    }
+    
+    public static String KEYEKLAIM() {
+        String var = "";
+        try {
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var = EnkripsiAES.decrypt(prop.getProperty("KEYEKLAIM"));
+        } catch (Exception e) {
+            var = "";
+        }
+        return var;
+    }
+
+    public static String WSEKLAIM() {
+        String var = "";
+        try {
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var = EnkripsiAES.decrypt(prop.getProperty("WSEKLAIM"));
+        } catch (Exception e) {
+            var = "";
+        }
+        return var;
+    }
+
+    public static String KELASRSEKLAIM() {
+        String var = "";
+        try {
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var = prop.getProperty("KELASRSEKLAIM");
+        } catch (Exception e) {
+            var = "";
+        }
+        return var;
+    }
 }

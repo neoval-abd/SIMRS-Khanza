@@ -230,6 +230,13 @@ import rekammedis.RMUjiFungsiKFR;
  *
  * @author dosen
  */
+
+// TAMBAHAN FITUR GRAFIK TTV
+import java.awt.Toolkit;
+import grafikanalisa.grafiksqlttv;
+import java.awt.Color;
+import java.awt.Font;
+
 public final class DlgRawatJalan extends javax.swing.JDialog {
     private final DefaultTableModel tabModeDr,tabModePr,tabModeDrPr,
             tabModePemeriksaan,tabModeObstetri,tabModeGinekologi,
@@ -252,6 +259,9 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
     private volatile boolean ceksukses = false;
     private DlgPeresepanDokter resepobat;
 
+    // TAMBAHAN FITUR GRAIK TTV
+    Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+    
     /** Creates new form DlgPerawatan
      * @param parent
      * @param modal */
@@ -1148,11 +1158,15 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        // TAMBAHAN FITUR GRAFIK TTV
+        panelBiasa3 = new widget.PanelBiasa();
+        BtnBalanceCairan1 = new widget.Button();
 
         internalFrame1 = new widget.InternalFrame();
         jPanel3 = new javax.swing.JPanel();
         panelGlass8 = new widget.panelisi();
         BtnSimpan = new widget.Button();
+        BtnValidasi = new widget.Button();
         BtnBatal = new widget.Button();
         BtnHapus = new widget.Button();
         BtnEdit = new widget.Button();
@@ -1490,6 +1504,10 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                 formWindowOpened(evt);
             }
         });
+        
+        // TAMBAHAN FITUR GRAFIK TTV
+        panelBiasa3.setName("panelBiasa3"); // NOI18N
+        panelBiasa3.setLayout(null);
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Perawatan/Tindakan Rawat Jalan ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); 
         internalFrame1.setName("internalFrame1"); 
@@ -1640,6 +1658,20 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass8.add(BtnKeluar);
+        
+        // TAMBAHAN UNTUK VALIDASI PEMERIKSAAN SOAP
+        BtnValidasi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/save-16x16.png"))); 
+        BtnValidasi.setMnemonic('S');
+        BtnValidasi.setText("Validasi");
+        BtnValidasi.setToolTipText("Alt+V");
+        BtnValidasi.setName("BtnValidasi"); 
+        BtnValidasi.setPreferredSize(new java.awt.Dimension(100, 30));
+        BtnValidasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnValidasiActionPerformed(evt);
+            }
+        });
+        panelGlass8.add(BtnValidasi);
 
         jPanel3.add(panelGlass8, java.awt.BorderLayout.CENTER);
 
@@ -5040,6 +5072,25 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                 BtnPenilaianTambahanMelarikanDiriActionPerformed(evt);
             }
         });
+        
+        // TAMBAHAN FITUR GRAFIK TTV
+        BtnBalanceCairan1.setFont(new Font("Tahoma", Font.BOLD, 11));
+        BtnBalanceCairan1.setBackground(new Color(200,230,201));
+        BtnBalanceCairan1.setForeground(new Color(20,70,25));
+        BtnBalanceCairan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Bar Chart.png"))); // NOI18N
+        BtnBalanceCairan1.setMnemonic('4');
+        BtnBalanceCairan1.setText("Grafik TTV");
+        BtnBalanceCairan1.setToolTipText("");
+        BtnBalanceCairan1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnBalanceCairan1.setName("BtnBalanceCairan1"); // NOI18N
+        BtnBalanceCairan1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCekGrafikTTV(evt);
+            }
+        });
+        panelGlass12.add(BtnBalanceCairan1);
+        BtnBalanceCairan1.setBounds(930, 220, 165, 26);
+        // AKHIR TAMBAHAN FITUR GRAFIK TTV
 
         ScrollMenu.setViewportView(FormMenu);
 
@@ -5143,6 +5194,53 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         }
 }//GEN-LAST:event_BtnSimpanKeyPressed
+    
+        private void BtnValidasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnValidasiActionPerformed
+        // 1. Cari baris yang dicentang di tabel Input Data
+        int rowTerpilih = -1;
+        for (int i = 0; i < tabModePemeriksaan.getRowCount(); i++) {
+            Object checked = tabModePemeriksaan.getValueAt(i, 0);
+            if (checked != null && (Boolean) checked == true) {
+                rowTerpilih = i;
+                break;
+            }
+        }
+
+        if (rowTerpilih == -1) {
+            JOptionPane.showMessageDialog(rootPane,"Silahkan centang salah satu data SOAP yang akan divalidasi..!!");
+            return;
+        }
+
+        // 2. Ambil key dari baris terpilih (sesuaikan index kolom dengan urutan tabModePemeriksaan)
+        String noRawatTerpilih = tabModePemeriksaan.getValueAt(rowTerpilih, 1).toString();
+        String tglRawatTerpilih = tabModePemeriksaan.getValueAt(rowTerpilih, 4).toString();
+        String jamTerpilih = tabModePemeriksaan.getValueAt(rowTerpilih, 5).toString();
+        String evaluasiSekarang = tabModePemeriksaan.getValueAt(rowTerpilih, 20)==null?"":tabModePemeriksaan.getValueAt(rowTerpilih, 20).toString();
+
+        // 3. Cegah validasi dobel
+        String teksValidasi = "Telah saya riview dan validasi seluruh rencana dari PPA lain selama 1x24 jam terakhir";
+        if (evaluasiSekarang.contains(teksValidasi)) {
+            JOptionPane.showMessageDialog(rootPane,"Data SOAP ini sudah pernah divalidasi..!!");
+            return;
+        }
+
+        String evaluasiBaru = evaluasiSekarang.trim().equals("") ? teksValidasi : evaluasiSekarang + "\n" + teksValidasi;
+
+        // 4. UPDATE ke database - HANYA kolom evaluasi
+        boolean sukses = Sequel.mengedittf("pemeriksaan_ralan",
+            "no_rawat=? and tgl_perawatan=? and jam_rawat=?",
+            "evaluasi=?",
+            4,
+            new String[]{evaluasiBaru, noRawatTerpilih, tglRawatTerpilih, jamTerpilih});
+
+        if (sukses) {
+            // 5. Refresh tampilan tanpa nambah baris baru
+            tabModePemeriksaan.setValueAt(evaluasiBaru, rowTerpilih, 20);
+            TEvaluasi.setText(evaluasiBaru);
+        } else {
+            JOptionPane.showMessageDialog(rootPane,"Gagal menyimpan validasi, silahkan coba lagi..!!");
+        }
+}//GEN-LAST:event_BtnValidasiActionPerformed
 
     private void BtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatalActionPerformed
         ChkInput.setSelected(true);
@@ -10638,6 +10736,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.Button BtnSignInSebelumAnestesi;
     private widget.Button BtnSignOutSebelumMenutupLuka;
     private widget.Button BtnSimpan;
+    private widget.Button BtnValidasi;
     private widget.Button BtnSkorAldrettePascaAnestesi;
     private widget.Button BtnSkorStewardPascaAnestesi;
     private widget.Button BtnSkriningGiziLanjut;
@@ -10883,6 +10982,10 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                           BtnHasilPemeriksaanUSGAbdomen,BtnIntervensiNyeriFarmakologi,BtnIntervensiNyeriNonFarmakologi;   
     private javax.swing.JPopupMenu PopupSOAP,PopupPemeriksaan;
     private javax.swing.JMenuItem MnSOAPDokter,MnSOAPPetugas,MnCopySOAP,MnPasteSOAP;
+    
+    // TAMBAHAN FITUR GRAFIK TTV
+    private widget.Button BtnBalanceCairan1;
+    private widget.PanelBiasa panelBiasa3;
     
     private void tampilDr() {
         Valid.tabelKosong(tabModeDr);
@@ -14611,5 +14714,17 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     public void dispose() {
         executor.shutdownNow();
         super.dispose();
+    }
+    
+    // TAMBAHAN FITUR GRAFIK TTV PRIVATE VOID
+    private void BtnCekGrafikTTV(java.awt.event.ActionEvent evt) {
+        grafiksqlttv kas = new grafiksqlttv("Grafik TTV Pasien " + TPasien.getText(),
+                "select DATE_FORMAT(tgl_perawatan , '%d/%m/%Y') as tgl,jam_rawat,replace(suhu_tubuh,',','.') as suhu_tubuh,nadi,respirasi,spo2 from pemeriksaan_ralan where no_rawat='" + TNoRw.getText() + "' and suhu_tubuh <>''", "Suhu", "Nadi", "Respirasi", "Spo2");
+        kas.setModal(true);
+        kas.setAlwaysOnTop(true);
+        kas.setLocationRelativeTo(panelBiasa3);
+        kas.setSize(screen.width, 600);
+        kas.setLocation(0, 100);
+        kas.setVisible(true);
     }
 }

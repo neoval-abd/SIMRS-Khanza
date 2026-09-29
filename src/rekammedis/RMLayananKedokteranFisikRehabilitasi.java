@@ -1714,6 +1714,16 @@ public final class RMLayananKedokteranFisikRehabilitasi extends javax.swing.JDia
         } catch (Exception e) {
             System.out.println("Notif : "+e);
         }
+        
+        // TAMBAHAN FITUR OTOMATIS ISI SENDIRI DI FORM RME
+        if (Sequel.cariInteger("select count(no_rawat) from pemeriksaan_ralan where no_rawat='" + TNoRw.getText() + "' and nip='D043'") > 0) {
+            Anamnesa.setText(Sequel.cariIsi("select keluhan from pemeriksaan_ralan where no_rawat=? and nip='D043'", TNoRw.getText()));
+            PemeriksaanFisik.setText(Sequel.cariIsi("select pemeriksaan from pemeriksaan_ralan where no_rawat=? and nip='D043'", TNoRw.getText()));
+            DiagnosisMedis.setText(Sequel.cariIsi("select penilaian from pemeriksaan_ralan where no_rawat=? and nip='D043'", TNoRw.getText()));
+            TatalaksanaKFR.setText(Sequel.cariIsi("select rtl from pemeriksaan_ralan where no_rawat=? and nip='D043'", TNoRw.getText()));
+            Anjuran.setText(Sequel.cariIsi("select instruksi from pemeriksaan_ralan where no_rawat=? and nip='D043'", TNoRw.getText()));
+            Evaluasi.setText(Sequel.cariIsi("select evaluasi from pemeriksaan_ralan where no_rawat=? and nip='D043'", TNoRw.getText()));
+        }
     }
  
     public void setNoRm(String norwt,Date tgl2) {

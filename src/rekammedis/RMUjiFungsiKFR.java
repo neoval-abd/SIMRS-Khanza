@@ -1292,6 +1292,12 @@ public final class RMUjiFungsiKFR extends javax.swing.JDialog {
     }
     private void isRawat() {
          Sequel.cariIsi("select reg_periksa.no_rkm_medis from reg_periksa where reg_periksa.no_rawat='"+TNoRw.getText()+"' ",TNoRM);
+         
+         // TAMBAHAN AUTO FILL
+         if (Sequel.cariInteger("select count(no_rawat) from layanan_kedokteran_fisik_rehabilitasi where no_rawat='" + TNoRw.getText() + "' ") > 0) {
+            DiagnosisFungsional.setText(Sequel.cariIsi("select diagnosa_fungsi from layanan_kedokteran_fisik_rehabilitasi where no_rawat=?", TNoRw.getText()));
+            DiagnosisMedis.setText(Sequel.cariIsi("select diagnosa_medis from layanan_kedokteran_fisik_rehabilitasi where no_rawat=?", TNoRw.getText()));
+        }
     }
 
     private void isPsien() {

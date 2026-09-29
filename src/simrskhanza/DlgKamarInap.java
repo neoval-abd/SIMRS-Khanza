@@ -11,6 +11,7 @@
  */
 
 package simrskhanza;
+import rekammedis.RMGenerateKlaim;
 import bridging.BPJSCekDataIndukKecelakaan;
 import bridging.BPJSCekSuplesiJasaRaharja;
 import rekammedis.RMRiwayatPerawatan;
@@ -534,6 +535,11 @@ public class DlgKamarInap extends javax.swing.JDialog {
         MnPerencanaanPemulangan = new javax.swing.JMenuItem();
         ppResume = new javax.swing.JMenuItem();
         ppRiwayat = new javax.swing.JMenuItem();
+        
+        // TAMBAHAN FITUR | GENERATE KLAIM
+        MnRiwayatPerawatanKlaim = new javax.swing.JMenuItem();
+        TNoRw = new widget.TextBox();
+        
         MnPermintaan = new javax.swing.JMenu();
         MnJadwalOperasi = new javax.swing.JMenuItem();
         MnPermintaanLab = new javax.swing.JMenuItem();
@@ -5352,6 +5358,15 @@ public class DlgKamarInap extends javax.swing.JDialog {
             }
         });
         panelGlass9.add(TNoRwCari);
+        
+        // TAMBAHAN FITUR | 
+        TNoRw.setHighlighter(null);
+        TNoRw.setName("TNoRw"); // NOI18N
+        TNoRw.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TNoRwKeyPressed(evt);
+            }
+        });
 
         TNoRMCari.setEditable(false);
         TNoRMCari.setHighlighter(null);
@@ -19810,6 +19825,10 @@ public class DlgKamarInap extends javax.swing.JDialog {
     private javax.swing.JMenuItem ppPerawatanCorona;
     private javax.swing.JMenuItem ppResume;
     private javax.swing.JMenuItem ppRiwayat;
+    // TAMBAHAN FITUR | GENERATE KLAIM
+    private javax.swing.JMenuItem MnRiwayatPerawatanKlaim;
+    private widget.TextBox TNoRw;
+    
     private javax.swing.JMenuItem ppSkriningGizi;
     private javax.swing.JMenuItem ppSkriningManagerPelayananPasien;
     private javax.swing.JMenuItem ppSkriningNutrisiAnak;
@@ -20497,7 +20516,48 @@ public class DlgKamarInap extends javax.swing.JDialog {
         } 
     }
     
+    // TAMBAHAN FITUR | GENERATE KLAIM
+    private void MnRiwayatPerawatanKlaimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnRiwayatPerawatanKlaimBtnPrintActionPerformed
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, data pasien sudah habis...!!!!");
+            TCari.requestFocus();
+        }else if(tbKamIn.getSelectedRow()== -1){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu data kamar inap pada table...!!!");
+            TCari.requestFocus();
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            RMGenerateKlaim resume=new RMGenerateKlaim(null,true);
+            // resume.setNoRm(tbKamIn.getValueAt(tbKamIn.getSelectedRow(),1).toString(),tbKamIn.getValueAt(tbKamIn.getSelectedRow(),2).toString());
+            resume.setNoRm(TNoRMCari.getText(), TPasienCari.getText(), "Rawat Inap", norawat.getText());
+            resume.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            resume.setLocationRelativeTo(internalFrame1);
+            resume.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_MnRiwayatPerawatanKlaimBtnPrintActionPerformed
+    
+    private void TNoRwKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TNoRwKeyPressed
+        //Valid.pindah(evt,TNoReg,DTPReg);
+    }//GEN-LAST:event_TNoRwKeyPressed
+    
+    
     private void initKamarInap(){
+        // TAMBAHAN FITUR | GENERATE KLAIM 
+        MnRiwayatPerawatanKlaim.setBackground(new java.awt.Color(255, 255, 254));
+        MnRiwayatPerawatanKlaim.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnRiwayatPerawatanKlaim.setForeground(new java.awt.Color(50, 50, 50));
+        MnRiwayatPerawatanKlaim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnRiwayatPerawatanKlaim.setText("Generate Klaim");
+        MnRiwayatPerawatanKlaim.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnRiwayatPerawatanKlaim.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnRiwayatPerawatanKlaim.setName("[170,26]"); // NOI18N
+        MnRiwayatPerawatanKlaim.setPreferredSize(new java.awt.Dimension(200, 26));
+        MnRiwayatPerawatanKlaim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnRiwayatPerawatanKlaimActionPerformed(evt);
+            }
+        });
+        
         MnPenilaianPreInduksi = new javax.swing.JMenuItem();
         MnPenilaianPreInduksi.setBackground(new java.awt.Color(255, 255, 254));
         MnPenilaianPreInduksi.setFont(new java.awt.Font("Tahoma", 0, 11)); 
@@ -21420,6 +21480,8 @@ public class DlgKamarInap extends javax.swing.JDialog {
         MnDataRM.add(MnEdukasi);
         MnDataRM.add(ppResume);
         MnDataRM.add(ppRiwayat);
+        // TAMBAHAN FITUR | GENERATE KLAIM
+        MnDataRM.add(MnRiwayatPerawatanKlaim);
         MnRMHCU.add(MnCheckListKriteriaMasukNICU);
         MnRMHCU.add(MnCheckListKriteriaKeluarNICU);
         MnRMHCU.add(MnCheckListKriteriaMasukPICU);
